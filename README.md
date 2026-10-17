@@ -55,7 +55,6 @@ There is no separate `pip install` step for the basic nodes when ComfyUI's norma
 | Face, eye and hand detailing | [**ComfyUI Impact Pack**](https://github.com/ltdrdata/ComfyUI-Impact-Pack), a compatible detector provider (often [**Impact Subpack**](https://github.com/ltdrdata/ComfyUI-Impact-Subpack)), and detector model weights. A SAM model can be used if configured. |
 | Tiled diffusion refinement | [**ComfyUI Ultimate SD Upscale**](https://github.com/ssitu/ComfyUI_UltimateSDUpscale) (the `UltimateSDUpscaleNoUpscale` node). |
 | AI model upscaling | A compatible upscaler model in `ComfyUI/models/upscale_models/`. |
-| Creator / Personal checkpoint profiles | Optional **Checkpoint Profile Manager** installation with its profile data. Custom settings work without it. |
 
 You only need these extras when enabling the corresponding feature. Simple generation, resizing, comparison, and saving do not require Impact Pack or Ultimate SD Upscale.
 
