@@ -15,6 +15,11 @@
 
 All four nodes are available under the **Uninodes** category in ComfyUI.
 
+## Tool
+
+You'll find in tools/ a simple html page you can open. It allows you to open/edit or even create your own libraries.
+Libraries accepts variables. Variables can be free input or connected libraries (for exemple, for colors).
+
 ## Installation
 
 1. Install and run a recent version of **ComfyUI**.
