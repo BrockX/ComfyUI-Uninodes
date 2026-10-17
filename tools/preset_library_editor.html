@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Preset Library Editor • Checkpoint Profiles</title>
+<style>
+:root{color-scheme:dark;--bg:#0e121b;--panel:#171e2a;--panel2:#202a3a;--stroke:#344154;--text:#ecf1f8;--muted:#9eabc0;--accent:#7f9cff;--warn:#f8bd7a}
+*{box-sizing:border-box}body{margin:0;font:14px/1.45 system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--text)}button,input,textarea,select{font:inherit;color:inherit}button{border:1px solid var(--stroke);background:#28344a;padding:10px 13px;border-radius:8px;cursor:pointer}button:hover{background:#394b69}button.primary{background:#395ab4;border-color:#6784e5}button:disabled{opacity:.4;cursor:default}input,textarea,select{background:#121926;border:1px solid #42516a;border-radius:7px;padding:10px;width:100%;outline:none}input:focus,textarea:focus,select:focus{border-color:var(--accent)}textarea{resize:vertical;min-height:130px}label{font-size:12px;color:var(--muted);display:flex;flex-direction:column;gap:6px}header{padding:20px clamp(15px,3vw,40px);border-bottom:1px solid var(--stroke);display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap;background:#141b27}.brand{font-size:20px;font-weight:750;letter-spacing:-.025em}.muted{font-size:12px;color:var(--muted)}.actions{display:flex;gap:8px;flex-wrap:wrap}main{display:grid;grid-template-columns:minmax(260px,340px) minmax(350px,1fr);min-height:calc(100vh - 104px)}aside{background:#141a26;border-right:1px solid var(--stroke);padding:20px;display:flex;flex-direction:column;gap:15px;min-height:450px}.meta{display:grid;grid-template-columns:1fr 1fr;gap:10px}.items{display:flex;flex-direction:column;gap:7px;overflow:auto;max-height:calc(100vh - 350px);min-height:150px}.item{width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;padding:12px;border-radius:8px;background:#202a39;border:1px solid transparent}.item.active{border-color:#708bf0;background:#2b3957}.item .number{color:var(--muted);font-size:11px;margin-right:12px}section.editor{padding:clamp(18px,3vw,44px);max-width:1100px;width:100%;margin:0 auto;display:flex;flex-direction:column;gap:20px}.section-top{display:flex;justify-content:space-between;gap:10px;align-items:center}.fields{display:grid;grid-template-columns:1fr 1fr;gap:18px}.big{min-height:190px}.info{border:1px solid #304263;background:#182339;color:#c4d3ff;padding:11px 15px;border-radius:8px}.status{min-height:20px;color:#9bd7ae}.danger{border-color:#694554;color:#ffd1d1}.hidden{display:none!important}h2{margin:0;font-size:19px;letter-spacing:-.02em}.drop{border:1px dashed var(--stroke);padding:10px;border-radius:8px;font-size:12px;color:var(--muted)}.drop.drag{border-color:var(--accent)}.variable-panel{display:flex;flex-direction:column;gap:10px;border:1px solid #34445e;background:#172133;padding:14px;border-radius:10px;margin-top:18px}.variable-row{display:grid;grid-template-columns:110px 1fr 1fr 1fr auto;gap:8px;align-items:end}.variable-row label{font-size:11px}.variable-row input{padding:7px;font-size:12px}.variable-row .slot-name{padding:9px 6px;white-space:nowrap;color:#c4d3ff;font-family:monospace}.variable-row button{padding:7px}.variable-preview{background:#101725;border:1px solid #42516a;padding:12px;border-radius:7px;white-space:pre-wrap;font-family:ui-monospace,monospace;font-size:12px;color:#c5e1cf}.mini{font-size:12px;color:#a5b5cb}#installedSection{display:flex;flex-direction:column;gap:8px;border:1px solid var(--stroke);border-radius:8px;padding:9px;background:#101725}
+.installed-browser{max-height:185px;overflow:auto;display:flex;flex-direction:column;gap:3px;scrollbar-width:thin}
+.installed-folder{flex:0 0 auto;background:transparent;border:0;text-align:left;padding:7px 6px 3px;font-size:11px;font-weight:750;letter-spacing:.04em;color:#9eafcc;text-transform:uppercase}
+.installed-library{flex:0 0 auto;min-height:29px;padding:6px 9px;text-align:left;border-radius:6px;font-size:12px;background:transparent;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.installed-library.active{border-color:var(--accent);background:#263a56;color:#fff}
+.installed-library .kind{float:right;opacity:.65;font-size:10px}
+.variable-row{grid-template-columns:82px minmax(90px,.9fr) minmax(103px,.9fr) minmax(135px,1.2fr) minmax(130px,1.1fr) auto}
+.variable-row select{font-size:12px;padding:7px}
+#variableCreate{display:flex;flex-wrap:wrap;gap:8px;align-items:end;border:1px dashed #506480;border-radius:8px;padding:9px}
+#variableCreate label{flex:1 1 140px}#variableCreate input,#variableCreate select{padding:7px;font-size:12px}
+#variableCreate button{align-self:end}
+body.embedded{height:100vh;overflow:hidden}body.embedded header{padding:9px 14px;min-height:51px}body.embedded .brand{font-size:16px}body.embedded header .muted{display:none}body.embedded #saveFile{display:none!important}
+body.embedded main{height:calc(100vh - 58px);min-height:0;grid-template-columns:minmax(250px,31%) minmax(390px,1fr)}
+body.embedded aside{min-height:0;overflow:auto;padding:12px;gap:10px}body.embedded .items{min-height:90px;max-height:26vh}
+body.embedded section.editor{overflow:auto;min-height:0;padding:15px;gap:14px}
+body.embedded textarea.big{min-height:94px}body.embedded textarea{min-height:80px}
+@media(max-width:780px){main{grid-template-columns:1fr}aside{border-right:none;border-bottom:1px solid var(--stroke)}.items{max-height:220px}.fields{grid-template-columns:1fr}body.embedded main{grid-template-columns:1fr;overflow:auto}body.embedded aside{overflow:visible}body.embedded section.editor{overflow:visible}}
+
+</style></head><body>
+<header><div><div class="brand">Preset Library Editor</div><div class="muted">Checkpoint Profiles · Embedded in Composer Settings or available as an offline JSON editor</div></div><div class="actions"><button id="new">+ New library</button><button id="load">↑ Load JSON</button><button class="primary" id="saveFile" title="Save the opened JSON. Direct overwrite requires browser file access; otherwise downloads a replacement copy.">✓ Save</button><button class="primary hidden" id="saveLive">✓ Save to ComfyUI</button><button id="cancelLive" class="hidden">↶ Discard changes</button><button id="export">↓ Export JSON</button></div></header>
+<main><aside><div id="installedSection" class="hidden"><div class="section-top"><strong>Installed libraries</strong><button id="reloadInstalled" type="button" title="Reload list">↻</button></div><input id="libraryFilter" placeholder="Search installed libraries…" autocomplete="off" spellcheck="false"><div id="installedLibraries" class="installed-browser"></div></div>
+  <div class="meta"><label>Library ID<input id="libid" maxlength="64" spellcheck="false" placeholder="camera"></label><label>Display name<input id="libname" maxlength="120" placeholder="Camera"></label></div><label id="folderWrap">Folder (new libraries only)<input id="libfolder" list="knownFolders" placeholder="Clothes & Accessories/Modifiers" spellcheck="false"><datalist id="knownFolders"></datalist></label><label>Library type<select id="libkind"><option value="preset">Main presets</option><option value="modifier">Reusable modifiers (Color, Fabric, Pattern…)</option></select></label>
+  <div class="section-top"><strong>Presets <span id="count">0</span></strong><button id="add">+ Add preset</button></div>
+  <div class="items" id="items"></div>
+  <div id="drop" class="drop">Drop a library JSON here or use “Load JSON”.</div>
+  <div class="muted">Tip: IDs stay stable when you rename display names. Import the exported file using Prompt Composer → Settings → Import library JSON. Use Save to ComfyUI to update installed libraries, or Export JSON for a portable copy.</div>
+</aside><section class="editor">
+  <div class="section-top"><div><h2 id="heading">Select a preset</h2><span class="muted" id="subheading">Edit its positive and negative tags</span></div><div class="actions"><button id="up">↑</button><button id="down">↓</button><button id="duplicate">Duplicate</button><button class="danger" id="remove">Delete</button></div></div>
+  <div id="editArea" class="hidden">
+    <div class="fields"><label>Name<input id="entryname" maxlength="120" placeholder="Golden Hour"></label><label>Stable preset ID<input id="entryid" maxlength="64" spellcheck="false" placeholder="golden-hour"></label></div>
+    <div class="fields" style="margin-top:18px"><label>Positive tags<textarea id="positive" class="big" spellcheck="false" placeholder="warm sunset lighting, golden hour..."></textarea></label><label>Negative tags<textarea id="negative" class="big" spellcheck="false" placeholder="flat lighting, harsh flash..."></textarea></label></div>
+    <div class="variable-panel"><div class="section-top"><strong>Optional template variables</strong><button id="addVariable" type="button">+ Add variable</button></div>
+       <div class="mini">Place tokens such as <code>&lt;color&gt;</code> in Positive or Negative tags. Choose a reusable modifier library dropdown or a user-entered Free Text variable for each token. An empty value inserts nothing.</div>
+       <div id="variableRows"></div><div id="variableCreate" class="hidden"><label>Slot name<input id="newVariableSlot" placeholder="color" maxlength="32"></label><label>Variable type<select id="newVariableType"><option value="library">Library dropdown</option><option value="text">Free Text</option></select></label><label id="newVariableSourceWrap">Modifier source<select id="newVariableSource"></select><input id="newVariableSourceManual" class="hidden" placeholder="modifier-colors" spellcheck="false"></label><button id="confirmVariable" type="button">Add slot</button><button id="cancelVariable" type="button">Cancel</button></div><div class="mini">Live preview (test choices are not saved in the JSON)</div><div id="variablePreview" class="variable-preview"></div>
+    </div>
+    <label style="margin-top:18px">Notes (optional)<textarea id="notes" placeholder="When should this preset be used?"></textarea></label>
+  </div>
+  <div id="empty" class="info">Create or select a preset to begin. This editor supports Style, Camera, Composition, Lighting and your own custom libraries.</div>
+  <div id="status" class="status" role="status" aria-live="polite"></div>
+  <div class="info"><strong>Export format</strong><div class="muted" style="margin-top:6px">Libraries continue using <code>cpm-preset-library</code> schema v1, now with optional <code>kind: modifier</code> and per-preset <code>variables</code>. Existing libraries remain valid. Exported libraries work with both standalone Preset Library nodes and embedded Prompt Composer selectors.</div></div>
+</section></main><input id="file" type="file" accept=".json,application/json" class="hidden">
+<script>
+(() => {
+'use strict';
+const $=id=>document.getElementById(id);
+const schema='cpm-preset-library';
+let state={format:schema,schema_version:1,id:'camera',name:'Camera',entries:[]};
+let selected=-1;let dirty=false;let loadedEditable=true;let saveInFlight=false;
+const query=new URLSearchParams(location.search);
+const embedded=query.get('embedded')==='1';
+if(embedded){
+  document.body.classList.add('embedded');
+  // Local-file Save belongs only to the standalone editor, never Composer.
+  // The embedded manager exclusively uses the revision-checked ComfyUI save.
+  $('saveFile').classList.add('hidden');
+  $('saveFile').disabled=true;
+}
+let installed=[], loadedId=null, loadedRevision=null, loadedFolder='', loadedSource='',loadedEntryIds=[];
+let openedFileHandle=null, openedFileName=null;
+const collapsedFolders=new Set();
+const editorApi=async(url,options)=>{const response=await fetch(url,{credentials:'same-origin',...options});let data;try{data=await response.json();}catch{throw Error('Invalid response from ComfyUI');}if(!response.ok)throw Error(data.error||`HTTP ${response.status}`);return data;};
+const modifierLibraries=()=>installed.filter(l=>l.kind==='modifier');
+const broadcast=(type,extra={})=>{if(embedded&&window.parent!==window)window.parent.postMessage({type,...extra},location.origin);};
+
+const slug=s=>String(s).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,60)||'preset';
+const validId=s=>/^[a-z][a-z0-9_-]{0,63}$/.test(s);
+function status(message,bad=false){$('status').textContent=message;$('status').style.color=bad?'#f8a3a3':'#9bd7ae'}
+function updateSaveState(){
+ const save=$('saveLive');
+ // Saving an opened library must NOT depend on successfully loading the entire
+ // installed-library browser. The edit endpoint is independent of that list.
+ const canSave=embedded||installedAvailable;
+ save.disabled=!(canSave&&loadedEditable&&dirty&&!saveInFlight);
+ save.title=!loadedEditable?'This library is read-only. Create your own library to edit it.':
+   saveInFlight?'Saving…':!dirty?'No unsaved changes':!canSave?'ComfyUI connection unavailable':'Save changes to ComfyUI';
+}
+function mark(){
+ if(!loadedEditable)return status('This library is read-only. Create a new library to make editable presets.',true);
+ dirty=true;updateSaveState();
+ status('Unsaved changes — Save to ComfyUI or Export JSON.');
+ broadcast('cpm-library-dirty',{dirty:true});
+}
+function updateEditorAccess(){
+ const locked=!loadedEditable;
+ for(const id of ['libid','libname','libkind','libfolder','entryname','entryid','positive','negative','notes',
+                  'add','remove','duplicate','up','down','addVariable','confirmVariable'])$(id).disabled=locked||($(id).disabled&&['up','down','remove','duplicate'].includes(id));
+ for(const field of $('variableRows').querySelectorAll('input,select,button'))field.disabled=locked;
+ if(locked)$('variableCreate').classList.add('hidden');
+ updateSaveState();
+}
+function cleanRow(row){const result={...row,id:row.id||slug(row.name||'preset'),name:row.name||'',positive:row.positive??row.positive_prefix??'',negative:row.negative??row.negative_prefix??'',notes:row.notes||''};if(result.variables)result.variables=JSON.parse(JSON.stringify(result.variables));return result;}
+function parse(obj){
+  if (obj?.format===schema&&obj.schema_version===1&&Array.isArray(obj.entries))return {...obj,format:schema,schema_version:1,id:obj.id,name:obj.name,kind:obj.kind||'preset',entries:obj.entries.map(cleanRow)};
+  if(obj?.schema_version===1&&Array.isArray(obj.presets))return {format:schema,schema_version:1,id:'style',name:'Style',kind:'preset',entries:obj.presets.map(cleanRow)};
+  throw Error('Unsupported format. Load a cpm-preset-library v1 JSON or legacy styles.json.');
+}
+function validate(){
+  const id=$('libid').value.trim(), name=$('libname').value.trim();
+  if(!validId(id))throw Error('Library ID must start with a lowercase letter and use lowercase letters, digits, - or _.');
+  if(!name||name.length>120)throw Error('Library name must be 1–120 characters.');
+  if(state.entries.length>300)throw Error('Maximum 300 presets per library.');
+  if(!['preset','modifier'].includes(state.kind||'preset'))throw Error('Invalid library type.');
+  const used=new Set();
+  for(const [index,e] of state.entries.entries()){
+    if(!validId(e.id))throw Error(`Preset ${index+1} has an invalid ID.`);
+    if(used.has(e.id))throw Error('Duplicate preset ID: '+e.id);
+    used.add(e.id);
+    if(!e.name.trim()||e.name.length>120)throw Error(`Preset ${index+1} needs a name.`);
+    for(const field of ['positive','negative','notes'])if(typeof e[field]!=='string'||e[field].length>12000)throw Error(`Preset ${index+1} has invalid/oversized ${field}.`);
+    if(e.variables){
+      if(typeof e.variables!=='object'||Array.isArray(e.variables)||Object.keys(e.variables).length>8)throw Error(`Invalid variables in preset ${index+1}.`);
+      for(const [slot,def] of Object.entries(e.variables)){
+        if(!/^[a-z][a-z0-9_]{0,31}$/.test(slot))throw Error(`Invalid variable slot ${slot}`);
+        if(!['library','text'].includes(def.type||'library'))throw Error(`Invalid type for <${slot}>.`);
+        if(typeof def.label!=='string'||!def.label.trim()||def.label.length>50)throw Error(`Variable <${slot}> needs a label.`);
+        if(def.type==='text'){
+          if(typeof (def.placeholder??'')!=='string'||(def.placeholder||'').length>100)throw Error(`Invalid placeholder for <${slot}>.`);
+        }else if(!validId(def.library))throw Error(`Variable <${slot}> needs a source library ID.`);
+        if(!e.positive.includes(`<${slot}>`)&&!e.negative.includes(`<${slot}>`))throw Error(`Use <${slot}> somewhere in the preset prompt before exporting.`);
+      }
+    }
+  }
+  const result={format:schema,schema_version:1,id,name,entries:state.entries.map(e=>({...e,name:e.name.trim()}))};
+  if(state.kind==='modifier')result.kind='modifier';
+  return result;
+}
+function render(){
+  $('libid').value=state.id;$('libid').readOnly=Boolean(loadedId);$('libname').value=state.name;$('libkind').value=state.kind||'preset';$('libfolder').value=loadedFolder;$('libfolder').readOnly=Boolean(loadedId);$('count').textContent=state.entries.length;
+  const list=$('items');list.replaceChildren();
+  state.entries.forEach((entry,i)=>{
+    const b=document.createElement('button');b.className='item'+(i===selected?' active':'');
+    const name=document.createElement('span');name.textContent=entry.name||'(untitled)';
+    const number=document.createElement('span');number.className='number';number.textContent=String(i+1).padStart(2,'0');
+    b.append(number,name);b.addEventListener('click',()=>select(i));list.append(b);
+  });
+  const active=state.entries[selected];$('editArea').classList.toggle('hidden',!active);$('empty').classList.toggle('hidden',!!active);
+  for(const key of ['up','down','duplicate','remove'])$(key).disabled=!active;
+  $('up').disabled=!active||selected===0;$('down').disabled=!active||selected===state.entries.length-1;
+  $('heading').textContent=active?(active.name||'New preset'):'Select a preset';
+  $('subheading').textContent=active?`Preset ${selected+1} of ${state.entries.length}`:'Edit its positive and negative tags';
+  if(active)for(const key of ['entryname','entryid','positive','negative','notes'])$(key).value=active[({entryname:'name',entryid:'id'})[key]||key];
+  drawVariables();
+  // The integrated manager always offers Save to ComfyUI. A failing library
+  // browser refresh must never remove editing/saving from the selected preset.
+  $('saveLive').classList.toggle('hidden',!(embedded||installedAvailable));
+  $('cancelLive').classList.toggle('hidden',!(embedded||installedAvailable));
+  drawInstalled();
+  updateEditorAccess();
+}
+
+function select(i){selected=i;render()}
+function unique(base){let id=slug(base),index=2;while(state.entries.some(x=>x.id===id))id=slug(base).slice(0,52)+'-'+index++;return id}
+let testValues={};
+function currentModifierValue(source,choice){
+ const lib=installed.find(x=>x.id===source);
+ const entry=lib?.entries?.find(x=>x.id===choice);
+ return entry?.positive||'';
+}
+function drawVariablePreview(){
+ const e=state.entries[selected];if(!e)return;
+ const output={positive:e.positive,negative:e.negative};
+ for(const [slot,def] of Object.entries(e.variables||{})){
+   const entry=def.type==='text'?null:installed.find(x=>x.id===def.library)?.entries?.find(x=>x.id===testValues[slot]);
+   for(const pol of ['positive','negative']){
+     const fallback=def.type==='text'?(testValues[slot]||''):(!installedAvailable?(testValues[slot]||''):'');
+     output[pol]=output[pol].replaceAll(`<${slot}>`,entry?(pol==='negative'?(entry.negative||entry.positive):entry.positive):fallback);
+   }
+ }
+ for(const pol of ['positive','negative'])output[pol]=output[pol].replace(/[ \t]+/g,' ').replace(/\s+,/g,',').replace(/,\s*,+/g,', ').trim().replace(/^,|,$/g,'').trim();
+ $('variablePreview').textContent=`Positive: ${output.positive||'(empty)'}\nNegative: ${output.negative||'(empty)'}`;
+}
+function optionSelect(options,value,onChange){
+ const elem=document.createElement('select');
+ for(const [id,name] of options){const opt=document.createElement('option');opt.value=id;opt.textContent=name;elem.append(opt);}
+ elem.value=value;if(elem.value!==value&&value){const opt=document.createElement('option');opt.value=value;opt.textContent=value+' (missing)';elem.append(opt);elem.value=value;}
+ elem.addEventListener('change',()=>onChange(elem.value));return elem;
+}
+function drawVariables(){
+ const container=$('variableRows');container.replaceChildren();const e=state.entries[selected];if(!e){$('variablePreview').textContent='';return;}
+ for(const [slot,def] of Object.entries(e.variables||{})){
+    const row=document.createElement('div');row.className='variable-row';
+    const title=document.createElement('div');title.className='slot-name';title.textContent=`<${slot}>`;row.append(title);
+    const nameWrap=document.createElement('label');nameWrap.textContent='Label';const name=document.createElement('input');name.value=def.label||'';name.addEventListener('input',()=>{def.label=name.value;mark();});nameWrap.append(name);row.append(nameWrap);
+    const typeWrap=document.createElement('label');typeWrap.textContent='Type';
+    typeWrap.append(optionSelect([['library','Library'],['text','Free Text']],def.type||'library',val=>{
+      e.variables[slot]=val==='text'
+        ?{type:'text',label:def.label||slot,placeholder:''}
+        :{label:def.label||slot,library:modifierLibraries()[0]?.id||'modifier-colors'};
+      testValues[slot]='';mark();drawVariables();
+    }));row.append(typeWrap);
+    const srcWrap=document.createElement('label');srcWrap.textContent=def.type==='text'?'Placeholder (optional)':'Modifier library';
+    if(def.type==='text'){
+      const hint=document.createElement('input');hint.value=def.placeholder||'';hint.placeholder='e.g. on a chair';hint.maxLength=100;
+      hint.addEventListener('input',()=>{def.placeholder=hint.value;mark();});srcWrap.append(hint);
+    }else if(installedAvailable){
+      srcWrap.append(optionSelect(modifierLibraries().map(x=>[x.id,`${x.folder?x.folder+' / ':''}${x.name}`]),def.library,(val)=>{def.library=val;testValues[slot]='';mark();drawVariables();}));
+    }else{
+      const source=document.createElement('input');source.value=def.library;source.placeholder='modifier-colors';
+      source.addEventListener('input',()=>{def.library=source.value;mark();});srcWrap.append(source);
+    }
+    row.append(srcWrap);
+    const previewWrap=document.createElement('label');previewWrap.textContent=def.type==='text'?'Preview text':'Preview choice';
+    const modifier=def.type==='text'?null:installed.find(x=>x.id===def.library);
+    if(def.type==='text'||!installedAvailable){
+      const input=document.createElement('input');input.value=testValues[slot]||'';
+      input.placeholder=def.type==='text'?'Type test value…':'Test text';input.maxLength=2000;
+      input.addEventListener('input',()=>{testValues[slot]=input.value;drawVariablePreview();});previewWrap.append(input);
+    }else{
+      previewWrap.append(optionSelect([['','None / empty'],...(modifier?.entries||[]).map(x=>[x.id,x.name])],testValues[slot]||'',val=>{testValues[slot]=val;drawVariablePreview();}));
+    }
+    row.append(previewWrap);
+    const del=document.createElement('button');del.textContent='✕';del.title='Remove variable mapping (does not change prompt text)';del.addEventListener('click',()=>{delete e.variables[slot];delete testValues[slot];mark();drawVariables();});row.append(del);
+    container.append(row);
+ }
+ drawVariablePreview();
+ if(!loadedEditable)for(const field of container.querySelectorAll('input,select,button'))field.disabled=true;
+}
+$('addVariable').addEventListener('click',()=>{
+ const e=state.entries[selected];if(!e)return;
+ if(Object.keys(e.variables||{}).length>=8)return status('Maximum 8 variables per preset.',true);
+ $('variableCreate').classList.remove('hidden');$('newVariableSlot').value='';
+ const sources=$('newVariableSource');sources.replaceChildren();
+ for(const lib of modifierLibraries()){const o=document.createElement('option');o.value=lib.id;o.textContent=displayInstalled(lib);sources.append(o);}
+ if(!modifierLibraries().length){const option=document.createElement('option');option.value='';option.textContent='Manual library ID below';sources.append(option);}
+ $('newVariableSourceManual').classList.toggle('hidden',modifierLibraries().length>0);
+ $('newVariableType').value='library';updateNewVariableKind();
+ $('newVariableSlot').focus();
+});
+function updateNewVariableKind(){
+  $('newVariableSourceWrap').classList.toggle('hidden',$('newVariableType').value==='text');
+}
+$('newVariableType').addEventListener('change',updateNewVariableKind);
+$('cancelVariable').addEventListener('click',()=>$('variableCreate').classList.add('hidden'));
+$('confirmVariable').addEventListener('click',()=>{
+ const e=state.entries[selected];if(!e)return;
+ const slot=$('newVariableSlot').value.trim(),kind=$('newVariableType').value;
+ const source=$('newVariableSource').value||$('newVariableSourceManual').value.trim();
+ if(!/^[a-z][a-z0-9_]{0,31}$/.test(slot))return status('Use a lowercase slot name such as detail or location.',true);
+ if(e.variables?.[slot])return status(`Variable <${slot}> already exists.`,true);
+ if(kind==='library'&&!validId(source))return status('Install a modifier library first, or create one in Library Manager.',true);
+ e.variables??={};const label=slot.replaceAll('_',' ').replace(/^./,x=>x.toUpperCase());
+ e.variables[slot]=kind==='text'?{type:'text',label,placeholder:''}:{label,library:source};
+ if(!e.positive.includes(`<${slot}>`)&&!e.negative.includes(`<${slot}>`)){
+   e.positive=`<${slot}> ${e.positive}`;$('positive').value=e.positive;
+ }
+ $('variableCreate').classList.add('hidden');mark();drawVariables();
+});
+$('libid').addEventListener('input',e=>{state.id=e.target.value;mark()});$('libfolder').addEventListener('input',e=>{loadedFolder=e.target.value;mark()});
+$('libname').addEventListener('input',e=>{state.name=e.target.value;mark()});
+$('libkind').addEventListener('change',e=>{state.kind=e.target.value;mark()});
+for(const key of ['entryname','entryid','positive','negative','notes'])$(key).addEventListener('input',e=>{
+  const field=({entryname:'name',entryid:'id'})[key]||key;
+  if(state.entries[selected]){state.entries[selected][field]=e.target.value;mark();if(field==='name'){$('heading').textContent=e.target.value; const b=$('items').children[selected];if(b)b.lastChild.textContent=e.target.value}if(field==='positive'||field==='negative')drawVariablePreview();}
+});
+$('add').addEventListener('click',()=>{if(state.entries.length>=300)return status('Maximum 300 entries',true);state.entries.push({id:unique('new-preset'),name:'New Preset',positive:'',negative:'',notes:''});selected=state.entries.length-1;mark();render()});
+$('remove').addEventListener('click',()=>{if(selected<0||!confirm('Delete this preset?'))return;state.entries.splice(selected,1);selected=state.entries.length?Math.min(selected,state.entries.length-1):-1;mark();render()});
+$('duplicate').addEventListener('click',()=>{if(selected<0)return;const copy=JSON.parse(JSON.stringify(state.entries[selected]));copy.id=unique(copy.id+'-copy');copy.name+=' Copy';state.entries.splice(selected+1,0,copy);selected++;mark();render()});
+for(const [button,delta] of [['up',-1],['down',1]])$(button).addEventListener('click',()=>{const j=selected+delta;if(selected<0||j<0||j>=state.entries.length)return;[state.entries[selected],state.entries[j]]=[state.entries[j],state.entries[selected]];selected=j;mark();render()});
+function createNew(){if(dirty&&!confirm('Discard unsaved changes and create a new library?'))return;
+ const id=(prompt('Library ID (camera, composition, lighting, style, or your own)', 'custom')||'').trim();if(!id)return;
+ if(!validId(id))return status('Invalid library ID',true);
+ state={format:schema,schema_version:1,id,name:id.charAt(0).toUpperCase()+id.slice(1),kind:'preset',entries:[]};openedFileHandle=null;openedFileName=null;loadedId=null;loadedRevision=null;loadedFolder='';loadedEntryIds=[];selected=-1;dirty=false;loadedEditable=true;testValues={};render();status('New library created. Add presets, then Save to ComfyUI or Export JSON.');}
+$('new').addEventListener('click',createNew);
+async function loadFile(file,handle=null){
+  if(!file)return;if(file.size>500000)return status('File exceeds 500 KB',true);
+  try{
+    const result=parse(JSON.parse(await file.text()));
+    if(dirty&&!confirm('Discard unsaved changes and load this library?'))return;
+    state=result;openedFileHandle=handle;openedFileName=file.name;
+    loadedId=null;loadedRevision=null;loadedFolder='';loadedEntryIds=[];
+    selected=state.entries.length?0:-1;testValues={};dirty=false;loadedEditable=true;
+    render();status(`Loaded ${state.entries.length} presets from ${file.name}`);
+  }catch(e){status('Could not load JSON: '+e.message,true)}
+}
+$('load').addEventListener('click',async()=>{
+  // Chromium secure contexts can grant an actual writable file handle.
+  // Firefox and browsers without this API still use the normal file picker.
+  if(typeof window.showOpenFilePicker==='function'){
+    try{
+      const [handle]=await window.showOpenFilePicker({multiple:false,types:[{description:'JSON files',accept:{'application/json':['.json']}}]});
+      if(handle)await loadFile(await handle.getFile(),handle);
+    }catch(e){if(e.name!=='AbortError')status('Open failed: '+e.message,true)}
+  }else $('file').click();
+});
+$('file').addEventListener('change',e=>{loadFile(e.target.files[0]);e.target.value=''});
+const drop=$('drop');drop.addEventListener('dragover',e=>{e.preventDefault();drop.classList.add('drag')});drop.addEventListener('dragleave',()=>drop.classList.remove('drag'));drop.addEventListener('drop',e=>{e.preventDefault();drop.classList.remove('drag');loadFile(e.dataTransfer.files[0])});
+function exportJson(filename,doc,json){
+ const url=URL.createObjectURL(new Blob([json],{type:'application/json'}));
+ const a=document.createElement('a');a.href=url;a.download=filename;
+ document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
+function serializePortable(){
+ const doc=validate(),json=JSON.stringify(doc,null,2)+'\n';
+ if(new Blob([json]).size>500000)throw Error('Export exceeds 500 KB');
+ return {doc,json};
+}
+$('saveFile').addEventListener('click',async()=>{
+ if(embedded)return;
+ try{
+   if(loadedId){
+     // Installed libraries use the version-checked backend, not an unrelated
+     // local download masquerading as a saved installed library.
+     if(!installedAvailable)throw Error('ComfyUI is offline; use Export JSON.');
+     if(!dirty)return status('No changes to save.');
+     $('saveLive').click();return;
+   }
+   const {doc,json}=serializePortable();
+   if(openedFileHandle?.createWritable){
+     const writable=await openedFileHandle.createWritable();
+     await writable.write(json);await writable.close();
+     dirty=false;updateSaveState();broadcast('cpm-library-dirty',{dirty:false});
+     status(`Saved directly to ${openedFileName}.`);
+   }else{
+     const filename=openedFileName||doc.id+'.json';
+     exportJson(filename,doc,json);
+     status(`Downloaded ${filename}. Your browser does not allow overwriting opened files directly; replace the original with this download.`);
+   }
+ }catch(e){status('Save failed: '+e.message,true)}
+});
+$('export').addEventListener('click',()=>{try{
+ const {doc,json}=serializePortable();const filename=doc.id+'.json';
+ exportJson(filename,doc,json);status(`Exported ${filename} with ${doc.entries.length} presets.`);
+}catch(e){status(e.message,true)}});
+let installedAvailable=false;
+function displayInstalled(lib){return `${lib.folder?lib.folder+' / ':''}${lib.name}`;}
+function drawInstalled(){
+ const el=$('installedLibraries');el.replaceChildren();
+ const q=$('libraryFilter').value.toLowerCase().trim();
+ const grouped=new Map();
+ for(const item of installed.filter(x=>`${x.name} ${x.id} ${x.folder}`.toLowerCase().includes(q))){
+   const group=item.folder||'Root';if(!grouped.has(group))grouped.set(group,[]);grouped.get(group).push(item);
+ }
+ for(const [folder,items] of [...grouped].sort((a,b)=>a[0].localeCompare(b[0]))){
+   const header=document.createElement('button');header.type='button';header.className='installed-folder';
+   header.textContent=(collapsedFolders.has(folder)?'▸ ':'▾ ')+folder;
+   header.addEventListener('click',()=>{if(collapsedFolders.has(folder))collapsedFolders.delete(folder);else collapsedFolders.add(folder);drawInstalled();});
+   el.append(header);
+   if(collapsedFolders.has(folder))continue;
+   for(const item of items.sort((a,b)=>a.name.localeCompare(b.name))){
+     const button=document.createElement('button');button.type='button';button.className='installed-library'+(loadedId===item.id?' active':'');
+     button.textContent=item.name;button.title=item.id+' · '+item.source;
+     if(item.kind==='modifier'){const badge=document.createElement('span');badge.className='kind';badge.textContent='MOD';button.append(badge);}
+     button.addEventListener('click',()=>loadInstalled(item.id));el.append(button);
+   }
+ }
+}
+async function loadInstalled(id,preset=null,force=false){
+ if(dirty&&!force&&!confirm('Discard unsaved library edits and open another library?'))return;
+ try{
+   const data=await editorApi('/uninodes/composer/library/edit?id='+encodeURIComponent(id));
+   state=parse(data.library);openedFileHandle=null;openedFileName=null;loadedId=id;loadedRevision=data.revision;loadedFolder=data.folder||'';loadedSource=data.source;
+   loadedEntryIds=state.entries.map(x=>x.id);
+   selected=preset?state.entries.findIndex(x=>x.id===preset):state.entries.length?0:-1;
+   if(selected<0&&state.entries.length)selected=0;
+   loadedEditable=data.editable!==false;
+   dirty=false;testValues={};render();broadcast('cpm-library-dirty',{dirty:false});
+   status(!loadedEditable?'Style is a read-only aggregated library. Create your own library for custom variables.':`Editing ${state.name} · ${data.source} · ${state.entries.length} presets`);
+ }catch(err){status(`Unable to open library: ${err.message}`,true);}
+}
+async function refreshInstalled(){
+ try{
+   const list=await editorApi('/uninodes/composer/libraries');
+   const result=await Promise.all(list.libraries.map(async entry=>{
+      try{const lib=await editorApi('/uninodes/composer/library?id='+encodeURIComponent(entry.id));return {...lib,source:entry.source,folder:entry.folder||''};}
+      catch{return {...entry,entries:[]};}
+   }));
+   installed=result;installedAvailable=true;
+   $('installedSection').classList.remove('hidden');
+   $('saveLive').classList.remove('hidden');$('cancelLive').classList.remove('hidden');
+   const folders=new Set(installed.map(x=>x.folder||'').filter(Boolean));
+   const dropdown=$('knownFolders');dropdown.replaceChildren();
+   for(const folder of [...folders].sort()){const option=document.createElement('option');option.value=folder;dropdown.append(option);}
+   drawInstalled();drawVariables();updateEditorAccess();
+   return true;
+ }catch(err){
+   installedAvailable=false;$('installedSection').classList.add('hidden');
+   // Standalone goes offline; embedded still has a direct edit/save route.
+   $('saveLive').classList.toggle('hidden',!embedded);
+   $('cancelLive').classList.toggle('hidden',!embedded);
+   updateSaveState();
+   if(embedded)status('Library list unavailable: '+err.message+'. Direct editing may still work.',true);
+   return false;
+ }
+}
+$('libraryFilter').addEventListener('input',drawInstalled);
+$('reloadInstalled').addEventListener('click',refreshInstalled);
+$('saveLive').addEventListener('click',async()=>{
+ if(!dirty||!loadedEditable||saveInFlight)return;
+ saveInFlight=true;updateSaveState();
+ try{
+   const doc=validate();
+   if(loadedId&&doc.id!==loadedId)throw Error('Installed library ID must stay unchanged. Create a new library to use another ID.');
+   const discarded=loadedId?loadedEntryIds.filter(id=>!doc.entries.some(entry=>entry.id===id)):[];
+   if(discarded.length&&!confirm(`You removed or renamed ${discarded.length} stable preset ID(s): ${discarded.slice(0,6).join(', ')}. Existing workflow selections may stop resolving. Save anyway?`))return;
+   const result=await editorApi('/uninodes/composer/library/edit',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({library:doc,expected_revision:loadedRevision,folder:loadedFolder})});
+   loadedId=result.id;loadedRevision=result.revision;loadedFolder=result.folder||'';loadedSource=result.source;loadedEntryIds=doc.entries.map(entry=>entry.id);
+   dirty=false;loadedEditable=true;broadcast('cpm-library-dirty',{dirty:false});
+   await refreshInstalled();render();
+   status(`Saved ${doc.name} (${doc.entries.length} presets) to ComfyUI.${result.backup_created?' A backup was created.':''}`);
+   broadcast('cpm-library-saved',{id:result.id,preset_id:state.entries[selected]?.id||''});
+ }catch(err){status(`Save failed: ${err.message}`,true);}
+ finally{saveInFlight=false;updateSaveState();}
+});
+$('cancelLive').addEventListener('click',()=>{
+ if(!dirty||confirm('Discard unsaved changes?')){
+    if(loadedId)loadInstalled(loadedId,null,true);
+    else{
+       state={format:schema,schema_version:1,id:'new-library',name:'New Library',kind:'preset',entries:[]};
+       openedFileHandle=null;openedFileName=null;dirty=false;loadedEditable=true;testValues={};selected=-1;render();broadcast('cpm-library-dirty',{dirty:false});status('New library draft cleared.');
+    }
+ }
+});
+window.addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue=''}});
+
+render();
+refreshInstalled().then(ok=>{
+ const initial=query.get('library');const preset=query.get('preset');
+ // Loading a directly linked library cannot depend on the whole list working.
+ if(initial)loadInstalled(initial,preset,true);
+});
+})();
+</script></body></html>

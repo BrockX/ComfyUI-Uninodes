@@ -1,0 +1,187 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "pose-v2-lying",
+  "name": "Pose V2: Lying & Reclining",
+  "entries": [
+    {
+      "id": "supine",
+      "name": "Lying Face Up",
+      "positive": "lying on back <surface> <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        },
+        "surface": {
+          "label": "Surface",
+          "library": "pose-v2-supports"
+        }
+      }
+    },
+    {
+      "id": "prone",
+      "name": "Lying Face Down",
+      "positive": "lying on stomach <surface> <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        },
+        "surface": {
+          "label": "Surface",
+          "library": "pose-v2-supports"
+        }
+      }
+    },
+    {
+      "id": "left-side",
+      "name": "Lying on Side",
+      "positive": "lying on one side",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "curled",
+      "name": "Curled Up",
+      "positive": "lying curled into a compact shape <surface> <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        },
+        "surface": {
+          "label": "Surface",
+          "library": "pose-v2-supports"
+        }
+      }
+    },
+    {
+      "id": "starfish",
+      "name": "Arms and Legs Spread",
+      "positive": "lying with arms and legs spread wide <surface> <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        },
+        "surface": {
+          "label": "Surface",
+          "library": "pose-v2-supports"
+        }
+      }
+    },
+    {
+      "id": "elbow-prop",
+      "name": "Propped on Elbow",
+      "positive": "reclining on one side, upper body supported by elbow <surface> <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        },
+        "surface": {
+          "label": "Surface",
+          "library": "pose-v2-supports"
+        }
+      }
+    },
+    {
+      "id": "head-rest",
+      "name": "Head Resting on Arms",
+      "positive": "lying down with head resting on folded arms <surface> <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        },
+        "surface": {
+          "label": "Surface",
+          "library": "pose-v2-supports"
+        }
+      }
+    },
+    {
+      "id": "legs-up",
+      "name": "Legs Raised While Lying",
+      "positive": "lying on back, both legs raised above the surface <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "one-knee-bent",
+      "name": "One Knee Bent",
+      "positive": "lying on back with one knee bent <surface> <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        },
+        "surface": {
+          "label": "Surface",
+          "library": "pose-v2-supports"
+        }
+      }
+    },
+    {
+      "id": "reclined",
+      "name": "Reclined Position",
+      "positive": "reclining at an angle, upper body partly elevated <surface> <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        },
+        "surface": {
+          "label": "Surface",
+          "library": "pose-v2-supports"
+        }
+      }
+    },
+    {
+      "id": "all-fours",
+      "name": "On Hands and Knees",
+      "positive": "on hands and knees, level torso <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    }
+  ]
+}

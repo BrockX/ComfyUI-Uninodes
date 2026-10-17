@@ -1,0 +1,15 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "character",
+  "name": "Character",
+  "entries": [
+    {
+      "id": "alix_og",
+      "name": "Alix",
+      "positive": "1girl, adult,  blue eyes, freckles on nose, tall,\nshort hair, pink hair, blue hair, gradient hair, asymmetrical haircut,\nblue eyes, large round glasses,medium breasts",
+      "negative": "bangs, front bangs, large breasts, wide hips, earrings, jeawelry,",
+      "notes": ""
+    }
+  ]
+}

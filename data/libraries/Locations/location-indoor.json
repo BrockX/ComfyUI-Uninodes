@@ -1,0 +1,106 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "location-indoor",
+  "name": "Location: Indoor",
+  "entries": [
+    {
+      "id": "bedroom",
+      "name": "Bedroom",
+      "positive": "indoor bedroom, bed, personal space, cozy interior details",
+      "negative": "outdoor scenery, open sky",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "living-room",
+      "name": "Living Room",
+      "positive": "indoor living room, sofa, home interior, warm domestic setting",
+      "negative": "forest, street exterior",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "kitchen",
+      "name": "Kitchen",
+      "positive": "indoor kitchen, counters, table, lived-in home environment",
+      "negative": "empty abstract background",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "bathroom",
+      "name": "Bathroom",
+      "positive": "bathroom interior, mirror, tiled room, sink or bathtub",
+      "negative": "open landscape",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "office",
+      "name": "Office",
+      "positive": "office interior, desk, workspace, modern indoor setting",
+      "negative": "rural field",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "classroom",
+      "name": "Classroom",
+      "positive": "classroom interior,chalkboard or whiteboard, school setting",
+      "negative": "city street",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "library",
+      "name": "Library",
+      "positive": "library interior, bookshelves, quiet reading atmosphere",
+      "negative": "industrial warehouse exterior",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "cafe",
+      "name": "Café",
+      "positive": "café interior, tables, warm social ambience, coffee-shop setting",
+      "negative": "bedroom scene",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "bar",
+      "name": "Bar / Lounge",
+      "positive": "bar or lounge interior, dim lighting, counter seating",
+      "negative": "bright outdoor park",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "studio",
+      "name": "Studio",
+      "positive": "artist or photo studio interior, controlled indoor setting",
+      "negative": "busy street market",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "train-car",
+      "name": "Train Car",
+      "positive": "train or subway interior, seats, carriage setting",
+      "negative": "open field",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "mall",
+      "name": "Shopping Mall",
+      "positive": "shopping mall interior, storefronts, public commercial indoor space",
+      "negative": "isolated wilderness",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "temple-hall",
+      "name": "Temple Hall",
+      "positive": "traditional interior hall, shrine or temple atmosphere",
+      "negative": "sci-fi spaceship bridge",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "castle-room",
+      "name": "Castle Room",
+      "positive": "castle interior, stone walls or regal chamber, fantasy indoor setting",
+      "negative": "modern city exterior",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    }
+  ]
+}
