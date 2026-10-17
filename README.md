@@ -79,7 +79,5 @@ For the combined workflow, use **Direct Image Sampler Finisher Ultra Turbo Delux
 
 ## Notes
 
-- The original Uninodes node IDs are preserved, so existing workflows remain compatible.
-- Presets and libraries are stored locally; keep your data folders when updating.
 - Extra detailers and specialized model families depend on the versions of the third-party nodes and ComfyUI installed on your system.
 - GPU execution and Node 1.0/2.0 rendering can vary by setup; please include your ComfyUI version, model family, and full error log when reporting issues.
