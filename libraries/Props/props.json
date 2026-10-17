@@ -1,0 +1,246 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "props",
+  "name": "Props & Held Objects",
+  "entries": [
+    {
+      "id": "book",
+      "name": "Book",
+      "positive": "holding book",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "open-book",
+      "name": "Open Book",
+      "positive": "holding book, open book, reading",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "notebook",
+      "name": "Notebook",
+      "positive": "holding notebook, pen",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "pen",
+      "name": "Pen",
+      "positive": "holding pen",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "coffee-cup",
+      "name": "Coffee Cup",
+      "positive": "holding cup, coffee, steam",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "tea-cup",
+      "name": "Teacup",
+      "positive": "teacup, holding cup",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "mug",
+      "name": "Mug",
+      "positive": "holding mug",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "bottle",
+      "name": "Bottle",
+      "positive": "holding bottle",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "umbrella",
+      "name": "Umbrella",
+      "positive": "holding umbrella",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "smartphone",
+      "name": "Smartphone",
+      "positive": "holding phone, smartphone, looking at phone",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "laptop",
+      "name": "Laptop",
+      "positive": "laptop, typing",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "tablet",
+      "name": "Tablet",
+      "positive": "holding tablet pc",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "controller",
+      "name": "Game Controller",
+      "positive": "holding controller, game controller",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "camera",
+      "name": "Camera",
+      "positive": "holding camera, camera",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "headphones",
+      "name": "Headphones",
+      "positive": "headphones",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "microphone",
+      "name": "Microphone",
+      "positive": "holding microphone, microphone",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "flower",
+      "name": "Single Flower",
+      "positive": "holding flower",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "bouquet",
+      "name": "Bouquet",
+      "positive": "holding bouquet, bouquet",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "stuffed-animal",
+      "name": "Plush Toy",
+      "positive": "holding stuffed toy, stuffed animal",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "gift-box",
+      "name": "Gift Box",
+      "positive": "holding gift, gift box, ribbon",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "shopping-bag",
+      "name": "Shopping Bag",
+      "positive": "holding bag, shopping bag",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "handbag",
+      "name": "Handbag",
+      "positive": "holding bag, handbag",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "balloon",
+      "name": "Balloon",
+      "positive": "holding balloon, balloon",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "paintbrush",
+      "name": "Paintbrush",
+      "positive": "holding paintbrush, painting",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "sketchbook",
+      "name": "Sketchbook",
+      "positive": "holding sketchbook, sketchbook",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "lantern",
+      "name": "Lantern",
+      "positive": "holding lantern, lantern",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "candle",
+      "name": "Candle",
+      "positive": "holding candle, candle",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "flashlight",
+      "name": "Flashlight",
+      "positive": "holding flashlight, flashlight",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "key",
+      "name": "Key",
+      "positive": "holding key, key",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "letter",
+      "name": "Letter",
+      "positive": "holding letter, envelope",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hand-fan",
+      "name": "Hand Fan",
+      "positive": "holding fan, folding fan",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hand-mirror",
+      "name": "Hand Mirror",
+      "positive": "holding hand mirror, hand mirror",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "broom",
+      "name": "Broom",
+      "positive": "holding broom",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "flag",
+      "name": "Flag",
+      "positive": "holding flag, flag",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

@@ -1,0 +1,274 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "hairstyles",
+  "name": "Hairstyles",
+  "entries": [
+    {
+      "id": "short-bob",
+      "name": "Short Bob",
+      "positive": "bob cut, short hair",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "asymmetrical-bob",
+      "name": "Asymmetrical Bob",
+      "positive": "bob cut, asymmetrical hair",
+      "negative": "",
+      "notes": "Mention the longer side in the prompt if it matters."
+    },
+    {
+      "id": "pixie-cut",
+      "name": "Pixie Cut",
+      "positive": "short hair, pixie cut",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "undercut",
+      "name": "Undercut",
+      "positive": "undercut",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "wolf-cut",
+      "name": "Wolf Cut",
+      "positive": "wolf cut, messy hair",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "shag",
+      "name": "Shaggy Layers",
+      "positive": "messy hair, layered hair",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "shoulder-length",
+      "name": "Shoulder Length",
+      "positive": "medium hair",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "long-straight",
+      "name": "Long Straight",
+      "positive": "long hair, straight hair",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "long-wavy",
+      "name": "Long Wavy",
+      "positive": "long hair, wavy hair",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "very-long",
+      "name": "Very Long",
+      "positive": "very long hair",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "curly-bob",
+      "name": "Curly Bob",
+      "positive": "short hair, curly hair",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "tight-curls",
+      "name": "Tight Curls",
+      "positive": "curly hair, voluminous hair",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "coily-hair",
+      "name": "Coily Hair",
+      "positive": "curly hair, voluminous hair, short hair",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "afro",
+      "name": "Afro",
+      "positive": "afro",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "low-ponytail",
+      "name": "Low Ponytail",
+      "positive": "low ponytail",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "high-ponytail",
+      "name": "High Ponytail",
+      "positive": "high ponytail",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "side-ponytail",
+      "name": "Side Ponytail",
+      "positive": "side ponytail",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "braided-ponytail",
+      "name": "Braided Ponytail",
+      "positive": "braided ponytail",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "twin-tails",
+      "name": "Twin Tails",
+      "positive": "twintails",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "low-twintails",
+      "name": "Low Twin Tails",
+      "positive": "low twintails",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "messy-bun",
+      "name": "Messy Bun",
+      "positive": "single hair bun, messy hair",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "double-bun",
+      "name": "Double Bun",
+      "positive": "double bun",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "elegant-updo",
+      "name": "Updo",
+      "positive": "hair up, updo",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "french-braid",
+      "name": "French Braid",
+      "positive": "french braid",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "double-braids",
+      "name": "Twin Braids",
+      "positive": "twin braids",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "side-braid",
+      "name": "Side Braid",
+      "positive": "side braid, braid over shoulder",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "crown-braid",
+      "name": "Crown Braid",
+      "positive": "crown braid",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "half-up",
+      "name": "Half Up",
+      "positive": "half updo",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hime-cut",
+      "name": "Hime Cut",
+      "positive": "hime cut",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "drill-hair",
+      "name": "Drill Hair",
+      "positive": "drill hair",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "ringlets",
+      "name": "Ringlets",
+      "positive": "ringlets",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "side-swept-bangs",
+      "name": "Swept Bangs",
+      "positive": "swept bangs",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "no-bangs",
+      "name": "No Bangs",
+      "positive": "forehead, hair pulled back",
+      "negative": "bangs",
+      "notes": "Bangs are the one tag worth suppressing here."
+    },
+    {
+      "id": "slicked-back",
+      "name": "Slicked Back",
+      "positive": "slicked-back",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "spiked",
+      "name": "Spiked",
+      "positive": "spiked hair",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "buzz-cut",
+      "name": "Buzz Cut",
+      "positive": "buzz cut",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "mohawk",
+      "name": "Mohawk",
+      "positive": "mohawk",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "bowl-cut",
+      "name": "Bowl Cut",
+      "positive": "bowl cut",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

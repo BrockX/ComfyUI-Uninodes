@@ -1,0 +1,370 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "outerwear",
+  "name": "Clothes: Outerwear",
+  "entries": [
+    {
+      "id": "jacket",
+      "name": "Jacket",
+      "positive": "<color> <fabric> <pattern> <fit> jacket",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        },
+        "fit": {
+          "label": "Fit",
+          "library": "modifier-fits"
+        }
+      }
+    },
+    {
+      "id": "blazer",
+      "name": "Blazer",
+      "positive": "<color> <fabric> <pattern> <fit> blazer",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        },
+        "fit": {
+          "label": "Fit",
+          "library": "modifier-fits"
+        }
+      }
+    },
+    {
+      "id": "denim-jacket",
+      "name": "Denim Jacket",
+      "positive": "<color> denim jacket",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "leather-jacket",
+      "name": "Leather Jacket",
+      "positive": "<color> leather jacket",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "bomber-jacket",
+      "name": "Bomber Jacket",
+      "positive": "<color> <pattern> bomber jacket",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "track-jacket",
+      "name": "Track Jacket",
+      "positive": "<color> <pattern> track jacket",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "puffer-jacket",
+      "name": "Puffer Jacket",
+      "positive": "<color> puffy jacket",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "parka",
+      "name": "Parka",
+      "positive": "<color> parka, hood",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "trench-coat",
+      "name": "Trench Coat",
+      "positive": "<color> trench coat",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "long-coat",
+      "name": "Long Coat",
+      "positive": "<color> <fabric> <pattern> long coat",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "fur-coat",
+      "name": "Fur Coat",
+      "positive": "<color> fur coat",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "raincoat",
+      "name": "Raincoat",
+      "positive": "<color> raincoat",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "poncho",
+      "name": "Poncho",
+      "positive": "<color> <pattern> poncho",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "cape",
+      "name": "Cape",
+      "positive": "<color> <fabric> cape",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "cloak",
+      "name": "Cloak",
+      "positive": "<color> <fabric> cloak",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "hooded-cloak",
+      "name": "Hooded Cloak",
+      "positive": "<color> <fabric> hooded cloak",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "vest",
+      "name": "Vest",
+      "positive": "<color> <fabric> <pattern> vest",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "shrug",
+      "name": "Shrug",
+      "positive": "<color> <fabric> shrug \\(clothing\\)",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "cropped-jacket",
+      "name": "Cropped Jacket",
+      "positive": "<color> <fabric> cropped jacket",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "open-jacket",
+      "name": "Open Jacket",
+      "positive": "<color> <fabric> jacket, open clothes",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "coat-on-shoulders",
+      "name": "Coat on Shoulders",
+      "positive": "<color> coat on shoulders",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "lab-coat",
+      "name": "Lab Coat",
+      "positive": "<color> labcoat",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    }
+  ]
+}

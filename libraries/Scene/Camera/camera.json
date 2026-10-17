@@ -1,0 +1,155 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "camera",
+  "name": "Camera",
+  "entries": [
+    {
+      "id": "eye-level-portrait",
+      "name": "Eye-Level Portrait",
+      "positive": "portrait, straight-on, looking at viewer, face focus",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "close-up",
+      "name": "Close-Up",
+      "positive": "close-up, face focus",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "extreme-close-up",
+      "name": "Extreme Close-Up",
+      "positive": "extreme close-up",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "bust-shot",
+      "name": "Bust Shot",
+      "positive": "upper body",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "cowboy-shot",
+      "name": "Cowboy Shot",
+      "positive": "cowboy shot",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "full-body",
+      "name": "Full Body",
+      "positive": "full body",
+      "negative": "out of frame",
+      "notes": "Pose-neutral: no standing/sitting tag. The negative only fights cropped feet/head."
+    },
+    {
+      "id": "lower-body",
+      "name": "Lower Body",
+      "positive": "lower body",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "wide-shot",
+      "name": "Wide Shot",
+      "positive": "wide shot, scenery, from a distance",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "very-wide",
+      "name": "Very Wide Shot",
+      "positive": "very wide shot, scenery",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "low-angle",
+      "name": "Low Angle",
+      "positive": "from below, foreshortening",
+      "negative": "from above",
+      "notes": ""
+    },
+    {
+      "id": "high-angle",
+      "name": "High Angle",
+      "positive": "from above",
+      "negative": "from below",
+      "notes": ""
+    },
+    {
+      "id": "birds-eye",
+      "name": "Bird's-Eye View",
+      "positive": "from above, bird's-eye view, wide shot",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "worms-eye",
+      "name": "Worm's-Eye View",
+      "positive": "from below, worm's-eye view, foreshortening",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "over-the-shoulder",
+      "name": "Over the Shoulder",
+      "positive": "from behind, looking back, over shoulder",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "from-behind",
+      "name": "From Behind",
+      "positive": "from behind",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "from-side",
+      "name": "From Side",
+      "positive": "from side",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "three-quarter-view",
+      "name": "Three-Quarter View",
+      "positive": "three quarter view",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "profile-view",
+      "name": "Profile View",
+      "positive": "profile, from side",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "dutch-angle",
+      "name": "Dutch Angle",
+      "positive": "dutch angle, dynamic angle",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "fisheye",
+      "name": "Fisheye",
+      "positive": "fisheye, wide shot",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "telephoto",
+      "name": "Telephoto Compression",
+      "positive": "depth of field, blurry background, close-up",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "pose-dramatic",
+  "name": "Pose: Dramatic",
+  "entries": [
+    {
+      "id": "reach-sky",
+      "name": "Reaching for the Sky",
+      "positive": "arm up, reaching, looking up, from below, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "collapse",
+      "name": "Collapsing",
+      "positive": "falling to knees, head down, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "prayer",
+      "name": "Praying",
+      "positive": "praying, own hands together, closed eyes, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "heroic",
+      "name": "Heroic Stance",
+      "positive": "standing, chest out, hands on own hips, looking up, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "shouting",
+      "name": "Shouting",
+      "positive": "shouting, hand to own mouth, open mouth, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "recoil",
+      "name": "Recoiling",
+      "positive": "flinching, arms up, leaning back, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "pleading",
+      "name": "Pleading",
+      "positive": "pleading, outstretched hand, leaning forward, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "triumph",
+      "name": "Triumph",
+      "positive": "arms up, victory, open mouth, happy, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "curtain-call",
+      "name": "Curtain Call Bow",
+      "positive": "bowing, curtsy, hand on own chest, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "wind-swept",
+      "name": "Wind-Swept Stand",
+      "positive": "standing, wind, floating hair, floating clothes, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "looking-up-rain",
+      "name": "Face to the Rain",
+      "positive": "head back, rain, closed eyes, arms at sides, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,260 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "location-outdoor",
+  "name": "Location: Outdoor",
+  "entries": [
+    {
+      "id": "city-street",
+      "name": "City Street",
+      "positive": "outdoors, city, street, building",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "alley",
+      "name": "Alley",
+      "positive": "outdoors, alley",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "crosswalk",
+      "name": "Crosswalk",
+      "positive": "outdoors, crosswalk, street",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "train-station",
+      "name": "Train Station",
+      "positive": "outdoors, train station, platform",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "bus-stop",
+      "name": "Bus Stop",
+      "positive": "outdoors, bus stop",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "park",
+      "name": "Park",
+      "positive": "outdoors, park, tree, bench",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "playground",
+      "name": "Playground",
+      "positive": "outdoors, playground, swing",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "garden",
+      "name": "Garden",
+      "positive": "outdoors, garden, flower",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "forest",
+      "name": "Forest",
+      "positive": "outdoors, forest, tree",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "bamboo-forest",
+      "name": "Bamboo Forest",
+      "positive": "outdoors, bamboo forest",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "flower-field",
+      "name": "Flower Field",
+      "positive": "outdoors, flower field, field",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "meadow",
+      "name": "Meadow",
+      "positive": "outdoors, field, grass, meadow",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "countryside",
+      "name": "Countryside",
+      "positive": "outdoors, countryside, field, path",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "beach",
+      "name": "Beach",
+      "positive": "outdoors, beach, sand, ocean",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "pool",
+      "name": "Poolside",
+      "positive": "outdoors, pool, poolside, water",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "lake",
+      "name": "Lakeside",
+      "positive": "outdoors, lake, water",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "river",
+      "name": "Riverbank",
+      "positive": "outdoors, river, grass",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "waterfall",
+      "name": "Waterfall",
+      "positive": "outdoors, waterfall, rock",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "mountain",
+      "name": "Mountain",
+      "positive": "outdoors, mountain, scenery",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "cliff",
+      "name": "Cliff",
+      "positive": "outdoors, cliff, wind",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "cave",
+      "name": "Cave",
+      "positive": "cave, rock, dark",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "desert",
+      "name": "Desert",
+      "positive": "outdoors, desert, sand dune",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "campsite",
+      "name": "Campsite",
+      "positive": "outdoors, camping, tent",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "rooftop",
+      "name": "Rooftop",
+      "positive": "outdoors, rooftop, sky, city",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "balcony",
+      "name": "Balcony",
+      "positive": "outdoors, balcony, railing",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "bridge",
+      "name": "Bridge",
+      "positive": "outdoors, bridge",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "harbor",
+      "name": "Harbor",
+      "positive": "outdoors, harbor, boat, ocean",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "lighthouse",
+      "name": "Lighthouse",
+      "positive": "outdoors, lighthouse, ocean",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "street-market",
+      "name": "Street Market",
+      "positive": "outdoors, market, stall",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "amusement-park",
+      "name": "Amusement Park",
+      "positive": "outdoors, amusement park, ferris wheel",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "school-yard",
+      "name": "School Grounds",
+      "positive": "outdoors, school, school building, schoolyard",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "shrine-path",
+      "name": "Shrine Path",
+      "positive": "outdoors, shrine, torii, stone path",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "snowy-street",
+      "name": "Snowy Street",
+      "positive": "outdoors, snow, winter, street",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "rainy-city",
+      "name": "Rainy City",
+      "positive": "outdoors, rain, city, wet ground",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "graveyard",
+      "name": "Graveyard",
+      "positive": "outdoors, graveyard, tombstone",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "ruins",
+      "name": "Ruins",
+      "positive": "outdoors, ruins, overgrown",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "styles",
+  "name": "Styles",
+  "entries": [
+    {
+      "id": "modern-anime",
+      "name": "Modern Anime",
+      "positive": "anime coloring, cel shading, clean lineart",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "flat-color",
+      "name": "Flat Color",
+      "positive": "flat color, simple background",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "soft-anime",
+      "name": "Soft Anime",
+      "positive": "soft shading, pastel colors, soft lighting",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "soft-painterly",
+      "name": "Soft Painterly",
+      "positive": "painterly, soft shading, detailed background, soft colors",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "watercolor",
+      "name": "Watercolor",
+      "positive": "watercolor \\(medium\\), traditional media, paper texture",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "oil-painting",
+      "name": "Oil Painting",
+      "positive": "oil painting \\(medium\\), traditional media, canvas texture",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "gouache",
+      "name": "Gouache",
+      "positive": "gouache \\(medium\\), traditional media, flat color",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "acrylic",
+      "name": "Acrylic Paint",
+      "positive": "acrylic paint \\(medium\\), traditional media",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "ink",
+      "name": "Ink",
+      "positive": "ink \\(medium\\), traditional media, monochrome",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "marker",
+      "name": "Marker",
+      "positive": "marker \\(medium\\), traditional media",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "colored-pencil",
+      "name": "Colored Pencil",
+      "positive": "colored pencil \\(medium\\), traditional media",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "pastel",
+      "name": "Soft Pastel",
+      "positive": "pastel \\(medium\\), traditional media, soft colors",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "sketch-lineart",
+      "name": "Sketch / Lineart",
+      "positive": "sketch, lineart, monochrome, greyscale, white background",
+      "negative": "colorful",
+      "notes": ""
+    },
+    {
+      "id": "manga",
+      "name": "Manga",
+      "positive": "manga, monochrome, greyscale, screentones, ink",
+      "negative": "colorful",
+      "notes": ""
+    },
+    {
+      "id": "greyscale",
+      "name": "Greyscale",
+      "positive": "greyscale, monochrome, high contrast",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "sepia",
+      "name": "Sepia",
+      "positive": "sepia, vintage, film grain",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "retro-80s",
+      "name": "Retro 80s Anime",
+      "positive": "retro artstyle, 1980s \\(style\\), film grain",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "retro-90s-anime",
+      "name": "Retro 90s Anime",
+      "positive": "retro artstyle, 1990s \\(style\\), anime screencap, film grain",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "retro-2000s",
+      "name": "2000s Anime",
+      "positive": "retro artstyle, 2000s \\(style\\)",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "chibi",
+      "name": "Chibi",
+      "positive": "chibi, super deformed, simple background",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "pixel-art",
+      "name": "Pixel Art",
+      "positive": "pixel art, pixelated, limited palette",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "semi-realistic",
+      "name": "Semi-Realistic",
+      "positive": "realistic, detailed skin, soft lighting, detailed eyes",
+      "negative": "flat color",
+      "notes": ""
+    },
+    {
+      "id": "ukiyo-e",
+      "name": "Ukiyo-e",
+      "positive": "ukiyo-e, traditional media, flat color",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "art-nouveau",
+      "name": "Art Nouveau",
+      "positive": "art nouveau, decorative, flowing lines, floral background",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "stained-glass",
+      "name": "Stained Glass",
+      "positive": "stained glass, colorful, flat color",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "pop-art",
+      "name": "Pop Art",
+      "positive": "pop art, halftone, bright colors, high contrast",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "synthwave",
+      "name": "Synthwave",
+      "positive": "retro artstyle, synthwave, neon lights, pink theme, blue theme",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "minimalist",
+      "name": "Minimalist",
+      "positive": "minimalism, simple background, limited palette, flat color",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "cyberpunk",
+      "name": "Cyberpunk",
+      "positive": "cyberpunk, neon lights, futuristic, city, high contrast",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "lofi",
+      "name": "Lo-Fi",
+      "positive": "lo-fi, soft colors, film grain, night, indoors",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

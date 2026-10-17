@@ -1,0 +1,120 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "pose-head-torso",
+  "name": "Pose: Head & Torso",
+  "entries": [
+    {
+      "id": "head-tilt",
+      "name": "Head Tilt",
+      "positive": "head tilt",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "head-down",
+      "name": "Head Down",
+      "positive": "head down",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "head-back",
+      "name": "Head Back",
+      "positive": "head back",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "chin-up",
+      "name": "Chin Up",
+      "positive": "chin up",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "looking-up",
+      "name": "Looking Up",
+      "positive": "looking up",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "looking-down",
+      "name": "Looking Down",
+      "positive": "looking down",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "looking-back",
+      "name": "Looking Back",
+      "positive": "looking back",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "looking-aside",
+      "name": "Looking to the Side",
+      "positive": "looking to the side",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "looking-away",
+      "name": "Looking Away",
+      "positive": "looking away",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "twisted-torso",
+      "name": "Twisted Torso",
+      "positive": "twisted torso",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "arched-back",
+      "name": "Arched Back",
+      "positive": "arched back",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "leaning-forward",
+      "name": "Leaning Forward",
+      "positive": "leaning forward",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "leaning-back",
+      "name": "Leaning Back",
+      "positive": "leaning back",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "leaning-side",
+      "name": "Leaning to the Side",
+      "positive": "leaning to the side",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hunched",
+      "name": "Hunched Over",
+      "positive": "hunched over",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "head-rest",
+      "name": "Head Resting on Hand",
+      "positive": "head rest",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

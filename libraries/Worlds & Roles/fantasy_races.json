@@ -1,0 +1,155 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "fantasy_races",
+  "name": "Fantasy Races",
+  "entries": [
+    {
+      "id": "human",
+      "name": "Human",
+      "positive": "human",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "elf",
+      "name": "Elf",
+      "positive": "elf, pointy ears",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "high-elf",
+      "name": "High Elf",
+      "positive": "elf, pointy ears, long pointy ears, elegant",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "wood-elf",
+      "name": "Wood Elf",
+      "positive": "elf, pointy ears, leaf, nature",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "dark-elf",
+      "name": "Dark Elf",
+      "positive": "dark elf, pointy ears",
+      "negative": "",
+      "notes": "Skin tone is not implied; set it separately."
+    },
+    {
+      "id": "dwarf",
+      "name": "Dwarf",
+      "positive": "dwarf, short stature, braid",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "halfling",
+      "name": "Halfling",
+      "positive": "halfling, short stature, barefoot",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "orc",
+      "name": "Orc",
+      "positive": "orc, tusks, green skin, muscular",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "half-orc",
+      "name": "Half-Orc",
+      "positive": "tusks, pointy ears",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "goblin",
+      "name": "Goblin",
+      "positive": "goblin, pointy ears, green skin",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "catfolk",
+      "name": "Catfolk",
+      "positive": "cat girl, cat ears, cat tail",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "foxfolk",
+      "name": "Foxfolk",
+      "positive": "fox girl, fox ears, fox tail",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "wolfkin",
+      "name": "Wolfkin",
+      "positive": "wolf girl, wolf ears, wolf tail",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "dragonkin",
+      "name": "Dragonkin",
+      "positive": "dragon girl, dragon horns, dragon tail, scales",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "fae",
+      "name": "Fae",
+      "positive": "fairy, fairy wings, pointy ears",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "merfolk",
+      "name": "Merfolk",
+      "positive": "mermaid, monster girl, scales",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "vampire",
+      "name": "Vampire",
+      "positive": "vampire, fangs, pale skin",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "angelic",
+      "name": "Angelic",
+      "positive": "angel, angel wings, halo",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "demonic",
+      "name": "Demonic",
+      "positive": "demon girl, demon horns, demon tail, demon wings",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "golem",
+      "name": "Living Construct",
+      "positive": "golem, mechanical parts, joints",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "skeleton",
+      "name": "Skeleton",
+      "positive": "skeleton, bone",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

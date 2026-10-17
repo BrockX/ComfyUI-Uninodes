@@ -1,0 +1,262 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "lingerie",
+  "name": "Lingerie",
+  "entries": [
+    {
+      "id": "lace-set",
+      "name": "Lace Set",
+      "positive": "<color> lace-trimmed bra, lace-trimmed panties, garter belt",
+      "negative": "child, aged down",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "strapless-bra",
+      "name": "Strapless Bra Set",
+      "positive": "<color> <fabric> strapless bra, panties",
+      "negative": "child, aged down",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "balconette",
+      "name": "Plunging Bra Set",
+      "positive": "<color> <fabric> plunge bra, panties",
+      "negative": "child, aged down",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "bustier",
+      "name": "Bustier",
+      "positive": "<color> <fabric> bustier",
+      "negative": "child, aged down",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "corset",
+      "name": "Underbust Corset",
+      "positive": "<color> <fabric> <pattern> underbust, corset",
+      "negative": "child, aged down",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "teddy",
+      "name": "Teddy",
+      "positive": "<color> <fabric> teddy \\(lingerie\\)",
+      "negative": "child, aged down",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "babydoll",
+      "name": "Babydoll",
+      "positive": "<color> <fabric> babydoll, see-through",
+      "negative": "child, aged down",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "negligee",
+      "name": "Negligee",
+      "positive": "<color> <fabric> negligee, see-through",
+      "negative": "child, aged down",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "chemise",
+      "name": "Chemise",
+      "positive": "<color> <fabric> chemise",
+      "negative": "child, aged down",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "garter-belt",
+      "name": "Garter Belt",
+      "positive": "<color> garter belt, garter straps, thighhighs",
+      "negative": "child, aged down",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "thong-set",
+      "name": "Thong Set",
+      "positive": "<color> <fabric> thong, bra",
+      "negative": "child, aged down",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "g-string",
+      "name": "G-String",
+      "positive": "<color> g-string, bra",
+      "negative": "child, aged down",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "bodystocking",
+      "name": "Bodystocking",
+      "positive": "bodystocking, see-through",
+      "negative": "child, aged down",
+      "notes": ""
+    },
+    {
+      "id": "silk-robe",
+      "name": "Silk Robe",
+      "positive": "<color> <fabric> robe, open robe, lingerie",
+      "negative": "child, aged down",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "lingerie-stockings",
+      "name": "Stockings Set",
+      "positive": "<color> <fabric> lingerie, thighhighs, garter straps",
+      "negative": "child, aged down",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "high-cut",
+      "name": "High-Cut Set",
+      "positive": "<color> <fabric> highleg panties, bra",
+      "negative": "child, aged down",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    }
+  ]
+}

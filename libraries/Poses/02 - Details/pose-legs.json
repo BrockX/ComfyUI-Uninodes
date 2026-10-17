@@ -1,0 +1,120 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "pose-legs",
+  "name": "Pose: Legs",
+  "entries": [
+    {
+      "id": "legs-apart",
+      "name": "Legs Apart",
+      "positive": "legs apart",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "legs-together",
+      "name": "Legs Together",
+      "positive": "legs together",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "legs-crossed",
+      "name": "Legs Crossed",
+      "positive": "legs crossed",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "ankles-crossed",
+      "name": "Ankles Crossed",
+      "positive": "crossed ankles",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "knees-together",
+      "name": "Knees Together, Feet Apart",
+      "positive": "knees together feet apart",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "pigeon-toed",
+      "name": "Pigeon-Toed",
+      "positive": "pigeon-toed",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "knock-kneed",
+      "name": "Knock-Kneed",
+      "positive": "knock-kneed",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "knee-up",
+      "name": "Knee Up",
+      "positive": "knee up",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "leg-up",
+      "name": "Leg Up",
+      "positive": "leg up",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "legs-up",
+      "name": "Legs Up",
+      "positive": "legs up",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "foot-up",
+      "name": "Foot Up",
+      "positive": "foot up",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "feet-up",
+      "name": "Feet Up",
+      "positive": "feet up",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "tiptoes",
+      "name": "Tiptoes",
+      "positive": "tiptoes",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "one-leg",
+      "name": "Standing on One Leg",
+      "positive": "standing on one leg",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "kicking",
+      "name": "Kicking",
+      "positive": "kicking",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "splits",
+      "name": "Splits",
+      "positive": "splits",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

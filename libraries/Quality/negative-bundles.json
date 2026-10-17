@@ -1,0 +1,64 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "negative-bundles",
+  "name": "Negative Bundles",
+  "entries": [
+    {
+      "id": "hands",
+      "name": "Hands",
+      "positive": "",
+      "negative": "extra digits, fewer digits, fused fingers, missing finger",
+      "notes": "Negative only."
+    },
+    {
+      "id": "anatomy",
+      "name": "Anatomy",
+      "positive": "",
+      "negative": "extra arms, extra legs, malformed limbs, bad proportions",
+      "notes": "Negative only."
+    },
+    {
+      "id": "text",
+      "name": "Text & Marks",
+      "positive": "",
+      "negative": "text, username, artist name, logo, watermark",
+      "notes": "Negative only."
+    },
+    {
+      "id": "artifacts",
+      "name": "Artifacts",
+      "positive": "",
+      "negative": "jpeg artifacts, blurry, noisy",
+      "notes": "Negative only."
+    },
+    {
+      "id": "no-3d",
+      "name": "No 3D / Realistic",
+      "positive": "",
+      "negative": "3d, realistic, photorealistic",
+      "notes": "Negative only. Keeps anime look when a style drifts."
+    },
+    {
+      "id": "no-mono",
+      "name": "No Monochrome",
+      "positive": "",
+      "negative": "monochrome, greyscale",
+      "notes": "Negative only."
+    },
+    {
+      "id": "no-borders",
+      "name": "No Borders",
+      "positive": "",
+      "negative": "border, letterboxed, pillarboxed, outside border",
+      "notes": "Negative only."
+    },
+    {
+      "id": "sfw",
+      "name": "Keep SFW",
+      "positive": "",
+      "negative": "nsfw, explicit, nude, nipples",
+      "notes": "Negative only."
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "fantasy-scifi-gear",
+  "name": "Fantasy & Sci-Fi Gear",
+  "entries": [
+    {
+      "id": "adventurer",
+      "name": "Adventurer",
+      "positive": "fantasy, leather armor, cloak, belt, boots",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "mage-robes",
+      "name": "Mage Robes",
+      "positive": "robe, hood, staff",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "light-armor",
+      "name": "Light Armor",
+      "positive": "armor, leather armor, pauldrons",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "plate-armor",
+      "name": "Plate Armor",
+      "positive": "plate armor, full armor, gauntlets",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "bikini-armor",
+      "name": "Bikini Armor",
+      "positive": "bikini armor, pauldrons, cape",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "thief",
+      "name": "Thief",
+      "positive": "hood, cloak, dagger, leather gloves",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "cleric",
+      "name": "Cleric",
+      "positive": "robe, holy symbol, staff",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "druid",
+      "name": "Druid",
+      "positive": "leaf, dress, flower, wooden staff",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "bard",
+      "name": "Bard",
+      "positive": "feathered hat, lute, cape",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "barbarian",
+      "name": "Barbarian",
+      "positive": "fur trim, axe, bare shoulders",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "noble",
+      "name": "Noble",
+      "positive": "noble, elegant dress, cape",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "cyberpunk-gear",
+      "name": "Cyberpunk Gear",
+      "positive": "cyberpunk, neon trim, bodysuit, visor",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "scifi-uniform",
+      "name": "Sci-Fi Uniform",
+      "positive": "futuristic, bodysuit, uniform, emblem",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "spacesuit",
+      "name": "Spacesuit",
+      "positive": "spacesuit, helmet",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "power-armor",
+      "name": "Power Armor",
+      "positive": "mecha, armor, cybernetic",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "pilot-suit",
+      "name": "Pilot Suit",
+      "positive": "bodysuit, pilot suit",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

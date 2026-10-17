@@ -1,0 +1,148 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "pose-acrobatics",
+  "name": "Pose: Acrobatics",
+  "entries": [
+    {
+      "id": "cartwheel",
+      "name": "Cartwheel",
+      "positive": "cartwheel, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "backflip",
+      "name": "Backflip",
+      "positive": "backflip, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "flip",
+      "name": "Flip",
+      "positive": "flipping, midair, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "splits",
+      "name": "Splits",
+      "positive": "splits, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "bridge",
+      "name": "Backbend Bridge",
+      "positive": "backbend, bridge, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "gymnastics",
+      "name": "Gymnastics",
+      "positive": "gymnastics, leotard, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "ribbon",
+      "name": "Rhythmic Gymnastics",
+      "positive": "rhythmic gymnastics, ribbon, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "balance-beam",
+      "name": "Balance Beam",
+      "positive": "balance beam, arms out, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "dive",
+      "name": "Diving",
+      "positive": "diving, midair, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "vault",
+      "name": "Vaulting",
+      "positive": "vaulting, midair, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    }
+  ]
+}

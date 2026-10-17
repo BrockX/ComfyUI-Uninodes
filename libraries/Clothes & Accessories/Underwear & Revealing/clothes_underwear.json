@@ -1,0 +1,249 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "clothes-underwear",
+  "name": "Clothes: Underwear & Sleepwear",
+  "entries": [
+    {
+      "id": "matching-set",
+      "name": "Matching Set",
+      "positive": "<color> <fabric> <pattern> bra, panties",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "bralette-set",
+      "name": "Bralette Set",
+      "positive": "<color> <fabric> <pattern> bralette, panties",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "sports-underwear",
+      "name": "Sports Underwear",
+      "positive": "<color> sports bra, panties",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "boyshort-set",
+      "name": "Boyshort Set",
+      "positive": "<color> <fabric> bra, boyshort panties",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "slip",
+      "name": "Slip",
+      "positive": "<color> <fabric> slip, camisole",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "camisole-shorts",
+      "name": "Camisole & Shorts",
+      "positive": "<color> <fabric> camisole, shorts",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "nightgown",
+      "name": "Nightgown",
+      "positive": "<color> <fabric> nightgown",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "pajamas",
+      "name": "Pajamas",
+      "positive": "<color> <pattern> pajamas",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "pajama-shorts",
+      "name": "Short Pajamas",
+      "positive": "<color> <pattern> pajamas, short sleeves, shorts",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "bathrobe",
+      "name": "Bathrobe",
+      "positive": "<color> bathrobe",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "sleep-shirt",
+      "name": "Sleep Shirt",
+      "positive": "<color> <pattern> oversized shirt, bare legs",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "onesie",
+      "name": "Onesie Pajamas",
+      "positive": "<color> kigurumi, hood up",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "sleep-mask",
+      "name": "Sleep Mask",
+      "positive": "<color> sleep mask, pajamas",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "bodysuit",
+      "name": "Bodysuit",
+      "positive": "<color> <fabric> <pattern> bodysuit",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "towel-wrap",
+      "name": "Towel Wrap",
+      "positive": "towel, naked towel, wet hair",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

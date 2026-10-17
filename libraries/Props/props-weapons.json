@@ -1,0 +1,162 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "props-weapons",
+  "name": "Props: Weapons & Magic Items",
+  "entries": [
+    {
+      "id": "sword",
+      "name": "Sword",
+      "positive": "holding sword, sword",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "katana",
+      "name": "Katana",
+      "positive": "holding sword, katana",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "dagger",
+      "name": "Dagger",
+      "positive": "holding dagger, dagger",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "spear",
+      "name": "Spear",
+      "positive": "holding polearm, spear",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "axe",
+      "name": "Axe",
+      "positive": "holding axe, axe",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hammer",
+      "name": "War Hammer",
+      "positive": "holding hammer, hammer",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "scythe",
+      "name": "Scythe",
+      "positive": "holding scythe, scythe",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "whip",
+      "name": "Whip",
+      "positive": "holding whip, whip",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "shield",
+      "name": "Shield",
+      "positive": "holding shield, shield",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "bow",
+      "name": "Bow & Arrow",
+      "positive": "holding bow \\(weapon\\), arrow \\(projectile\\), quiver",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "handgun",
+      "name": "Handgun",
+      "positive": "holding gun, handgun",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "rifle",
+      "name": "Rifle",
+      "positive": "holding rifle, rifle",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "baseball-bat",
+      "name": "Baseball Bat",
+      "positive": "holding baseball bat",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "staff",
+      "name": "Magic Staff",
+      "positive": "holding staff, staff, magic",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "wand",
+      "name": "Wand",
+      "positive": "holding wand, wand, sparkle",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "orb",
+      "name": "Glowing Orb",
+      "positive": "holding orb, orb, glowing",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "spellbook",
+      "name": "Spellbook",
+      "positive": "holding book, spell, magic, glowing",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "potion",
+      "name": "Potion",
+      "positive": "holding bottle, potion, glowing",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "scroll",
+      "name": "Scroll",
+      "positive": "holding scroll, scroll",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "map",
+      "name": "Map",
+      "positive": "holding map, map",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "lance",
+      "name": "Lance",
+      "positive": "holding polearm, lance",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "greatsword",
+      "name": "Greatsword",
+      "positive": "holding sword, huge weapon, greatsword",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

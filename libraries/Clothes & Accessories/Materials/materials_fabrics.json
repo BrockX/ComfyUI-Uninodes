@@ -1,0 +1,162 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "materials_fabrics",
+  "name": "Materials, Fabrics & Surfaces",
+  "entries": [
+    {
+      "id": "cotton",
+      "name": "Cotton",
+      "positive": "cotton",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "linen",
+      "name": "Linen",
+      "positive": "linen",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "knit-wool",
+      "name": "Knit Wool",
+      "positive": "knitted, wool",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "velvet",
+      "name": "Velvet",
+      "positive": "velvet",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "satin",
+      "name": "Satin",
+      "positive": "satin, shiny",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "silk",
+      "name": "Silk",
+      "positive": "silk",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "chiffon",
+      "name": "Chiffon",
+      "positive": "chiffon, see-through",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "lace",
+      "name": "Lace",
+      "positive": "lace",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "denim",
+      "name": "Denim",
+      "positive": "denim",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "leather",
+      "name": "Leather",
+      "positive": "leather",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "suede",
+      "name": "Suede",
+      "positive": "suede",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "latex",
+      "name": "Glossy Latex",
+      "positive": "latex, shiny",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "metal",
+      "name": "Polished Metal",
+      "positive": "metal, metallic",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "brushed-metal",
+      "name": "Brushed Metal",
+      "positive": "brushed metal",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "bronze",
+      "name": "Bronze",
+      "positive": "bronze, patina",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "wood",
+      "name": "Wood",
+      "positive": "wooden, wood grain",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "stone",
+      "name": "Weathered Stone",
+      "positive": "stone, rough",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "marble",
+      "name": "Marble",
+      "positive": "marble",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "glass",
+      "name": "Glass",
+      "positive": "glass, transparent",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "ceramic",
+      "name": "Ceramic",
+      "positive": "ceramic, glaze",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "holographic",
+      "name": "Holographic",
+      "positive": "holographic, iridescent",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "carbon-fiber",
+      "name": "Carbon Fiber",
+      "positive": "carbon fiber",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

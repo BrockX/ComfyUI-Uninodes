@@ -1,0 +1,442 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "dresses",
+  "name": "Dresses",
+  "entries": [
+    {
+      "id": "sundress",
+      "name": "Sundress",
+      "positive": "<color> <fabric> <pattern> sundress",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "short-dress",
+      "name": "Short Dress",
+      "positive": "<color> <fabric> <pattern> short dress",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "long-dress",
+      "name": "Long Dress",
+      "positive": "<color> <fabric> <pattern> long dress",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "sleeveless-dress",
+      "name": "Sleeveless Dress",
+      "positive": "<color> <fabric> <pattern> sleeveless dress",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "strapless-dress",
+      "name": "Strapless Dress",
+      "positive": "<color> <fabric> <pattern> strapless dress",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "halter-dress",
+      "name": "Halter Dress",
+      "positive": "<color> <fabric> <pattern> halterneck, dress",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "off-shoulder-dress",
+      "name": "Off-Shoulder Dress",
+      "positive": "<color> <fabric> <pattern> off-shoulder dress",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "pinafore-dress",
+      "name": "Pinafore Dress",
+      "positive": "<color> <fabric> <pattern> pinafore dress",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "shirt-dress",
+      "name": "Shirt Dress",
+      "positive": "<color> <pattern> shirt dress",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "sweater-dress",
+      "name": "Sweater Dress",
+      "positive": "<color> <pattern> sweater dress",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "pleated-dress",
+      "name": "Pleated Dress",
+      "positive": "<color> <fabric> <pattern> pleated dress",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "frilled-dress",
+      "name": "Frilled Dress",
+      "positive": "<color> <fabric> <pattern> frilled dress",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "layered-dress",
+      "name": "Layered Dress",
+      "positive": "<color> <fabric> <pattern> layered dress",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "tight-dress",
+      "name": "Tight Dress",
+      "positive": "<color> <fabric> <pattern> tight dress",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "side-slit-dress",
+      "name": "Side-Slit Dress",
+      "positive": "<color> <fabric> dress, side slit",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "pencil-dress",
+      "name": "Pencil Dress",
+      "positive": "<color> <fabric> pencil dress",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "denim-dress",
+      "name": "Denim Dress",
+      "positive": "<color> denim dress",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "sailor-dress",
+      "name": "Sailor Dress",
+      "positive": "<color> sailor dress",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "evening-gown",
+      "name": "Evening Gown",
+      "positive": "<color> <fabric> evening gown",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "ball-gown",
+      "name": "Ball Gown",
+      "positive": "<color> <fabric> ball gown",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "wedding-dress",
+      "name": "Wedding Dress",
+      "positive": "wedding dress, white dress",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "china-dress",
+      "name": "China Dress",
+      "positive": "<color> <fabric> <pattern> china dress",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "gothic-lolita",
+      "name": "Gothic Lolita",
+      "positive": "<color> gothic lolita, frills",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "sweet-lolita",
+      "name": "Sweet Lolita",
+      "positive": "<color> lolita fashion, frills, ribbon",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    }
+  ]
+}

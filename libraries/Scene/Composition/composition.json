@@ -1,0 +1,162 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "composition",
+  "name": "Composition",
+  "entries": [
+    {
+      "id": "centered-symmetry",
+      "name": "Centered Symmetry",
+      "positive": "centered, symmetry, straight-on",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "negative-space",
+      "name": "Negative Space",
+      "positive": "negative space, off-center, simple background",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "depth-of-field",
+      "name": "Depth of Field",
+      "positive": "depth of field, blurry background, bokeh",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "blurry-foreground",
+      "name": "Blurry Foreground",
+      "positive": "blurry foreground, depth of field",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "dynamic-action",
+      "name": "Dynamic Action",
+      "positive": "dynamic angle, foreshortening, motion blur, motion lines",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "pov",
+      "name": "POV",
+      "positive": "pov, looking at viewer, upper body",
+      "negative": "",
+      "notes": "First-person view: the viewer is a person. No phone tag so it never adds one."
+    },
+    {
+      "id": "pov-hands",
+      "name": "POV Hands",
+      "positive": "pov, pov hands, reaching towards viewer",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "selfie-result",
+      "name": "Selfie (Viewer Is the Camera)",
+      "positive": "selfie, looking at viewer, outstretched arm, from above, upper body, smile",
+      "negative": "holding phone, phone",
+      "notes": "The finished selfie photo. No phone is meant to be visible, so the negative blocks one."
+    },
+    {
+      "id": "selfie-taking",
+      "name": "Selfie (Seen Taking It)",
+      "positive": "selfie, holding phone, outstretched arm, looking at phone, smile",
+      "negative": "",
+      "notes": "Third-person view of someone taking a selfie, phone visible."
+    },
+    {
+      "id": "mirror-selfie",
+      "name": "Mirror Selfie",
+      "positive": "selfie, mirror, reflection, holding phone, looking at phone, indoors",
+      "negative": "",
+      "notes": "Phone and mirror both visible. Not a POV shot."
+    },
+    {
+      "id": "mirror-reflection",
+      "name": "Mirror Reflection",
+      "positive": "mirror, reflection, looking at mirror, indoors",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "taking-photo",
+      "name": "Taking a Photo",
+      "positive": "holding camera, taking picture, looking at viewer",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "multiple-views",
+      "name": "Multiple Views",
+      "positive": "multiple views, reference sheet, simple background, white background",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "vignette",
+      "name": "Vignette",
+      "positive": "vignetting, centered",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "solo-focus",
+      "name": "Subject Focus",
+      "positive": "solo focus, close-up, blurry background",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "wide-scenery",
+      "name": "Wide Scenery",
+      "positive": "scenery, wide shot, very wide shot, tiny character",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "eye-focus",
+      "name": "Eye Focus",
+      "positive": "eye focus, extreme close-up, looking at viewer",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hand-focus",
+      "name": "Hand Focus",
+      "positive": "hand focus, close-up",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "face-focus",
+      "name": "Face Focus",
+      "positive": "face focus, portrait",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "cropped",
+      "name": "Cropped Torso",
+      "positive": "cropped torso",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "isometric",
+      "name": "Isometric",
+      "positive": "isometric, from above, scenery",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "tilt-shift",
+      "name": "Shallow Focus",
+      "positive": "depth of field, bokeh, blurry foreground",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

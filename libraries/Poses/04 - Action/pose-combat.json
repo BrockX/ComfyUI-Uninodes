@@ -1,0 +1,246 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "pose-combat",
+  "name": "Pose: Combat",
+  "entries": [
+    {
+      "id": "fighting-stance",
+      "name": "Fighting Stance",
+      "positive": "fighting stance, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "punch",
+      "name": "Punching",
+      "positive": "punching, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "kick",
+      "name": "Kicking",
+      "positive": "kicking, high kick, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "flying-kick",
+      "name": "Flying Kick",
+      "positive": "flying kick, midair, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "block",
+      "name": "Blocking",
+      "positive": "blocking, crossed arms, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "martial-arts",
+      "name": "Martial Arts",
+      "positive": "martial arts, fighting stance, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "boxing",
+      "name": "Boxing",
+      "positive": "boxing, clenched hands, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "sword-ready",
+      "name": "Sword Ready",
+      "positive": "holding sword, fighting stance, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "sword-draw",
+      "name": "Drawing Sword",
+      "positive": "drawing sword, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "sword-slash",
+      "name": "Sword Slash",
+      "positive": "holding sword, slashing, motion blur, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "dual-wield",
+      "name": "Dual Wielding",
+      "positive": "dual wielding, holding sword, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "reverse-grip",
+      "name": "Reverse Grip",
+      "positive": "reverse grip, holding dagger, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "bow-draw",
+      "name": "Drawing Bow",
+      "positive": "drawing bow, holding bow \\(weapon\\), arrow \\(projectile\\), <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "aiming",
+      "name": "Aiming Gun",
+      "positive": "aiming, holding gun, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "spellcast",
+      "name": "Casting Spell",
+      "positive": "magic, casting spell, outstretched arm, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "shield",
+      "name": "Behind Shield",
+      "positive": "holding shield, fighting stance, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "lunge",
+      "name": "Lunge",
+      "positive": "lunging, fighting stance, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    }
+  ]
+}

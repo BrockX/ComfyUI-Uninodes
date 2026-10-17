@@ -1,0 +1,43 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "quality-period",
+  "name": "Quality: Period",
+  "entries": [
+    {
+      "id": "newest",
+      "name": "Newest (2021-2024)",
+      "positive": "newest",
+      "negative": "",
+      "notes": "Most modern look. Safe default for current checkpoints."
+    },
+    {
+      "id": "recent",
+      "name": "Recent (2018-2020)",
+      "positive": "recent",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "mid",
+      "name": "Mid (2015-2017)",
+      "positive": "mid",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "early",
+      "name": "Early (2011-2014)",
+      "positive": "early",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "old",
+      "name": "Old (2005-2010)",
+      "positive": "old",
+      "negative": "",
+      "notes": "Older, softer 2000s anime look."
+    }
+  ]
+}

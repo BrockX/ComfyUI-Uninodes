@@ -1,0 +1,163 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "pose-supports",
+  "name": "Pose: Seats & Surfaces",
+  "kind": "modifier",
+  "entries": [
+    {
+      "id": "chair",
+      "name": "Chair",
+      "positive": "on chair",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "stool",
+      "name": "Stool",
+      "positive": "on stool",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "bench",
+      "name": "Bench",
+      "positive": "on bench",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "couch",
+      "name": "Couch",
+      "positive": "on couch",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "bed",
+      "name": "Bed",
+      "positive": "on bed",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "floor",
+      "name": "Floor",
+      "positive": "on floor",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "carpet",
+      "name": "Carpet",
+      "positive": "on carpet",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "grass",
+      "name": "Grass",
+      "positive": "on grass",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "sand",
+      "name": "Sand",
+      "positive": "on sand",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "rock",
+      "name": "Rock",
+      "positive": "on rock",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "stairs",
+      "name": "Stairs",
+      "positive": "on stairs",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "table",
+      "name": "Table",
+      "positive": "on table",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "desk",
+      "name": "Desk",
+      "positive": "on desk",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "counter",
+      "name": "Counter",
+      "positive": "on counter",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "ledge",
+      "name": "Ledge",
+      "positive": "on ledge",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "windowsill",
+      "name": "Windowsill",
+      "positive": "on windowsill",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "railing",
+      "name": "Railing",
+      "positive": "on railing",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "mat",
+      "name": "Yoga Mat",
+      "positive": "on yoga mat",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "bean-bag",
+      "name": "Bean Bag",
+      "positive": "on beanbag chair",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "futon",
+      "name": "Futon",
+      "positive": "on futon",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "tatami",
+      "name": "Tatami",
+      "positive": "on tatami",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "wall",
+      "name": "Against Wall",
+      "positive": "against wall",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

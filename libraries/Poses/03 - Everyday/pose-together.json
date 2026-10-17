@@ -1,0 +1,344 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "pose-together",
+  "name": "Pose: Together",
+  "entries": [
+    {
+      "id": "hug",
+      "name": "Hug",
+      "positive": "hug, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "hug-behind",
+      "name": "Hug From Behind",
+      "positive": "hug from behind, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "holding-hands",
+      "name": "Holding Hands",
+      "positive": "holding hands, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "arm-hug",
+      "name": "Arm Hug",
+      "positive": "arm hug, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "back-to-back",
+      "name": "Back to Back",
+      "positive": "back-to-back, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "side-by-side",
+      "name": "Side by Side",
+      "positive": "side-by-side, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "face-to-face",
+      "name": "Face to Face",
+      "positive": "face-to-face, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "forehead-touch",
+      "name": "Forehead to Forehead",
+      "positive": "forehead-to-forehead, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "cheek-to-cheek",
+      "name": "Cheek to Cheek",
+      "positive": "cheek-to-cheek, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "head-on-shoulder",
+      "name": "Head on Shoulder",
+      "positive": "head on another's shoulder, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "arm-around-shoulder",
+      "name": "Arm Around Shoulder",
+      "positive": "arm around shoulder, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "arm-around-waist",
+      "name": "Arm Around Waist",
+      "positive": "arm around waist, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "hand-on-cheek",
+      "name": "Hand on Other's Cheek",
+      "positive": "hand on another's cheek, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "headpat",
+      "name": "Head Pat",
+      "positive": "headpat, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "lap-pillow",
+      "name": "Lap Pillow",
+      "positive": "lap pillow, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "sitting-on-lap",
+      "name": "Sitting on Lap",
+      "positive": "sitting on lap, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "piggyback",
+      "name": "Piggyback",
+      "positive": "piggyback, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "princess-carry",
+      "name": "Princess Carry",
+      "positive": "princess carry, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "leaning-on-person",
+      "name": "Leaning on Each Other",
+      "positive": "leaning on person, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "feeding",
+      "name": "Feeding",
+      "positive": "feeding, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "shared-umbrella",
+      "name": "Shared Umbrella",
+      "positive": "shared umbrella, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "dancing",
+      "name": "Dancing Together",
+      "positive": "dancing, holding hands, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "wrist-grab",
+      "name": "Wrist Grab",
+      "positive": "wrist grab, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "kiss-cheek",
+      "name": "Kiss on Cheek",
+      "positive": "cheek kiss, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    }
+  ]
+}

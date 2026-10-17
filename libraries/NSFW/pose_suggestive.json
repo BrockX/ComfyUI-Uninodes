@@ -1,0 +1,78 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "pose-suggestive",
+  "name": "Pose: Suggestive",
+  "entries": [
+    {
+      "id": "over-shoulder-glance",
+      "name": "Over-Shoulder Glance",
+      "positive": "looking back, from behind, over shoulder, seductive smile",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "arched-back-standing",
+      "name": "Arched Back Standing",
+      "positive": "standing, arched back, hand on own hip",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "seated-legs-crossed",
+      "name": "Seated Legs Crossed",
+      "positive": "sitting, crossed legs, looking at viewer, seductive smile",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "leaning-forward",
+      "name": "Leaning Forward",
+      "positive": "leaning forward, cleavage, looking at viewer",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hand-near-face",
+      "name": "Hand Near Face",
+      "positive": "finger to mouth, blush, looking at viewer",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "reclined-side",
+      "name": "Reclined on Side",
+      "positive": "lying, on side, head rest, looking at viewer",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "kneeling-upright",
+      "name": "Kneeling Upright",
+      "positive": "kneeling, hands on own thighs, looking at viewer",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "one-leg-raised",
+      "name": "One Leg Raised",
+      "positive": "standing, leg up, hand on own hip",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "stomach-legs-up",
+      "name": "Lying on Stomach, Feet Up",
+      "positive": "lying, on stomach, feet up, looking at viewer",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hair-touch",
+      "name": "Hair Touch",
+      "positive": "hand in own hair, looking at viewer, smile",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

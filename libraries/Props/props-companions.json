@@ -1,0 +1,134 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "props-companions",
+  "name": "Props: Animals & Companions",
+  "entries": [
+    {
+      "id": "cat",
+      "name": "Cat",
+      "positive": "cat, holding cat",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "kitten",
+      "name": "Kitten",
+      "positive": "kitten, holding cat",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "dog",
+      "name": "Dog",
+      "positive": "dog",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "puppy",
+      "name": "Puppy",
+      "positive": "puppy, holding dog",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "bird-shoulder",
+      "name": "Bird on Shoulder",
+      "positive": "bird on shoulder, bird",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "bird-hand",
+      "name": "Bird on Hand",
+      "positive": "bird on hand, bird",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "rabbit",
+      "name": "Rabbit",
+      "positive": "rabbit, holding rabbit",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "fox",
+      "name": "Fox",
+      "positive": "fox",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "owl",
+      "name": "Owl",
+      "positive": "owl",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "butterfly",
+      "name": "Butterfly",
+      "positive": "butterfly, butterfly on hand",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "goldfish",
+      "name": "Goldfish",
+      "positive": "goldfish, fish, water",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "frog",
+      "name": "Frog",
+      "positive": "frog",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "horse",
+      "name": "Horse",
+      "positive": "horse",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "small-dragon",
+      "name": "Small Dragon",
+      "positive": "dragon, mini dragon",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "slime",
+      "name": "Slime",
+      "positive": "slime \\(creature\\)",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "animal-on-head",
+      "name": "Animal on Head",
+      "positive": "animal on head",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "animal-hug",
+      "name": "Hugging an Animal",
+      "positive": "hugging animal, animal hug",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "mascot",
+      "name": "Mascot Companion",
+      "positive": "mascot, floating, small creature",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

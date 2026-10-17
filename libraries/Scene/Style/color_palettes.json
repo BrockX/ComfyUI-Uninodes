@@ -1,0 +1,155 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "color_palettes",
+  "name": "Color Palettes",
+  "entries": [
+    {
+      "id": "neutral-natural",
+      "name": "Natural Neutral",
+      "positive": "muted color, beige, brown theme",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "soft-pastels",
+      "name": "Soft Pastels",
+      "positive": "pastel colors, soft colors, pink theme",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "warm-earth",
+      "name": "Warm Earth Tones",
+      "positive": "brown theme, orange theme, muted color",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "cool-jewel",
+      "name": "Cool Jewel Tones",
+      "positive": "blue theme, purple theme, green theme, vivid colors",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "sunset",
+      "name": "Sunset Palette",
+      "positive": "orange theme, pink theme, warm colors",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "oceanic",
+      "name": "Oceanic Palette",
+      "positive": "aqua theme, blue theme",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "forest",
+      "name": "Forest Palette",
+      "positive": "green theme, brown theme, muted color",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "monochrome-ink",
+      "name": "Monochrome",
+      "positive": "monochrome, greyscale, high contrast",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "sepia",
+      "name": "Vintage Sepia",
+      "positive": "sepia, vintage",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "limited-duotone",
+      "name": "Limited Duotone",
+      "positive": "limited palette, two-tone",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "neon-cyber",
+      "name": "Neon",
+      "positive": "neon lights, vivid colors, pink theme, blue theme",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "noir",
+      "name": "Noir Contrast",
+      "positive": "monochrome, high contrast, dark",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "muted-cinematic",
+      "name": "Muted Cinematic",
+      "positive": "muted color, desaturated",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "bright-pop",
+      "name": "Bright Pop",
+      "positive": "colorful, vivid colors, saturated",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "royal-luxury",
+      "name": "Royal Luxury",
+      "positive": "purple theme, blue theme, gold trim",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "icy-winter",
+      "name": "Icy Winter",
+      "positive": "blue theme, white theme, cold",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "warm-cozy",
+      "name": "Cozy Warmth",
+      "positive": "warm colors, orange theme, brown theme, soft lighting",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "dreamlike",
+      "name": "Dreamlike",
+      "positive": "pastel colors, purple theme, soft focus, sparkle",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "red-black",
+      "name": "Red & Black",
+      "positive": "red theme, black theme, high contrast",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "pink-blue",
+      "name": "Pink & Blue",
+      "positive": "pink theme, blue theme",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "green-gold",
+      "name": "Green & Gold",
+      "positive": "green theme, gold trim",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

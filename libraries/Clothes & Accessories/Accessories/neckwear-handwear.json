@@ -1,0 +1,336 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "neckwear-handwear",
+  "name": "Neckwear & Handwear",
+  "entries": [
+    {
+      "id": "scarf",
+      "name": "Scarf",
+      "positive": "<color> <fabric> <pattern> scarf",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "long-scarf",
+      "name": "Long Scarf",
+      "positive": "<color> <pattern> long scarf, scarf",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "necktie",
+      "name": "Necktie",
+      "positive": "<color> <pattern> necktie",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "loose-necktie",
+      "name": "Loose Necktie",
+      "positive": "<color> loose necktie",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "bowtie",
+      "name": "Bowtie",
+      "positive": "<color> <pattern> bowtie",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "neck-ribbon",
+      "name": "Neck Ribbon",
+      "positive": "<color> neck ribbon",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "neckerchief",
+      "name": "Neckerchief",
+      "positive": "<color> neckerchief",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "choker",
+      "name": "Choker",
+      "positive": "<color> <fabric> choker",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "collar",
+      "name": "Collar",
+      "positive": "<color> collar",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "neck-bell",
+      "name": "Bell Collar",
+      "positive": "<color> collar, neck bell",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "necklace",
+      "name": "Necklace",
+      "positive": "<color> necklace",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "pendant",
+      "name": "Pendant",
+      "positive": "<color> pendant, necklace",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "cross-necklace",
+      "name": "Cross Necklace",
+      "positive": "cross necklace",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "locket",
+      "name": "Locket",
+      "positive": "locket",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "gloves",
+      "name": "Gloves",
+      "positive": "<color> <fabric> gloves",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "fingerless-gloves",
+      "name": "Fingerless Gloves",
+      "positive": "<color> <fabric> fingerless gloves",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "elbow-gloves",
+      "name": "Elbow Gloves",
+      "positive": "<color> <fabric> elbow gloves",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "mittens",
+      "name": "Mittens",
+      "positive": "<color> <pattern> mittens",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "detached-sleeves",
+      "name": "Detached Sleeves",
+      "positive": "<color> detached sleeves",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "arm-warmers",
+      "name": "Arm Warmers",
+      "positive": "<color> arm warmers",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "wristband",
+      "name": "Wristband",
+      "positive": "<color> wristband",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "bracelet",
+      "name": "Bracelet",
+      "positive": "<color> bracelet",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "wristwatch",
+      "name": "Wristwatch",
+      "positive": "wristwatch",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "ring",
+      "name": "Ring",
+      "positive": "ring",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

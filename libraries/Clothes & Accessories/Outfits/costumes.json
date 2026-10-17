@@ -1,0 +1,127 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "costumes",
+  "name": "Costumes",
+  "entries": [
+    {
+      "id": "witch",
+      "name": "Witch",
+      "positive": "witch, witch hat, robe",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "nun",
+      "name": "Nun",
+      "positive": "nun, habit, veil",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "miko",
+      "name": "Shrine Maiden",
+      "positive": "miko, red hakama",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "angel",
+      "name": "Angel",
+      "positive": "angel wings, halo, white dress",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "devil",
+      "name": "Devil",
+      "positive": "demon horns, demon tail, black dress",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "vampire",
+      "name": "Vampire",
+      "positive": "vampire, cape, fangs, high collar",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "pirate",
+      "name": "Pirate",
+      "positive": "pirate, pirate hat, eyepatch, coat",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "ninja",
+      "name": "Kunoichi",
+      "positive": "ninja, kunoichi, scarf, armor",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "magical-girl",
+      "name": "Magical Girl",
+      "positive": "magical girl, frills, wand, bow",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "princess",
+      "name": "Princess",
+      "positive": "princess, tiara, ball gown",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "santa",
+      "name": "Santa",
+      "positive": "santa costume, santa hat, red dress, fur trim",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "halloween",
+      "name": "Halloween",
+      "positive": "halloween costume, pumpkin, witch hat",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "kigurumi",
+      "name": "Kigurumi",
+      "positive": "kigurumi, animal hood",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "bunny",
+      "name": "Bunny Costume",
+      "positive": "rabbit ears, bunny tail, bowtie, leotard",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "detective",
+      "name": "Detective",
+      "positive": "deerstalker, trench coat, magnifying glass",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "steampunk",
+      "name": "Steampunk",
+      "positive": "steampunk, goggles, corset, gears",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "cosplay",
+      "name": "Cosplay",
+      "positive": "cosplay",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

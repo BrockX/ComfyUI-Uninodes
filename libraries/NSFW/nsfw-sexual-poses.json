@@ -1,0 +1,92 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "nsfw-sexual-poses",
+  "name": "NSFW Sexual Poses",
+  "entries": [
+    {
+      "id": "spread-legs",
+      "name": "Spread Legs",
+      "positive": "spread legs, on back, looking at viewer",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "legs-up",
+      "name": "Legs Up",
+      "positive": "legs up, on back, knees up, lying",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "all-fours",
+      "name": "All Fours",
+      "positive": "all fours, top-down bottom-up, looking back",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "straddling",
+      "name": "Straddling",
+      "positive": "straddling, girl on top, leaning forward",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "cowgirl-position",
+      "name": "Cowgirl Position",
+      "positive": "cowgirl position, hetero, straddling",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "reverse-cowgirl",
+      "name": "Reverse Cowgirl",
+      "positive": "reverse cowgirl position, hetero, from behind, looking back",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "missionary",
+      "name": "Missionary",
+      "positive": "missionary, hetero, lying, on back, legs up",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "doggystyle",
+      "name": "Doggystyle",
+      "positive": "doggystyle, hetero, all fours, from behind",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "spooning",
+      "name": "Spooning",
+      "positive": "spooning, hetero, lying, on side, from behind",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "standing-against-wall",
+      "name": "Standing Against Wall",
+      "positive": "standing sex, against wall, hetero, leg up",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "kneeling-presenting",
+      "name": "Kneeling Presenting",
+      "positive": "kneeling, presenting, looking back, arched back",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "lying-on-side",
+      "name": "Lying on Side",
+      "positive": "on side, lying, bent knee, looking at viewer, arm support",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

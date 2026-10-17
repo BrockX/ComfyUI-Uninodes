@@ -1,0 +1,36 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "quality-rating",
+  "name": "Quality: Rating",
+  "entries": [
+    {
+      "id": "general",
+      "name": "General",
+      "positive": "general",
+      "negative": "",
+      "notes": "Rating tags differ between finetunes (NoobAI: safe/sensitive/nsfw/explicit)."
+    },
+    {
+      "id": "sensitive",
+      "name": "Sensitive",
+      "positive": "sensitive",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "nsfw",
+      "name": "NSFW",
+      "positive": "nsfw",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "explicit",
+      "name": "Explicit",
+      "positive": "explicit",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "modifier-eye-colors",
+  "name": "Eye Colors",
+  "kind": "modifier",
+  "entries": [
+    {
+      "id": "blue",
+      "name": "Blue",
+      "positive": "blue",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "light-blue",
+      "name": "Light Blue",
+      "positive": "light blue",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "aqua",
+      "name": "Aqua",
+      "positive": "aqua",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "green",
+      "name": "Green",
+      "positive": "green",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "yellow",
+      "name": "Yellow",
+      "positive": "yellow",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "amber",
+      "name": "Amber",
+      "positive": "amber",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "orange",
+      "name": "Orange",
+      "positive": "orange",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "red",
+      "name": "Red",
+      "positive": "red",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "pink",
+      "name": "Pink",
+      "positive": "pink",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "purple",
+      "name": "Purple",
+      "positive": "purple",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "brown",
+      "name": "Brown",
+      "positive": "brown",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "black",
+      "name": "Black",
+      "positive": "black",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "grey",
+      "name": "Grey",
+      "positive": "grey",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "white",
+      "name": "White",
+      "positive": "white",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

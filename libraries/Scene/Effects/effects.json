@@ -1,0 +1,218 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "effects",
+  "name": "Effects",
+  "entries": [
+    {
+      "id": "sparkle",
+      "name": "Sparkle",
+      "positive": "sparkle, glitter",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "light-particles",
+      "name": "Light Particles",
+      "positive": "light particles, glowing",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "bokeh",
+      "name": "Bokeh",
+      "positive": "bokeh, depth of field",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "bloom",
+      "name": "Bloom",
+      "positive": "bloom, soft focus, glow",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "lens-flare",
+      "name": "Lens Flare",
+      "positive": "lens flare, sunlight",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "film-grain",
+      "name": "Film Grain",
+      "positive": "film grain",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "chromatic-aberration",
+      "name": "Chromatic Aberration",
+      "positive": "chromatic aberration",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "glitch",
+      "name": "Glitch",
+      "positive": "glitch, chromatic aberration",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "motion-blur",
+      "name": "Motion Blur",
+      "positive": "motion blur, motion lines",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "speed-lines",
+      "name": "Speed Lines",
+      "positive": "speed lines, dynamic angle",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "petals",
+      "name": "Petals",
+      "positive": "petals, falling petals",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "leaves",
+      "name": "Falling Leaves",
+      "positive": "falling leaves, wind",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "snow",
+      "name": "Snow",
+      "positive": "snowing, snowflakes",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "rain",
+      "name": "Rain",
+      "positive": "rain, water drops",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "bubbles",
+      "name": "Bubbles",
+      "positive": "bubble, soap bubbles, floating",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "feathers",
+      "name": "Feathers",
+      "positive": "feathers, falling feathers",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "fireworks",
+      "name": "Fireworks",
+      "positive": "fireworks, night sky",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "confetti",
+      "name": "Confetti",
+      "positive": "confetti, party popper",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "fire",
+      "name": "Fire",
+      "positive": "fire, embers, sparks",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "smoke",
+      "name": "Smoke",
+      "positive": "smoke, hazy",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "steam",
+      "name": "Steam",
+      "positive": "steam",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "water-splash",
+      "name": "Water Splash",
+      "positive": "splashing, water drops, wet",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "fireflies",
+      "name": "Fireflies",
+      "positive": "fireflies, light particles",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "floating-hearts",
+      "name": "Floating Hearts",
+      "positive": "heart, floating hearts",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "sweat-drops",
+      "name": "Sweat Drops",
+      "positive": "sweatdrop, sweat",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "magic-circle",
+      "name": "Magic Circle",
+      "positive": "magic circle, glowing, light particles",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "lightning",
+      "name": "Lightning",
+      "positive": "lightning, electricity, glowing",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "wind",
+      "name": "Wind",
+      "positive": "wind, motion lines, floating hair",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "dust",
+      "name": "Dust in Light",
+      "positive": "dust, sunbeam, light particles",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "emphasis",
+      "name": "Emphasis Lines",
+      "positive": "emphasis lines, surprised",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

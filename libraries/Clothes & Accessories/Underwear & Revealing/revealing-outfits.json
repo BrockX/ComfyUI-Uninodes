@@ -1,0 +1,262 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "revealing-outfits",
+  "name": "Sexy Revealing Outfits",
+  "entries": [
+    {
+      "id": "lingerie-set",
+      "name": "Lingerie Set",
+      "positive": "<color> <fabric> <pattern> lingerie, bra, panties, lace trim, garter belt, thighhighs",
+      "negative": "child, aged down",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "babydoll",
+      "name": "Babydoll",
+      "positive": "<color> <fabric> <pattern> babydoll, see-through, lace trim, negligee",
+      "negative": "child, aged down",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "micro-bikini",
+      "name": "Micro Bikini",
+      "positive": "<color> <pattern> micro bikini, string bikini, navel, side-tie bikini",
+      "negative": "child, aged down",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "sling-bikini",
+      "name": "Sling Bikini",
+      "positive": "<color> <pattern> slingshot swimsuit, underboob, navel, revealing clothes",
+      "negative": "child, aged down",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "playboy-bunny",
+      "name": "Playboy Bunny",
+      "positive": "<color> <fabric> <pattern> playboy bunny, leotard, fishnet pantyhose, rabbit ears, bowtie, detached collar",
+      "negative": "child, aged down",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "latex-bodysuit",
+      "name": "Latex Bodysuit",
+      "positive": "<color> <pattern> latex bodysuit, shiny clothes, skin tight, cleavage",
+      "negative": "child, aged down",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "backless-dress",
+      "name": "Backless Dress",
+      "positive": "<color> <fabric> <pattern> backless dress, side slit, halter dress, bare back, cleavage",
+      "negative": "child, aged down",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "crop-top-mini-skirt",
+      "name": "Crop Top & Mini Skirt",
+      "positive": "<color> <fabric> <pattern> crop top, midriff, navel, pleated miniskirt, underboob",
+      "negative": "child, aged down",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "open-shirt",
+      "name": "Open Shirt",
+      "positive": "<color> <fabric> <pattern> open shirt, unbuttoned, naked shirt, cleavage, collarbone",
+      "negative": "child, aged down",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "sexy-maid",
+      "name": "Sexy Maid",
+      "positive": "<color> maid, maid headdress, frills, cleavage cutout, thighhighs, short skirt, revealing clothes",
+      "negative": "child, aged down",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "thighhighs-garter",
+      "name": "Thighhighs & Garter",
+      "positive": "<color> <fabric> <pattern> thighhighs, garter straps, zettai ryouiki, panty peek",
+      "negative": "child, aged down",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "sheer-robe",
+      "name": "Sheer Robe",
+      "positive": "<color> sheer robe, see-through, open robe, off shoulder, negligee",
+      "negative": "child, aged down",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "nurse-revealing",
+      "name": "Nurse (Revealing)",
+      "positive": "<color> nurse, nurse cap, cleavage, short dress, thighhighs, revealing clothes",
+      "negative": "child, aged down",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "cheerleader-revealing",
+      "name": "Cheerleader (Revealing)",
+      "positive": "<color> <pattern> cheerleader, crop top, pleated miniskirt, midriff, pom poms",
+      "negative": "child, aged down",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    }
+  ]
+}

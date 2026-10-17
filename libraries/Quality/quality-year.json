@@ -1,0 +1,71 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "quality-year",
+  "name": "Quality: Year",
+  "entries": [
+    {
+      "id": "y2025",
+      "name": "2025",
+      "positive": "year 2025",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "y2024",
+      "name": "2024",
+      "positive": "year 2024",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "y2023",
+      "name": "2023",
+      "positive": "year 2023",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "y2022",
+      "name": "2022",
+      "positive": "year 2022",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "y2021",
+      "name": "2021",
+      "positive": "year 2021",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "y2020",
+      "name": "2020",
+      "positive": "year 2020",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "y2018",
+      "name": "2018",
+      "positive": "year 2018",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "y2015",
+      "name": "2015",
+      "positive": "year 2015",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "y2010",
+      "name": "2010",
+      "positive": "year 2010",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

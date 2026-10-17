@@ -1,0 +1,43 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "quality",
+  "name": "Quality",
+  "entries": [
+    {
+      "id": "standard",
+      "name": "Standard",
+      "positive": "masterpiece, best quality, newest, absurdres",
+      "negative": "worst quality, low quality, lowres, bad anatomy, bad hands, signature, watermark",
+      "notes": "Balanced default. Positive follows the Illustrious/NoobAI tier tags; the negative is the usual short base."
+    },
+    {
+      "id": "aesthetic",
+      "name": "Very Aesthetic",
+      "positive": "masterpiece, best quality, very aesthetic, newest, absurdres",
+      "negative": "worst quality, low quality, lowres, bad anatomy, bad hands, signature, watermark, jpeg artifacts",
+      "notes": "'very aesthetic' is honoured by NoobAI-style finetunes; plain Illustrious mostly ignores it."
+    },
+    {
+      "id": "detailed",
+      "name": "Detailed",
+      "positive": "masterpiece, best quality, newest, absurdres, highres, highly detailed",
+      "negative": "worst quality, low quality, lowres, bad anatomy, bad hands, signature, watermark, blurry",
+      "notes": "More detail pressure; can over-busy simple scenes."
+    },
+    {
+      "id": "lean",
+      "name": "Lean (fewest tokens)",
+      "positive": "best quality, newest",
+      "negative": "worst quality, lowres",
+      "notes": "Minimal tags for when the prompt itself is already long."
+    },
+    {
+      "id": "positive-only",
+      "name": "Positive Only",
+      "positive": "masterpiece, best quality, newest, absurdres",
+      "negative": "",
+      "notes": "No negative at all. Pair with a Negative Bundle if you want selective suppression."
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "pose-balance",
+  "name": "Pose: Balance & Inverted",
+  "entries": [
+    {
+      "id": "hanging",
+      "name": "Hanging",
+      "positive": "hanging, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "handstand",
+      "name": "Handstand",
+      "positive": "handstand, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "headstand",
+      "name": "Headstand",
+      "positive": "headstand, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "upside-down",
+      "name": "Upside Down",
+      "positive": "upside-down, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "backbend",
+      "name": "Backbend",
+      "positive": "backbend, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "standing-split",
+      "name": "Standing Split",
+      "positive": "standing split, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "leg-lift",
+      "name": "Leg Lifted",
+      "positive": "standing, leg up, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "bent-over",
+      "name": "Bent Over",
+      "positive": "bent over, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    }
+  ]
+}

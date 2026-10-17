@@ -1,0 +1,176 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "pose-jumping",
+  "name": "Pose: Jumping",
+  "entries": [
+    {
+      "id": "jump",
+      "name": "Jumping",
+      "positive": "jumping, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "jump-forward",
+      "name": "Forward Jump",
+      "positive": "jumping, leaping, motion lines, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "tuck",
+      "name": "Tuck Jump",
+      "positive": "jumping, knees to chest, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "split-leap",
+      "name": "Split Leap",
+      "positive": "jumping, splits, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "jump-arms-up",
+      "name": "Jumping, Arms Up",
+      "positive": "jumping, arms up, happy, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "jump-reach",
+      "name": "Jump and Reach",
+      "positive": "jumping, outstretched arm, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "spin-jump",
+      "name": "Spinning Jump",
+      "positive": "jumping, spinning, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "pounce",
+      "name": "Pouncing",
+      "positive": "pounce, outstretched arms, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "jump-kick",
+      "name": "Jump Kick",
+      "positive": "jumping, flying kick, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "landing",
+      "name": "Landing",
+      "positive": "landing, bent knees, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "hero-landing",
+      "name": "Hero Landing",
+      "positive": "superhero landing, one knee, one hand on ground, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "leaping-gap",
+      "name": "Leaping Over a Gap",
+      "positive": "leaping, midair, wind, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    }
+  ]
+}

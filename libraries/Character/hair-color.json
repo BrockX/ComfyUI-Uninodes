@@ -1,0 +1,139 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "hair-color",
+  "name": "Hair Color",
+  "entries": [
+    {
+      "id": "hair-color",
+      "name": "Hair Color",
+      "positive": "<color> hair",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Hair color",
+          "library": "modifier-hair-colors"
+        }
+      }
+    },
+    {
+      "id": "two-tone-hair",
+      "name": "Two-Tone Hair",
+      "positive": "two-tone hair, <color> hair, <color2> hair",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Hair color",
+          "library": "modifier-hair-colors"
+        },
+        "color2": {
+          "label": "Second color",
+          "library": "modifier-hair-colors"
+        }
+      }
+    },
+    {
+      "id": "gradient-hair",
+      "name": "Gradient Hair",
+      "positive": "gradient hair, <color> hair, <color2> hair",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Hair color",
+          "library": "modifier-hair-colors"
+        },
+        "color2": {
+          "label": "Second color",
+          "library": "modifier-hair-colors"
+        }
+      }
+    },
+    {
+      "id": "streaked-hair",
+      "name": "Streaked Hair",
+      "positive": "streaked hair, <color> hair, <color2> hair",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Hair color",
+          "library": "modifier-hair-colors"
+        },
+        "color2": {
+          "label": "Second color",
+          "library": "modifier-hair-colors"
+        }
+      }
+    },
+    {
+      "id": "colored-inner-hair",
+      "name": "Colored Inner Hair",
+      "positive": "colored inner hair, <color> hair",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Hair color",
+          "library": "modifier-hair-colors"
+        }
+      }
+    },
+    {
+      "id": "colored-tips",
+      "name": "Colored Tips",
+      "positive": "colored tips, <color> hair, <color2> tips",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Hair color",
+          "library": "modifier-hair-colors"
+        },
+        "color2": {
+          "label": "Second color",
+          "library": "modifier-hair-colors"
+        }
+      }
+    },
+    {
+      "id": "split-hair",
+      "name": "Split-Color Hair",
+      "positive": "split-color hair, <color> hair, <color2> hair",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Hair color",
+          "library": "modifier-hair-colors"
+        },
+        "color2": {
+          "label": "Second color",
+          "library": "modifier-hair-colors"
+        }
+      }
+    },
+    {
+      "id": "rainbow-hair",
+      "name": "Rainbow Hair",
+      "positive": "rainbow hair, multicolored hair",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "black-roots",
+      "name": "Dark Roots",
+      "positive": "<color> hair, black roots",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Hair color",
+          "library": "modifier-hair-colors"
+        }
+      }
+    }
+  ]
+}

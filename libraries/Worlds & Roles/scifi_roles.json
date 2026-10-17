@@ -1,0 +1,141 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "scifi_roles",
+  "name": "Sci-Fi Roles",
+  "entries": [
+    {
+      "id": "spaceship-pilot",
+      "name": "Spaceship Pilot",
+      "positive": "pilot, flight suit, cockpit",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "starship-captain",
+      "name": "Starship Captain",
+      "positive": "military uniform, captain, peaked cap",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "space-explorer",
+      "name": "Space Explorer",
+      "positive": "spacesuit, backpack, helmet, exploration",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "astronaut",
+      "name": "Astronaut",
+      "positive": "astronaut, spacesuit, helmet",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "cyber-hacker",
+      "name": "Cyber Hacker",
+      "positive": "hacker, hood, laptop, hologram",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "android",
+      "name": "Android",
+      "positive": "android, mechanical parts, joints",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "cyborg",
+      "name": "Cyborg",
+      "positive": "cyborg, mechanical arms, cybernetic",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "roboticist",
+      "name": "Robotics Engineer",
+      "positive": "goggles, wrench, gloves, workshop",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "scientist",
+      "name": "Research Scientist",
+      "positive": "scientist, labcoat, glasses, clipboard",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "medic",
+      "name": "Field Medic",
+      "positive": "medic, first aid kit, uniform",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "space-marine",
+      "name": "Space Marine",
+      "positive": "armor, helmet, rifle, futuristic",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "bounty-hunter",
+      "name": "Bounty Hunter",
+      "positive": "bounty hunter, gun, helmet, cloak",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "salvager",
+      "name": "Salvage Crew",
+      "positive": "jumpsuit, tool belt, goggles, gloves",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "smuggler",
+      "name": "Space Smuggler",
+      "positive": "jacket, holster, goggles, gun",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "diplomat",
+      "name": "Galactic Diplomat",
+      "positive": "formal, uniform, cape, futuristic",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "engineer",
+      "name": "Starship Engineer",
+      "positive": "jumpsuit, wrench, goggles, engine room",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "mechanic",
+      "name": "Mecha Mechanic",
+      "positive": "jumpsuit, wrench, mecha, hangar",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "mecha-pilot",
+      "name": "Mecha Pilot",
+      "positive": "pilot suit, bodysuit, cockpit, mecha",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "planetary-ranger",
+      "name": "Planetary Ranger",
+      "positive": "armor, cloak, rifle, scenery",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "props-instruments",
+  "name": "Props: Instruments",
+  "entries": [
+    {
+      "id": "acoustic-guitar",
+      "name": "Acoustic Guitar",
+      "positive": "holding guitar, acoustic guitar, playing guitar",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "electric-guitar",
+      "name": "Electric Guitar",
+      "positive": "holding guitar, electric guitar, playing guitar",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "bass-guitar",
+      "name": "Bass Guitar",
+      "positive": "holding bass guitar, bass guitar",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "ukulele",
+      "name": "Ukulele",
+      "positive": "ukulele, playing instrument",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "violin",
+      "name": "Violin",
+      "positive": "holding violin, violin, bow \\(instrument\\), playing violin",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "cello",
+      "name": "Cello",
+      "positive": "cello, playing instrument, sitting",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "piano",
+      "name": "Piano",
+      "positive": "piano, playing piano, sitting",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "keyboard",
+      "name": "Keyboard",
+      "positive": "keyboard \\(instrument\\), playing instrument",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "flute",
+      "name": "Flute",
+      "positive": "flute, playing flute",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "saxophone",
+      "name": "Saxophone",
+      "positive": "saxophone, playing instrument",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "trumpet",
+      "name": "Trumpet",
+      "positive": "trumpet, playing instrument",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "drums",
+      "name": "Drums",
+      "positive": "drum set, drumsticks, playing drum",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "harp",
+      "name": "Harp",
+      "positive": "harp, playing instrument",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "tambourine",
+      "name": "Tambourine",
+      "positive": "tambourine",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "singing",
+      "name": "Singing",
+      "positive": "singing, microphone, open mouth",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "sheet-music",
+      "name": "Sheet Music",
+      "positive": "holding sheet music, sheet music",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

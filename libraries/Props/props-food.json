@@ -1,0 +1,183 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "props-food",
+  "name": "Props: Food & Drink",
+  "entries": [
+    {
+      "id": "ice-cream",
+      "name": "Ice Cream",
+      "positive": "holding ice cream, ice cream cone, eating",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "popsicle",
+      "name": "Popsicle",
+      "positive": "holding popsicle, popsicle, eating",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "bubble-tea",
+      "name": "Bubble Tea",
+      "positive": "holding cup, bubble tea, drinking straw",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "cake",
+      "name": "Cake Slice",
+      "positive": "cake slice, fork, plate",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "cupcake",
+      "name": "Cupcake",
+      "positive": "holding cupcake, cupcake",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "doughnut",
+      "name": "Doughnut",
+      "positive": "holding doughnut, doughnut, eating",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "cookie",
+      "name": "Cookie",
+      "positive": "holding cookie, cookie, eating",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "pocky",
+      "name": "Pocky",
+      "positive": "pocky, mouth hold",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "candy",
+      "name": "Candy",
+      "positive": "holding candy, candy",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "lollipop",
+      "name": "Lollipop",
+      "positive": "lollipop, licking",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "chocolate",
+      "name": "Chocolate",
+      "positive": "holding chocolate, chocolate",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "onigiri",
+      "name": "Onigiri",
+      "positive": "holding onigiri, onigiri, eating",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "sandwich",
+      "name": "Sandwich",
+      "positive": "holding sandwich, sandwich, eating",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "pizza",
+      "name": "Pizza Slice",
+      "positive": "holding pizza, pizza, eating",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hamburger",
+      "name": "Hamburger",
+      "positive": "holding hamburger, hamburger, eating",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "ramen",
+      "name": "Ramen",
+      "positive": "ramen, chopsticks, eating, steam",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "sushi",
+      "name": "Sushi",
+      "positive": "sushi, chopsticks",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "bread",
+      "name": "Bread",
+      "positive": "holding bread, bread, eating",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "strawberry",
+      "name": "Strawberry",
+      "positive": "holding strawberry, strawberry",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "apple",
+      "name": "Apple",
+      "positive": "holding apple, apple",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "watermelon",
+      "name": "Watermelon Slice",
+      "positive": "watermelon slice, eating",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "wine",
+      "name": "Wine Glass",
+      "positive": "holding wine glass, wine glass",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "beer",
+      "name": "Beer",
+      "positive": "holding beer mug, beer mug",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "soda",
+      "name": "Soda Can",
+      "positive": "holding can, soda can, drinking",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "milk",
+      "name": "Milk",
+      "positive": "holding milk carton, milk",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

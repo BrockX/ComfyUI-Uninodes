@@ -1,0 +1,134 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "pose-unnatural",
+  "name": "Pose: Exaggerated",
+  "entries": [
+    {
+      "id": "extreme-twist",
+      "name": "Extreme Twist",
+      "positive": "twisted torso, looking back, arched back, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "extreme-backbend",
+      "name": "Extreme Backbend",
+      "positive": "backbend, arched back, head back, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "off-balance",
+      "name": "Off Balance",
+      "positive": "leaning, off balance, arms out, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "spiral",
+      "name": "Spiral Body Line",
+      "positive": "twisted torso, spread arms, dynamic pose, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "inverted-split",
+      "name": "Inverted Split",
+      "positive": "upside-down, splits, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "side-fold",
+      "name": "Deep Side Bend",
+      "positive": "leaning to the side, arm up, arched back, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "angular",
+      "name": "Angular Limbs",
+      "positive": "dynamic pose, bent knees, bent elbows, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "contortion",
+      "name": "Contortion",
+      "positive": "contortion, flexible, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "suspended-arch",
+      "name": "Suspended Arch",
+      "positive": "midair, arched back, spread arms, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "pose-kneeling",
+  "name": "Pose: Kneeling",
+  "entries": [
+    {
+      "id": "kneeling",
+      "name": "Kneeling",
+      "positive": "kneeling, <surface>, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "surface": {
+          "label": "Surface",
+          "library": "pose-supports"
+        },
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "one-knee",
+      "name": "On One Knee",
+      "positive": "kneeling, on one knee, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "lean-forward",
+      "name": "Kneeling, Leaning Forward",
+      "positive": "kneeling, leaning forward, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "hands-on-thighs",
+      "name": "Hands on Thighs",
+      "positive": "kneeling, hands on own thighs, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "arms-behind",
+      "name": "Arms Behind Back",
+      "positive": "kneeling, arms behind back, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "arms-up",
+      "name": "Arms Up",
+      "positive": "kneeling, arms up, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "dogeza",
+      "name": "Dogeza",
+      "positive": "dogeza, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "squatting",
+      "name": "Squatting",
+      "positive": "squatting, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "squat-tiptoes",
+      "name": "Squat on Tiptoes",
+      "positive": "squatting, tiptoes, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "squat-wide",
+      "name": "Wide Squat",
+      "positive": "squatting, legs apart, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "crouching",
+      "name": "Crouching",
+      "positive": "crouching, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "crouch-start",
+      "name": "Crouch, Hand on Ground",
+      "positive": "crouching, one hand on ground, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "all-fours",
+      "name": "All Fours",
+      "positive": "all fours, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    }
+  ]
+}

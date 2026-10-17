@@ -1,0 +1,50 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "pose-orientation",
+  "name": "Pose: Orientation",
+  "entries": [
+    {
+      "id": "facing-viewer",
+      "name": "Facing Viewer",
+      "positive": "facing viewer",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "facing-away",
+      "name": "Facing Away",
+      "positive": "facing away",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "profile",
+      "name": "Profile",
+      "positive": "profile",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "facing-side",
+      "name": "Facing Sideways",
+      "positive": "facing to the side",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "upside-down",
+      "name": "Upside Down",
+      "positive": "upside-down",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "foreshortening",
+      "name": "Limb Toward Viewer",
+      "positive": "foreshortening, reaching towards viewer",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

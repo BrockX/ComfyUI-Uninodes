@@ -1,0 +1,162 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "pose-fashion",
+  "name": "Pose: Fashion",
+  "entries": [
+    {
+      "id": "contrapposto",
+      "name": "Contrapposto",
+      "positive": "contrapposto, hand on own hip, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "runway",
+      "name": "Runway Walk",
+      "positive": "walking, runway, looking at viewer, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "look-back",
+      "name": "Look Back",
+      "positive": "looking back, from behind, contrapposto, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "hand-on-hip",
+      "name": "Hand on Hip",
+      "positive": "hand on own hip, standing, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "hand-in-hair",
+      "name": "Hand in Hair",
+      "positive": "hand in own hair, standing, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "crossed-ankles",
+      "name": "Crossed Ankles",
+      "positive": "crossed ankles, standing, leaning, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "lean-wall",
+      "name": "Leaning on Wall",
+      "positive": "leaning against wall, crossed ankles, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "sitting-model",
+      "name": "Seated Model",
+      "positive": "sitting, crossed legs, hand on own knee, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "coat-on-shoulders",
+      "name": "Coat on Shoulders",
+      "positive": "coat on shoulders, standing, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "over-shoulder",
+      "name": "Over the Shoulder",
+      "positive": "looking back, hand on own shoulder, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "jacket-hold",
+      "name": "Jacket Over Shoulder",
+      "positive": "jacket over shoulder, holding jacket, standing, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    }
+  ]
+}

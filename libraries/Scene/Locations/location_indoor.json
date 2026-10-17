@@ -1,0 +1,246 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "location-indoor",
+  "name": "Location: Indoor",
+  "entries": [
+    {
+      "id": "bedroom",
+      "name": "Bedroom",
+      "positive": "indoors, bedroom, bed",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "living-room",
+      "name": "Living Room",
+      "positive": "indoors, living room, couch",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "kitchen",
+      "name": "Kitchen",
+      "positive": "indoors, kitchen",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "bathroom",
+      "name": "Bathroom",
+      "positive": "indoors, bathroom",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "bathtub",
+      "name": "Bathtub",
+      "positive": "indoors, bathroom, bathtub, bath",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "onsen",
+      "name": "Hot Spring",
+      "positive": "onsen, hot spring, steam",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "office",
+      "name": "Office",
+      "positive": "indoors, office, desk",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "classroom",
+      "name": "Classroom",
+      "positive": "indoors, classroom, desk, chalkboard",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "library",
+      "name": "Library",
+      "positive": "indoors, library, bookshelf",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "cafe",
+      "name": "Café",
+      "positive": "indoors, cafe, table",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "restaurant",
+      "name": "Restaurant",
+      "positive": "indoors, restaurant, table",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "bar",
+      "name": "Bar",
+      "positive": "indoors, bar \\(place\\), counter",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "studio",
+      "name": "Photo Studio",
+      "positive": "indoors, photo studio, simple background",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "train",
+      "name": "Train Interior",
+      "positive": "indoors, train interior, seats",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "mall",
+      "name": "Shopping Mall",
+      "positive": "indoors, shopping mall",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "convenience-store",
+      "name": "Convenience Store",
+      "positive": "indoors, convenience store",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "arcade",
+      "name": "Arcade",
+      "positive": "indoors, arcade",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "gym",
+      "name": "Gym",
+      "positive": "indoors, gym",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "locker-room",
+      "name": "Locker Room",
+      "positive": "indoors, locker room",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hospital",
+      "name": "Hospital Room",
+      "positive": "indoors, hospital, hospital bed",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "infirmary",
+      "name": "Infirmary",
+      "positive": "indoors, infirmary, bed",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hotel-room",
+      "name": "Hotel Room",
+      "positive": "indoors, hotel room, bed",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hallway",
+      "name": "Hallway",
+      "positive": "indoors, hallway",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "stairwell",
+      "name": "Stairwell",
+      "positive": "indoors, stairs",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "elevator",
+      "name": "Elevator",
+      "positive": "indoors, elevator",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "attic",
+      "name": "Attic",
+      "positive": "indoors, attic",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "garage",
+      "name": "Garage",
+      "positive": "indoors, garage",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "laboratory",
+      "name": "Laboratory",
+      "positive": "indoors, laboratory",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "greenhouse",
+      "name": "Greenhouse",
+      "positive": "indoors, greenhouse, plant",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "church",
+      "name": "Church",
+      "positive": "indoors, church, stained glass",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "temple-hall",
+      "name": "Temple Hall",
+      "positive": "indoors, temple, shrine",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "dojo",
+      "name": "Dojo",
+      "positive": "indoors, dojo, wooden floor",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "castle-room",
+      "name": "Castle Room",
+      "positive": "indoors, castle, stone wall",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "music-room",
+      "name": "Music Room",
+      "positive": "indoors, music room, piano",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

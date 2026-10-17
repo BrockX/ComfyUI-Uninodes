@@ -1,0 +1,127 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "character_archetypes",
+  "name": "Character Archetypes",
+  "entries": [
+    {
+      "id": "quiet-intellectual",
+      "name": "Quiet Intellectual",
+      "positive": "intellectual, reserved, calm, closed mouth",
+      "negative": "",
+      "notes": "Personality cues only; does not change the character's species or design."
+    },
+    {
+      "id": "cheerful-optimist",
+      "name": "Cheerful Optimist",
+      "positive": "cheerful, bright smile, open mouth, happy",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "streetwise-rebel",
+      "name": "Streetwise Rebel",
+      "positive": "rebellious, smirk, hands in pockets, looking at viewer",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "elegant-noble",
+      "name": "Elegant Noble",
+      "positive": "noble, elegant, dignified, closed mouth, chin up",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "mysterious-stranger",
+      "name": "Mysterious Stranger",
+      "positive": "mysterious, expressionless, looking at viewer, hood",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "brave-adventurer",
+      "name": "Brave Adventurer",
+      "positive": "adventurer, determined, smile, confident",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "soft-spoken-healer",
+      "name": "Gentle Healer",
+      "positive": "gentle, kind, light smile, caring",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "shrewd-detective",
+      "name": "Shrewd Detective",
+      "positive": "detective, serious, narrowed eyes, hand on own chin",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "confident-leader",
+      "name": "Confident Leader",
+      "positive": "confident, smug, chin up, hand on own hip",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "shy-dreamer",
+      "name": "Shy Dreamer",
+      "positive": "shy, dreamy, looking away, blush",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "wandering-artist",
+      "name": "Wandering Artist",
+      "positive": "artist, creative, paintbrush, smile",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "cunning-trickster",
+      "name": "Cunning Trickster",
+      "positive": "smirk, evil smile, narrowed eyes, mischievous",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "stoic-guardian",
+      "name": "Stoic Guardian",
+      "positive": "stoic, serious, expressionless, standing",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "charming-performer",
+      "name": "Charming Performer",
+      "positive": "performer, confident smile, wink, spotlight",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "curious-scholar",
+      "name": "Curious Scholar",
+      "positive": "scholar, curious, head tilt, holding book",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hardened-survivor",
+      "name": "Hardened Survivor",
+      "positive": "serious, scar, tired, worn clothes",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "royal-envoy",
+      "name": "Royal Envoy",
+      "positive": "formal, dignified, closed mouth, straight-backed",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

@@ -1,0 +1,211 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "creature-features",
+  "name": "Creature Features",
+  "entries": [
+    {
+      "id": "cat",
+      "name": "Cat",
+      "positive": "cat ears, cat tail, animal ear fluff",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "dog",
+      "name": "Dog",
+      "positive": "dog ears, dog tail",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "fox",
+      "name": "Fox",
+      "positive": "fox ears, fox tail, animal ear fluff",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "kitsune",
+      "name": "Kitsune",
+      "positive": "fox ears, fox tail, multiple tails",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "wolf",
+      "name": "Wolf",
+      "positive": "wolf ears, wolf tail",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "rabbit",
+      "name": "Rabbit",
+      "positive": "rabbit ears, rabbit tail",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "horse",
+      "name": "Horse",
+      "positive": "horse ears, horse tail",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "mouse",
+      "name": "Mouse",
+      "positive": "mouse ears, mouse tail",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "bear",
+      "name": "Bear",
+      "positive": "bear ears",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "raccoon",
+      "name": "Raccoon",
+      "positive": "raccoon ears, raccoon tail",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "tiger",
+      "name": "Tiger",
+      "positive": "tiger ears, tiger tail",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "cow",
+      "name": "Cow",
+      "positive": "cow ears, cow horns, cow tail",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "sheep",
+      "name": "Sheep",
+      "positive": "sheep ears, sheep horns",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "elf",
+      "name": "Elf Ears",
+      "positive": "pointy ears",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "demon",
+      "name": "Demon",
+      "positive": "demon horns, demon tail, demon wings, pointy ears",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "oni",
+      "name": "Oni",
+      "positive": "oni horns, horns",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "dragon",
+      "name": "Dragon",
+      "positive": "dragon horns, dragon tail, dragon wings, scales",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "angel",
+      "name": "Angel",
+      "positive": "angel wings, halo, white wings",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "fairy",
+      "name": "Fairy",
+      "positive": "fairy wings, pointy ears",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "butterfly",
+      "name": "Butterfly Wings",
+      "positive": "butterfly wings",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "bat",
+      "name": "Bat Wings",
+      "positive": "bat wings, fangs",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "mermaid",
+      "name": "Mermaid",
+      "positive": "mermaid, fins, head fins",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "harpy",
+      "name": "Harpy",
+      "positive": "harpy, feathered wings, talons",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "lamia",
+      "name": "Lamia",
+      "positive": "lamia, snake tail",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "vampire",
+      "name": "Vampire",
+      "positive": "fangs, pale skin, red eyes",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "robot",
+      "name": "Robot Joints",
+      "positive": "robot joints, mechanical parts",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "android",
+      "name": "Android",
+      "positive": "android, mechanical arms",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "slime",
+      "name": "Slime Girl",
+      "positive": "slime girl, translucent",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "succubus",
+      "name": "Succubus",
+      "positive": "succubus, demon horns, demon wings, demon tail",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

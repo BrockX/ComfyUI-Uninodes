@@ -1,0 +1,445 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "swimwear",
+  "name": "Swimwear",
+  "entries": [
+    {
+      "id": "bikini",
+      "name": "Bikini",
+      "positive": "<color> <pattern> bikini",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "string-bikini",
+      "name": "String Bikini",
+      "positive": "<color> <pattern> string bikini",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "side-tie-bikini",
+      "name": "Side-Tie Bikini",
+      "positive": "<color> <pattern> bikini, side-tie bikini bottom",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "halter-bikini",
+      "name": "Halter Bikini",
+      "positive": "<color> <pattern> bikini, halterneck",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "bandeau-bikini",
+      "name": "Strapless Bikini",
+      "positive": "<color> <pattern> bikini, strapless bikini",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "high-waist-bikini",
+      "name": "High-Waist Bikini",
+      "positive": "<color> <pattern> bikini, high-waist bikini",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "frilled-bikini",
+      "name": "Frilled Bikini",
+      "positive": "<color> <pattern> frilled bikini",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "o-ring-bikini",
+      "name": "O-Ring Bikini",
+      "positive": "<color> o-ring bikini",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "front-tie-bikini",
+      "name": "Front-Tie Bikini",
+      "positive": "<color> <pattern> bikini, front-tie bikini top",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "lace-up-bikini",
+      "name": "Lace-Up Bikini",
+      "positive": "<color> bikini, lace-up",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "bikini-skirt",
+      "name": "Bikini With Skirt",
+      "positive": "<color> <pattern> bikini, bikini skirt",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "bikini-sarong",
+      "name": "Bikini With Sarong",
+      "positive": "<color> <pattern> bikini, sarong",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "bikini-open-shirt",
+      "name": "Bikini Under Open Shirt",
+      "positive": "<color> bikini, open shirt",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "one-piece",
+      "name": "One-Piece",
+      "positive": "<color> <pattern> one-piece swimsuit",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "casual-one-piece",
+      "name": "Casual One-Piece",
+      "positive": "<color> <pattern> casual one-piece swimsuit",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "highleg-one-piece",
+      "name": "High-Leg One-Piece",
+      "positive": "<color> highleg swimsuit",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "cutout-one-piece",
+      "name": "Cutout One-Piece",
+      "positive": "<color> one-piece swimsuit, navel cutout, clothing cutout",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "halter-one-piece",
+      "name": "Halter One-Piece",
+      "positive": "<color> one-piece swimsuit, halterneck",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "backless-one-piece",
+      "name": "Backless One-Piece",
+      "positive": "<color> one-piece swimsuit, backless outfit",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "frilled-one-piece",
+      "name": "Frilled One-Piece",
+      "positive": "<color> <pattern> frilled one-piece swimsuit",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "school-swimsuit",
+      "name": "School Swimsuit",
+      "positive": "<color> school swimsuit",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "competition-swimsuit",
+      "name": "Competition Swimsuit",
+      "positive": "<color> competition swimsuit",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "monokini",
+      "name": "Monokini",
+      "positive": "<color> monokini",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "tankini",
+      "name": "Tankini",
+      "positive": "<color> <pattern> tankini",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "rash-guard",
+      "name": "Rash Guard",
+      "positive": "<color> rash guard, swim shorts",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "wetsuit",
+      "name": "Wetsuit",
+      "positive": "<color> wetsuit",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "swim-under-clothes",
+      "name": "Swimsuit Under Clothes",
+      "positive": "<color> swimsuit under clothes",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "swim-trunks",
+      "name": "Swim Trunks",
+      "positive": "<color> <pattern> swim trunks, male swimwear",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "swim-briefs",
+      "name": "Swim Briefs",
+      "positive": "<color> swim briefs, male swimwear",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "props-vehicles",
+  "name": "Props: Vehicles",
+  "entries": [
+    {
+      "id": "bicycle",
+      "name": "Bicycle",
+      "positive": "bicycle, ground vehicle",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "riding-bicycle",
+      "name": "Riding a Bicycle",
+      "positive": "riding bicycle, ground vehicle",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "motorcycle",
+      "name": "Motorcycle",
+      "positive": "motorcycle, ground vehicle",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "scooter",
+      "name": "Scooter",
+      "positive": "scooter, ground vehicle",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "car",
+      "name": "Car",
+      "positive": "car, ground vehicle",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "driving",
+      "name": "Driving",
+      "positive": "driving, car interior",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "train",
+      "name": "Train",
+      "positive": "train, railroad tracks",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "bus",
+      "name": "Bus",
+      "positive": "bus, ground vehicle",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "boat",
+      "name": "Boat",
+      "positive": "boat, watercraft",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "rowboat",
+      "name": "Rowboat",
+      "positive": "rowboat, watercraft, oar",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "airplane",
+      "name": "Airplane",
+      "positive": "airplane, sky",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "helicopter",
+      "name": "Helicopter",
+      "positive": "helicopter, sky",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "horseback",
+      "name": "Horseback Riding",
+      "positive": "horseback riding, horse",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "skateboard",
+      "name": "Skateboard",
+      "positive": "skateboard",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "roller-skates",
+      "name": "Roller Skates",
+      "positive": "roller skates",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hot-air-balloon",
+      "name": "Hot Air Balloon",
+      "positive": "hot air balloon, sky",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "broom-ride",
+      "name": "Riding a Broom",
+      "positive": "broom riding, broom, flying",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "mecha",
+      "name": "Mecha",
+      "positive": "mecha, robot",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "spacecraft",
+      "name": "Spacecraft",
+      "positive": "spacecraft, space",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

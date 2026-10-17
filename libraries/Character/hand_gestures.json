@@ -1,0 +1,169 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "hand-gestures",
+  "name": "Hand Gestures",
+  "entries": [
+    {
+      "id": "peace-sign",
+      "name": "Peace Sign",
+      "positive": "v",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "double-v",
+      "name": "Double Peace",
+      "positive": "double v",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "thumbs-up",
+      "name": "Thumbs Up",
+      "positive": "thumbs up",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "finger-heart",
+      "name": "Finger Heart",
+      "positive": "finger heart",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "heart-hands",
+      "name": "Heart Hands",
+      "positive": "heart hands",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "wave",
+      "name": "Waving",
+      "positive": "waving",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "pointing",
+      "name": "Pointing at Viewer",
+      "positive": "pointing at viewer",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "pointing-up",
+      "name": "Pointing Up",
+      "positive": "pointing up",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hands-on-cheeks",
+      "name": "Hands on Cheeks",
+      "positive": "hands on own cheeks",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hand-in-hair",
+      "name": "Hand in Hair",
+      "positive": "hand in own hair",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "open-palm",
+      "name": "Open Palm",
+      "positive": "outstretched hand, palm",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hand-in-pocket",
+      "name": "Hand in Pocket",
+      "positive": "hand in pocket",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "fist",
+      "name": "Clenched Fist",
+      "positive": "clenched hand",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "fists-up",
+      "name": "Fists Up",
+      "positive": "clenched hands, fighting stance",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "salute",
+      "name": "Salute",
+      "positive": "salute",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "v-over-eye",
+      "name": "V Over Eye",
+      "positive": "v over eye",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "skirt-hold",
+      "name": "Holding Skirt",
+      "positive": "skirt hold",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "finger-to-mouth",
+      "name": "Finger to Mouth",
+      "positive": "finger to mouth",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hand-to-mouth",
+      "name": "Hand Over Mouth",
+      "positive": "covering own mouth",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "shushing",
+      "name": "Shushing",
+      "positive": "shushing",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "claw-pose",
+      "name": "Claw Pose",
+      "positive": "claw pose",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "paw-pose",
+      "name": "Paw Pose",
+      "positive": "paw pose",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "beckoning",
+      "name": "Beckoning",
+      "positive": "beckoning",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

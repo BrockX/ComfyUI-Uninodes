@@ -1,0 +1,169 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "outfits",
+  "name": "Outfits",
+  "entries": [
+    {
+      "id": "business-suit",
+      "name": "Business Suit",
+      "positive": "business suit, formal, suit, collared shirt, necktie",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "tuxedo",
+      "name": "Tuxedo",
+      "positive": "tuxedo, bowtie, formal",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "office-chic",
+      "name": "Office Chic",
+      "positive": "office lady, blouse, pencil skirt, high heels",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "casual-streetwear",
+      "name": "Casual Streetwear",
+      "positive": "casual, hoodie, jeans, sneakers",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "techwear",
+      "name": "Techwear",
+      "positive": "techwear, black jacket, cargo pants, straps",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "athleisure",
+      "name": "Athleisure",
+      "positive": "sportswear, track jacket, leggings, sneakers",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "cottagecore",
+      "name": "Cottagecore",
+      "positive": "peasant blouse, long skirt, apron, straw hat",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "preppy",
+      "name": "Preppy",
+      "positive": "sweater vest, collared shirt, plaid skirt, kneehighs, loafers",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "gothic",
+      "name": "Gothic",
+      "positive": "gothic, black dress, black thighhighs, choker",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "punk",
+      "name": "Punk",
+      "positive": "punk, studded belt, plaid skirt, torn clothes, jacket",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "harajuku",
+      "name": "Harajuku",
+      "positive": "harajuku fashion, colorful, layered clothes, hair bow",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "grunge",
+      "name": "Grunge",
+      "positive": "oversized shirt, plaid shirt, torn jeans, boots",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "biker",
+      "name": "Biker",
+      "positive": "leather jacket, jeans, boots, gloves",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "western",
+      "name": "Western",
+      "positive": "cowboy hat, vest, jeans, cowboy boots",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "loungewear",
+      "name": "Loungewear",
+      "positive": "oversized shirt, shorts, bare legs",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "winter-outfit",
+      "name": "Winter Outfit",
+      "positive": "winter clothes, coat, scarf, gloves, boots",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "summer-outfit",
+      "name": "Summer Outfit",
+      "positive": "sundress, straw hat, sandals",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "date-outfit",
+      "name": "Date Outfit",
+      "positive": "dress, cardigan, shoulder bag",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hiking",
+      "name": "Hiking",
+      "positive": "backpack, jacket, shorts, boots, hat",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "rainy-day",
+      "name": "Rainy Day",
+      "positive": "raincoat, rubber boots, umbrella",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "gym",
+      "name": "Gym",
+      "positive": "sportswear, sports bra, leggings, towel around neck",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "cyberpunk",
+      "name": "Cyberpunk",
+      "positive": "cyberpunk, techwear, neon trim, jacket",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "evening",
+      "name": "Evening Wear",
+      "positive": "evening gown, jewelry, high heels, elbow gloves",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

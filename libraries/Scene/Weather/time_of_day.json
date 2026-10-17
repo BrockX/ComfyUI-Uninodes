@@ -1,0 +1,99 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "time_of_day",
+  "name": "Time of Day",
+  "entries": [
+    {
+      "id": "dawn",
+      "name": "Dawn",
+      "positive": "dawn, early morning, gradient sky",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "sunrise",
+      "name": "Sunrise",
+      "positive": "sunrise, orange sky",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "morning",
+      "name": "Morning",
+      "positive": "morning, sunlight, blue sky",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "day",
+      "name": "Day",
+      "positive": "day, blue sky, sunlight",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "midday",
+      "name": "Midday",
+      "positive": "day, bright, blue sky, sunlight",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "afternoon",
+      "name": "Afternoon",
+      "positive": "afternoon, sunlight, blue sky",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "evening",
+      "name": "Evening",
+      "positive": "evening, orange sky, sunlight, warm lighting",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "sunset",
+      "name": "Sunset",
+      "positive": "sunset, orange sky, gradient sky",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "twilight",
+      "name": "Twilight",
+      "positive": "twilight, dusk, gradient sky, purple sky",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "blue-hour",
+      "name": "Blue Hour",
+      "positive": "dusk, blue theme, blue sky",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "night",
+      "name": "Night",
+      "positive": "night, night sky",
+      "negative": "",
+      "notes": "Indoors, 'night' tends to add a window. Use Lighting: Dark for interiors."
+    },
+    {
+      "id": "moonlit-night",
+      "name": "Moonlit Night",
+      "positive": "night, moonlight, full moon, night sky",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "starry-night",
+      "name": "Starry Night",
+      "positive": "night, starry sky, night sky",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

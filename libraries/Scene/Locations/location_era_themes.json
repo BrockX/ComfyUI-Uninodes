@@ -1,0 +1,169 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "location-era-themes",
+  "name": "Location: Era & Theme",
+  "entries": [
+    {
+      "id": "ancient",
+      "name": "Ancient World",
+      "positive": "ancient greek, columns, ruins",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "medieval-town",
+      "name": "Medieval Town",
+      "positive": "medieval, town, european architecture",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "medieval-castle",
+      "name": "Medieval Castle",
+      "positive": "medieval, castle, stone wall",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "renaissance",
+      "name": "Renaissance",
+      "positive": "renaissance, ornate interior, european architecture",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "victorian",
+      "name": "Victorian",
+      "positive": "victorian, gas lamp, european architecture",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "edwardian",
+      "name": "Edwardian",
+      "positive": "edwardian, vintage, european architecture",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "roaring-20s",
+      "name": "Roaring 20s",
+      "positive": "1920s \\(style\\), art deco, vintage",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "mid-century",
+      "name": "Mid-Century",
+      "positive": "1950s \\(style\\), retro, diner",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "retro-80s",
+      "name": "Retro 80s",
+      "positive": "1980s \\(style\\), retro, neon lights",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "post-apocalyptic",
+      "name": "Post-Apocalyptic",
+      "positive": "post-apocalypse, ruins, overgrown, scenery",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "steampunk",
+      "name": "Steampunk",
+      "positive": "steampunk, gears, brass, machinery",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "dieselpunk",
+      "name": "Dieselpunk",
+      "positive": "dieselpunk, industrial, machinery",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "fantasy-village",
+      "name": "Fantasy Village",
+      "positive": "fantasy, village, cottage, scenery",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "enchanted-forest",
+      "name": "Enchanted Forest",
+      "positive": "fantasy, forest, glowing, light particles, mushroom",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "royal-palace",
+      "name": "Royal Palace",
+      "positive": "palace, ornate interior, chandelier",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "underwater",
+      "name": "Underwater",
+      "positive": "underwater, air bubble, coral, fish",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "cyberpunk-city",
+      "name": "Cyberpunk City",
+      "positive": "cyberpunk, city, neon lights, night",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "space-station",
+      "name": "Space Station",
+      "positive": "space station, spacecraft interior, futuristic",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "spaceship",
+      "name": "Spaceship",
+      "positive": "spacecraft interior, cockpit, futuristic",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "alien-world",
+      "name": "Alien World",
+      "positive": "alien planet, scenery, otherworldly",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "floating-islands",
+      "name": "Floating Islands",
+      "positive": "floating island, fantasy, sky, clouds",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "japanese-town",
+      "name": "Japanese Town",
+      "positive": "japan, town, utility pole, power lines",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "showa-retro",
+      "name": "Showa Retro",
+      "positive": "showa retro, shopping district, old town",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

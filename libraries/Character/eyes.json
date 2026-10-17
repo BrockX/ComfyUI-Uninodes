@@ -1,0 +1,204 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "eyes",
+  "name": "Eyes",
+  "entries": [
+    {
+      "id": "eye-color",
+      "name": "Eye Color",
+      "positive": "<color> eyes",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Eye color",
+          "library": "modifier-eye-colors"
+        }
+      }
+    },
+    {
+      "id": "heterochromia",
+      "name": "Heterochromia",
+      "positive": "heterochromia, <color> eyes, <color2> eyes",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Eye color",
+          "library": "modifier-eye-colors"
+        },
+        "color2": {
+          "label": "Second color",
+          "library": "modifier-eye-colors"
+        }
+      }
+    },
+    {
+      "id": "glowing-eyes",
+      "name": "Glowing Eyes",
+      "positive": "<color> eyes, glowing eyes",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Eye color",
+          "library": "modifier-eye-colors"
+        }
+      }
+    },
+    {
+      "id": "eyeshadow",
+      "name": "Eyeshadow",
+      "positive": "<color> eyeshadow, makeup",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "eyeliner",
+      "name": "Eyeliner",
+      "positive": "eyeliner, makeup",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "slit-pupils",
+      "name": "Slit Pupils",
+      "positive": "slit pupils",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "heart-pupils",
+      "name": "Heart-Shaped Pupils",
+      "positive": "heart-shaped pupils, symbol-shaped pupils",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "star-pupils",
+      "name": "Star-Shaped Pupils",
+      "positive": "star-shaped pupils, symbol-shaped pupils",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "constricted",
+      "name": "Constricted Pupils",
+      "positive": "constricted pupils",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "ringed-eyes",
+      "name": "Ringed Eyes",
+      "positive": "ringed eyes",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "spiral-eyes",
+      "name": "Spiral Eyes",
+      "positive": "spiral eyes",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "sharp-eyes",
+      "name": "Sharp Eyes",
+      "positive": "tsurime, sharp eyes",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "droopy-eyes",
+      "name": "Droopy Eyes",
+      "positive": "tareme, droopy eyes",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "large-eyes",
+      "name": "Large Eyes",
+      "positive": "large eyes",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "narrowed-eyes",
+      "name": "Narrowed Eyes",
+      "positive": "narrowed eyes",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "half-closed",
+      "name": "Half-Closed Eyes",
+      "positive": "half-closed eyes",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "wide-eyed",
+      "name": "Wide-Eyed",
+      "positive": "wide-eyed",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "empty-eyes",
+      "name": "Empty Eyes",
+      "positive": "empty eyes",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "sparkling-eyes",
+      "name": "Sparkling Eyes",
+      "positive": "sparkling eyes, bright pupils",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "long-lashes",
+      "name": "Long Eyelashes",
+      "positive": "long eyelashes, thick eyelashes",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "colored-lashes",
+      "name": "Colored Eyelashes",
+      "positive": "colored eyelashes",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "closed-eyes",
+      "name": "Closed Eyes",
+      "positive": "closed eyes",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "one-eye-closed",
+      "name": "One Eye Closed",
+      "positive": "one eye closed",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "multicolored-eyes",
+      "name": "Multicolored Eyes",
+      "positive": "multicolored eyes",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

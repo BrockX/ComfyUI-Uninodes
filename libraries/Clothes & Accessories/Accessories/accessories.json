@@ -1,0 +1,190 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "accessories",
+  "name": "Accessories",
+  "entries": [
+    {
+      "id": "round-glasses",
+      "name": "Round Glasses",
+      "positive": "glasses, round eyewear",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "plain-glasses",
+      "name": "Glasses",
+      "positive": "glasses",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "rimless",
+      "name": "Rimless Glasses",
+      "positive": "glasses, rimless eyewear",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "semi-rimless",
+      "name": "Semi-Rimless Glasses",
+      "positive": "glasses, semi-rimless eyewear",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "sunglasses",
+      "name": "Sunglasses",
+      "positive": "sunglasses",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "tinted",
+      "name": "Tinted Glasses",
+      "positive": "tinted eyewear",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "monocle",
+      "name": "Monocle",
+      "positive": "monocle",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "goggles",
+      "name": "Goggles",
+      "positive": "goggles",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "eyewear-on-head",
+      "name": "Glasses on Head",
+      "positive": "eyewear on head",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "surgical-mask",
+      "name": "Face Mask",
+      "positive": "mouth mask",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "earrings",
+      "name": "Earrings",
+      "positive": "earrings",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hoop-earrings",
+      "name": "Hoop Earrings",
+      "positive": "hoop earrings",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "drop-earrings",
+      "name": "Dangling Earrings",
+      "positive": "dangle earrings",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "anklet",
+      "name": "Anklet",
+      "positive": "anklet",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "brooch",
+      "name": "Brooch",
+      "positive": "brooch",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "belt",
+      "name": "Belt",
+      "positive": "belt",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "suspenders",
+      "name": "Suspenders",
+      "positive": "suspenders",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "harness",
+      "name": "Harness",
+      "positive": "harness",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "thigh-strap",
+      "name": "Thigh Strap",
+      "positive": "thigh strap",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "shoulder-bag",
+      "name": "Shoulder Bag",
+      "positive": "shoulder bag",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "handbag",
+      "name": "Handbag",
+      "positive": "handbag",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "backpack",
+      "name": "Backpack",
+      "positive": "backpack",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "randoseru",
+      "name": "Randoseru",
+      "positive": "randoseru",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "school-bag",
+      "name": "School Bag",
+      "positive": "school bag",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "waist-pouch",
+      "name": "Waist Pouch",
+      "positive": "waist pouch",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "umbrella",
+      "name": "Umbrella",
+      "positive": "umbrella",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

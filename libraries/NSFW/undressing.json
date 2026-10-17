@@ -1,0 +1,134 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "undressing",
+  "name": "Undressing & Clothing State",
+  "entries": [
+    {
+      "id": "clothes-pull",
+      "name": "Clothes Pull",
+      "positive": "clothes pull, undressing, looking at viewer, blush",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "shirt-lift",
+      "name": "Shirt Lift",
+      "positive": "shirt lift, lifted by self, underboob, midriff",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "skirt-lift",
+      "name": "Skirt Lift",
+      "positive": "skirt lift, lifted by self, panties, thighs",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "strap-slip",
+      "name": "Strap Slip",
+      "positive": "strap slip, off shoulder, bare shoulders, one breast out",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "bra-lift",
+      "name": "Bra Lift",
+      "positive": "bra lift, breasts out, underwear lift, blush",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "panty-pull",
+      "name": "Panty Pull",
+      "positive": "panty pull, panties around one leg, undressing, blush",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "partially-undressed",
+      "name": "Partially Undressed",
+      "positive": "partially undressed, open clothes, unbuttoned, cleavage, clothes pull",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "topless",
+      "name": "Topless",
+      "positive": "topless, bare shoulders, breasts, nipples",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "bottomless",
+      "name": "Bottomless",
+      "positive": "bottomless, naked shirt, no panties",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "nude",
+      "name": "Nude",
+      "positive": "nude, completely nude, navel, bare skin",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "naked-shirt",
+      "name": "Naked Shirt",
+      "positive": "naked shirt, oversized shirt, bare legs, no bra",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "naked-apron",
+      "name": "Naked Apron",
+      "positive": "naked apron, apron, bare back, bare shoulders, from behind",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "towel-only",
+      "name": "Towel Only",
+      "positive": "naked towel, towel, wet hair, steam, bathroom",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "torn-clothes",
+      "name": "Torn Clothes",
+      "positive": "torn clothes, torn shirt, torn pantyhose, ripped clothes",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "wet-clothes",
+      "name": "Wet Clothes",
+      "positive": "wet clothes, wet shirt, see-through, wet, clinging clothes",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "covering-self",
+      "name": "Covering Self",
+      "positive": "covering breasts, covering crotch, embarrassed, blush, shy",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "shirtless-male",
+      "name": "Shirtless Male",
+      "positive": "male focus, shirtless, pectorals, abs, toned",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "male-undressing",
+      "name": "Male Undressing",
+      "positive": "male focus, undressing, unbuttoning, shirt pull, open shirt",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "lighting-bright",
+  "name": "Lighting: Bright",
+  "entries": [
+    {
+      "id": "soft-daylight",
+      "name": "Soft Daylight",
+      "positive": "soft lighting, natural light, bright",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "sunny-direct",
+      "name": "Direct Sunlight",
+      "positive": "sunlight, bright, strong sunlight",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "harsh-midday",
+      "name": "Harsh Midday",
+      "positive": "sunlight, high contrast, bright, day",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "golden-hour",
+      "name": "Golden Hour (Outdoor)",
+      "positive": "sunset, orange sky, warm lighting, sunlight, light rays",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "warm-golden-light",
+      "name": "Warm Golden Light",
+      "positive": "warm lighting, orange theme, golden light, soft glow",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "overcast-diffused",
+      "name": "Overcast / Diffused",
+      "positive": "soft lighting, diffused light, muted color, low contrast",
+      "negative": "sunlight",
+      "notes": ""
+    },
+    {
+      "id": "window-light",
+      "name": "Window Light (Indoor)",
+      "positive": "sunbeam, light rays, indoors, light particles",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "backlit-glow",
+      "name": "Backlit Glow",
+      "positive": "backlighting, rim light, light rays, lens flare",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "dappled-sunlight",
+      "name": "Dappled Sunlight",
+      "positive": "dappled sunlight, sunbeam, light particles",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "dreamy-bloom",
+      "name": "Dreamy Bloom",
+      "positive": "bloom, soft focus, soft glow, glowing, sparkle, bright",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "pastel-airy",
+      "name": "Pastel & Airy",
+      "positive": "pastel colors, soft colors, soft lighting, bright, airy",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "clean-bright",
+      "name": "Clean Bright",
+      "positive": "bright, soft lighting, clean lighting",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "morning-light",
+      "name": "Morning Light",
+      "positive": "morning, sunlight, soft lighting, light rays",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "blue-sky-day",
+      "name": "Blue Sky Day",
+      "positive": "day, blue sky, sunlight, outdoors, clouds",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "sun-flare",
+      "name": "Sun Flare",
+      "positive": "sunlight, lens flare, bright, backlighting",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "studio-bright",
+      "name": "Studio Bright",
+      "positive": "soft lighting, bright, simple background, white background",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

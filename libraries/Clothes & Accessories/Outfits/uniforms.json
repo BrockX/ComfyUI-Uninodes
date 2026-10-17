@@ -1,0 +1,204 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "uniforms",
+  "name": "Uniforms",
+  "entries": [
+    {
+      "id": "sailor-school",
+      "name": "Sailor School Uniform",
+      "positive": "serafuku, school uniform, neckerchief, pleated skirt",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "blazer-school",
+      "name": "Blazer School Uniform",
+      "positive": "school uniform, blazer, plaid skirt, necktie, collared shirt",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "summer-school",
+      "name": "Summer School Uniform",
+      "positive": "school uniform, short sleeves, white shirt, pleated skirt",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "cardigan-school",
+      "name": "Cardigan School Uniform",
+      "positive": "school uniform, cardigan, pleated skirt, kneehighs",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "gakuran",
+      "name": "Gakuran",
+      "positive": "gakuran, school uniform, black jacket",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "gym-uniform",
+      "name": "Gym Uniform",
+      "positive": "gym uniform, gym shirt, gym shorts",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "buruma",
+      "name": "Buruma",
+      "positive": "gym uniform, gym shirt, buruma",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "tennis",
+      "name": "Tennis Uniform",
+      "positive": "tennis uniform, visor cap, skirt",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "baseball",
+      "name": "Baseball Uniform",
+      "positive": "baseball uniform, baseball cap",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "soccer",
+      "name": "Soccer Uniform",
+      "positive": "soccer uniform",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "basketball",
+      "name": "Basketball Uniform",
+      "positive": "basketball uniform, sleeveless",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "volleyball",
+      "name": "Volleyball Uniform",
+      "positive": "volleyball uniform, shorts",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "karate",
+      "name": "Martial Arts Gi",
+      "positive": "dougi, belt",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "cheerleader",
+      "name": "Cheerleader",
+      "positive": "cheerleader, crop top, pleated skirt, pom pom \\(cheerleading\\)",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "nurse",
+      "name": "Nurse",
+      "positive": "nurse, nurse cap, white dress",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "doctor",
+      "name": "Doctor",
+      "positive": "labcoat, stethoscope",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "police",
+      "name": "Police",
+      "positive": "police uniform, police hat",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "military",
+      "name": "Military",
+      "positive": "military uniform, peaked cap",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "firefighter",
+      "name": "Firefighter",
+      "positive": "firefighter, helmet",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "pilot",
+      "name": "Pilot",
+      "positive": "pilot, flight suit, aviator sunglasses",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "flight-attendant",
+      "name": "Flight Attendant",
+      "positive": "stewardess, neckerchief, hat",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "waitress",
+      "name": "Waitress",
+      "positive": "waitress, apron, name tag",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "maid",
+      "name": "Maid",
+      "positive": "maid, maid headdress, apron, frills",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "chef",
+      "name": "Chef",
+      "positive": "chef, chef hat, apron",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "teacher",
+      "name": "Teacher",
+      "positive": "teacher, glasses, pointer, blouse, pencil skirt",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "idol",
+      "name": "Idol Outfit",
+      "positive": "idol, frilled dress, microphone, hair ribbon",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "race-queen",
+      "name": "Race Queen",
+      "positive": "race queen, crop top, umbrella",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "office-lady",
+      "name": "Office Lady",
+      "positive": "office lady, blazer, pencil skirt, id card",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

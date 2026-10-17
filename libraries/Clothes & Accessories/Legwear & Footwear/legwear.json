@@ -1,0 +1,277 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "legwear",
+  "name": "Legwear",
+  "entries": [
+    {
+      "id": "thighhighs",
+      "name": "Thighhighs",
+      "positive": "<color> <pattern> thighhighs",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "zettai-ryouiki",
+      "name": "Thighhighs, Zettai Ryouiki",
+      "positive": "<color> thighhighs, zettai ryouiki",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "over-kneehighs",
+      "name": "Over-Kneehighs",
+      "positive": "<color> <pattern> over-kneehighs",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "kneehighs",
+      "name": "Kneehighs",
+      "positive": "<color> <pattern> kneehighs",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "socks",
+      "name": "Socks",
+      "positive": "<color> <pattern> socks",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "ankle-socks",
+      "name": "Ankle Socks",
+      "positive": "<color> <pattern> ankle socks",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "loose-socks",
+      "name": "Loose Socks",
+      "positive": "<color> loose socks",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "pantyhose",
+      "name": "Pantyhose",
+      "positive": "<color> <pattern> pantyhose",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "fishnets",
+      "name": "Fishnet Pantyhose",
+      "positive": "<color> fishnet pantyhose",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "fishnet-thighhighs",
+      "name": "Fishnet Thighhighs",
+      "positive": "<color> fishnet thighhighs",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "garter-straps",
+      "name": "Garter Straps",
+      "positive": "<color> garter straps",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "stirrup",
+      "name": "Stirrup Legwear",
+      "positive": "<color> stirrup legwear",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "leg-warmers",
+      "name": "Leg Warmers",
+      "positive": "<color> <fabric> leg warmers",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "see-through",
+      "name": "See-Through Legwear",
+      "positive": "<color> see-through legwear",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "lace-trim",
+      "name": "Lace-Trimmed Legwear",
+      "positive": "<color> lace-trimmed legwear",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "single-thighhigh",
+      "name": "Single Thighhigh",
+      "positive": "<color> single thighhigh",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "mismatched",
+      "name": "Mismatched Legwear",
+      "positive": "<color> mismatched legwear",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "toeless",
+      "name": "Toeless Legwear",
+      "positive": "<color> toeless legwear",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "bare-legs",
+      "name": "Bare Legs",
+      "positive": "bare legs",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

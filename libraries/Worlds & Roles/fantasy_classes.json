@@ -1,0 +1,162 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "fantasy_classes",
+  "name": "Fantasy Classes",
+  "entries": [
+    {
+      "id": "warrior",
+      "name": "Warrior",
+      "positive": "warrior, armor, sword",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "knight",
+      "name": "Knight",
+      "positive": "knight, armor, cape",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "paladin",
+      "name": "Paladin",
+      "positive": "paladin, armor, holy, shield",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "barbarian",
+      "name": "Barbarian",
+      "positive": "barbarian, fur trim, muscular, axe",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "rogue",
+      "name": "Rogue",
+      "positive": "thief, hood, cloak, dagger",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "assassin",
+      "name": "Assassin",
+      "positive": "assassin, hood, dagger, dark",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "ranger",
+      "name": "Ranger",
+      "positive": "ranger, hood, cloak, bow \\(weapon\\)",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "archer",
+      "name": "Archer",
+      "positive": "archer, bow \\(weapon\\), quiver",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "mage",
+      "name": "Mage",
+      "positive": "mage, robe, staff",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "wizard",
+      "name": "Wizard",
+      "positive": "wizard, wizard hat, robe, staff",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "witch",
+      "name": "Witch",
+      "positive": "witch, spell, potion, cauldron",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "sorcerer",
+      "name": "Sorcerer",
+      "positive": "magic, glowing, robe, casting spell",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "healer",
+      "name": "Healer",
+      "positive": "healer, robe, staff, glowing",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "priest",
+      "name": "Priest / Cleric",
+      "positive": "priestess, habit, holy symbol",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "druid",
+      "name": "Druid",
+      "positive": "druid, leaf, staff, nature",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "bard",
+      "name": "Bard",
+      "positive": "bard, lute, feathered hat",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "alchemist",
+      "name": "Alchemist",
+      "positive": "alchemist, potion, flask, goggles",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "artificer",
+      "name": "Artificer",
+      "positive": "goggles, gadget, gears, tool belt",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "monk",
+      "name": "Monk",
+      "positive": "monk, martial arts, bandages, robe",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "summoner",
+      "name": "Summoner",
+      "positive": "summoning, magic circle, glowing",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "necromancer",
+      "name": "Necromancer",
+      "positive": "necromancer, skull, dark robe, glowing eyes",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "royal-guard",
+      "name": "Royal Guard",
+      "positive": "guard, armor, spear, helmet, cape",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

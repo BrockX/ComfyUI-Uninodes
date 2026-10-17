@@ -1,0 +1,85 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "beachwear",
+  "name": "Beach & Poolside",
+  "entries": [
+    {
+      "id": "sarong",
+      "name": "Sarong",
+      "positive": "sarong",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "beach-shirt",
+      "name": "Beach Shirt",
+      "positive": "hawaiian shirt, open shirt",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "flip-flops",
+      "name": "Flip-Flops",
+      "positive": "flip-flops, barefoot",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "swim-ring",
+      "name": "Swim Ring",
+      "positive": "swim ring, innertube",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "beach-ball",
+      "name": "Beach Ball",
+      "positive": "beachball",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "beach-umbrella",
+      "name": "Beach Umbrella",
+      "positive": "beach umbrella",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "towel-neck",
+      "name": "Towel Around Neck",
+      "positive": "towel around neck, wet",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "surfboard",
+      "name": "Surfboard",
+      "positive": "surfboard",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "snorkel",
+      "name": "Snorkel",
+      "positive": "snorkel, diving mask",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "water-gun",
+      "name": "Water Gun",
+      "positive": "water gun, splashing",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "wet-sand",
+      "name": "Wet Skin",
+      "positive": "wet, wet hair, water drops",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

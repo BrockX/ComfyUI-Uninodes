@@ -1,0 +1,141 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "attitudes_body_language",
+  "name": "Attitude & Body Language",
+  "entries": [
+    {
+      "id": "relaxed",
+      "name": "Relaxed",
+      "positive": "relaxed, calm, arms at sides",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "confident",
+      "name": "Confident",
+      "positive": "confident, chin up, hand on own hip",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "shy",
+      "name": "Shy",
+      "positive": "shy, embarrassed, looking away, own hands together",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "playful",
+      "name": "Playful",
+      "positive": "playful, tongue out, leaning forward",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "elegant",
+      "name": "Elegant",
+      "positive": "elegant, graceful, own hands together, closed mouth",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "defiant",
+      "name": "Defiant",
+      "positive": "defiant, crossed arms, glaring, frown",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "curious",
+      "name": "Curious",
+      "positive": "curious, head tilt, looking at viewer",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "thoughtful",
+      "name": "Thoughtful",
+      "positive": "thoughtful, hand on own chin, looking away",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "focused",
+      "name": "Focused",
+      "positive": "serious, focused, intense gaze",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "protective",
+      "name": "Protective",
+      "positive": "protective, arm up, serious, looking at viewer",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "friendly",
+      "name": "Friendly",
+      "positive": "friendly, smile, waving, looking at viewer",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "reserved",
+      "name": "Reserved",
+      "positive": "reserved, closed mouth, own hands together",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "nervous",
+      "name": "Nervous",
+      "positive": "nervous, sweatdrop, fidgeting, looking away",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "tired",
+      "name": "Tired",
+      "positive": "tired, half-closed eyes, sigh, drooping shoulders",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "determined",
+      "name": "Determined",
+      "positive": "determined, clenched hand, serious",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "flirtatious",
+      "name": "Flirtatious",
+      "positive": "flirting, wink, head tilt, finger to mouth",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "melancholic",
+      "name": "Melancholic",
+      "positive": "sad, looking down, wistful",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "energetic",
+      "name": "Energetic",
+      "positive": "energetic, open mouth, smile, arms up",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "regal",
+      "name": "Regal",
+      "positive": "dignified, chin up, closed mouth, hand on own hip",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

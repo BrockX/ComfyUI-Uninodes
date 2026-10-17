@@ -1,0 +1,149 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "modifier-hair-colors",
+  "name": "Hair Colors",
+  "kind": "modifier",
+  "entries": [
+    {
+      "id": "black",
+      "name": "Black",
+      "positive": "black",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "brown",
+      "name": "Brown",
+      "positive": "brown",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "light-brown",
+      "name": "Light Brown",
+      "positive": "light brown",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "blonde",
+      "name": "Blonde",
+      "positive": "blonde",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "red",
+      "name": "Red",
+      "positive": "red",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "orange",
+      "name": "Orange",
+      "positive": "orange",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "pink",
+      "name": "Pink",
+      "positive": "pink",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "light-pink",
+      "name": "Light Pink",
+      "positive": "light pink",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "purple",
+      "name": "Purple",
+      "positive": "purple",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "light-purple",
+      "name": "Light Purple",
+      "positive": "light purple",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "blue",
+      "name": "Blue",
+      "positive": "blue",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "light-blue",
+      "name": "Light Blue",
+      "positive": "light blue",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "dark-blue",
+      "name": "Dark Blue",
+      "positive": "dark blue",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "aqua",
+      "name": "Aqua",
+      "positive": "aqua",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "green",
+      "name": "Green",
+      "positive": "green",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "light-green",
+      "name": "Light Green",
+      "positive": "light green",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "dark-green",
+      "name": "Dark Green",
+      "positive": "dark green",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "white",
+      "name": "White",
+      "positive": "white",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "grey",
+      "name": "Grey",
+      "positive": "grey",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "silver",
+      "name": "Silver",
+      "positive": "silver",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

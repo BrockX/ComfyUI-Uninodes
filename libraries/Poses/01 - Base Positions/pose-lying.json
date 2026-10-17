@@ -1,0 +1,220 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "pose-lying",
+  "name": "Pose: Lying",
+  "entries": [
+    {
+      "id": "on-back",
+      "name": "On Back",
+      "positive": "lying, on back, <surface>, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "surface": {
+          "label": "Surface",
+          "library": "pose-supports"
+        },
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "on-stomach",
+      "name": "On Stomach",
+      "positive": "lying, on stomach, <surface>, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "surface": {
+          "label": "Surface",
+          "library": "pose-supports"
+        },
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "on-side",
+      "name": "On Side",
+      "positive": "lying, on side, <surface>, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "surface": {
+          "label": "Surface",
+          "library": "pose-supports"
+        },
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "fetal",
+      "name": "Curled Up",
+      "positive": "fetal position, lying, <surface>, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "surface": {
+          "label": "Surface",
+          "library": "pose-supports"
+        },
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "spread-eagle",
+      "name": "Arms and Legs Spread",
+      "positive": "lying, on back, spread arms, spread legs, <surface>, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "surface": {
+          "label": "Surface",
+          "library": "pose-supports"
+        },
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "head-rest",
+      "name": "Propped Head",
+      "positive": "lying, on side, head rest, <surface>, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "surface": {
+          "label": "Surface",
+          "library": "pose-supports"
+        },
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "arms-under-head",
+      "name": "Arms Behind Head",
+      "positive": "lying, on back, arms behind head, <surface>, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "surface": {
+          "label": "Surface",
+          "library": "pose-supports"
+        },
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "legs-up",
+      "name": "Legs Up",
+      "positive": "lying, on back, legs up, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "knee-up",
+      "name": "One Knee Up",
+      "positive": "lying, on back, knee up, <surface>, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "surface": {
+          "label": "Surface",
+          "library": "pose-supports"
+        },
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "feet-up",
+      "name": "Feet Up",
+      "positive": "lying, on stomach, feet up, <surface>, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "surface": {
+          "label": "Surface",
+          "library": "pose-supports"
+        },
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "head-on-arms",
+      "name": "Head on Arms",
+      "positive": "lying, on stomach, head on arms, <surface>, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "surface": {
+          "label": "Surface",
+          "library": "pose-supports"
+        },
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "reclining",
+      "name": "Reclining",
+      "positive": "reclining, <surface>, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "surface": {
+          "label": "Surface",
+          "library": "pose-supports"
+        },
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    }
+  ]
+}

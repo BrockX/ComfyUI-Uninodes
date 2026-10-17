@@ -1,0 +1,153 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "pose-interactions",
+  "name": "Pose: Environment",
+  "entries": [
+    {
+      "id": "lean-on",
+      "name": "Leaning On",
+      "positive": "leaning on <support>, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "support": {
+          "type": "text",
+          "label": "Support",
+          "placeholder": "On / against…"
+        },
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "stairs-climb",
+      "name": "Climbing Stairs",
+      "positive": "stairs, climbing stairs, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "stairs-sit",
+      "name": "Sitting on Stairs",
+      "positive": "sitting, on stairs, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "swing",
+      "name": "On a Swing",
+      "positive": "swing, sitting, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "windowsill",
+      "name": "Elbows on Windowsill",
+      "positive": "windowsill, elbows on windowsill, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "railing",
+      "name": "Hand on Railing",
+      "positive": "railing, leaning on railing, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "under-tree",
+      "name": "Under a Tree",
+      "positive": "sitting, under tree, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "chair-backwards",
+      "name": "Chair Backwards",
+      "positive": "sitting backwards, chair, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "on-ledge",
+      "name": "Sitting on Ledge",
+      "positive": "sitting, on ledge, dangling legs, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "tiptoe-reach",
+      "name": "Reaching Up",
+      "positive": "tiptoes, reaching up, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    }
+  ]
+}

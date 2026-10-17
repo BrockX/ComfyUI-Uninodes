@@ -1,0 +1,225 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "hair-extras",
+  "name": "Hair Details",
+  "entries": [
+    {
+      "id": "ahoge",
+      "name": "Ahoge",
+      "positive": "ahoge",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hair-between-eyes",
+      "name": "Hair Between Eyes",
+      "positive": "hair between eyes",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hair-over-one-eye",
+      "name": "Hair Over One Eye",
+      "positive": "hair over one eye",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hair-over-eyes",
+      "name": "Hair Over Eyes",
+      "positive": "hair over eyes",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "blunt-bangs",
+      "name": "Blunt Bangs",
+      "positive": "blunt bangs",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "parted-bangs",
+      "name": "Parted Bangs",
+      "positive": "parted bangs",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "long-bangs",
+      "name": "Long Bangs",
+      "positive": "long bangs",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "sidelocks",
+      "name": "Sidelocks",
+      "positive": "sidelocks",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hair-intakes",
+      "name": "Hair Intakes",
+      "positive": "hair intakes",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "braided-bangs",
+      "name": "Braided Bangs",
+      "positive": "braided bangs",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "floating-hair",
+      "name": "Floating Hair",
+      "positive": "floating hair",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "windblown",
+      "name": "Windblown Hair",
+      "positive": "wind, floating hair",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "wet-hair",
+      "name": "Wet Hair",
+      "positive": "wet hair",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "messy-hair",
+      "name": "Messy Hair",
+      "positive": "messy hair",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "bedhead",
+      "name": "Bedhead",
+      "positive": "messy hair, bed head",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hair-ornament",
+      "name": "Hair Ornament",
+      "positive": "hair ornament",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hair-flower",
+      "name": "Hair Flower",
+      "positive": "hair flower",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hair-ribbon",
+      "name": "Hair Ribbon",
+      "positive": "hair ribbon",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hair-bow",
+      "name": "Hair Bow",
+      "positive": "hair bow",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "scrunchie",
+      "name": "Scrunchie",
+      "positive": "scrunchie",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hair-tie",
+      "name": "Hair Tie",
+      "positive": "hair tie",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hairclip",
+      "name": "Hair Clip",
+      "positive": "hairclip",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hairband",
+      "name": "Hairband",
+      "positive": "hairband",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hair-stick",
+      "name": "Hair Stick",
+      "positive": "hair stick",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "kanzashi",
+      "name": "Kanzashi",
+      "positive": "kanzashi",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hair-beads",
+      "name": "Hair Beads",
+      "positive": "hair beads",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hair-bobbles",
+      "name": "Hair Bobbles",
+      "positive": "hair bobbles",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hair-pulled-back",
+      "name": "Hair Behind Ear",
+      "positive": "hair behind ear",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hair-tucking",
+      "name": "Tucking Hair",
+      "positive": "hair tucking, hand in own hair",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hair-ornament-star",
+      "name": "Star Hair Clip",
+      "positive": "star hair ornament",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hair-ornament-heart",
+      "name": "Heart Hair Clip",
+      "positive": "heart hair ornament",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

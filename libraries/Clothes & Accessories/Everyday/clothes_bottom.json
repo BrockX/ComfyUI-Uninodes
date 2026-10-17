@@ -1,0 +1,578 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "clothes-bottom",
+  "name": "Clothes: Bottom",
+  "entries": [
+    {
+      "id": "jeans",
+      "name": "Jeans",
+      "positive": "<color> <pattern> <fit> jeans",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        },
+        "fit": {
+          "label": "Fit",
+          "library": "modifier-fits"
+        }
+      }
+    },
+    {
+      "id": "ripped-jeans",
+      "name": "Ripped Jeans",
+      "positive": "<color> <fit> jeans, torn jeans",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fit": {
+          "label": "Fit",
+          "library": "modifier-fits"
+        }
+      }
+    },
+    {
+      "id": "leggings",
+      "name": "Leggings",
+      "positive": "<color> <pattern> <fit> leggings",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        },
+        "fit": {
+          "label": "Fit",
+          "library": "modifier-fits"
+        }
+      }
+    },
+    {
+      "id": "shorts",
+      "name": "Shorts",
+      "positive": "<color> <fabric> <pattern> <fit> shorts",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        },
+        "fit": {
+          "label": "Fit",
+          "library": "modifier-fits"
+        }
+      }
+    },
+    {
+      "id": "short-shorts",
+      "name": "Short Shorts",
+      "positive": "<color> <fabric> <pattern> short shorts",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "denim-shorts",
+      "name": "Denim Shorts",
+      "positive": "<color> denim shorts",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "bike-shorts",
+      "name": "Bike Shorts",
+      "positive": "<color> bike shorts",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "gym-shorts",
+      "name": "Gym Shorts",
+      "positive": "<color> gym shorts",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "mini-skirt",
+      "name": "Mini Skirt",
+      "positive": "<color> <fabric> <pattern> <fit> miniskirt",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        },
+        "fit": {
+          "label": "Fit",
+          "library": "modifier-fits"
+        }
+      }
+    },
+    {
+      "id": "pleated-skirt",
+      "name": "Pleated Skirt",
+      "positive": "<color> <fabric> <pattern> <fit> pleated skirt",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        },
+        "fit": {
+          "label": "Fit",
+          "library": "modifier-fits"
+        }
+      }
+    },
+    {
+      "id": "plaid-skirt",
+      "name": "Plaid Skirt",
+      "positive": "<color> plaid skirt",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "long-skirt",
+      "name": "Long Skirt",
+      "positive": "<color> <fabric> <pattern> <fit> long skirt",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        },
+        "fit": {
+          "label": "Fit",
+          "library": "modifier-fits"
+        }
+      }
+    },
+    {
+      "id": "pencil-skirt",
+      "name": "Pencil Skirt",
+      "positive": "<color> <fabric> <pattern> <fit> pencil skirt",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        },
+        "fit": {
+          "label": "Fit",
+          "library": "modifier-fits"
+        }
+      }
+    },
+    {
+      "id": "high-waist-skirt",
+      "name": "High-Waist Skirt",
+      "positive": "<color> <fabric> <pattern> high-waist skirt",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "frilled-skirt",
+      "name": "Frilled Skirt",
+      "positive": "<color> <fabric> <pattern> frilled skirt",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "layered-skirt",
+      "name": "Layered Skirt",
+      "positive": "<color> <fabric> layered skirt",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "denim-skirt",
+      "name": "Denim Skirt",
+      "positive": "<color> denim skirt",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "suspender-skirt",
+      "name": "Suspender Skirt",
+      "positive": "<color> <fabric> <pattern> suspender skirt",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "tutu",
+      "name": "Tutu",
+      "positive": "<color> tutu",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "kilt",
+      "name": "Kilt",
+      "positive": "<pattern> kilt",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "cargo-pants",
+      "name": "Cargo Pants",
+      "positive": "<color> <fabric> <pattern> <fit> cargo pants",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        },
+        "fit": {
+          "label": "Fit",
+          "library": "modifier-fits"
+        }
+      }
+    },
+    {
+      "id": "tailored-trousers",
+      "name": "Tailored Trousers",
+      "positive": "<color> <fabric> <pattern> <fit> pants, belt",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        },
+        "fit": {
+          "label": "Fit",
+          "library": "modifier-fits"
+        }
+      }
+    },
+    {
+      "id": "sweatpants",
+      "name": "Sweatpants",
+      "positive": "<color> <pattern> <fit> sweatpants",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        },
+        "fit": {
+          "label": "Fit",
+          "library": "modifier-fits"
+        }
+      }
+    },
+    {
+      "id": "yoga-pants",
+      "name": "Yoga Pants",
+      "positive": "<color> <pattern> <fit> yoga pants",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        },
+        "fit": {
+          "label": "Fit",
+          "library": "modifier-fits"
+        }
+      }
+    },
+    {
+      "id": "capri-pants",
+      "name": "Capri Pants",
+      "positive": "<color> <pattern> capri pants",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "leather-pants",
+      "name": "Leather Pants",
+      "positive": "<color> leather pants",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "overalls",
+      "name": "Overalls",
+      "positive": "<color> <fabric> <pattern> overalls",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "bloomers",
+      "name": "Bloomers",
+      "positive": "<color> <pattern> bloomers",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "hakama",
+      "name": "Hakama",
+      "positive": "<color> <pattern> hakama",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "pants-rolled-up",
+      "name": "Rolled-Up Pants",
+      "positive": "<color> <fabric> pants rolled up",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    }
+  ]
+}

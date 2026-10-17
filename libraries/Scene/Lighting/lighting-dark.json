@@ -1,0 +1,176 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "lighting-dark",
+  "name": "Lighting: Dark",
+  "entries": [
+    {
+      "id": "dim-interior",
+      "name": "Dim Interior (No Source)",
+      "positive": "dark, dim lighting, indoors",
+      "negative": "window, sunlight",
+      "notes": ""
+    },
+    {
+      "id": "moonlit-outdoor",
+      "name": "Moonlit (Outdoor)",
+      "positive": "night, moonlight, full moon, night sky, blue theme, dim lighting",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "moonlit-interior",
+      "name": "Moonlit Interior (No Window)",
+      "positive": "dark, blue theme, dim lighting, rim light, indoors",
+      "negative": "window, moon, night sky",
+      "notes": "'night' and 'moonlight' make Illustrious draw windows indoors, so those tags are left out."
+    },
+    {
+      "id": "warm-dim-glow",
+      "name": "Warm Dim Glow (No Candles)",
+      "positive": "dim lighting, warm lighting, orange theme, soft glow, dark",
+      "negative": "candle, fireplace",
+      "notes": ""
+    },
+    {
+      "id": "candlelit",
+      "name": "Candlelit",
+      "positive": "candlelight, candle, warm lighting, dim lighting, orange theme",
+      "negative": "",
+      "notes": "Expect candles in the frame. That is the point of this entry."
+    },
+    {
+      "id": "fireplace",
+      "name": "Fireplace Glow",
+      "positive": "fireplace, firelight, indoors, warm lighting, dim lighting",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "campfire-night",
+      "name": "Campfire Night",
+      "positive": "campfire, firelight, night, orange theme, dark, sparks",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "lamplight",
+      "name": "Lamplight",
+      "positive": "lamp, warm lighting, dim lighting, indoors",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "streetlight-night",
+      "name": "Streetlight Night",
+      "positive": "street lamp, night, outdoors, dim lighting, warm lighting",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "neon-night-city",
+      "name": "Neon Night (City)",
+      "positive": "neon lights, night, glowing, colorful lighting, city lights",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "neon-interior",
+      "name": "Neon Interior (No Window)",
+      "positive": "neon lights, dark, indoors, colorful lighting, glowing",
+      "negative": "window",
+      "notes": ""
+    },
+    {
+      "id": "screen-glow",
+      "name": "Screen Glow",
+      "positive": "dark, indoors, blue theme, glowing, monitor light",
+      "negative": "window",
+      "notes": ""
+    },
+    {
+      "id": "red-light",
+      "name": "Red Light",
+      "positive": "dark, red theme, red lighting, dim lighting",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "purple-light",
+      "name": "Purple Light",
+      "positive": "dark, purple theme, purple lighting, dim lighting",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "dramatic-low-key",
+      "name": "Dramatic Low-Key",
+      "positive": "dramatic lighting, high contrast, chiaroscuro, spotlight, dark",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "spotlight",
+      "name": "Spotlight",
+      "positive": "spotlight, dark background, light beam, dark",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "rim-lit",
+      "name": "Rim Lit",
+      "positive": "rim light, backlighting, dark, dark background",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "silhouette",
+      "name": "Silhouette",
+      "positive": "silhouette, backlighting, dark",
+      "negative": "face focus, detailed face",
+      "notes": "Intentional: the only preset that wants a dark figure. Everything else avoids the tag."
+    },
+    {
+      "id": "under-lighting",
+      "name": "Under-Lighting (Horror)",
+      "positive": "dark, dim lighting, from below, glowing eyes, evil smile",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "cinematic-dark",
+      "name": "Cinematic Dark",
+      "positive": "cinematic lighting, volumetric lighting, light rays, dark",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "starlit",
+      "name": "Starlit",
+      "positive": "starry sky, night sky, blue theme, dim lighting, outdoors",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "bioluminescent",
+      "name": "Bioluminescent",
+      "positive": "bioluminescence, glowing, dark, blue theme, light particles",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "magical-glow",
+      "name": "Magical Glow",
+      "positive": "glowing, light particles, bloom, sparkle, glowing eyes, dark background",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "firefly-night",
+      "name": "Fireflies at Night",
+      "positive": "fireflies, night, dark, light particles, outdoors, grass",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

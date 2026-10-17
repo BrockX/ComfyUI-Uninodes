@@ -1,0 +1,242 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "pose-sitting",
+  "name": "Pose: Sitting",
+  "entries": [
+    {
+      "id": "sitting",
+      "name": "Sitting",
+      "positive": "sitting, <seat>, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "seat": {
+          "label": "Seat",
+          "library": "pose-supports"
+        },
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "crossed-legs",
+      "name": "Legs Crossed",
+      "positive": "sitting, crossed legs, <seat>, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "seat": {
+          "label": "Seat",
+          "library": "pose-supports"
+        },
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "knee-up",
+      "name": "One Knee Up",
+      "positive": "sitting, knee up, <seat>, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "seat": {
+          "label": "Seat",
+          "library": "pose-supports"
+        },
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "knees-to-chest",
+      "name": "Knees to Chest",
+      "positive": "sitting, knees to chest, <seat>, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "seat": {
+          "label": "Seat",
+          "library": "pose-supports"
+        },
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "hugging-legs",
+      "name": "Hugging Own Legs",
+      "positive": "sitting, hugging own legs, <seat>, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "seat": {
+          "label": "Seat",
+          "library": "pose-supports"
+        },
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "legs-outstretched",
+      "name": "Legs Outstretched",
+      "positive": "sitting, outstretched legs, <seat>, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "seat": {
+          "label": "Seat",
+          "library": "pose-supports"
+        },
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "knees-together",
+      "name": "Knees Together",
+      "positive": "sitting, knees together feet apart, <seat>, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "seat": {
+          "label": "Seat",
+          "library": "pose-supports"
+        },
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "lean-forward",
+      "name": "Leaning Forward",
+      "positive": "sitting, leaning forward, elbows on knees, <seat>, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "seat": {
+          "label": "Seat",
+          "library": "pose-supports"
+        },
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "lean-back",
+      "name": "Leaning Back",
+      "positive": "sitting, leaning back, <seat>, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "seat": {
+          "label": "Seat",
+          "library": "pose-supports"
+        },
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "indian-style",
+      "name": "Cross-Legged",
+      "positive": "indian style, <surface>, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "surface": {
+          "label": "Surface",
+          "library": "pose-supports"
+        },
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "seiza",
+      "name": "Seiza",
+      "positive": "seiza, <surface>, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "surface": {
+          "label": "Surface",
+          "library": "pose-supports"
+        },
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "wariza",
+      "name": "W-Sit",
+      "positive": "wariza, <surface>, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "surface": {
+          "label": "Surface",
+          "library": "pose-supports"
+        },
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "yokozuwari",
+      "name": "Legs to the Side",
+      "positive": "yokozuwari, <surface>, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "surface": {
+          "label": "Surface",
+          "library": "pose-supports"
+        },
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    }
+  ]
+}

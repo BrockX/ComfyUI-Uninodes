@@ -1,0 +1,162 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "pose-arms",
+  "name": "Pose: Arms",
+  "entries": [
+    {
+      "id": "arms-up",
+      "name": "Arms Up",
+      "positive": "arms up",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "arm-up",
+      "name": "One Arm Up",
+      "positive": "arm up",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "spread-arms",
+      "name": "Spread Arms",
+      "positive": "spread arms",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "outstretched-arm",
+      "name": "Outstretched Arm",
+      "positive": "outstretched arm",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "outstretched-arms",
+      "name": "Outstretched Arms",
+      "positive": "outstretched arms",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "reaching-viewer",
+      "name": "Reaching Toward Viewer",
+      "positive": "reaching towards viewer",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "arms-behind-back",
+      "name": "Arms Behind Back",
+      "positive": "arms behind back",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "arms-behind-head",
+      "name": "Arms Behind Head",
+      "positive": "arms behind head",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "arm-behind-head",
+      "name": "One Arm Behind Head",
+      "positive": "arm behind head",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hands-on-hips",
+      "name": "Hands on Hips",
+      "positive": "hands on own hips",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hand-on-hip",
+      "name": "Hand on Hip",
+      "positive": "hand on own hip",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hands-on-knees",
+      "name": "Hands on Knees",
+      "positive": "hands on own knees",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "crossed-arms",
+      "name": "Crossed Arms",
+      "positive": "crossed arms",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "arms-at-sides",
+      "name": "Arms at Sides",
+      "positive": "arms at sides",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hand-on-chest",
+      "name": "Hand on Chest",
+      "positive": "hand on own chest",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hand-on-cheek",
+      "name": "Hand on Cheek",
+      "positive": "hand on own cheek",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hand-on-chin",
+      "name": "Hand on Chin",
+      "positive": "hand on own chin",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hand-to-mouth",
+      "name": "Hand to Mouth",
+      "positive": "hand to own mouth",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hands-clasped",
+      "name": "Hands Clasped",
+      "positive": "own hands clasped",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hands-together",
+      "name": "Hands Together",
+      "positive": "own hands together",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hug-own-legs",
+      "name": "Arms Around Knees",
+      "positive": "hugging own legs",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "arm-support",
+      "name": "Arm Support",
+      "positive": "arm support",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

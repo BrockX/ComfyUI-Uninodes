@@ -1,0 +1,182 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "backgrounds",
+  "name": "Backgrounds",
+  "entries": [
+    {
+      "id": "simple",
+      "name": "Simple Background",
+      "positive": "simple background",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "white",
+      "name": "White Background",
+      "positive": "white background, simple background",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "grey",
+      "name": "Grey Background",
+      "positive": "grey background, simple background",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "black",
+      "name": "Black Background",
+      "positive": "black background, simple background",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "color",
+      "name": "Solid Color",
+      "positive": "<color> background, simple background",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "gradient",
+      "name": "Gradient Background",
+      "positive": "gradient background",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "two-tone",
+      "name": "Two-Tone Background",
+      "positive": "two-tone background",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "colorful",
+      "name": "Colorful Background",
+      "positive": "colorful background",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "abstract",
+      "name": "Abstract Background",
+      "positive": "abstract background",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "starry",
+      "name": "Starry Background",
+      "positive": "starry background, sparkle",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "sparkle",
+      "name": "Sparkle Background",
+      "positive": "sparkle background, sparkle",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "floral",
+      "name": "Floral Background",
+      "positive": "floral background, flower",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "leaves",
+      "name": "Leaf Background",
+      "positive": "leaf, plant, green background",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hearts",
+      "name": "Heart Background",
+      "positive": "heart background, pink background",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "halftone",
+      "name": "Halftone Background",
+      "positive": "halftone background",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "striped",
+      "name": "Striped Background",
+      "positive": "striped background",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "checkered",
+      "name": "Checkered Background",
+      "positive": "checkered background",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "polka",
+      "name": "Polka Dot Background",
+      "positive": "polka dot background",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "sky",
+      "name": "Sky Background",
+      "positive": "sky, cloud, blue sky",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "blurry",
+      "name": "Blurry Background",
+      "positive": "blurry background, depth of field",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "city-blur",
+      "name": "City Bokeh",
+      "positive": "blurry background, city lights, bokeh, night",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "speed-lines",
+      "name": "Speed Lines",
+      "positive": "speed lines, emphasis lines",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "sunburst",
+      "name": "Sunburst",
+      "positive": "sunburst background, light rays",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "watercolor-bg",
+      "name": "Watercolor Wash",
+      "positive": "watercolor background, traditional media",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

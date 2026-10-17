@@ -1,0 +1,148 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "weather",
+  "name": "Weather",
+  "entries": [
+    {
+      "id": "clear-sky",
+      "name": "Clear Sky",
+      "positive": "blue sky, cloudless sky, sunlight",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "partly-cloudy",
+      "name": "Partly Cloudy",
+      "positive": "blue sky, cloud, cumulonimbus cloud",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "overcast",
+      "name": "Overcast",
+      "positive": "overcast, cloudy sky, grey sky",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "drizzle",
+      "name": "Light Rain",
+      "positive": "rain, light rain, wet",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "rain",
+      "name": "Rain",
+      "positive": "rain, wet, water drops",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "heavy-rain",
+      "name": "Heavy Rain",
+      "positive": "heavy rain, rain, wet, storm",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "thunderstorm",
+      "name": "Thunderstorm",
+      "positive": "storm, lightning, dark clouds, rain",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "snowfall",
+      "name": "Snowfall",
+      "positive": "snowing, snow",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "positive": "snowing, blizzard, wind",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "fog",
+      "name": "Fog",
+      "positive": "fog",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "mist",
+      "name": "Morning Mist",
+      "positive": "mist, hazy",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "windy",
+      "name": "Windy",
+      "positive": "wind, floating hair, floating clothes",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "autumn-breeze",
+      "name": "Autumn Breeze",
+      "positive": "wind, falling leaves, autumn leaves",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hot",
+      "name": "Hot Summer Day",
+      "positive": "summer, sunlight, sweat, heat",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "frost",
+      "name": "Frost",
+      "positive": "frost, ice, cold",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "petals",
+      "name": "Falling Petals",
+      "positive": "falling petals, cherry blossoms, petals, wind",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "rainbow",
+      "name": "Rainbow",
+      "positive": "rainbow, blue sky, after rain",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "aurora",
+      "name": "Aurora",
+      "positive": "aurora, night sky",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "sandstorm",
+      "name": "Sandstorm",
+      "positive": "sandstorm, wind, desert",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "puddles",
+      "name": "After the Rain",
+      "positive": "wet ground, puddle, reflection",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

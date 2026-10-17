@@ -1,0 +1,190 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "face-details",
+  "name": "Face Details",
+  "entries": [
+    {
+      "id": "freckles",
+      "name": "Freckles",
+      "positive": "freckles",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "mole-eye",
+      "name": "Mole Under Eye",
+      "positive": "mole under eye",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "mole-mouth",
+      "name": "Mole Under Mouth",
+      "positive": "mole under mouth",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "blush",
+      "name": "Blush",
+      "positive": "blush",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "nose-blush",
+      "name": "Nose Blush",
+      "positive": "nose blush",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "blush-stickers",
+      "name": "Blush Stickers",
+      "positive": "blush stickers",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "thick-eyebrows",
+      "name": "Thick Eyebrows",
+      "positive": "thick eyebrows",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "lipstick",
+      "name": "Lipstick",
+      "positive": "lipstick, red lips",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "glossy-lips",
+      "name": "Glossy Lips",
+      "positive": "glossy lips",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "fang",
+      "name": "Fang",
+      "positive": "fang",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "fangs",
+      "name": "Fangs",
+      "positive": "fangs",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "sharp-teeth",
+      "name": "Sharp Teeth",
+      "positive": "sharp teeth",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "braces",
+      "name": "Braces",
+      "positive": "braces",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "scar-cheek",
+      "name": "Scar on Cheek",
+      "positive": "scar on cheek",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "scar-eye",
+      "name": "Scar Across Eye",
+      "positive": "scar across eye",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "eyepatch",
+      "name": "Eyepatch",
+      "positive": "eyepatch",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "bandaid-face",
+      "name": "Bandaid on Face",
+      "positive": "bandaid on face",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "bandaid-nose",
+      "name": "Bandaid on Nose",
+      "positive": "bandaid on nose",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "facepaint",
+      "name": "Face Paint",
+      "positive": "facepaint",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "whiskers",
+      "name": "Whisker Markings",
+      "positive": "whisker markings",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "forehead-mark",
+      "name": "Forehead Mark",
+      "positive": "facial mark, forehead mark",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "ear-piercing",
+      "name": "Ear Piercings",
+      "positive": "ear piercing",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "lip-piercing",
+      "name": "Lip Piercing",
+      "positive": "lip piercing",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "nose-piercing",
+      "name": "Nose Piercing",
+      "positive": "nose piercing",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "makeup",
+      "name": "Makeup",
+      "positive": "makeup, eyeshadow, lipstick",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "gradient-lips",
+      "name": "Gradient Lips",
+      "positive": "pink lips",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

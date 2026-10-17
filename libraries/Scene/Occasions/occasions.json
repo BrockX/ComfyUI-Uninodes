@@ -1,0 +1,162 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "occasions",
+  "name": "Occasions & Seasons",
+  "entries": [
+    {
+      "id": "birthday",
+      "name": "Birthday",
+      "positive": "birthday, birthday cake, party popper, balloon",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "christmas",
+      "name": "Christmas",
+      "positive": "christmas, christmas tree, santa hat, snow",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "new-year",
+      "name": "New Year",
+      "positive": "new year, japanese clothes, shrine",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "valentine",
+      "name": "Valentine",
+      "positive": "valentine, heart, chocolate, gift box",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "halloween",
+      "name": "Halloween",
+      "positive": "halloween, jack-o'-lantern, bat \\(animal\\), night",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "wedding",
+      "name": "Wedding",
+      "positive": "wedding, wedding dress, bouquet, church",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "summer-festival",
+      "name": "Summer Festival",
+      "positive": "festival, yukata, fireworks, lantern, night",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hanami",
+      "name": "Cherry Blossom Viewing",
+      "positive": "hanami, cherry blossoms, petals, spring",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "tanabata",
+      "name": "Tanabata",
+      "positive": "tanabata, bamboo, tanzaku, night sky",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "school-festival",
+      "name": "School Festival",
+      "positive": "school festival, school, classroom, decorations",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "sports-day",
+      "name": "Sports Day",
+      "positive": "sports festival, track and field, headband",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "graduation",
+      "name": "Graduation",
+      "positive": "graduation, school uniform, flower bouquet, cherry blossoms",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "picnic",
+      "name": "Picnic",
+      "positive": "picnic, picnic basket, grass, blanket, sandwich",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "camping",
+      "name": "Camping",
+      "positive": "camping, tent, campfire, forest",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "beach-day",
+      "name": "Beach Day",
+      "positive": "beach, summer, swimsuit, ocean, sunlight",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "pool-party",
+      "name": "Pool Party",
+      "positive": "pool, poolside, swimsuit, water, sunlight",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "autumn",
+      "name": "Autumn",
+      "positive": "autumn, autumn leaves, falling leaves",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "spring",
+      "name": "Spring",
+      "positive": "spring \\(season\\), cherry blossoms, flower",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "winter",
+      "name": "Winter",
+      "positive": "winter, snow, scarf, breath",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "rainy-season",
+      "name": "Rainy Season",
+      "positive": "rain, umbrella, hydrangea, wet",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "tea-time",
+      "name": "Tea Time",
+      "positive": "tea, teacup, teapot, cake, table",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "study-session",
+      "name": "Study Session",
+      "positive": "studying, desk, notebook, lamp, indoors",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

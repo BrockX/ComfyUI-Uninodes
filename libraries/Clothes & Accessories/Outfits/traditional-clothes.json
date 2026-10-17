@@ -1,0 +1,190 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "traditional-clothes",
+  "name": "Traditional Clothes",
+  "entries": [
+    {
+      "id": "kimono",
+      "name": "Kimono",
+      "positive": "<color> <pattern> kimono, japanese clothes, obi",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "furisode",
+      "name": "Furisode",
+      "positive": "<color> <pattern> furisode, obi",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "yukata",
+      "name": "Yukata",
+      "positive": "<color> <pattern> yukata, obi",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "short-kimono",
+      "name": "Short Kimono",
+      "positive": "<color> <pattern> short kimono, obi, thighhighs",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "haori",
+      "name": "Haori",
+      "positive": "<color> haori",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "jinbei",
+      "name": "Jinbei",
+      "positive": "<color> jinbei",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "happi",
+      "name": "Happi",
+      "positive": "happi, headband",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hanfu",
+      "name": "Hanfu",
+      "positive": "<color> <fabric> hanfu",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "hanbok",
+      "name": "Hanbok",
+      "positive": "<color> <fabric> hanbok",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "ao-dai",
+      "name": "Ao Dai",
+      "positive": "<color> <fabric> ao dai",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "sari",
+      "name": "Sari",
+      "positive": "<color> <pattern> sari",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "dirndl",
+      "name": "Dirndl",
+      "positive": "<color> dirndl",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    }
+  ]
+}

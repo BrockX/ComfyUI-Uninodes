@@ -1,0 +1,161 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "body-features",
+  "name": "Body Features & Types",
+  "entries": [
+    {
+      "id": "slim",
+      "name": "Slim",
+      "positive": "slender, slim, narrow waist, long legs",
+      "negative": "child, aged down",
+      "notes": ""
+    },
+    {
+      "id": "athletic-toned",
+      "name": "Athletic / Toned",
+      "positive": "toned, athletic, abs, narrow waist, medium breasts",
+      "negative": "child, aged down",
+      "notes": ""
+    },
+    {
+      "id": "curvy",
+      "name": "Curvy",
+      "positive": "curvy, wide hips, thick thighs, narrow waist, large breasts",
+      "negative": "child, aged down",
+      "notes": ""
+    },
+    {
+      "id": "voluptuous",
+      "name": "Voluptuous",
+      "positive": "voluptuous, huge breasts, wide hips, thick thighs, curvy, cleavage",
+      "negative": "child, aged down",
+      "notes": ""
+    },
+    {
+      "id": "plump-soft",
+      "name": "Plump / Soft",
+      "positive": "plump, soft belly, wide hips, thick thighs, large breasts",
+      "negative": "child, aged down",
+      "notes": ""
+    },
+    {
+      "id": "muscular-female",
+      "name": "Muscular Female",
+      "positive": "muscular female, abs, toned, biceps, broad shoulders, strong",
+      "negative": "child, aged down",
+      "notes": ""
+    },
+    {
+      "id": "tall-elegant",
+      "name": "Tall & Elegant",
+      "positive": "tall female, mature female, long legs, elegant, narrow waist",
+      "negative": "child, aged down",
+      "notes": ""
+    },
+    {
+      "id": "mature-woman",
+      "name": "Mature Woman",
+      "positive": "mature female, curvy, large breasts, wide hips, elegant",
+      "negative": "child, aged down",
+      "notes": ""
+    },
+    {
+      "id": "breast-size",
+      "name": "Breast Size",
+      "positive": "<size> breasts",
+      "negative": "child, aged down",
+      "notes": "",
+      "variables": {
+        "size": {
+          "label": "Size",
+          "library": "modifier-breast-sizes"
+        }
+      }
+    },
+    {
+      "id": "wide-hips-thighs",
+      "name": "Wide Hips & Thighs",
+      "positive": "wide hips, thick thighs, narrow waist, thigh gap",
+      "negative": "child, aged down",
+      "notes": ""
+    },
+    {
+      "id": "big-butt",
+      "name": "Big Butt",
+      "positive": "huge ass, wide hips, thick thighs, curvy",
+      "negative": "child, aged down",
+      "notes": ""
+    },
+    {
+      "id": "pale-skin",
+      "name": "Pale Skin",
+      "positive": "pale skin, fair skin",
+      "negative": "child, aged down",
+      "notes": ""
+    },
+    {
+      "id": "tanned-with-tan-lines",
+      "name": "Tanned with Tan Lines",
+      "positive": "tan, tanlines, bikini tan, sun-kissed",
+      "negative": "child, aged down",
+      "notes": ""
+    },
+    {
+      "id": "dark-skin",
+      "name": "Dark Skin",
+      "positive": "dark skin, dark-skinned female",
+      "negative": "child, aged down",
+      "notes": ""
+    },
+    {
+      "id": "muscular-male",
+      "name": "Muscular Male",
+      "positive": "male focus, muscular male, pectorals, abs, broad shoulders",
+      "negative": "child, aged down",
+      "notes": ""
+    },
+    {
+      "id": "lean-male",
+      "name": "Lean Male",
+      "positive": "male focus, lean, toned, slim waist, bishounen",
+      "negative": "child, aged down",
+      "notes": ""
+    },
+    {
+      "id": "bara-heavyset-male",
+      "name": "Bara / Heavyset Male",
+      "positive": "male focus, bara, muscular male, large pectorals, thick thighs, mature male, stubble",
+      "negative": "child, aged down",
+      "notes": ""
+    },
+    {
+      "id": "tall-male",
+      "name": "Tall Male",
+      "positive": "male focus, tall male, broad shoulders, long legs",
+      "negative": "child, aged down",
+      "notes": ""
+    },
+    {
+      "id": "androgynous",
+      "name": "Androgynous",
+      "positive": "androgynous, slender",
+      "negative": "child, aged down",
+      "notes": ""
+    },
+    {
+      "id": "abs-only",
+      "name": "Visible Abs",
+      "positive": "abs, navel, toned",
+      "negative": "child, aged down",
+      "notes": ""
+    },
+    {
+      "id": "broad-shoulders",
+      "name": "Broad Shoulders",
+      "positive": "broad shoulders, muscular",
+      "negative": "child, aged down",
+      "notes": ""
+    }
+  ]
+}

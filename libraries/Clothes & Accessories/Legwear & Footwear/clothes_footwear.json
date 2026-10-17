@@ -1,0 +1,356 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "clothes-footwear",
+  "name": "Clothes: Footwear",
+  "entries": [
+    {
+      "id": "sneakers",
+      "name": "Sneakers",
+      "positive": "<color> <pattern> sneakers",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "high-tops",
+      "name": "High-Tops",
+      "positive": "<color> <pattern> high tops",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "running-shoes",
+      "name": "Running Shoes",
+      "positive": "<color> <pattern> sneakers, running shoes",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "loafers",
+      "name": "Loafers",
+      "positive": "<color> <fabric> loafers",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "mary-janes",
+      "name": "Mary Janes",
+      "positive": "<color> <fabric> mary janes",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "uwabaki",
+      "name": "School Indoor Shoes",
+      "positive": "<color> uwabaki",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "flats",
+      "name": "Ballet Flats",
+      "positive": "<color> <fabric> ballet flats",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "heels",
+      "name": "High Heels",
+      "positive": "<color> <fabric> <pattern> high heels",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "stilettos",
+      "name": "Stiletto Heels",
+      "positive": "<color> <fabric> stiletto heels",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "platforms",
+      "name": "Platform Shoes",
+      "positive": "<color> <fabric> platform footwear",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "sandals",
+      "name": "Sandals",
+      "positive": "<color> <fabric> <pattern> sandals",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "flip-flops",
+      "name": "Flip-Flops",
+      "positive": "<color> <pattern> flip-flops",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "slippers",
+      "name": "Slippers",
+      "positive": "<color> slippers",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "ankle-boots",
+      "name": "Ankle Boots",
+      "positive": "<color> <fabric> <pattern> ankle boots",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "knee-boots",
+      "name": "Knee-High Boots",
+      "positive": "<color> <fabric> <pattern> knee boots",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "thigh-boots",
+      "name": "Thigh Boots",
+      "positive": "<color> <fabric> thigh boots",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "combat-boots",
+      "name": "Combat Boots",
+      "positive": "<color> <fabric> combat boots",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "cowboy-boots",
+      "name": "Cowboy Boots",
+      "positive": "<color> <fabric> cowboy boots",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        }
+      }
+    },
+    {
+      "id": "rain-boots",
+      "name": "Rain Boots",
+      "positive": "<color> rubber boots",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "geta",
+      "name": "Geta",
+      "positive": "geta, tabi",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "zouri",
+      "name": "Zouri",
+      "positive": "zouri, tabi",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "barefoot",
+      "name": "Barefoot",
+      "positive": "barefoot",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

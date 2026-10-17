@@ -1,0 +1,553 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "clothes-top",
+  "name": "Clothes: Top",
+  "entries": [
+    {
+      "id": "tshirt",
+      "name": "T-Shirt",
+      "positive": "<color> <fabric> <pattern> <fit> t-shirt",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        },
+        "fit": {
+          "label": "Fit",
+          "library": "modifier-fits"
+        }
+      }
+    },
+    {
+      "id": "oversized-tee",
+      "name": "Oversized Tee",
+      "positive": "<color> <fabric> <pattern> oversized shirt, t-shirt",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "crop-top",
+      "name": "Crop Top",
+      "positive": "<color> <fabric> <pattern> <fit> crop top",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        },
+        "fit": {
+          "label": "Fit",
+          "library": "modifier-fits"
+        }
+      }
+    },
+    {
+      "id": "tank-top",
+      "name": "Tank Top",
+      "positive": "<color> <fabric> <pattern> <fit> tank top",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        },
+        "fit": {
+          "label": "Fit",
+          "library": "modifier-fits"
+        }
+      }
+    },
+    {
+      "id": "camisole",
+      "name": "Camisole",
+      "positive": "<color> <fabric> <pattern> camisole",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "tube-top",
+      "name": "Tube Top",
+      "positive": "<color> <fabric> <pattern> tube top, strapless",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "halter-top",
+      "name": "Halter Top",
+      "positive": "<color> <fabric> <pattern> halterneck, shirt",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "sleeveless-shirt",
+      "name": "Sleeveless Shirt",
+      "positive": "<color> <fabric> <pattern> <fit> sleeveless shirt",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        },
+        "fit": {
+          "label": "Fit",
+          "library": "modifier-fits"
+        }
+      }
+    },
+    {
+      "id": "hoodie",
+      "name": "Hoodie",
+      "positive": "<color> <fabric> <pattern> <fit> hoodie",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        },
+        "fit": {
+          "label": "Fit",
+          "library": "modifier-fits"
+        }
+      }
+    },
+    {
+      "id": "zip-hoodie",
+      "name": "Zip Hoodie",
+      "positive": "<color> <fabric> <pattern> <fit> hoodie, zipper, open clothes",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        },
+        "fit": {
+          "label": "Fit",
+          "library": "modifier-fits"
+        }
+      }
+    },
+    {
+      "id": "sweater",
+      "name": "Sweater",
+      "positive": "<color> <fabric> <pattern> <fit> sweater",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        },
+        "fit": {
+          "label": "Fit",
+          "library": "modifier-fits"
+        }
+      }
+    },
+    {
+      "id": "ribbed-sweater",
+      "name": "Ribbed Sweater",
+      "positive": "<color> <pattern> ribbed sweater",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "sweater-vest",
+      "name": "Sweater Vest",
+      "positive": "<color> <fabric> <pattern> sweater vest",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "cardigan",
+      "name": "Cardigan",
+      "positive": "<color> <fabric> <pattern> <fit> cardigan",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        },
+        "fit": {
+          "label": "Fit",
+          "library": "modifier-fits"
+        }
+      }
+    },
+    {
+      "id": "blouse",
+      "name": "Blouse",
+      "positive": "<color> <fabric> <pattern> <fit> blouse",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        },
+        "fit": {
+          "label": "Fit",
+          "library": "modifier-fits"
+        }
+      }
+    },
+    {
+      "id": "button-shirt",
+      "name": "Button-Up Shirt",
+      "positive": "<color> <fabric> <pattern> <fit> collared shirt, buttons",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        },
+        "fit": {
+          "label": "Fit",
+          "library": "modifier-fits"
+        }
+      }
+    },
+    {
+      "id": "polo-shirt",
+      "name": "Polo Shirt",
+      "positive": "<color> <pattern> polo shirt",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "turtleneck",
+      "name": "Turtleneck",
+      "positive": "<color> <fabric> <pattern> <fit> turtleneck sweater",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        },
+        "fit": {
+          "label": "Fit",
+          "library": "modifier-fits"
+        }
+      }
+    },
+    {
+      "id": "sleeveless-turtleneck",
+      "name": "Sleeveless Turtleneck",
+      "positive": "<color> <fabric> <pattern> sleeveless turtleneck",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "off-shoulder",
+      "name": "Off-Shoulder Top",
+      "positive": "<color> <fabric> <pattern> <fit> off-shoulder shirt",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        },
+        "fit": {
+          "label": "Fit",
+          "library": "modifier-fits"
+        }
+      }
+    },
+    {
+      "id": "corset-top",
+      "name": "Corset Top",
+      "positive": "<color> <fabric> <pattern> corset",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "flannel",
+      "name": "Flannel Shirt",
+      "positive": "<color> plaid shirt, collared shirt",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "hawaiian-shirt",
+      "name": "Hawaiian Shirt",
+      "positive": "<color> hawaiian shirt",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "tied-shirt",
+      "name": "Tied Shirt",
+      "positive": "<color> <pattern> tied shirt, midriff",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "peasant-blouse",
+      "name": "Peasant Blouse",
+      "positive": "<color> <fabric> <pattern> puffy sleeves, blouse",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    }
+  ]
+}

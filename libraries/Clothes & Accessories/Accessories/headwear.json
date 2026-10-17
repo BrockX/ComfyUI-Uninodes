@@ -1,0 +1,417 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "headwear",
+  "name": "Headwear",
+  "entries": [
+    {
+      "id": "beret",
+      "name": "Beret",
+      "positive": "<color> beret",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "beanie",
+      "name": "Beanie",
+      "positive": "<color> <pattern> beanie",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "sun-hat",
+      "name": "Sun Hat",
+      "positive": "<color> sun hat",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "straw-hat",
+      "name": "Straw Hat",
+      "positive": "straw hat",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "baseball-cap",
+      "name": "Baseball Cap",
+      "positive": "<color> <pattern> baseball cap",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "flat-cap",
+      "name": "Flat Cap",
+      "positive": "<color> flat cap",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "bucket-hat",
+      "name": "Bucket Hat",
+      "positive": "<color> <pattern> bucket hat",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "fedora",
+      "name": "Fedora",
+      "positive": "<color> fedora",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "top-hat",
+      "name": "Top Hat",
+      "positive": "<color> top hat",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "mini-top-hat",
+      "name": "Mini Top Hat",
+      "positive": "<color> mini top hat",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "cowboy-hat",
+      "name": "Cowboy Hat",
+      "positive": "<color> cowboy hat",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "witch-hat",
+      "name": "Witch Hat",
+      "positive": "<color> witch hat",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "santa-hat",
+      "name": "Santa Hat",
+      "positive": "santa hat",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "peaked-cap",
+      "name": "Peaked Cap",
+      "positive": "<color> peaked cap",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "sailor-hat",
+      "name": "Sailor Hat",
+      "positive": "<color> sailor hat",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "nurse-cap",
+      "name": "Nurse Cap",
+      "positive": "nurse cap",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "maid-headdress",
+      "name": "Maid Headdress",
+      "positive": "maid headdress",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "hood-up",
+      "name": "Hood Up",
+      "positive": "<color> hood up",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "animal-hood",
+      "name": "Animal Hood",
+      "positive": "<color> animal hood",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "crown",
+      "name": "Crown",
+      "positive": "<color> crown",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "tiara",
+      "name": "Tiara",
+      "positive": "tiara",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "veil",
+      "name": "Veil",
+      "positive": "<color> veil",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "bridal-veil",
+      "name": "Bridal Veil",
+      "positive": "bridal veil",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "flower-crown",
+      "name": "Flower Crown",
+      "positive": "head wreath",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "headband",
+      "name": "Headband",
+      "positive": "<color> <pattern> headband",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "hairband",
+      "name": "Hairband",
+      "positive": "<color> <pattern> hairband",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "fake-animal-ears",
+      "name": "Fake Animal Ears",
+      "positive": "<color> fake animal ears",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "cat-ear-headphones",
+      "name": "Cat-Ear Headphones",
+      "positive": "<color> cat ear headphones",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "headphones",
+      "name": "Headphones",
+      "positive": "<color> headphones",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    },
+    {
+      "id": "bandana",
+      "name": "Bandana",
+      "positive": "<color> <pattern> bandana",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "head-scarf",
+      "name": "Head Scarf",
+      "positive": "<color> <pattern> head scarf",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        }
+      }
+    },
+    {
+      "id": "goggles-on-head",
+      "name": "Goggles on Head",
+      "positive": "goggles on head",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "earmuffs",
+      "name": "Earmuffs",
+      "positive": "<color> earmuffs",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        }
+      }
+    }
+  ]
+}

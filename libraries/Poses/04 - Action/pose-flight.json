@@ -1,0 +1,200 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "pose-flight",
+  "name": "Pose: Flight & Falling",
+  "entries": [
+    {
+      "id": "flying",
+      "name": "Flying",
+      "positive": "flying, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "flying-forward",
+      "name": "Flying Forward",
+      "positive": "flying, <direction>, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "direction": {
+          "type": "text",
+          "label": "Direction",
+          "placeholder": "Movement direction…"
+        },
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "flying-up",
+      "name": "Flying Upward",
+      "positive": "flying, arms up, from below, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "diving",
+      "name": "Diving Down",
+      "positive": "falling, head first, wind, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "hovering",
+      "name": "Hovering",
+      "positive": "floating, midair, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "floating",
+      "name": "Floating",
+      "positive": "floating, floating hair, relaxed, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "floating-curled",
+      "name": "Floating Curled Up",
+      "positive": "floating, fetal position, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "levitating",
+      "name": "Levitating",
+      "positive": "levitation, midair, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "zero-g",
+      "name": "Zero Gravity",
+      "positive": "zero gravity, floating, floating hair, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "falling",
+      "name": "Falling",
+      "positive": "falling, <direction>, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "direction": {
+          "type": "text",
+          "label": "Direction",
+          "placeholder": "Movement direction…"
+        },
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "falling-back",
+      "name": "Falling Backward",
+      "positive": "falling, spread arms, from above, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "tumbling",
+      "name": "Tumbling",
+      "positive": "falling, tumbling, motion blur, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "wings-spread",
+      "name": "Wings Spread",
+      "positive": "spread wings, flying, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    }
+  ]
+}

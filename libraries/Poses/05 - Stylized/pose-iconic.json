@@ -1,0 +1,190 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "pose-iconic",
+  "name": "Pose: Iconic & Meme",
+  "entries": [
+    {
+      "id": "jojo-pose",
+      "name": "Jojo Pose",
+      "positive": "jojo pose, dynamic pose, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "jack-o",
+      "name": "Jack-O' Pose",
+      "positive": "jack-o' challenge, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "top-down-bottom-up",
+      "name": "Head Down, Hips Up",
+      "positive": "top-down bottom-up, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "gendo",
+      "name": "Gendo Pose",
+      "positive": "gendo pose, sitting, elbows on table, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "ojou-sama",
+      "name": "Ojou-Sama Pose",
+      "positive": "ojou-sama pose, hand to own mouth, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "paw-pose",
+      "name": "Paw Pose",
+      "positive": "paw pose, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "claw-pose",
+      "name": "Claw Pose",
+      "positive": "claw pose, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "dabbing",
+      "name": "Dab",
+      "positive": "dabbing, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "victory",
+      "name": "Victory V",
+      "positive": "v, smile, arm up, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "facepalm",
+      "name": "Facepalm",
+      "positive": "facepalm, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "hair-flip",
+      "name": "Hair Flip",
+      "positive": "hair flip, hand in own hair, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "hero-landing",
+      "name": "Hero Landing",
+      "positive": "superhero landing, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "cheering-arms",
+      "name": "Cheering",
+      "positive": "cheering, arms up, open mouth, <detail>",
+      "negative": "",
+      "notes": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    }
+  ]
+}
