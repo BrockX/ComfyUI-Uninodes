@@ -2,7 +2,7 @@
 
 **Uninodes** is a collection of custom [ComfyUI](https://github.com/comfyanonymous/ComfyUI) nodes for building prompts, generating images, finishing them, and comparing the results — without needing a large workflow.
 
-**Current version:** 1.2.2
+**Current version:** 1.0-ish
 
 ## Nodes
 
