@@ -1,0 +1,140 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "body-features",
+  "name": "Body Features & Types",
+  "entries": [
+    {
+      "id": "slim",
+      "name": "Slim",
+      "positive": "slender, slim, narrow waist, long legs",
+      "negative": "fat, plump, muscular, child, loli, shota, aged down",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "athletic-toned",
+      "name": "Athletic / Toned",
+      "positive": "toned, athletic, abs, narrow waist, medium breasts",
+      "negative": "fat, plump, skinny, child, loli, shota, aged down",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "curvy",
+      "name": "Curvy",
+      "positive": "curvy, wide hips, thick thighs, narrow waist, large breasts",
+      "negative": "slim, flat chest, skinny, child, loli, shota, aged down",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "voluptuous",
+      "name": "Voluptuous",
+      "positive": "voluptuous, huge breasts, wide hips, thick thighs, curvy, cleavage",
+      "negative": "slim, skinny, small breasts, child, loli, shota, aged down",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "plump-soft",
+      "name": "Plump / Soft",
+      "positive": "plump, soft belly, wide hips, thick thighs, large breasts",
+      "negative": "slim, skinny, muscular, abs, child, loli, shota, aged down",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "muscular-female",
+      "name": "Muscular Female",
+      "positive": "muscular female, abs, toned, biceps, broad shoulders, strong",
+      "negative": "slim, soft, frail, child, loli, shota, aged down",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "tall-elegant",
+      "name": "Tall & Elegant",
+      "positive": "tall female, mature female, long legs, elegant, narrow waist",
+      "negative": "short, petite, child, loli, shota, aged down",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "mature-woman",
+      "name": "Mature Woman",
+      "positive": "mature female, curvy, large breasts, wide hips, elegant",
+      "negative": "young, slim, child, loli, shota, aged down",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "breast-size",
+      "name": "Breast Size",
+      "positive": "<size> breasts",
+      "negative": "child, loli, shota, aged down",
+      "notes": "Danbooru-style tags for Illustrious. Pick a size from the dropdown. Adult characters only; negative includes an aged-down guard.",
+      "variables": {
+        "size": {
+          "label": "Size",
+          "library": "modifier-breast-sizes"
+        }
+      }
+    },
+    {
+      "id": "wide-hips-thighs",
+      "name": "Wide Hips & Thighs",
+      "positive": "wide hips, thick thighs, narrow waist, thigh gap",
+      "negative": "narrow hips, skinny legs, child, loli, shota, aged down",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "big-butt",
+      "name": "Big Butt",
+      "positive": "huge ass, wide hips, thick thighs, curvy",
+      "negative": "small ass, skinny, child, loli, shota, aged down",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "pale-skin",
+      "name": "Pale Skin",
+      "positive": "pale skin, fair skin",
+      "negative": "dark skin, tan, child, loli, shota, aged down",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "tanned-with-tan-lines",
+      "name": "Tanned with Tan Lines",
+      "positive": "tan, tanlines, bikini tan, sun-kissed",
+      "negative": "pale skin, dark skin, child, loli, shota, aged down",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "dark-skin",
+      "name": "Dark Skin",
+      "positive": "dark skin, dark-skinned female",
+      "negative": "pale skin, fair skin, child, loli, shota, aged down",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "muscular-male",
+      "name": "Muscular Male",
+      "positive": "male focus, muscular male, pectorals, abs, broad shoulders",
+      "negative": "slim, skinny, fat, female, child, loli, shota, aged down",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "lean-male",
+      "name": "Lean Male",
+      "positive": "male focus, lean, toned, slim waist, bishounen",
+      "negative": "muscular male, fat, female, child, loli, shota, aged down",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "bara-heavyset-male",
+      "name": "Bara / Heavyset Male",
+      "positive": "male focus, bara, muscular male, large pectorals, thick thighs, mature male, stubble",
+      "negative": "slim, bishounen, female, child, loli, shota, aged down",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "tall-male",
+      "name": "Tall Male",
+      "positive": "male focus, tall male, broad shoulders, long legs",
+      "negative": "short, female, child, loli, shota, aged down",
+      "notes": "Danbooru-style tags for Illustrious."
+    }
+  ]
+}

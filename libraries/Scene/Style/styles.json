@@ -1,0 +1,106 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "styles",
+  "name": "Art Styles",
+  "entries": [
+    {
+      "id": "modern-anime",
+      "name": "Modern Anime",
+      "positive": "anime coloring, cel shading, clean lineart",
+      "negative": "sketch, rough, realistic, photorealistic",
+      "notes": "Danbooru-style tags for Illustrious. Medium tags with parentheses are escaped for ComfyUI weight syntax; remove the backslashes if your node escapes automatically."
+    },
+    {
+      "id": "flat-color",
+      "name": "Flat Color",
+      "positive": "flat color, simple background, bold outlines",
+      "negative": "gradient, realistic shading, 3d",
+      "notes": "Danbooru-style tags for Illustrious. Medium tags with parentheses are escaped for ComfyUI weight syntax; remove the backslashes if your node escapes automatically."
+    },
+    {
+      "id": "soft-painterly",
+      "name": "Soft Painterly",
+      "positive": "soft shading, painterly, detailed background, soft colors",
+      "negative": "flat color, harsh outlines",
+      "notes": "Danbooru-style tags for Illustrious. Medium tags with parentheses are escaped for ComfyUI weight syntax; remove the backslashes if your node escapes automatically."
+    },
+    {
+      "id": "watercolor",
+      "name": "Watercolor",
+      "positive": "watercolor \\(medium\\), traditional media, soft edges, paper texture",
+      "negative": "digital, sharp lineart, 3d",
+      "notes": "Danbooru-style tags for Illustrious. Medium tags with parentheses are escaped for ComfyUI weight syntax; remove the backslashes if your node escapes automatically."
+    },
+    {
+      "id": "oil-painting",
+      "name": "Oil Painting",
+      "positive": "oil painting \\(medium\\), traditional media, thick brush strokes, canvas texture",
+      "negative": "flat color, anime coloring",
+      "notes": "Danbooru-style tags for Illustrious. Medium tags with parentheses are escaped for ComfyUI weight syntax; remove the backslashes if your node escapes automatically."
+    },
+    {
+      "id": "sketch-lineart",
+      "name": "Sketch / Lineart",
+      "positive": "sketch, lineart, monochrome, greyscale, white background",
+      "negative": "color, colorful, shading, painted",
+      "notes": "Danbooru-style tags for Illustrious. Medium tags with parentheses are escaped for ComfyUI weight syntax; remove the backslashes if your node escapes automatically."
+    },
+    {
+      "id": "manga",
+      "name": "Manga",
+      "positive": "manga, monochrome, greyscale, screentones, ink",
+      "negative": "color, colorful, 3d, realistic",
+      "notes": "Danbooru-style tags for Illustrious. Medium tags with parentheses are escaped for ComfyUI weight syntax; remove the backslashes if your node escapes automatically."
+    },
+    {
+      "id": "retro-90s-anime",
+      "name": "Retro 90s Anime",
+      "positive": "retro artstyle, 1990s \\(style\\), anime screencap, film grain",
+      "negative": "modern, 3d, sharp digital",
+      "notes": "Danbooru-style tags for Illustrious. Medium tags with parentheses are escaped for ComfyUI weight syntax; remove the backslashes if your node escapes automatically."
+    },
+    {
+      "id": "chibi",
+      "name": "Chibi",
+      "positive": "chibi, super deformed, simple background, big head",
+      "negative": "realistic proportions, tall, mature",
+      "notes": "Danbooru-style tags for Illustrious. Medium tags with parentheses are escaped for ComfyUI weight syntax; remove the backslashes if your node escapes automatically."
+    },
+    {
+      "id": "pixel-art",
+      "name": "Pixel Art",
+      "positive": "pixel art, pixelated, limited palette, sprite",
+      "negative": "smooth, realistic, blurry, 3d",
+      "notes": "Danbooru-style tags for Illustrious. Medium tags with parentheses are escaped for ComfyUI weight syntax; remove the backslashes if your node escapes automatically."
+    },
+    {
+      "id": "semi-realistic",
+      "name": "Semi-Realistic",
+      "positive": "realistic, detailed skin, soft lighting, detailed eyes",
+      "negative": "flat color, chibi, sketch",
+      "notes": "Danbooru-style tags for Illustrious. Medium tags with parentheses are escaped for ComfyUI weight syntax; remove the backslashes if your node escapes automatically."
+    },
+    {
+      "id": "ukiyo-e",
+      "name": "Ukiyo-e",
+      "positive": "ukiyo-e, traditional media, flat color, woodblock print",
+      "negative": "3d, realistic, modern",
+      "notes": "Danbooru-style tags for Illustrious. Medium tags with parentheses are escaped for ComfyUI weight syntax; remove the backslashes if your node escapes automatically."
+    },
+    {
+      "id": "art-nouveau",
+      "name": "Art Nouveau",
+      "positive": "art nouveau, ornate border, decorative, flowing lines",
+      "negative": "flat color, minimalist",
+      "notes": "Danbooru-style tags for Illustrious. Medium tags with parentheses are escaped for ComfyUI weight syntax; remove the backslashes if your node escapes automatically."
+    },
+    {
+      "id": "cyberpunk",
+      "name": "Cyberpunk",
+      "positive": "cyberpunk, neon lights, futuristic, city, high contrast",
+      "negative": "pastoral, medieval, soft colors",
+      "notes": "Danbooru-style tags for Illustrious. Medium tags with parentheses are escaped for ComfyUI weight syntax; remove the backslashes if your node escapes automatically."
+    }
+  ]
+}

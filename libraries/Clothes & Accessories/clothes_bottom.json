@@ -1,0 +1,288 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "clothes-bottom",
+  "name": "Clothes: Bottom",
+  "entries": [
+    {
+      "id": "jeans",
+      "name": "Jeans",
+      "positive": "<color> <pattern> <fit> jeans, denim pants, casual everyday wear",
+      "negative": "skirt, shorts",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition.",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        },
+        "fit": {
+          "label": "Fit",
+          "library": "modifier-fits"
+        }
+      }
+    },
+    {
+      "id": "leggings",
+      "name": "Leggings",
+      "positive": "<color> <pattern> <fit> leggings, form-fitting stretch pants, sleek silhouette",
+      "negative": "baggy trousers",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition.",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        },
+        "fit": {
+          "label": "Fit",
+          "library": "modifier-fits"
+        }
+      }
+    },
+    {
+      "id": "shorts",
+      "name": "Shorts",
+      "positive": "<color> <fabric> <pattern> <fit> shorts, above-knee casual bottoms",
+      "negative": "full-length pants, long skirt",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition.",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        },
+        "fit": {
+          "label": "Fit",
+          "library": "modifier-fits"
+        }
+      }
+    },
+    {
+      "id": "mini-skirt",
+      "name": "Mini Skirt",
+      "positive": "<color> <fabric> <pattern> <fit> mini skirt, short hemline, youthful fashion",
+      "negative": "full-length trousers",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition.",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        },
+        "fit": {
+          "label": "Fit",
+          "library": "modifier-fits"
+        }
+      }
+    },
+    {
+      "id": "pleated-skirt",
+      "name": "Pleated Skirt",
+      "positive": "<color> <fabric> <pattern> <fit> pleated skirt, crisp folds, classic silhouette",
+      "negative": "tight jeans, shorts",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition.",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        },
+        "fit": {
+          "label": "Fit",
+          "library": "modifier-fits"
+        }
+      }
+    },
+    {
+      "id": "long-skirt",
+      "name": "Long Skirt",
+      "positive": "<color> <fabric> <pattern> <fit> long skirt, flowing fabric, elegant movement",
+      "negative": "shorts, miniskirt",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition.",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        },
+        "fit": {
+          "label": "Fit",
+          "library": "modifier-fits"
+        }
+      }
+    },
+    {
+      "id": "pencil-skirt",
+      "name": "Pencil Skirt",
+      "positive": "<color> <fabric> <pattern> <fit> pencil skirt, fitted silhouette, office fashion",
+      "negative": "baggy cargo pants",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition.",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        },
+        "fit": {
+          "label": "Fit",
+          "library": "modifier-fits"
+        }
+      }
+    },
+    {
+      "id": "cargo-pants",
+      "name": "Cargo Pants",
+      "positive": "<color> <fabric> <pattern> <fit> cargo pants, utility pockets, casual streetwear",
+      "negative": "formal skirt",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition.",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        },
+        "fit": {
+          "label": "Fit",
+          "library": "modifier-fits"
+        }
+      }
+    },
+    {
+      "id": "tailored-trousers",
+      "name": "Tailored Trousers",
+      "positive": "<color> <fabric> <pattern> <fit> tailored trousers, structured slacks, refined look",
+      "negative": "ripped jeans, shorts",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition.",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "fabric": {
+          "label": "Fabric",
+          "library": "modifier-fabrics"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        },
+        "fit": {
+          "label": "Fit",
+          "library": "modifier-fits"
+        }
+      }
+    },
+    {
+      "id": "joggers",
+      "name": "Joggers",
+      "positive": "<color> <pattern> <fit> jogger pants, tapered casual athletic wear",
+      "negative": "formal slacks",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition.",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        },
+        "fit": {
+          "label": "Fit",
+          "library": "modifier-fits"
+        }
+      }
+    },
+    {
+      "id": "yoga-pants",
+      "name": "Yoga Pants",
+      "positive": "<color> <pattern> <fit> yoga pants, sleek athletic bottoms, fitted stretch fabric",
+      "negative": "heavy denim, layered skirt",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition.",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        },
+        "fit": {
+          "label": "Fit",
+          "library": "modifier-fits"
+        }
+      }
+    },
+    {
+      "id": "hakama",
+      "name": "Hakama",
+      "positive": "<color> <pattern> <fit> hakama-style bottoms, traditional wide-leg silhouette",
+      "negative": "skinny jeans, modern leggings",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition.",
+      "variables": {
+        "color": {
+          "label": "Color",
+          "library": "modifier-colors"
+        },
+        "pattern": {
+          "label": "Pattern",
+          "library": "modifier-patterns"
+        },
+        "fit": {
+          "label": "Fit",
+          "library": "modifier-fits"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "modifier-fits",
+  "name": "Fits",
+  "kind": "modifier",
+  "entries": [
+    {
+      "id": "oversized",
+      "name": "Oversized",
+      "positive": "oversized",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "loose",
+      "name": "Loose",
+      "positive": "loose",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "relaxed",
+      "name": "Relaxed",
+      "positive": "relaxed fit",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "fitted",
+      "name": "Fitted",
+      "positive": "fitted",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "slim-fit",
+      "name": "Slim Fit",
+      "positive": "slim-fit",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "baggy",
+      "name": "Baggy",
+      "positive": "baggy",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "cropped",
+      "name": "Cropped",
+      "positive": "cropped",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "tailored",
+      "name": "Tailored",
+      "positive": "tailored",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

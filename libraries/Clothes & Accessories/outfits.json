@@ -1,0 +1,148 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "outfits",
+  "name": "Outfits",
+  "entries": [
+    {
+      "id": "school-uniform",
+      "name": "School Uniform",
+      "positive": "school uniform, coordinated top and skirt, neat academic fashion",
+      "negative": "random mismatched casual wear",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "business-suit",
+      "name": "Business Suit",
+      "positive": "business suit, blazer, formal coordinated outfit, polished appearance",
+      "negative": "casual loungewear",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "office-chic",
+      "name": "Office Chic",
+      "positive": "smart office outfit, blouse and tailored skirt or slacks, refined workwear",
+      "negative": "gym clothes",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "casual-streetwear",
+      "name": "Casual Streetwear",
+      "positive": "casual streetwear outfit, layered modern fashion, stylish everyday look",
+      "negative": "formal evening gown",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "techwear",
+      "name": "Techwear",
+      "positive": "techwear outfit, layered utility fashion, straps, pockets, urban futuristic style",
+      "negative": "soft cottagecore dress",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "athleisure",
+      "name": "Athleisure",
+      "positive": "athleisure outfit, sporty coordinated clothing, sleek activewear",
+      "negative": "formal suit, ball gown",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "cottagecore",
+      "name": "Cottagecore",
+      "positive": "cottagecore outfit, soft natural fabrics, romantic rural fashion",
+      "negative": "cyberpunk gear",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "gothic",
+      "name": "Gothic",
+      "positive": "gothic outfit, dark fashion, layered black clothing, dramatic styling",
+      "negative": "pastel school uniform",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "punk",
+      "name": "Punk",
+      "positive": "punk outfit, edgy street fashion, ripped details, rebellious styling",
+      "negative": "office suit",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "maid",
+      "name": "Maid Outfit",
+      "positive": "maid outfit, apron dress, frilled details, classic costume styling",
+      "negative": "business suit, armor",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "cheongsam",
+      "name": "Cheongsam",
+      "positive": "cheongsam dress, fitted silhouette, elegant traditional-inspired fashion",
+      "negative": "baggy hoodie and jeans",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "kimono",
+      "name": "Kimono",
+      "positive": "kimono outfit, traditional robes, layered sash, elegant silhouette",
+      "negative": "western business attire",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "hanfu",
+      "name": "Hanfu",
+      "positive": "hanfu outfit, flowing traditional robes, layered drapery, graceful styling",
+      "negative": "modern sportswear",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "fantasy-adventurer",
+      "name": "Fantasy Adventurer",
+      "positive": "fantasy adventurer outfit, layered tunic, belts, boots, practical fantasy gear",
+      "negative": "modern office wear",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "mage-robes",
+      "name": "Mage Robes",
+      "positive": "mage robes, arcane attire, layered fabric, fantasy spellcaster outfit",
+      "negative": "casual denim outfit",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "armor-light",
+      "name": "Light Armor",
+      "positive": "light armor outfit, fantasy pauldrons, leather straps, practical combat attire",
+      "negative": "sleepwear, office clothing",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "cyberpunk",
+      "name": "Cyberpunk",
+      "positive": "cyberpunk outfit, futuristic streetwear, neon accents, techwear details",
+      "negative": "historical peasant clothing",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "sci-fi-uniform",
+      "name": "Sci-Fi Uniform",
+      "positive": "science-fiction uniform, sleek futuristic outfit, panelled materials",
+      "negative": "medieval tunic, rustic clothing",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "evening-gown",
+      "name": "Evening Gown",
+      "positive": "evening gown, elegant formal dress, refined eveningwear",
+      "negative": "casual streetwear",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "swimsuit",
+      "name": "Swimsuit",
+      "positive": "swimsuit outfit, coordinated beachwear, simple streamlined styling",
+      "negative": "winter coat, layered streetwear",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    }
+  ]
+}

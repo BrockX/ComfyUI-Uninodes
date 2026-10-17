@@ -1,0 +1,213 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "pose-v2-simple-motion",
+  "name": "Pose V2: Simple Movements",
+  "entries": [
+    {
+      "id": "walk",
+      "name": "Walking",
+      "positive": "walking naturally, one foot stepping forward <detail>",
+      "negative": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "turn",
+      "name": "Turning Around",
+      "positive": "turning the body around, mid-turn posture <detail>",
+      "negative": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "step-back",
+      "name": "Stepping Back",
+      "positive": "taking a step backward, balanced movement <detail>",
+      "negative": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "step-side",
+      "name": "Side Step",
+      "positive": "stepping sideways, shifting weight <detail>",
+      "negative": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "bend",
+      "name": "Bending to Reach",
+      "positive": "bending down to reach something <detail>",
+      "negative": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "reach",
+      "name": "Reaching",
+      "positive": "reaching outward <detail>",
+      "negative": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "wave",
+      "name": "Waving",
+      "positive": "raising a hand to wave <detail>",
+      "negative": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "raise",
+      "name": "Raising Both Hands",
+      "positive": "lifting both hands upward <detail>",
+      "negative": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "bow",
+      "name": "Bowing",
+      "positive": "bowing from the waist <detail>",
+      "negative": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "stretch",
+      "name": "Stretching",
+      "positive": "stretching the limbs <detail>",
+      "negative": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "shrug",
+      "name": "Shrugging",
+      "positive": "shoulders raised, subtle shrug <detail>",
+      "negative": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "look-around",
+      "name": "Looking Around",
+      "positive": "glancing around, head turning <detail>",
+      "negative": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "spin",
+      "name": "Spinning",
+      "positive": "body rotating mid-spin, dynamic clothing movement <detail>",
+      "negative": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "pick-up",
+      "name": "Picking Something Up",
+      "positive": "reaching down to pick up <object> <detail>",
+      "negative": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        },
+        "object": {
+          "type": "text",
+          "label": "Object",
+          "placeholder": "Object or equipment…"
+        }
+      }
+    },
+    {
+      "id": "set-down",
+      "name": "Setting Something Down",
+      "positive": "lowering hands to put down <object> <detail>",
+      "negative": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        },
+        "object": {
+          "type": "text",
+          "label": "Object",
+          "placeholder": "Object or equipment…"
+        }
+      }
+    }
+  ]
+}

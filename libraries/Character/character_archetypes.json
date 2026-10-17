@@ -1,0 +1,127 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "character_archetypes",
+  "name": "Character Archetypes",
+  "entries": [
+    {
+      "id": "quiet-intellectual",
+      "name": "Quiet Intellectual",
+      "positive": "thoughtful adult character, reserved demeanor, contemplative presence",
+      "negative": "",
+      "notes": "Personality cues only; does not change the character's species or age."
+    },
+    {
+      "id": "cheerful-optimist",
+      "name": "Cheerful Optimist",
+      "positive": "cheerful character, lively presence, welcoming energy",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "streetwise-rebel",
+      "name": "Streetwise Rebel",
+      "positive": "streetwise rebel vibe, independent attitude, casual confidence",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "elegant-noble",
+      "name": "Elegant Noble",
+      "positive": "elegant noble archetype, refined poise, composed manner",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "mysterious-stranger",
+      "name": "Mysterious Stranger",
+      "positive": "mysterious stranger, reserved gaze, enigmatic body language",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "brave-adventurer",
+      "name": "Brave Adventurer",
+      "positive": "brave adventurer archetype, curious eyes, ready-for-action attitude",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "soft-spoken-healer",
+      "name": "Gentle Healer",
+      "positive": "gentle healer archetype, reassuring expression, caring presence",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "shrewd-detective",
+      "name": "Shrewd Detective",
+      "positive": "detective archetype, observant gaze, analytical demeanor",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "confident-leader",
+      "name": "Confident Leader",
+      "positive": "confident leader archetype, assured posture, commanding presence",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "shy-dreamer",
+      "name": "Shy Dreamer",
+      "positive": "shy dreamer archetype, wistful expression, thoughtful demeanor",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "wandering-artist",
+      "name": "Wandering Artist",
+      "positive": "artist archetype, creative atmosphere, expressive personality",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "cunning-trickster",
+      "name": "Cunning Trickster",
+      "positive": "trickster archetype, mischievous smile, playful self-assurance",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "stoic-guardian",
+      "name": "Stoic Guardian",
+      "positive": "stoic guardian archetype, protective presence, serious expression",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "charming-performer",
+      "name": "Charming Performer",
+      "positive": "performer archetype, theatrical confidence, engaging presence",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "curious-scholar",
+      "name": "Curious Scholar",
+      "positive": "curious scholar archetype, inquisitive expression, attentive body language",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "hardened-survivor",
+      "name": "Hardened Survivor",
+      "positive": "survivor archetype, practical bearing, weathered clothing details",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "royal-envoy",
+      "name": "Royal Envoy",
+      "positive": "royal envoy archetype, diplomatic poise, refined attire hints",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    }
+  ]
+}

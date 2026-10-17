@@ -1,0 +1,120 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "hand-gestures",
+  "name": "Hand Gestures",
+  "entries": [
+    {
+      "id": "peace-sign",
+      "name": "Peace Sign",
+      "positive": "peace sign gesture, two fingers raised, playful hand pose",
+      "negative": "closed fists, hands hidden",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "thumbs-up",
+      "name": "Thumbs Up",
+      "positive": "thumbs up gesture, positive hand sign, clear visible hand",
+      "negative": "hands behind back",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "finger-heart",
+      "name": "Finger Heart",
+      "positive": "finger heart gesture, small heart sign with fingers, cute hand pose",
+      "negative": "arms crossed hiding hands",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "wave",
+      "name": "Waving",
+      "positive": "waving hand gesture, raised open hand, friendly pose",
+      "negative": "hands in pockets",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "pointing",
+      "name": "Pointing",
+      "positive": "pointing gesture, one hand indicating direction or viewer",
+      "negative": "hands clasped",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "hand-on-cheek",
+      "name": "Hand on Cheek",
+      "positive": "hand resting on cheek, cute thoughtful gesture",
+      "negative": "hands off face",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "hand-in-hair",
+      "name": "Hand in Hair",
+      "positive": "hand in hair, casual touch, natural gesture",
+      "negative": "hands rigid at sides",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "hands-clasped",
+      "name": "Hands Clasped",
+      "positive": "hands clasped together, gentle composed body language",
+      "negative": "separated wide gestures",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "hands-behind-back",
+      "name": "Hands Behind Back",
+      "positive": "hands behind back, shy or formal body language",
+      "negative": "wide open arms",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "open-palms",
+      "name": "Open Palms",
+      "positive": "open palms visible, welcoming gesture, expressive hands",
+      "negative": "closed fists",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "one-hand-pocket",
+      "name": "One Hand in Pocket",
+      "positive": "one hand tucked in pocket, casual gesture",
+      "negative": "both hands raised",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "fists-up",
+      "name": "Fists Up",
+      "positive": "lightly raised fists, energetic fighting-spirit pose",
+      "negative": "relaxed open fingers",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "salute",
+      "name": "Salute",
+      "positive": "salute gesture, hand near forehead, crisp pose",
+      "negative": "slouched arms",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "v-sign-near-eye",
+      "name": "V Sign Near Eye",
+      "positive": "playful v-sign near eye, idol-style gesture",
+      "negative": "formal still hands",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "holding-hem",
+      "name": "Holding Clothing Hem",
+      "positive": "hands lightly holding skirt hem, jacket edge, or dress fabric",
+      "negative": "hands completely hidden",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "touching-lips",
+      "name": "Touching Lips",
+      "positive": "finger near lips, soft playful gesture, subtle allure",
+      "negative": "wide aggressive gestures",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    }
+  ]
+}

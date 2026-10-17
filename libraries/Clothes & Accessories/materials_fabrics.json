@@ -1,0 +1,162 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "materials_fabrics",
+  "name": "Materials, Fabrics & Surfaces",
+  "entries": [
+    {
+      "id": "cotton",
+      "name": "Cotton",
+      "positive": "cotton fabric texture, soft matte woven cloth, natural folds",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "linen",
+      "name": "Linen",
+      "positive": "linen fabric, breathable coarse weave, organic wrinkles",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "knit-wool",
+      "name": "Knit Wool",
+      "positive": "knitted wool texture, visible knit pattern, cozy softness",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "velvet",
+      "name": "Velvet",
+      "positive": "velvet fabric, deep soft pile, rich light-absorbing texture",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "satin",
+      "name": "Satin",
+      "positive": "satin fabric, smooth sheen, soft reflective folds",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "silk",
+      "name": "Silk",
+      "positive": "silk material, delicate glossy drapery, fine flowing folds",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "chiffon",
+      "name": "Chiffon",
+      "positive": "chiffon fabric, airy semi-sheer layering, flowing drapery",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "lace",
+      "name": "Lace",
+      "positive": "lace fabric, delicate ornamental pattern, intricate trim",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "denim",
+      "name": "Denim",
+      "positive": "denim material, twill texture, visible seams and stitching",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "leather",
+      "name": "Leather",
+      "positive": "leather material, subtle grain, natural creasing, controlled sheen",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "suede",
+      "name": "Suede",
+      "positive": "suede leather, velvety matte surface, fine texture",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "latex",
+      "name": "Glossy Latex",
+      "positive": "glossy latex material, high specular reflections, form-fitting surface",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "metal",
+      "name": "Polished Metal",
+      "positive": "polished metal, crisp specular highlights, solid reflective surface",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "brushed-metal",
+      "name": "Brushed Metal",
+      "positive": "brushed metal texture, directional grain, subtle metallic reflection",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "bronze",
+      "name": "Aged Bronze",
+      "positive": "aged bronze, warm patina, metallic surface, historical character",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "wood",
+      "name": "Natural Wood",
+      "positive": "natural wood grain, warm timber texture, organic surface",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "stone",
+      "name": "Weathered Stone",
+      "positive": "weathered stone texture, uneven mineral surface, aged detail",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "marble",
+      "name": "Polished Marble",
+      "positive": "polished marble surface, fine natural veining, soft reflections",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "glass",
+      "name": "Clear Glass",
+      "positive": "transparent glass, clean reflections and refractions, sharp highlights",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "ceramic",
+      "name": "Glazed Ceramic",
+      "positive": "glazed ceramic material, smooth fired surface, subtle shine",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "holographic",
+      "name": "Holographic Fabric",
+      "positive": "iridescent holographic fabric, color-shifting sheen, futuristic material",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "carbon-fiber",
+      "name": "Carbon Fiber",
+      "positive": "carbon fiber texture, subtle woven pattern, technical finish",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    }
+  ]
+}

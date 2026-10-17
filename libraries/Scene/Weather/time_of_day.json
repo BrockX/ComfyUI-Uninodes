@@ -1,0 +1,92 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "time_of_day",
+  "name": "Time of Day",
+  "entries": [
+    {
+      "id": "pre-dawn",
+      "name": "Pre-Dawn",
+      "positive": "pre-dawn blue hour, faint horizon glow, cool dim ambient light",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "sunrise",
+      "name": "Sunrise",
+      "positive": "sunrise, sun just above horizon, soft warm first light",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "early-morning",
+      "name": "Early Morning",
+      "positive": "early morning daylight, soft clean illumination, fresh atmosphere",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "late-morning",
+      "name": "Late Morning",
+      "positive": "late morning sunlight, clear daylight, bright gentle atmosphere",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "high-noon",
+      "name": "High Noon",
+      "positive": "midday sun, strong overhead daylight, crisp shadows",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "afternoon",
+      "name": "Afternoon",
+      "positive": "afternoon sunlight, pleasant directional daylight",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "golden-hour",
+      "name": "Golden Hour",
+      "positive": "late afternoon golden hour, warm low-angle sunlight, long shadows",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "sunset",
+      "name": "Sunset",
+      "positive": "sunset sky, warm horizon glow, fading daylight",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "blue-hour",
+      "name": "Blue Hour",
+      "positive": "blue hour twilight, cool saturated dusk light, residual sky glow",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "dusk",
+      "name": "Dusk",
+      "positive": "dusk, dim fading natural light, evening ambience",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "night",
+      "name": "Night",
+      "positive": "nighttime, dark sky, artificial or moonlit illumination",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "moonlit-night",
+      "name": "Moonlit Night",
+      "positive": "moonlit night, silvery moonlight, soft cool shadows",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "expressions",
+  "name": "Face Expressions",
+  "entries": [
+    {
+      "id": "neutral",
+      "name": "Neutral",
+      "positive": "expressionless, closed mouth, looking at viewer",
+      "negative": "smile, angry, crying",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "gentle-smile",
+      "name": "Gentle Smile",
+      "positive": "light smile, closed mouth, soft eyes, looking at viewer",
+      "negative": "angry, frown",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "big-happy-smile",
+      "name": "Big Happy Smile",
+      "positive": "open mouth, :d, happy, bright eyes, smile",
+      "negative": "sad, angry, expressionless",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "smug",
+      "name": "Smug",
+      "positive": "smug, smirk, half-closed eyes, raised eyebrow, looking at viewer",
+      "negative": "shy, sad",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "embarrassed",
+      "name": "Embarrassed",
+      "positive": "embarrassed, blush, nose blush, looking away, shy",
+      "negative": "confident, smug",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "pouty",
+      "name": "Pouty",
+      "positive": "pout, puffy cheeks, blush, looking at viewer",
+      "negative": "smile, calm",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "sad-crying",
+      "name": "Sad / Crying",
+      "positive": "sad, tears, crying, trembling, lowered eyebrows",
+      "negative": "smile, happy",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "angry",
+      "name": "Angry",
+      "positive": "angry, furrowed brow, clenched teeth, glaring",
+      "negative": "smile, calm, happy",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "surprised",
+      "name": "Surprised",
+      "positive": "surprised, wide-eyed, open mouth, shocked",
+      "negative": "calm, sleepy",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "sleepy",
+      "name": "Sleepy",
+      "positive": "sleepy, half-closed eyes, yawning, drowsy",
+      "negative": "wide-eyed, alert",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "seductive",
+      "name": "Seductive",
+      "positive": "seductive smile, half-closed eyes, bedroom eyes, parted lips, blush",
+      "negative": "angry, sad, surprised",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "lustful",
+      "name": "Lustful",
+      "positive": "naughty face, half-closed eyes, blush, licking lips, looking at viewer",
+      "negative": "innocent, calm",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "aroused",
+      "name": "Aroused",
+      "positive": "blush, heavy breathing, half-closed eyes, parted lips, saliva, sweat",
+      "negative": "calm, expressionless",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "pleading",
+      "name": "Pleading",
+      "positive": "blush, teary eyes, trembling, parted lips, looking at viewer, pleading",
+      "negative": "angry, smug",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "ecstasy",
+      "name": "Ecstasy",
+      "positive": "orgasm, open mouth, rolling eyes, blush, tears, saliva, sweat",
+      "negative": "calm, expressionless",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "ahegao",
+      "name": "Ahegao",
+      "positive": "ahegao, tongue out, rolling eyes, open mouth, blush, saliva",
+      "negative": "calm, expressionless",
+      "notes": "Danbooru-style tags for Illustrious."
+    }
+  ]
+}

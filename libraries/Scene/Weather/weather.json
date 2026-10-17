@@ -1,0 +1,120 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "weather",
+  "name": "Weather",
+  "entries": [
+    {
+      "id": "clear-sky",
+      "name": "Clear Sky",
+      "positive": "clear skies, bright clean atmosphere, visibility across distance",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "partly-cloudy",
+      "name": "Partly Cloudy",
+      "positive": "partly cloudy weather, scattered clouds, shifting daylight",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "overcast",
+      "name": "Overcast",
+      "positive": "overcast sky, soft diffuse illumination, muted shadows",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "drizzle",
+      "name": "Light Drizzle",
+      "positive": "light drizzle, tiny raindrops, damp environment",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "rain",
+      "name": "Rain",
+      "positive": "rainy weather, falling raindrops, wet surfaces and reflections",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "heavy-rain",
+      "name": "Heavy Rain",
+      "positive": "heavy rain, dense falling raindrops, stormy atmosphere",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "thunderstorm",
+      "name": "Thunderstorm",
+      "positive": "thunderstorm, dark storm clouds, distant lightning, dramatic sky",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "snowfall",
+      "name": "Snowfall",
+      "positive": "soft falling snow, winter atmosphere, snowflakes in air",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "positive": "blizzard conditions, strong snow gusts, low visibility",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "fog",
+      "name": "Fog",
+      "positive": "foggy weather, thick mist, soft silhouettes in distance",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "morning-mist",
+      "name": "Morning Mist",
+      "positive": "thin ground mist, soft hazy air, tranquil atmosphere",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "windy",
+      "name": "Windy",
+      "positive": "windy weather, windblown hair and fabric, swaying trees",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "autumn-breeze",
+      "name": "Autumn Breeze",
+      "positive": "gentle autumn breeze, a few windblown leaves, crisp air",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "heat-haze",
+      "name": "Heat Haze",
+      "positive": "hot weather, faint heat haze, shimmering distant air",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "frost",
+      "name": "Frost",
+      "positive": "frosty environment, icy surfaces, cold clear air",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "cherry-blossom-fall",
+      "name": "Falling Petals",
+      "positive": "flower petals drifting in breeze, soft spring atmosphere",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    }
+  ]
+}

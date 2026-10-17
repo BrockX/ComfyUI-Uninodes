@@ -1,0 +1,127 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "solo-sexual-action",
+  "name": "Solo Sexual Action",
+  "entries": [
+    {
+      "id": "female-masturbation",
+      "name": "Female - Masturbation",
+      "positive": "female masturbation, masturbation, hand between legs, spread legs, blush, heavy breathing",
+      "negative": "penis, hetero",
+      "notes": "Danbooru-style tags for Illustrious. Adult characters only; negative includes an aged-down guard."
+    },
+    {
+      "id": "female-fingering",
+      "name": "Female - Fingering",
+      "positive": "fingering, pussy, spread pussy, spread legs, pussy juice, blush, half-closed eyes",
+      "negative": "penis, hetero",
+      "notes": "Danbooru-style tags for Illustrious. Adult characters only; negative includes an aged-down guard."
+    },
+    {
+      "id": "female-clothed-masturbation",
+      "name": "Female - Clothed Masturbation",
+      "positive": "masturbation, clothed masturbation, hand under clothes, hand in panties, blush, biting lip, heavy breathing",
+      "negative": "nude, penis, hetero",
+      "notes": "Danbooru-style tags for Illustrious. Adult characters only; negative includes an aged-down guard."
+    },
+    {
+      "id": "female-through-panties",
+      "name": "Female - Through Panties",
+      "positive": "masturbation, panties, fingering through panties, wet panties, spread legs, blush",
+      "negative": "nude, penis, hetero",
+      "notes": "Danbooru-style tags for Illustrious. Adult characters only; negative includes an aged-down guard."
+    },
+    {
+      "id": "female-breast-play",
+      "name": "Female - Breast Play",
+      "positive": "groping own breast, breast grab, nipple tweak, blush, half-closed eyes, parted lips",
+      "negative": "penis, hetero",
+      "notes": "Danbooru-style tags for Illustrious. Adult characters only; negative includes an aged-down guard."
+    },
+    {
+      "id": "female-vibrator",
+      "name": "Female - Vibrator",
+      "positive": "vibrator, vibrator in thighhighs, vibrator under clothes, pussy juice, trembling, blush, heavy breathing",
+      "negative": "penis, hetero",
+      "notes": "Danbooru-style tags for Illustrious. Adult characters only; negative includes an aged-down guard."
+    },
+    {
+      "id": "female-dildo",
+      "name": "Female - Dildo",
+      "positive": "dildo, dildo riding, masturbation, spread legs, pussy juice, sweat, blush",
+      "negative": "penis, hetero",
+      "notes": "Danbooru-style tags for Illustrious. Adult characters only; negative includes an aged-down guard."
+    },
+    {
+      "id": "female-table-humping",
+      "name": "Female - Grinding / Humping",
+      "positive": "humping, table humping, grinding, hip thrust, blush, sweat, heavy breathing",
+      "negative": "penis, hetero",
+      "notes": "Danbooru-style tags for Illustrious. Adult characters only; negative includes an aged-down guard. Swap 'table humping' for 'pillow humping' or 'object insertion' variants as needed."
+    },
+    {
+      "id": "female-lying-in-bed",
+      "name": "Female - Lying in Bed",
+      "positive": "lying, on bed, on back, masturbation, spread legs, bedroom, blush, half-closed eyes",
+      "negative": "penis, hetero, standing",
+      "notes": "Danbooru-style tags for Illustrious. Adult characters only; negative includes an aged-down guard."
+    },
+    {
+      "id": "female-peak",
+      "name": "Female - Climax",
+      "positive": "masturbation, orgasm, trembling, arched back, open mouth, rolling eyes, pussy juice, sweat, tears",
+      "negative": "penis, hetero, calm, expressionless",
+      "notes": "Danbooru-style tags for Illustrious. Adult characters only; negative includes an aged-down guard."
+    },
+    {
+      "id": "male-masturbation",
+      "name": "Male - Masturbation",
+      "positive": "male focus, male masturbation, masturbation, erection, penis, holding penis, blush, heavy breathing",
+      "negative": "pussy, hetero, yaoi, child, shota, aged down",
+      "notes": "Danbooru-style tags for Illustrious. Adult characters only; negative includes an aged-down guard."
+    },
+    {
+      "id": "male-stroking",
+      "name": "Male - Stroking",
+      "positive": "male focus, male masturbation, stroking, erection, penis, grabbing own penis, precum, sweat",
+      "negative": "pussy, hetero, yaoi, child, shota, aged down",
+      "notes": "Danbooru-style tags for Illustrious. Adult characters only; negative includes an aged-down guard."
+    },
+    {
+      "id": "male-sitting-spread",
+      "name": "Male - Sitting, Spread Legs",
+      "positive": "male focus, sitting, spread legs, male masturbation, erection, penis, looking at viewer, blush",
+      "negative": "pussy, hetero, yaoi, child, shota, aged down",
+      "notes": "Danbooru-style tags for Illustrious. Adult characters only; negative includes an aged-down guard."
+    },
+    {
+      "id": "male-clothed-masturbation",
+      "name": "Male - Clothed Masturbation",
+      "positive": "male focus, clothed masturbation, hand in pants, erection under clothes, bulge, blush, heavy breathing",
+      "negative": "nude, pussy, hetero, yaoi, child, shota, aged down",
+      "notes": "Danbooru-style tags for Illustrious. Adult characters only; negative includes an aged-down guard."
+    },
+    {
+      "id": "male-lying-in-bed",
+      "name": "Male - Lying in Bed",
+      "positive": "male focus, lying, on bed, on back, male masturbation, erection, penis, bedroom, sweat",
+      "negative": "pussy, hetero, yaoi, standing, child, shota, aged down",
+      "notes": "Danbooru-style tags for Illustrious. Adult characters only; negative includes an aged-down guard."
+    },
+    {
+      "id": "male-pov-tease",
+      "name": "Male - POV Display",
+      "positive": "male focus, male masturbation, erection, penis, looking at viewer, smirk, pov, from below",
+      "negative": "pussy, hetero, yaoi, child, shota, aged down",
+      "notes": "Danbooru-style tags for Illustrious. Adult characters only; negative includes an aged-down guard."
+    },
+    {
+      "id": "male-climax",
+      "name": "Male - Climax",
+      "positive": "male focus, male masturbation, ejaculation, cum, cum on body, orgasm, erection, penis, heavy breathing, sweat",
+      "negative": "pussy, hetero, yaoi, calm, expressionless, child, shota, aged down",
+      "notes": "Danbooru-style tags for Illustrious. Adult characters only; negative includes an aged-down guard."
+    }
+  ]
+}

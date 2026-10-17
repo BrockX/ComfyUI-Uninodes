@@ -1,0 +1,134 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "color_palettes",
+  "name": "Color Palettes & Mood",
+  "entries": [
+    {
+      "id": "neutral-natural",
+      "name": "Natural Neutral",
+      "positive": "natural balanced colors, subtle tonal variation, neutral color palette",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "soft-pastels",
+      "name": "Soft Pastels",
+      "positive": "soft pastel palette, powder pink, pale blue, lavender, gentle saturation",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "warm-earth",
+      "name": "Warm Earth Tones",
+      "positive": "warm earth tone palette, terracotta, ochre, sienna, muted olive",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "cool-jewel",
+      "name": "Cool Jewel Tones",
+      "positive": "cool jewel tone palette, sapphire blue, emerald green, amethyst purple",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "sunset",
+      "name": "Sunset Palette",
+      "positive": "sunset color palette, coral orange, warm rose, golden yellow",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "oceanic",
+      "name": "Oceanic Palette",
+      "positive": "oceanic color palette, teal, seafoam, deep blue, turquoise accents",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "forest",
+      "name": "Forest Palette",
+      "positive": "forest-inspired colors, moss green, cedar brown, muted gold",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "monochrome-ink",
+      "name": "Monochrome Ink",
+      "positive": "black and white monochrome palette, tonal grayscale, crisp contrast",
+      "negative": "bright rainbow hues",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "sepia",
+      "name": "Vintage Sepia",
+      "positive": "sepia-toned palette, warm browns, aged photographic mood",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "limited-duotone",
+      "name": "Limited Duotone",
+      "positive": "two-color limited palette, controlled duotone shading, restrained tones",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "neon-cyber",
+      "name": "Neon Cyber",
+      "positive": "neon palette, vivid magenta, cyan, electric blue, saturated accents",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "noir",
+      "name": "Noir Contrast",
+      "positive": "high contrast dark palette, charcoal shadows, selective highlights",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "muted-cinematic",
+      "name": "Muted Cinematic",
+      "positive": "desaturated cinematic palette, subdued colors, rich midtones",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "bright-pop",
+      "name": "Bright Pop",
+      "positive": "vivid pop palette, bright clean primary colors, playful contrast",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "royal-luxury",
+      "name": "Royal Luxury",
+      "positive": "royal palette, deep burgundy, navy blue, antique gold accents",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "icy-winter",
+      "name": "Icy Winter",
+      "positive": "icy winter colors, cool whites, blue-gray, faint silver highlights",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "warm-cozy",
+      "name": "Cozy Warmth",
+      "positive": "cozy warm palette, cream, amber, muted rose, soft browns",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "dreamlike",
+      "name": "Dreamlike Ether",
+      "positive": "ethereal colors, lavender haze, mint, luminous pale blues",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    }
+  ]
+}

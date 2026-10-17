@@ -1,0 +1,176 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "props",
+  "name": "Props & Held Objects",
+  "entries": [
+    {
+      "id": "book",
+      "name": "Book",
+      "positive": "holding a book, readable physical book shape, natural grip",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "open-book",
+      "name": "Open Book",
+      "positive": "holding an open book, pages visible, reading pose",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "coffee-cup",
+      "name": "Coffee Cup",
+      "positive": "holding a ceramic coffee cup, natural hand placement",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "tea-cup",
+      "name": "Teacup",
+      "positive": "holding a teacup, delicate grip",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "umbrella",
+      "name": "Umbrella",
+      "positive": "holding an umbrella, canopy visible overhead",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "smartphone",
+      "name": "Smartphone",
+      "positive": "holding smartphone, looking at phone screen",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "camera",
+      "name": "Camera",
+      "positive": "holding a camera, photography pose, camera body visible",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "headphones",
+      "name": "Headphones",
+      "positive": "wearing over-ear headphones, audio accessory",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "flower",
+      "name": "Single Flower",
+      "positive": "holding a single flower, delicate petals",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "bouquet",
+      "name": "Bouquet",
+      "positive": "holding a bouquet of flowers, clustered blossoms",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "stuffed-animal",
+      "name": "Plush Toy",
+      "positive": "holding a plush toy, soft fabric texture",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "gift-box",
+      "name": "Gift Box",
+      "positive": "holding a wrapped gift box, ribbon bow",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "shopping-bag",
+      "name": "Shopping Bag",
+      "positive": "holding shopping bag, casual retail scene",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "handbag",
+      "name": "Handbag",
+      "positive": "holding small handbag, fashion accessory",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "guitar",
+      "name": "Guitar",
+      "positive": "holding acoustic guitar, musician pose",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "violin",
+      "name": "Violin",
+      "positive": "holding violin and bow, musical instrument",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "paintbrush",
+      "name": "Paintbrush",
+      "positive": "holding paintbrush, artist at work",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "sketchbook",
+      "name": "Sketchbook",
+      "positive": "holding sketchbook, drawing or painting scene",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "lantern",
+      "name": "Lantern",
+      "positive": "holding lantern, warm glowing portable light source",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "sword",
+      "name": "Fantasy Sword",
+      "positive": "holding a fantasy sword, stylized prop weapon, clear silhouette",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "magic-staff",
+      "name": "Magic Staff",
+      "positive": "holding ornate magical staff, fantasy spellcasting prop",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "glowing-orb",
+      "name": "Glowing Orb",
+      "positive": "holding glowing magical orb, soft emitted light",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "map-scroll",
+      "name": "Map / Scroll",
+      "positive": "holding folded map or parchment scroll, travel prop",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "small-pet",
+      "name": "Small Pet",
+      "positive": "holding a small pet animal carefully, gentle interaction",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    }
+  ]
+}

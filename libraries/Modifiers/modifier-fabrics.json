@@ -1,0 +1,128 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "modifier-fabrics",
+  "name": "Fabrics",
+  "kind": "modifier",
+  "entries": [
+    {
+      "id": "cotton",
+      "name": "Cotton",
+      "positive": "cotton",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "linen",
+      "name": "Linen",
+      "positive": "linen",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "knitted",
+      "name": "Knitted",
+      "positive": "knitted",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "wool",
+      "name": "Wool",
+      "positive": "wool",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "cashmere",
+      "name": "Cashmere",
+      "positive": "cashmere",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "silk",
+      "name": "Silk",
+      "positive": "silk",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "satin",
+      "name": "Satin",
+      "positive": "satin",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "velvet",
+      "name": "Velvet",
+      "positive": "velvet",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "denim",
+      "name": "Denim",
+      "positive": "denim",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "leather",
+      "name": "Leather",
+      "positive": "leather",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "suede",
+      "name": "Suede",
+      "positive": "suede",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "lace",
+      "name": "Lace",
+      "positive": "lace",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "chiffon",
+      "name": "Chiffon",
+      "positive": "chiffon",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "latex",
+      "name": "Latex",
+      "positive": "latex",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "mesh",
+      "name": "Mesh",
+      "positive": "mesh",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "fleece",
+      "name": "Fleece",
+      "positive": "fleece",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "corduroy",
+      "name": "Corduroy",
+      "positive": "corduroy",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "sexy-poses",
+  "name": "Sexy Poses (Teasing / Playful / Tempting / Aroused)",
+  "entries": [
+    {
+      "id": "teasing-strap-pull",
+      "name": "Teasing Strap Pull",
+      "positive": "strap pull, clothes pull, looking at viewer, smile, one shoulder bare",
+      "negative": "fully clothed, stiff",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "teasing-skirt-lift",
+      "name": "Teasing Skirt Lift",
+      "positive": "skirt lift, lifted by self, looking at viewer, blush, smile",
+      "negative": "long skirt, pants",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "teasing-shirt-lift",
+      "name": "Teasing Shirt Lift",
+      "positive": "shirt lift, lifted by self, midriff, navel, looking at viewer",
+      "negative": "buttoned, long shirt",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "finger-to-mouth",
+      "name": "Finger to Mouth",
+      "positive": "finger to mouth, seductive smile, half-closed eyes, looking at viewer",
+      "negative": "angry, surprised",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "playful-wink",
+      "name": "Playful Wink",
+      "positive": "one eye closed, wink, tongue out, leaning forward, v, smile",
+      "negative": "serious, sad, stiff",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "playful-hair-twirl",
+      "name": "Playful Hair Twirl",
+      "positive": "hand in own hair, hair twirling, head tilt, smile, looking at viewer",
+      "negative": "stiff, serious",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "blowing-a-kiss",
+      "name": "Blowing a Kiss",
+      "positive": "blowing kiss, leaning forward, wink, heart, looking at viewer",
+      "negative": "serious, angry",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "tempting-beckon",
+      "name": "Tempting Beckon",
+      "positive": "beckoning, outstretched hand, reaching towards viewer, seductive smile, leaning forward",
+      "negative": "turned away, closed off",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "arched-back-look",
+      "name": "Arched Back Look",
+      "positive": "arched back, looking back, from behind, hands on own hips, smile",
+      "negative": "front view, stiff",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "leaning-forward",
+      "name": "Leaning Forward",
+      "positive": "leaning forward, cleavage, hanging breasts, hands on own knees, looking at viewer",
+      "negative": "standing straight, stiff",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "lounging-on-bed",
+      "name": "Lounging on Bed",
+      "positive": "lying, on bed, on side, head rest, bedroom eyes, looking at viewer",
+      "negative": "standing, stiff",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "aroused-touching",
+      "name": "Aroused Touching",
+      "positive": "hand on own chest, blush, heavy breathing, half-closed eyes, parted lips, sweat",
+      "negative": "calm, neutral, serious",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "aroused-squirm",
+      "name": "Aroused Squirm",
+      "positive": "thighs together, hand between legs, blush, heavy breathing, shy",
+      "negative": "relaxed, neutral",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "hands-behind-back",
+      "name": "Hands Behind Back",
+      "positive": "arms behind back, leaning forward, head tilt, smile, looking at viewer",
+      "negative": "arms crossed, stiff",
+      "notes": "Danbooru-style tags for Illustrious."
+    }
+  ]
+}

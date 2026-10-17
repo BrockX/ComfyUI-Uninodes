@@ -1,0 +1,78 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "clothes-underwear",
+  "name": "Clothes: Underwear & Sleepwear",
+  "entries": [
+    {
+      "id": "matching-set",
+      "name": "Matching Set",
+      "positive": "matching bra and panties set, coordinated underwear, tasteful fashion styling",
+      "negative": "fully clothed outerwear, bulky layers",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "bralette-set",
+      "name": "Bralette Set",
+      "positive": "bralette and briefs set, soft lingerie styling, comfortable modern underwear",
+      "negative": "structured corset, full outfit",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "sports-underwear",
+      "name": "Sports Underwear",
+      "positive": "sports bra and athletic briefs, functional sporty undergarments",
+      "negative": "lace lingerie, heavy clothing",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "boyshort-set",
+      "name": "Boyshort Set",
+      "positive": "underwear set with boyshort bottoms, casual comfortable styling",
+      "negative": "thong, layered trousers",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "slip",
+      "name": "Slip",
+      "positive": "silky slip dress, sleepwear, minimal elegant loungewear",
+      "negative": "jeans, jacket",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "camisole-shorts",
+      "name": "Camisole + Shorts",
+      "positive": "camisole top and sleep shorts, relaxed sleepwear",
+      "negative": "formal outfit, heavy layers",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "nightgown",
+      "name": "Nightgown",
+      "positive": "nightgown, soft flowing sleepwear, delicate fabric",
+      "negative": "streetwear, armor",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "pajama-set",
+      "name": "Pajama Set",
+      "positive": "pajama set, matching sleepwear, cozy indoor clothing",
+      "negative": "swimsuit, armor",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "robe-lingerie",
+      "name": "Robe + Lingerie",
+      "positive": "light robe over lingerie, layered intimate fashion, tasteful styling",
+      "negative": "heavy coat, streetwear",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    },
+    {
+      "id": "bodysuit-underlayer",
+      "name": "Bodysuit Underlayer",
+      "positive": "simple bodysuit underlayer, sleek fitted base garment",
+      "negative": "baggy clothing, layered outerwear",
+      "notes": "Suggested prompt tags; tune or prune per checkpoint and composition."
+    }
+  ]
+}

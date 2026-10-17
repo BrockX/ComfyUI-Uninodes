@@ -1,0 +1,162 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "fantasy_classes",
+  "name": "Fantasy Classes & Roles",
+  "entries": [
+    {
+      "id": "warrior",
+      "name": "Warrior",
+      "positive": "fantasy warrior, practical combat attire, heroic bearing",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "knight",
+      "name": "Knight",
+      "positive": "fantasy knight, armor, heraldic design, disciplined presence",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "paladin",
+      "name": "Paladin",
+      "positive": "holy knight, polished armor, radiant fantasy symbolism",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "barbarian",
+      "name": "Barbarian",
+      "positive": "barbarian adventurer, rugged gear, powerful physique, fierce presence",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "rogue",
+      "name": "Rogue",
+      "positive": "fantasy rogue, hooded leather gear, stealthy look",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "assassin",
+      "name": "Assassin",
+      "positive": "fantasy assassin, dark lightweight gear, hidden tools, stealth aesthetic",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "ranger",
+      "name": "Ranger",
+      "positive": "fantasy ranger, woodland clothing, cloak, travel gear",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "archer",
+      "name": "Archer",
+      "positive": "fantasy archer, bow and quiver, practical light armor",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "mage",
+      "name": "Mage",
+      "positive": "fantasy mage, layered robes, spellcasting motifs, arcane accessories",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "wizard",
+      "name": "Wizard",
+      "positive": "fantasy wizard, ornate robes, magical staff, arcane books",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "witch",
+      "name": "Witch",
+      "positive": "fantasy witch, spellcraft accessories, mystical attire",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "sorcerer",
+      "name": "Sorcerer",
+      "positive": "sorcerer, innate magical aura, elegant arcane costume",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "healer",
+      "name": "Healer",
+      "positive": "fantasy healer, gentle robes, medicine satchel, restorative magic motifs",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "priest",
+      "name": "Priest / Cleric",
+      "positive": "fantasy cleric, ceremonial garments, sacred symbols",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "druid",
+      "name": "Druid",
+      "positive": "fantasy druid, nature-themed garments, leaves and organic ornaments",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "bard",
+      "name": "Bard",
+      "positive": "fantasy bard, musician's attire, instrument, colorful travel clothing",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "alchemist",
+      "name": "Alchemist",
+      "positive": "fantasy alchemist, potion bottles, utility belt, laboratory gear",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "artificer",
+      "name": "Artificer",
+      "positive": "fantasy artificer, magical gadgets, intricate tools, crafted mechanisms",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "monk",
+      "name": "Monk",
+      "positive": "fantasy martial artist, simple layered robes, disciplined pose",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "summoner",
+      "name": "Summoner",
+      "positive": "fantasy summoner, glowing runes, magical companion motifs",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "necromancer",
+      "name": "Necromancer",
+      "positive": "fantasy necromancer, dark robes, eerie magical atmosphere",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "royal-guard",
+      "name": "Royal Guard",
+      "positive": "royal guard, formal armor, ceremonial insignia, watchful bearing",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    }
+  ]
+}

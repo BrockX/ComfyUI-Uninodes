@@ -1,0 +1,92 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "sex-act-views",
+  "name": "Sex Act Views & Focus",
+  "entries": [
+    {
+      "id": "pov-sex",
+      "name": "POV Sex",
+      "positive": "pov, sex, hetero, pov crotch, looking at viewer",
+      "negative": "from behind, child, loli, shota, aged down",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "cross-section",
+      "name": "Cross-Section",
+      "positive": "cross-section, internal cumshot, x-ray, sex",
+      "negative": "clothed, child, loli, shota, aged down",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "x-ray",
+      "name": "X-Ray",
+      "positive": "x-ray, transparent, internal organs visible, sex",
+      "negative": "clothed, child, loli, shota, aged down",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "genital-close-up",
+      "name": "Genital Close-Up",
+      "positive": "close-up, spread legs, pussy, spread pussy, between legs, from below",
+      "negative": "full body, wide shot, child, loli, shota, aged down",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "ass-focus",
+      "name": "Ass Focus",
+      "positive": "ass focus, from behind, huge ass, looking back",
+      "negative": "front view, face focus, child, loli, shota, aged down",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "breast-focus",
+      "name": "Breast Focus",
+      "positive": "breast focus, close-up, cleavage, breasts, looking at viewer",
+      "negative": "full body, wide shot, child, loli, shota, aged down",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "crotch-focus",
+      "name": "Crotch Focus",
+      "positive": "crotch focus, between legs, spread legs, from below",
+      "negative": "face focus, full body, child, loli, shota, aged down",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "foot-focus",
+      "name": "Foot Focus",
+      "positive": "foot focus, soles, toes, barefoot, close-up",
+      "negative": "face focus, upper body, child, loli, shota, aged down",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "upskirt-panty-shot",
+      "name": "Upskirt / Panty Shot",
+      "positive": "upskirt, panty shot, from below, panties, skirt lift",
+      "negative": "pants, from above, child, loli, shota, aged down",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "voyeur-peeking",
+      "name": "Voyeur / Peeking",
+      "positive": "voyeurism, peeking, through window, from outside, from a distance",
+      "negative": "looking at viewer, close-up, child, loli, shota, aged down",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "over-the-shoulder-look",
+      "name": "Over the Shoulder Look",
+      "positive": "from behind, looking back, over shoulder, ass, blush",
+      "negative": "front view, close-up, child, loli, shota, aged down",
+      "notes": "Danbooru-style tags for Illustrious."
+    },
+    {
+      "id": "mirror-view",
+      "name": "Mirror View",
+      "positive": "mirror, reflection, looking at mirror, nude, from behind",
+      "negative": "no mirror, close-up, child, loli, shota, aged down",
+      "notes": "Danbooru-style tags for Illustrious."
+    }
+  ]
+}

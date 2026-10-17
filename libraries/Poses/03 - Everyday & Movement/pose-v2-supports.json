@@ -1,0 +1,93 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "pose-v2-supports",
+  "name": "Pose V2: Supports & Surfaces",
+  "entries": [
+    {
+      "id": "chair",
+      "name": "Chair",
+      "positive": "on a chair",
+      "negative": ""
+    },
+    {
+      "id": "stool",
+      "name": "Stool",
+      "positive": "on a stool",
+      "negative": ""
+    },
+    {
+      "id": "bench",
+      "name": "Bench",
+      "positive": "on a bench",
+      "negative": ""
+    },
+    {
+      "id": "floor",
+      "name": "Floor",
+      "positive": "on the floor",
+      "negative": ""
+    },
+    {
+      "id": "bed",
+      "name": "Bed",
+      "positive": "on a bed",
+      "negative": ""
+    },
+    {
+      "id": "sofa",
+      "name": "Sofa",
+      "positive": "on a sofa",
+      "negative": ""
+    },
+    {
+      "id": "grass",
+      "name": "Grass",
+      "positive": "on the grass",
+      "negative": ""
+    },
+    {
+      "id": "rock",
+      "name": "Rock",
+      "positive": "on a rock",
+      "negative": ""
+    },
+    {
+      "id": "stairs",
+      "name": "Stairs",
+      "positive": "on a staircase",
+      "negative": ""
+    },
+    {
+      "id": "wall",
+      "name": "Wall",
+      "positive": "against a wall",
+      "negative": ""
+    },
+    {
+      "id": "counter",
+      "name": "Counter",
+      "positive": "against a countertop",
+      "negative": ""
+    },
+    {
+      "id": "table",
+      "name": "Table",
+      "positive": "beside a table",
+      "negative": ""
+    },
+    {
+      "id": "ledge",
+      "name": "Ledge",
+      "positive": "on a ledge",
+      "negative": ""
+    },
+    {
+      "id": "mat",
+      "name": "Exercise Mat",
+      "positive": "on an exercise mat",
+      "negative": ""
+    }
+  ],
+  "kind": "modifier"
+}

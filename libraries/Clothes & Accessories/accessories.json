@@ -1,0 +1,183 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "accessories",
+  "name": "Accessories",
+  "entries": [
+    {
+      "id": "round-glasses",
+      "name": "Round Glasses",
+      "positive": "large round eyeglasses, clearly visible thin frames",
+      "negative": "",
+      "notes": "Keep glasses if part of the character's identity."
+    },
+    {
+      "id": "rectangular-glasses",
+      "name": "Rectangular Glasses",
+      "positive": "rectangular glasses, sharp clean frames",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "sunglasses",
+      "name": "Sunglasses",
+      "positive": "sunglasses, tinted lenses, fashionable frames",
+      "negative": "",
+      "notes": "Can obscure eye color."
+    },
+    {
+      "id": "hairclip",
+      "name": "Hair Clip",
+      "positive": "decorative hair clip, small metallic hair accessory",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "ribbon",
+      "name": "Hair Ribbon",
+      "positive": "ribbon tied in hair, subtle hair accessory",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "headband",
+      "name": "Headband",
+      "positive": "headband, neat hair accessory",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "beret",
+      "name": "Beret",
+      "positive": "beret hat, soft rounded cap, artistic outfit accent",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "beanie",
+      "name": "Beanie",
+      "positive": "knit beanie, cozy casual headwear",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "wide-brim-hat",
+      "name": "Wide-Brim Hat",
+      "positive": "wide-brim hat, elegant silhouette, shadow across face",
+      "negative": "",
+      "notes": "May hide hairstyle and eyes."
+    },
+    {
+      "id": "baseball-cap",
+      "name": "Baseball Cap",
+      "positive": "baseball cap, casual sporty headwear",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "hood-up",
+      "name": "Hood Up",
+      "positive": "hood pulled over head, framing the face",
+      "negative": "",
+      "notes": "May obscure hair silhouette."
+    },
+    {
+      "id": "small-earrings",
+      "name": "Small Earrings",
+      "positive": "small stud earrings, understated jewelry",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "hoop-earrings",
+      "name": "Hoop Earrings",
+      "positive": "hoop earrings, subtle metallic jewelry",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "choker",
+      "name": "Choker",
+      "positive": "choker necklace, close-fitting neck accessory",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "pendant-necklace",
+      "name": "Pendant Necklace",
+      "positive": "delicate chain necklace, small pendant",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "layered-necklaces",
+      "name": "Layered Necklaces",
+      "positive": "layered necklaces, multiple delicate chains",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "bracelets",
+      "name": "Bracelets",
+      "positive": "bracelets on wrist, subtle jewelry",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "wristwatch",
+      "name": "Wristwatch",
+      "positive": "wristwatch, simple functional accessory",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "leather-gloves",
+      "name": "Leather Gloves",
+      "positive": "leather gloves, fitted handwear",
+      "negative": "",
+      "notes": "Will conceal hands/finger details."
+    },
+    {
+      "id": "fingerless-gloves",
+      "name": "Fingerless Gloves",
+      "positive": "fingerless gloves, fingertips visible",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "scarf",
+      "name": "Scarf",
+      "positive": "scarf around neck, soft draped fabric",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "satchel",
+      "name": "Satchel Bag",
+      "positive": "crossbody satchel, practical shoulder bag",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "backpack",
+      "name": "Backpack",
+      "positive": "backpack, visible shoulder straps, practical travel accessory",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "belt-pouch",
+      "name": "Utility Belt Pouch",
+      "positive": "belt pouch, utility accessory worn at waist",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "fox-ears-headband",
+      "name": "Animal-Ear Headband",
+      "positive": "animal-ear headband, costume accessory, small pointed ears",
+      "negative": "",
+      "notes": "Costume headband, not anatomical ears."
+    }
+  ]
+}

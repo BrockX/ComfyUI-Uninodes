@@ -1,0 +1,141 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "attitudes_body_language",
+  "name": "Attitude & Body Language",
+  "entries": [
+    {
+      "id": "relaxed",
+      "name": "Relaxed",
+      "positive": "relaxed posture, loose shoulders, natural comfortable body language",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "confident",
+      "name": "Confident",
+      "positive": "confident stance, lifted chin, open body language",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "shy",
+      "name": "Shy",
+      "positive": "shy body language, slight inward posture, hesitant gestures",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "playful",
+      "name": "Playful",
+      "positive": "playful posture, lively gesture, mischievous energy",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "elegant",
+      "name": "Elegant",
+      "positive": "elegant posture, poised stance, graceful hand placement",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "defiant",
+      "name": "Defiant",
+      "positive": "defiant posture, arms crossed or planted, unyielding gaze",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "curious",
+      "name": "Curious",
+      "positive": "curious body language, slight head tilt, attentive gaze",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "thoughtful",
+      "name": "Thoughtful",
+      "positive": "contemplative posture, subtle pause, distant gaze",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "focused",
+      "name": "Focused",
+      "positive": "focused posture, intent attention, controlled movements",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "protective",
+      "name": "Protective",
+      "positive": "protective stance, alert posture, body angled toward companion",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "friendly",
+      "name": "Friendly",
+      "positive": "friendly posture, welcoming gesture, approachable demeanor",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "reserved",
+      "name": "Reserved",
+      "positive": "reserved demeanor, restrained gestures, composed body language",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "nervous",
+      "name": "Nervous",
+      "positive": "nervous body language, subtle fidgeting, tense shoulders",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "tired",
+      "name": "Tired",
+      "positive": "tired posture, slightly lowered shoulders, subdued movement",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "determined",
+      "name": "Determined",
+      "positive": "determined stance, deliberate posture, focused gaze",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "flirtatious",
+      "name": "Flirtatious",
+      "positive": "flirtatious body language, subtle playful gesture, confident gaze",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "melancholic",
+      "name": "Melancholic",
+      "positive": "melancholic posture, wistful expression, subdued energy",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "energetic",
+      "name": "Energetic",
+      "positive": "energetic body language, dynamic gesture, lively posture",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    },
+    {
+      "id": "regal",
+      "name": "Regal",
+      "positive": "regal bearing, upright posture, controlled graceful movements",
+      "negative": "",
+      "notes": "Optional descriptive tags. Avoid stacking conflicting presets; the negative prompt is deliberately sparse to preserve character identity."
+    }
+  ]
+}

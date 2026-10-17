@@ -1,0 +1,148 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "pose-v2-balanced",
+  "name": "Pose V2: Balance & Unusual Bases",
+  "entries": [
+    {
+      "id": "hanging",
+      "name": "Hanging",
+      "positive": "hanging by the hands, feet off the ground <detail>",
+      "negative": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      },
+      "notes": ""
+    },
+    {
+      "id": "one-hand-braced",
+      "name": "One-Hand Support",
+      "positive": "body supported partly by one hand, off-balance pose <detail>",
+      "negative": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      },
+      "notes": ""
+    },
+    {
+      "id": "backbend",
+      "name": "Backbend",
+      "positive": "deep backward bend, arched spine, controlled balance <detail>",
+      "negative": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      },
+      "notes": ""
+    },
+    {
+      "id": "bridge",
+      "name": "Bridge Pose",
+      "positive": "bridge position, hands and feet planted, back arched <detail>",
+      "negative": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      },
+      "notes": ""
+    },
+    {
+      "id": "headstand",
+      "name": "Headstand",
+      "positive": "upside-down headstand, feet above head <detail>",
+      "negative": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      },
+      "notes": ""
+    },
+    {
+      "id": "handstand",
+      "name": "Handstand",
+      "positive": "inverted handstand, arms straight, legs raised <detail>",
+      "negative": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      },
+      "notes": ""
+    },
+    {
+      "id": "wall-brace",
+      "name": "Braced Against Wall",
+      "positive": "body braced against wall, weight shifted sideways <detail>",
+      "negative": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      },
+      "notes": ""
+    },
+    {
+      "id": "forward-fold",
+      "name": "Deep Forward Fold",
+      "positive": "bending deeply at waist, torso folded toward legs <detail>",
+      "negative": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      },
+      "notes": ""
+    },
+    {
+      "id": "head-low-hips-high",
+      "name": "Head Low, Hips High",
+      "positive": "ass-up head-down, face down ass up,  <detail>",
+      "negative": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      },
+      "notes": ""
+    },
+    {
+      "id": "side-bend",
+      "name": "Deep Side Bend",
+      "positive": "body bent sideways in a pronounced arc <detail>",
+      "negative": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      },
+      "notes": ""
+    }
+  ]
+}

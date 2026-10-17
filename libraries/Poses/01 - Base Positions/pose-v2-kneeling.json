@@ -1,0 +1,151 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "pose-v2-kneeling",
+  "name": "Pose V2: Kneeling & Squatting",
+  "entries": [
+    {
+      "id": "upright-kneel",
+      "name": "Upright Kneeling",
+      "positive": "kneeling upright, hips over heels <detail>",
+      "negative": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "one-knee",
+      "name": "One Knee Down",
+      "positive": "kneeling on one knee, other foot planted <detail>",
+      "negative": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "high-kneel",
+      "name": "High Kneeling",
+      "positive": "kneeling tall, hips raised above heels <detail>",
+      "negative": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "heels-sit",
+      "name": "Sitting on Heels",
+      "positive": "kneeling while seated on heels, legs folded beneath <detail>",
+      "negative": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "kneel-forward",
+      "name": "Forward-Leaning Kneel",
+      "positive": "kneeling with torso leaning forward <detail>",
+      "negative": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "low-crouch",
+      "name": "Low Crouch",
+      "positive": "crouching low, weight centered over bent legs <detail>",
+      "negative": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "athletic-crouch",
+      "name": "Athletic Crouch",
+      "positive": "ready crouch, one hand close to ground <detail>",
+      "negative": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "deep-squat",
+      "name": "Deep Squat",
+      "positive": "deep squatting pose, heels near floor <detail>",
+      "negative": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "heel-raised-squat",
+      "name": "Raised-Heel Squat",
+      "positive": "compact squat balanced on toes <detail>",
+      "negative": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "wide-squat",
+      "name": "Wide Squat",
+      "positive": "wide squat with knees bent outward <detail>",
+      "negative": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    },
+    {
+      "id": "runner-start",
+      "name": "Runner Start",
+      "positive": "starting position, one knee bent, hand braced near ground <detail>",
+      "negative": "",
+      "variables": {
+        "detail": {
+          "type": "text",
+          "label": "Detail",
+          "placeholder": "Optional pose detail…"
+        }
+      }
+    }
+  ]
+}
