@@ -34,8 +34,6 @@ All four nodes are available under the **Uninodes** category in ComfyUI.
 4. Restart ComfyUI and refresh the browser (**Ctrl+F5** if the controls don't appear).
 5. Right-click on the canvas and find the nodes under **Uninodes**.
 
-**Updating:** Replace the node files with those from a newer release, but keep your existing data and preset folders. If you are using an **incremental patch ZIP**, install its required base version first and merge only the included files.
-
 ## Dependencies
 
 ### Basic features
