@@ -25,10 +25,12 @@ if web is not None:
     # Prompt Composer library APIs use the pre-existing CPM disk-backed libraries.
     # The original pack's Library Manager may remain installed independently.
     from . import library_store as composer_libraries
+    from . import composer_categories
 
     @PromptServer.instance.routes.get('/uninodes/composer/libraries')
     async def uni_composer_libraries(request):
-        return web.json_response({'libraries': composer_libraries.list_libraries()})
+        return web.json_response({'libraries': composer_libraries.list_libraries(),
+                                  'categories': composer_categories.public_templates()})
 
     @PromptServer.instance.routes.get('/uninodes/composer/library')
     async def uni_composer_library(request):
@@ -69,6 +71,24 @@ if web is not None:
         try:
             return web.json_response(composer_libraries.remove_user_library(request.query.get('id','')))
         except ValueError as exc:
+            return web.json_response({'error':str(exc)},status=400)
+
+    @PromptServer.instance.routes.get('/uninodes/composer/table-editor')
+    async def uni_composer_table_editor_page(request):
+        from pathlib import Path
+        return web.FileResponse(Path(__file__).resolve().parent/'tools'/'library_table_editor.html',headers={'Cache-Control':'no-cache'})
+
+    @PromptServer.instance.routes.post('/uninodes/composer/table-editor/export')
+    async def uni_composer_table_editor_export(request):
+        try:
+            if request.content_length and request.content_length > 20_000_000:
+                raise ValueError('Export request exceeds 20 MB')
+            data = composer_libraries.export_library_bundle(await request.json())
+            return web.Response(body=data,content_type='application/zip',headers={
+                'Content-Disposition':'attachment; filename="Uninodes_libraries_export.zip"',
+                'Cache-Control':'no-store',
+            })
+        except (ValueError,TypeError,KeyError) as exc:
             return web.json_response({'error':str(exc)},status=400)
 
     @PromptServer.instance.routes.get('/uninodes/composer/preset-editor')
@@ -183,7 +203,8 @@ if web is not None:
     async def ds_save(request):
         try:
             data=await request.json()
-            return web.json_response(backend.save_preview(data.get('token',''), folder=data.get('folder',''), image_format=data.get('format','PNG')))
+            return web.json_response(backend.save_preview(data.get('token',''), folder=data.get('folder',''), image_format=data.get('format','PNG'),
+                embed_metadata=data.get('embed_metadata', True)))
         except (ValueError, KeyError, TypeError) as exc:
             return web.json_response({'error':str(exc)},status=400)
 
@@ -263,7 +284,8 @@ if web is not None:
             data=await request.json()
             return web.json_response(finisher_exports.save_preview(
                 data.get('token'),data.get('variant'),data.get('folder',''),
-                data.get('format','PNG'),data.get('placement','suffix'),data.get('detail_label','_Detailed')))
+                data.get('format','PNG'),data.get('placement','suffix'),data.get('detail_label','_Detailed'),
+                embed_metadata=data.get('embed_metadata', True)))
         except (ValueError,KeyError,TypeError) as exc:
             return web.json_response({'error':str(exc)},status=400)
 

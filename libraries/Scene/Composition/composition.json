@@ -42,7 +42,7 @@
     {
       "id": "pov",
       "name": "POV",
-      "positive": "pov, looking at viewer, upper body",
+      "positive": "pov, upper body",
       "negative": "",
       "notes": "First-person view: the viewer is a person. No phone tag so it never adds one."
     },
@@ -56,7 +56,7 @@
     {
       "id": "selfie-result",
       "name": "Selfie (Viewer Is the Camera)",
-      "positive": "selfie, looking at viewer, outstretched arm, from above, upper body, smile",
+      "positive": "selfie, outstretched arm, from above, upper body, smile",
       "negative": "holding phone, phone",
       "notes": "The finished selfie photo. No phone is meant to be visible, so the negative blocks one."
     },
@@ -84,7 +84,7 @@
     {
       "id": "taking-photo",
       "name": "Taking a Photo",
-      "positive": "holding camera, taking picture, looking at viewer",
+      "positive": "holding camera, taking picture",
       "negative": "",
       "notes": ""
     },
@@ -119,7 +119,7 @@
     {
       "id": "eye-focus",
       "name": "Eye Focus",
-      "positive": "eye focus, extreme close-up, looking at viewer",
+      "positive": "eye focus, extreme close-up",
       "negative": "",
       "notes": ""
     },

@@ -1,0 +1,78 @@
+{
+  "format": "cpm-preset-library",
+  "schema_version": 1,
+  "id": "gaze-direction",
+  "name": "Gaze Direction",
+  "entries": [
+    {
+      "id": "looking-at-viewer",
+      "name": "Looking at Viewer",
+      "positive": "looking at viewer",
+      "negative": "",
+      "notes": "Explicit gaze selection, never implied by character or expression"
+    },
+    {
+      "id": "looking-away",
+      "name": "Looking Away",
+      "positive": "looking away",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "looking-aside",
+      "name": "Looking to the Side",
+      "positive": "looking to the side",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "looking-up",
+      "name": "Looking Up",
+      "positive": "looking up",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "looking-down",
+      "name": "Looking Down",
+      "positive": "looking down",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "looking-back",
+      "name": "Looking Back",
+      "positive": "looking back",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "looking-at-partner",
+      "name": "Looking at Another Person",
+      "positive": "looking at another person",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "looking-at-object",
+      "name": "Looking at Object",
+      "positive": "looking at object",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "eyes-closed",
+      "name": "Eyes Closed",
+      "positive": "closed eyes",
+      "negative": "",
+      "notes": ""
+    },
+    {
+      "id": "averted-eyes",
+      "name": "Averted Eyes",
+      "positive": "averted eyes",
+      "negative": "",
+      "notes": ""
+    }
+  ]
+}

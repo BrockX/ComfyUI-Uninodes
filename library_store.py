@@ -9,6 +9,8 @@ import json
 import re
 import hashlib
 import shutil
+import io
+import zipfile
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -74,15 +76,15 @@ def validate_library(obj):
                 raise ValueError(f'Invalid variable slot in {name}: {slot}')
             if not isinstance(config, dict):
                 raise ValueError(f'Invalid configuration for <{slot}>')
-            kind = config.get('type', 'library')
-            if kind not in ('library', 'text'):
+            variable_type = config.get('type', 'library')
+            if variable_type not in ('library', 'text'):
                 raise ValueError(f'Unknown variable type for <{slot}>')
             label = config.get('label', slot.replace('_', ' ').title())
             if not isinstance(label, str) or not label.strip() or len(label) > 50:
                 raise ValueError(f'Invalid label for <{slot}>')
             if f'<{slot}>' not in row.get('positive', '') and f'<{slot}>' not in row.get('negative', ''):
                 raise ValueError(f'Variable <{slot}> is not used in the preset text for {name}')
-            if kind == 'text':
+            if variable_type == 'text':
                 placeholder = config.get('placeholder', '')
                 if not isinstance(placeholder, str) or len(placeholder) > 100:
                     raise ValueError(f'Invalid placeholder for <{slot}>')
@@ -146,6 +148,21 @@ def _records():
             folder = '' if rel_folder == Path('.') else rel_folder.as_posix()
             records[key] = {'library': content, 'path': path, 'folder': folder, 'source': source}
     return records
+
+
+# Mandatory backend-only protection for adult-library prompt composition.
+# Folder classification is authoritative, with legacy IDs as a fallback for
+# workflows migrated from older library folder layouts.
+_NSFW_LIBRARY_IDS = frozenset({
+    'effects-fluids', 'nsfw-sexual-poses', 'partner-sexual-acts', 'pose-suggestive',
+    'sex-act-views', 'sexy-poses', 'solo-sexual-action', 'undressing',
+})
+
+def is_nsfw_library(lib_id):
+    if lib_id in _NSFW_LIBRARY_IDS:
+        return True
+    record = _records().get(lib_id)
+    return bool(record and record['folder'].replace('\\','/').split('/')[0].casefold() == 'nsfw')
 
 
 def _files():
@@ -371,3 +388,42 @@ def save_library_edit(payload):
                 'revision': _revision(destination), 'source': 'Personal',
                 'folder': '' if destination.parent == USER_LIBRARIES else destination.parent.relative_to(USER_LIBRARIES).as_posix(),
                 'backup_created': bool(personal_files)}
+
+
+def export_library_bundle(payload):
+    """Export validated library JSON files to a ZIP, never touching disk.
+
+    Accepts edited in-memory copies too; the browser's local-file mode can
+    export multiple libraries without requiring filesystem permissions.
+    """
+    if not isinstance(payload, dict) or not isinstance(payload.get('libraries'), list):
+        raise ValueError('Expected a libraries array')
+    values = payload['libraries']
+    if not 1 <= len(values) <= 200:
+        raise ValueError('Export supports between 1 and 200 libraries')
+    archive = io.BytesIO()
+    seen_names = set()
+    with zipfile.ZipFile(archive, 'w', zipfile.ZIP_DEFLATED, compresslevel=6) as zf:
+        for item in values:
+            if not isinstance(item, dict):
+                raise ValueError('Invalid export item')
+            library = validate_library(item.get('library'))
+            folder = item.get('folder', '')
+            if not isinstance(folder, str) or len(folder) > 500:
+                raise ValueError('Invalid folder in export')
+            parts = folder.replace('\\', '/').split('/') if folder else []
+            if len(parts) > 12 or any(
+                part in ('', '.', '..') or len(part) > 70 or
+                not re.fullmatch(r'[\w &().-]+', part, re.UNICODE)
+                for part in parts
+            ):
+                raise ValueError('Invalid folder in export')
+            filename = '/'.join(['libraries', *parts, library['id'] + '.json'])
+            if filename.casefold() in seen_names:
+                raise ValueError('Duplicate library ID/location in export')
+            seen_names.add(filename.casefold())
+            content = (json.dumps(library, ensure_ascii=False, indent=2) + '\n').encode('utf-8')
+            zf.writestr(filename, content)
+    if archive.tell() > 20_000_000:
+        raise ValueError('Export ZIP exceeds 20 MB')
+    return archive.getvalue()

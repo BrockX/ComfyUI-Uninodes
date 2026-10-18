@@ -6,11 +6,11 @@
 
 ## Nodes
 
-| Node | What it does |
-| --- | --- |
-| **Prompt Composer** | Build positive and negative prompts from reusable blocks and preset libraries. Chain composers together; optionally output encoded conditioning when a CLIP is connected. |
-| **Direct Sampler** | Generate images in one node. Choose a checkpoint or diffusion model, configure sampling and resolution, add LoRAs, and use text-to-image or image-to-image. Includes image preview and saving controls. |
-| **Image Finisher** | Process an existing image with resizing, model upscaling, tiled diffusion refinement, face/eye/hand detailing, mirroring, and text/image watermarks. Compare the original and processed images and save either or both. |
+| Node                                                 | What it does                                                                                                                                                                                                                         |
+| ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Prompt Composer**                                  | Build positive and negative prompts from reusable blocks and preset libraries. Chain composers together; optionally output encoded conditioning when a CLIP is connected.                                                            |
+| **Direct Sampler**                                   | Generate images in one node. Choose a checkpoint or diffusion model, configure sampling and resolution, add LoRAs, and use text-to-image or image-to-image. Includes image preview and saving controls.                              |
+| **Image Finisher**                                   | Process an existing image with resizing, model upscaling, tiled diffusion refinement, face/eye/hand detailing, mirroring, and text/image watermarks. Compare the original and processed images and save either or both.              |
 | **Direct Image Sampler Finisher Ultra Turbo Deluxe** | The all-in-one version: **Sampler settings → Finisher settings → Compare & Save**, arranged in three columns. Generates an image, optionally finishes it, and outputs both the final and original images. Yes, that's its full name. |
 
 All four nodes are available under the **Uninodes** category in ComfyUI.
@@ -50,11 +50,11 @@ There is no separate `pip install` step for the basic nodes when ComfyUI's norma
 
 ### Optional features
 
-| Feature | Additional requirement |
-| --- | --- |
+| Feature                      | Additional requirement                                                                                                                                                                                                                                          |
+| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Face, eye and hand detailing | [**ComfyUI Impact Pack**](https://github.com/ltdrdata/ComfyUI-Impact-Pack), a compatible detector provider (often [**Impact Subpack**](https://github.com/ltdrdata/ComfyUI-Impact-Subpack)), and detector model weights. A SAM model can be used if configured. |
-| Tiled diffusion refinement | [**ComfyUI Ultimate SD Upscale**](https://github.com/ssitu/ComfyUI_UltimateSDUpscale) (the `UltimateSDUpscaleNoUpscale` node). |
-| AI model upscaling | A compatible upscaler model in `ComfyUI/models/upscale_models/`. |
+| Tiled diffusion refinement   | [**ComfyUI Ultimate SD Upscale**](https://github.com/ssitu/ComfyUI_UltimateSDUpscale) (the `UltimateSDUpscaleNoUpscale` node).                                                                                                                                  |
+| AI model upscaling           | A compatible upscaler model in `ComfyUI/models/upscale_models/`.                                                                                                                                                                                                |
 
 You only need these extras when enabling the corresponding feature. Simple generation, resizing, comparison, and saving do not require Impact Pack or Ultimate SD Upscale.
 

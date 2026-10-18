@@ -128,8 +128,8 @@ function rebuildGallery(n){const row=n._dsGallery;if(!row)return;row.replaceChil
 async function fetchOutputFolders(n){try{const r=await api.fetchApi('/uninodes/sampler/folders');const d=await r.json();if(!r.ok)throw Error(d.error||'Folder list unavailable');n._dsOutputFolders=d.folders||[''];render(n);}catch(err){console.warn('[Direct Sampler] Output folders',err);}}
 async function createOutputFolder(n){const folder=window.prompt('New folder inside ComfyUI/output (Parent/Child allowed):','Generated');if(folder===null||!folder.trim())return;try{const r=await api.fetchApi('/uninodes/sampler/folders',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({folder:folder.trim()})});const data=await r.json();if(!r.ok)throw Error(data.error||'Unable to create folder');n.properties??={};n.properties.ds_output_folder=folder.trim();n._dsOutputFolders=data.folders||[''];graphDirty();render(n);}catch(err){if(n._dsProgressLabel)n._dsProgressLabel.textContent=err.message;}}
 async function browseOutputFolder(n){try{if(n._dsProgressLabel)n._dsProgressLabel.textContent='Choose a folder in the Windows dialog…';const r=await api.fetchApi('/uninodes/sampler/browse-folder',{method:'POST'});const raw=await r.text();let d;try{d=JSON.parse(raw);}catch{throw Error(`HTTP ${r.status}: ${raw.slice(0,120).trim()} — restart ComfyUI and check Uninodes installation`);}if(!r.ok)throw Error(d.error||'Native folder dialog unavailable');if(d.cancelled){if(n._dsProgressLabel)n._dsProgressLabel.textContent='Folder selection cancelled';return;}n.properties??={};n.properties.ds_output_folder=d.folder;n.properties.ds_native_folder_label=d.display;graphDirty();render(n);}catch(err){if(n._dsProgressLabel)n._dsProgressLabel.textContent=err.message;}}
-async function saveSelected(n){const item=n._dsResults?.[n._dsResultIndex||0];if(!item?.ds_token){n._dsProgressLabel.textContent='No result to save';return;}const format=n.properties?.ds_export_format||'PNG';const r=await api.fetchApi('/uninodes/sampler/save',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({token:item.ds_token,folder:n.properties?.ds_output_folder||'',format})});const data=await r.json();if(!r.ok)throw Error(data.error||'Save failed');n._dsProgressLabel.textContent=`Saved ${data.filename}`;}
-async function autoSaveDS(n,images){if(!n.properties?.ds_autosave)return;const folder=n.properties.ds_output_folder||'';const format=n.properties?.ds_export_format||'PNG';let saved=0;for(const image of images){if(!image?.ds_token)continue;const r=await api.fetchApi('/uninodes/sampler/save',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({token:image.ds_token,folder,format})});const data=await r.json();if(!r.ok)throw Error(data.error||'Autosave failed');saved++;}if(n._dsProgressLabel)n._dsProgressLabel.textContent=`Autosaved ${saved} image${saved===1?'':'s'}`;}
+async function saveSelected(n){const item=n._dsResults?.[n._dsResultIndex||0];if(!item?.ds_token){n._dsProgressLabel.textContent='No result to save';return;}const format=n.properties?.ds_export_format||'PNG';const r=await api.fetchApi('/uninodes/sampler/save',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({token:item.ds_token,folder:n.properties?.ds_output_folder||'',format,embed_metadata:parse(n).embed_metadata!==false})});const data=await r.json();if(!r.ok)throw Error(data.error||'Save failed');n._dsProgressLabel.textContent=`Saved ${data.filename}`;}
+async function autoSaveDS(n,images){if(!n.properties?.ds_autosave)return;const folder=n.properties.ds_output_folder||'';const format=n.properties?.ds_export_format||'PNG';let saved=0;for(const image of images){if(!image?.ds_token)continue;const r=await api.fetchApi('/uninodes/sampler/save',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({token:image.ds_token,folder,format,embed_metadata:parse(n).embed_metadata!==false})});const data=await r.json();if(!r.ok)throw Error(data.error||'Autosave failed');saved++;}if(n._dsProgressLabel)n._dsProgressLabel.textContent=`Autosaved ${saved} image${saved===1?'':'s'}`;}
 
 function sanitizeSeed(value){
   // Comfy supports uint64 seeds, but JS number inputs only preserve integers up to 2^53-1.
@@ -197,15 +197,49 @@ function queueSeedForNode(n){
   if(n._dsSeedNote)n._dsSeedNote.textContent=controls.lock?'🔒 Reusing displayed seed.':'Seed selected for this generation (lock to reuse).';
   return chosen;
 }
-function patchSerializedWorkflowSeed(workflow,n,seed){
-  const node=workflow?.nodes?.find?.(entry=>String(entry.id)===String(n.id));
-  if(!node)return;
+// Mirror a native widget into BOTH prompt inputs (the executable payload) and
+// workflow metadata (what ComfyUI records). ComfyUI's graph serialization and
+// async DOM input events can otherwise leave a just-edited prompt one queue
+// behind. Never rewrite linked positive/negative inputs or other node types.
+function patchSubmittedWidget(data,n,key,value){
+  const entry=data?.output?.[String(n.id)];
+  if(!entry?.inputs)return;
+  // All keys passed here have corresponding live native widgets.
+  // A hidden optional widget can be missing from a stale serialized object.
+  entry.inputs[key]=value;
+  const workflowNode=data.workflow?.nodes?.find?.(x=>String(x.id)===String(n.id));
+  if(!workflowNode)return;
   const serializedWidgets=(n.widgets||[]).filter(w=>w.serialize!==false);
-  const seedIndex=serializedWidgets.findIndex(w=>w.name==='seed');
-  if(Array.isArray(node.widgets_values)&&seedIndex>=0 && seedIndex<node.widgets_values.length){
-    node.widgets_values[seedIndex]=seed;
-  }else if(node.widgets_values && !Array.isArray(node.widgets_values) && 'seed' in node.widgets_values){
-    node.widgets_values.seed=seed;
+  const idx=serializedWidgets.findIndex(w=>w.name===key);
+  if(Array.isArray(workflowNode.widgets_values)&&idx>=0&&idx<workflowNode.widgets_values.length){
+    workflowNode.widgets_values[idx]=value;
+  }else if(workflowNode.widgets_values&&!Array.isArray(workflowNode.widgets_values)
+      &&Object.hasOwn(workflowNode.widgets_values,key)){
+    workflowNode.widgets_values[key]=value;
+  }
+}
+function syncQueuedPromptWidgets(data){
+  if(!data?.output||typeof data.output!=='object')return;
+  // Read the live hidden widgets, not a previously built graphToPrompt clone.
+  // This covers both standalone Direct Sampler and the Deluxe sampler.
+  for(const [id,entry] of Object.entries(data.output)){
+    if(entry?.class_type==='CPMPromptComposer'){
+      const composer=app.graph?.getNodeById?.(Number(id));
+      if(composer?.type!=='CPMPromptComposer')continue;
+      for(const key of ['blocks_json','socket_settings']){
+        const current=composer.widgets?.find(w=>w.name===key)?.value;
+        if(typeof current==='string')patchSubmittedWidget(data,composer,key,current);
+      }
+    }else if(isSamplerType(entry?.class_type)){
+      const sampler=findNode(id);
+      if(!sampler||!isSamplerType(sampler.type))continue;
+      const settings=get(sampler,'settings_json')?.value;
+      if(typeof settings==='string')patchSubmittedWidget(data,sampler,'settings_json',settings);
+      const profile=get(sampler,'profile_mode')?.value;
+      if(typeof profile==='string')patchSubmittedWidget(data,sampler,'profile_mode',profile);
+      const checkpoint=get(sampler,'checkpoint')?.value;
+      if(typeof checkpoint==='string')patchSubmittedWidget(data,sampler,'checkpoint',checkpoint);
+    }
   }
 }
 function installQueueSeedHook(){
@@ -218,13 +252,13 @@ function installQueueSeedHook(){
   const wrapped=function(...args){
     const data=args[1];
     if(data?.output && typeof data.output==='object'){
+      syncQueuedPromptWidgets(data);
       for(const [id,entry] of Object.entries(data.output)){
         if(!isSamplerType(entry?.class_type) || !entry.inputs || !Object.hasOwn(entry.inputs,'seed'))continue;
         const n=findNode(id);
         if(!n || !isSamplerType(n.type))continue;
         const seed=queueSeedForNode(n);
-        entry.inputs.seed=seed;
-        patchSerializedWorkflowSeed(data.workflow,n,seed);
+        patchSubmittedWidget(data,n,'seed',seed);
       }
     }
     return original.apply(this,args);
@@ -592,7 +626,7 @@ function openSettings(n){const originalCfg=structuredClone(n._dsConfig||parse(n)
    else saveMessage.textContent=n._dsProfileMessage?.startsWith("Couldn't")?n._dsProfileMessage:'Save cancelled.';
   }finally{creatorButton.disabled=personalButton.disabled=false;}
  }
- const sections=[['sampling','Sampling'],['resolution','Resolution & encoders'],['loras','LoRA & prompts'],['sockets','Optional sockets'],['preview','Preview & layout']];let flush=null;
+ const sections=[['sampling','Sampling'],['resolution','Resolution & encoders'],['loras','LoRA & prompts'],['sockets','Optional sockets'],['preview','Preview & layout'],['export','Export & metadata']];let flush=null;
  function addField(target,key,title,{options=null,type='number',step=1,defaultValue=null}={}){const input=options?select(target[key],options):textBox(target[key]??defaultValue,type,step);const f=field(title,input);article.append(f);return ()=>{target[key]=options?input.value:type==='number'?Number(input.value):type==='checkbox'?input.checked:input.value;};}
  function tab(id){flush?.();flush=null;nav.replaceChildren(...sections.map(([k,l])=>btn(l,()=>tab(k),'ds-tab'+(id===k?' active':''))));article.replaceChildren();const fns=[];
  if(id==='sampling'){article.append(e('div','ds-muted','Creator and Personal are saved in Uninodes for each model. Changing manual sampling values switches to Custom until you save again.'));
@@ -616,6 +650,11 @@ function openSettings(n){const originalCfg=structuredClone(n._dsConfig||parse(n)
  article.append(e('p','ds-muted','Conditioning outputs also show the LATENT output, to preserve ComfyUI output indices. Already connected outputs always remain visible.'));
  fns.push(()=>{cfg.show_sockets??={};for(const [key,cb]of controls){if(key==='latent_output'&&condOutputs?.checked)continue;cfg.show_sockets[key]=cb.checked;}});
  }else if(id==='preview'){article.append(e('p','ds-muted','ComfyUI denoising previews appear while sampling, without retaining a frame history. Final decoded PNGs are temporary until saved.'));
+ }else if(id==='export'){
+  const row=e('label','ds-row');const checkbox=textBox(cfg.embed_metadata!==false,'checkbox');
+  row.append(checkbox,e('span','','Embed generation metadata in saved images'));
+  article.append(row,e('p','ds-muted','On by default. Saves prompts, model and sampler parameters, plus ComfyUI prompt/workflow when available. Supported: PNG, JPEG, WebP, TIFF and GIF. BMP remains image-only. Turning this off removes generated metadata from manual saves and autosaves.'));
+  fns.push(()=>{cfg.embed_metadata=checkbox.checked;});
  }
  flush=()=>{for(const fn of fns)fn();}; }
  tab('sampling');}

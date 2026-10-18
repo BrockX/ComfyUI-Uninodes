@@ -7,7 +7,7 @@
     {
       "id": "spread-legs",
       "name": "Spread Legs",
-      "positive": "spread legs, on back, looking at viewer",
+      "positive": "spread legs, on back",
       "negative": "",
       "notes": ""
     },
@@ -84,7 +84,7 @@
     {
       "id": "lying-on-side",
       "name": "Lying on Side",
-      "positive": "on side, lying, bent knee, looking at viewer, arm support",
+      "positive": "on side, lying, bent knee, arm support",
       "negative": "",
       "notes": ""
     }

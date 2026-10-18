@@ -7,21 +7,21 @@
     {
       "id": "slim",
       "name": "Slim",
-      "positive": "slender, slim, narrow waist, long legs",
+      "positive": "slender, slim",
       "negative": "child, aged down",
       "notes": ""
     },
     {
       "id": "athletic-toned",
       "name": "Athletic / Toned",
-      "positive": "toned, athletic, abs, narrow waist, medium breasts",
+      "positive": "toned, athletic, abs",
       "negative": "child, aged down",
       "notes": ""
     },
     {
       "id": "curvy",
       "name": "Curvy",
-      "positive": "curvy, wide hips, thick thighs, narrow waist, large breasts",
+      "positive": "curvy, wide hips, thick thighs",
       "negative": "child, aged down",
       "notes": ""
     },
@@ -35,7 +35,7 @@
     {
       "id": "plump-soft",
       "name": "Plump / Soft",
-      "positive": "plump, soft belly, wide hips, thick thighs, large breasts",
+      "positive": "plump, soft belly",
       "negative": "child, aged down",
       "notes": ""
     },
@@ -49,14 +49,14 @@
     {
       "id": "tall-elegant",
       "name": "Tall & Elegant",
-      "positive": "tall female, mature female, long legs, elegant, narrow waist",
+      "positive": "tall female, long legs, elegant",
       "negative": "child, aged down",
       "notes": ""
     },
     {
       "id": "mature-woman",
       "name": "Mature Woman",
-      "positive": "mature female, curvy, large breasts, wide hips, elegant",
+      "positive": "mature female",
       "negative": "child, aged down",
       "notes": ""
     },
@@ -76,14 +76,14 @@
     {
       "id": "wide-hips-thighs",
       "name": "Wide Hips & Thighs",
-      "positive": "wide hips, thick thighs, narrow waist, thigh gap",
+      "positive": "wide hips, thick thighs",
       "negative": "child, aged down",
       "notes": ""
     },
     {
       "id": "big-butt",
       "name": "Big Butt",
-      "positive": "huge ass, wide hips, thick thighs, curvy",
+      "positive": "huge ass",
       "negative": "child, aged down",
       "notes": ""
     },
@@ -118,7 +118,7 @@
     {
       "id": "lean-male",
       "name": "Lean Male",
-      "positive": "male focus, lean, toned, slim waist, bishounen",
+      "positive": "male focus, lean, toned",
       "negative": "child, aged down",
       "notes": ""
     },
@@ -132,7 +132,7 @@
     {
       "id": "tall-male",
       "name": "Tall Male",
-      "positive": "male focus, tall male, broad shoulders, long legs",
+      "positive": "male focus, tall male",
       "negative": "child, aged down",
       "notes": ""
     },

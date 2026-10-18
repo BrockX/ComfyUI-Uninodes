@@ -21,7 +21,7 @@
     {
       "id": "streetwise-rebel",
       "name": "Streetwise Rebel",
-      "positive": "rebellious, smirk, hands in pockets, looking at viewer",
+      "positive": "rebellious, smirk, hands in pockets",
       "negative": "",
       "notes": ""
     },
@@ -35,7 +35,7 @@
     {
       "id": "mysterious-stranger",
       "name": "Mysterious Stranger",
-      "positive": "mysterious, expressionless, looking at viewer, hood",
+      "positive": "mysterious, expressionless, hood",
       "negative": "",
       "notes": ""
     },
@@ -70,7 +70,7 @@
     {
       "id": "shy-dreamer",
       "name": "Shy Dreamer",
-      "positive": "shy, dreamy, looking away, blush",
+      "positive": "shy, dreamy, blush",
       "negative": "",
       "notes": ""
     },

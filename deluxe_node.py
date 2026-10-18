@@ -51,14 +51,14 @@ class DirectImageSamplerFinisherUltraTurboDeluxe:
 
     def generate_and_finish(self, checkpoint, profile_mode, seed, settings_json,
                             finisher_settings_json="{}", positive="", negative="",
-                            unique_id=None, face=False, eyes=False, hands=False,
+                            unique_id=None, prompt=None, extra_pnginfo=None, face=False, eyes=False, hands=False,
                             upscale_using_model=False, simple_upscale=False,
                             mirror=False, watermark=False, diffusion_refine=False,
                             enabled=True, **kwargs):
         generated = DirectSampler().generate(
             checkpoint=checkpoint, profile_mode=profile_mode, seed=seed,
             settings_json=settings_json, positive=positive, negative=negative,
-            unique_id=unique_id, **kwargs,
+            unique_id=unique_id, prompt=prompt, extra_pnginfo=extra_pnginfo, **kwargs,
         )
         original, bundle, latent, positive_cond, negative_cond = generated["result"]
         finished = ImageFinisher().finish(
@@ -67,6 +67,7 @@ class DirectImageSamplerFinisherUltraTurboDeluxe:
             simple_upscale=simple_upscale, mirror=mirror, watermark=watermark,
             diffusion_refine=diffusion_refine, enabled=enabled,
             settings_json=finisher_settings_json, seed=seed, finisher=bundle,
+            prompt=prompt, extra_pnginfo=extra_pnginfo,
         )
         processed, summary = finished["result"]
         ui = {**generated.get("ui", {}), **finished.get("ui", {})}

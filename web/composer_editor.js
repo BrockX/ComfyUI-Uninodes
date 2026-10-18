@@ -7,6 +7,15 @@ import { api } from "../../scripts/api.js";
 
 const TYPE = 'CPMPromptComposer', PREFIX = 'cpm_block_';
 const MAX = 96;
+let CATEGORY_TEMPLATES=[];
+const categoryFor=id=>CATEGORY_TEMPLATES.find(x=>x.id===id);
+const allowedCategories=nsfw=>CATEGORY_TEMPLATES.filter(t=>nsfw||!t.nsfw_only);
+function visibleCategoryLibraries(t,variant,nsfw){
+    if(!t||(t.nsfw_only&&!nsfw))return [];
+    const mode=t.modes?.[variant]||t.modes?.[t.default_mode]||Object.values(t.modes||{})[0];
+    return [...new Set([...(t.common||[]),...(mode?.libraries||[]),...(nsfw?t.nsfw||[]:[])])];
+}
+
 // Fixed, deliberately muted accents: colour coding without a picker.
 // Stored as IDs so existing workflows can be opened on future themes.
 const FOLDER_COLORS = [
@@ -24,14 +33,16 @@ const FOLDER_COLORS = [
     {id:'slate',label:'Slate',hex:'#A4ADB9'}
 ];
 const colorById=id=>FOLDER_COLORS.find(c=>c.id===id)||FOLDER_COLORS[0];
+const CATEGORY_COLORS={quality:'yellow',camera:'indigo',identity:'blue',outfit:'pink',pose:'lime',setting:'teal',lighting:'orange',style:'violet',props:'cyan',roles:'green',adult:'red'};
+const categoryColor=b=>colorById(b.color||CATEGORY_COLORS[b.category_id]||'slate');
 const rgba=(hex,opacity)=>{const s=hex.replace('#','');return `rgba(${parseInt(s.slice(0,2),16)},${parseInt(s.slice(2,4),16)},${parseInt(s.slice(4,6),16)},${opacity})`;};
-const inheritedAccent=(b,rows)=>b.type==='folder'?colorById(b.color).hex:(rows.find(r=>r.type==='folder'&&r.id===b.folder_id)?colorById(rows.find(r=>r.id===b.folder_id).color).hex:null);
+const inheritedAccent=(b,rows)=>b.type==='folder'?colorById(b.color).hex:b.type==='category'?categoryColor(b).hex:(rows.find(r=>r.type==='folder'&&r.id===b.folder_id)?colorById(rows.find(r=>r.id===b.folder_id).color).hex:null);
 
 const get = (n,k)=>n.widgets?.find(w=>w.name===k);
-const SOCKET_DEFAULTS={clip:false,conditioning:false};
+const SOCKET_DEFAULTS={clip:false,conditioning:false,nsfw_libraries:false};
 function socketSettings(n){
     try{const parsed=JSON.parse(get(n,'socket_settings')?.value||'{}');
-        return {clip:parsed.clip===true,conditioning:parsed.conditioning===true};
+        return {clip:parsed.clip===true,conditioning:parsed.conditioning===true,nsfw_libraries:parsed.nsfw_libraries===true};
     }catch{return {...SOCKET_DEFAULTS};}
 }
 function writeSocketSettings(n,next){
@@ -57,6 +68,7 @@ const catalog=async()=>{
     const responses=await Promise.all(idx.libraries.map(row=>request(`/uninodes/composer/library?id=${encodeURIComponent(row.id)}`).catch(e=>{
         console.warn('[CPM] Library unavailable:',row.id,e);return null;
     })));
+    CATEGORY_TEMPLATES=Array.isArray(idx.categories)?idx.categories:[];
     const folders=new Map(idx.libraries.map(row=>[row.id,row.folder||'']));
     return responses.filter(Boolean).map(lib=>({...lib,folder:folders.get(lib.id)||''}));
 };
@@ -69,6 +81,18 @@ const slotDefs=(b,arr)=>entryFor(b,arr)?.variables||{};
 const modifierOptions=(def,arr)=>def.type==='text'?[]:libFor(arr,def.library)?.entries||[];
 const modifierName=(b,slot,def,arr)=>modifierOptions(def,arr).find(x=>x.id===b.variables?.[slot])?.name||'—';
 const mainLibraries=arr=>arr.filter(x=>x.kind!=='modifier');
+const selectedIds=b=>Array.isArray(b?.preset_ids)?b.preset_ids:(b?.preset_id?[b.preset_id]:[]);
+const selectedNames=(ids,lib)=>{const names=(ids||[]).map(id=>lib?.entries?.find(x=>x.id===id)?.name||id);return names.length===0?'Choose…':names.length===1?names[0]:`${names.length} selected · ${names.slice(0,2).join(', ')}`;};
+// Folder taxonomy is retained only for browsing a standalone Library row.
+// Smart Categories are curated sets from backend composer_categories.py.
+const libraryCategory=lib=>{
+    const parts=String(lib?.folder||'').split('/').map(s=>s.trim()).filter(Boolean);
+    return {parent:parts[0]||'Uncategorized',sub:parts.slice(1).join(' / ')||'General'};
+};
+const categoryOptions=libs=>[...new Set(libs.map(lib=>libraryCategory(lib).parent))].sort((a,b)=>a.localeCompare(b));
+const subcategoryOptions=(libs,parent)=>[...new Set(libs.filter(lib=>libraryCategory(lib).parent===parent).map(lib=>libraryCategory(lib).sub))].sort((a,b)=>a.localeCompare(b));
+const inCategory=(lib,parent,sub='')=>{const c=libraryCategory(lib);return c.parent===parent&&(!sub||c.sub===sub);};
+
 
 function normalized(raw){
     let source=[];
@@ -79,17 +103,24 @@ function normalized(raw){
     for(const r of source.slice(0,MAX)){
         if(!r||typeof r.id!=='string'||!/^[a-zA-Z0-9_-]{1,64}$/.test(r.id)||ids.has(r.id))continue;
         ids.add(r.id);
-        const type=['main','folder','text','library'].includes(r.type)?r.type:'text';
+        const type=['main','folder','text','library','category'].includes(r.type)?r.type:'text';
         if(type==='main')continue; // Compatibility: old anchor has no row in V1.5.12.
         const base={type,id:r.id,name:typeof r.name==='string'?r.name.slice(0,160):(type==='folder'?'Folder':'Block')};
         if(type==='folder'){base.color=colorById(r.color).id;rows.push(base);continue;}
         base.folder_id=typeof r.folder_id==='string'?r.folder_id:null;
         base.enabled=r.enabled!==false;
         base.expose_input=Boolean(r.expose_input);
-        if(type==='library'){
+        if(type==='category'){
+            base.category_id=r.category_id||'identity';
+            base.color=colorById(r.color||CATEGORY_COLORS[base.category_id]).id;
+            base.variant=typeof r.variant==='string'?r.variant:'';
+            base.members=(r.members&&typeof r.members==='object'&&!Array.isArray(r.members))?structuredClone(r.members):{};
+        }else if(type==='library'){
             base.library_id=r.library_id||'camera';base.preset_id=r.preset_id||'';
+            if(Array.isArray(r.preset_ids))base.preset_ids=r.preset_ids.filter(x=>typeof x==='string');
             base.auto_label=r.auto_label!==false;
             base.variables=(r.variables&&typeof r.variables==='object'&&!Array.isArray(r.variables))?{...r.variables}:{};
+            base.entry_variables=(r.entry_variables&&typeof r.entry_variables==='object'&&!Array.isArray(r.entry_variables))?structuredClone(r.entry_variables):{};
         }else{
             const old=typeof r.positive_text!=='string'&&typeof r.negative_text!=='string';
             base.positive_text=old?(r.target==='negative'?'':textOrEmpty(r.text)):textOrEmpty(r.positive_text);
@@ -238,6 +269,34 @@ function changed(n,id,fn){
     const did=fn(row);if(did===false)return;
     save(n,rows);
 }
+// These are UI-only choices: collapsing never removes an entry from a prompt.
+function entriesCollapsed(n,key){return (n.properties?.cpm_collapsed_entries||[]).includes(key);}
+function toggleEntries(n,key){
+    n.properties??={};const keys=new Set(n.properties.cpm_collapsed_entries||[]);
+    if(keys.has(key))keys.delete(key);else keys.add(key);
+    n.properties.cpm_collapsed_entries=[...keys];graphDirty();reconcile(n);
+}
+function collapseEntriesButton(n,key,description){
+    const closed=entriesCollapsed(n,key);
+    const button=action(closed?'▸':'▾','cpm-compact-icon cpm-collapse-button',()=>toggleEntries(n,key));
+    button.setAttribute('aria-label',`${closed?'Show':'Hide'} selected items in ${description}`);
+    button.setAttribute('aria-expanded',String(!closed));
+    button.title=`${closed?'Show':'Hide'} selected items`;
+    return button;
+}
+function deleteBlockOnNode(n,id){
+    const rows=read(n),b=rows.find(x=>x.id===id);if(!b)return;
+    if(!window.confirm(`Remove “${b.name}” from this Composer?\n\nThis does not delete the library or its entries.`))return;
+    const next=rows.filter(x=>x.id!==id);
+    if(b.type==='folder')for(const child of next)if(child.folder_id===id)child.folder_id=null;
+    save(n,next);reconcile(n);
+}
+function deleteBlockButton(n,b){
+    const button=action('×','cpm-compact-icon cpm-delete-button',()=>deleteBlockOnNode(n,b.id));
+    button.title=`Remove ${b.name} block from this Composer`;
+    button.setAttribute('aria-label',button.title);
+    return button;
+}
 // Nodes 2.0 may intercept the wheel on the Vue node wrapper before the DOM
 // widget scrolls. Listen at WINDOW CAPTURE (before node/canvas listeners),
 // but only handle wheel gestures inside a Composer block list with overflow.
@@ -332,6 +391,149 @@ function composerResizeGrip(n){
     });
     return grip;
 }
+// A library can contain multiple selected presets. Each selected item gets
+// its *own* modifier controls; older row-wide variables remain the fallback.
+function selectedEntryChildren(n,rowId,lib,ids,shared,byEntry,updateEntry,removeEntry){
+    const list=h('div','cpm-entry-children');
+    for(const entryId of ids||[]){
+        const entry=lib?.entries?.find(e=>e.id===entryId);
+        if(!entry)continue;
+        const child=h('div','cpm-entry-child');
+        const name=h('span','cpm-entry-child-label',entry.name);
+        name.title=entry.name;
+        child.append(name);
+        const overrides=byEntry?.[entryId]||{};
+        for(const [slot,def] of Object.entries(entry.variables||{})){
+            const value=Object.prototype.hasOwnProperty.call(overrides,slot)?overrides[slot]:(shared?.[slot]||'');
+            if(def.type==='text'){
+                const field=h('label','cpm-node-free-text cpm-entry-variable');
+                field.title=`${entry.name} · ${def.label||slot}`;
+                field.append(h('span','cpm-node-free-text-label',def.label||slot));
+                const input=h('input','cpm-node-free-text-input');
+                input.type='text';input.maxLength=2000;input.spellcheck=false;
+                input.value=value;input.placeholder=def.placeholder||'Optional…';
+                input.setAttribute('aria-label',`${entry.name}: ${def.label||slot}`);
+                stopNodeGesture(input);
+                input.addEventListener('keydown',ev=>ev.stopPropagation());
+                // Keep focus and caret while typing; save without rebuilding.
+                input.addEventListener('input',()=>updateEntry(entryId,slot,input.value));
+                field.append(input);child.append(field);
+            }else{
+                const options=modifierOptions(def,n._cpmCatalog||[]);
+                const chosen=options.find(x=>x.id===value)?.name||'None';
+                const picker=action('', 'cpm-node-modifier cpm-entry-variable',ev=>{
+                    showChoices(n,{id:rowId},ev,[{id:'',name:'None (no insertion)'},...options],
+                        `Search ${def.label||slot}…`,opt=>{updateEntry(entryId,slot,opt.id);reconcile(n);});
+                });
+                picker.title=`${entry.name} · ${def.label||slot}: ${chosen}`;
+                picker.append(h('span','cpm-node-modifier-name',def.label||slot),
+                    h('span','cpm-node-modifier-value',chosen),h('span','cpm-node-picker-arrow','▾'));
+                child.append(picker);
+            }
+        }
+        const remove=action('×','cpm-compact-icon cpm-delete-button cpm-entry-remove',()=>removeEntry(entryId));
+        remove.title=`Remove “${entry.name}” from the selection`;
+        remove.setAttribute('aria-label',remove.title);
+        child.append(remove);
+        list.append(child);
+    }
+    return list;
+}
+
+function domCategory(n,b,rows,libraries){
+    const t=categoryFor(b.category_id);
+    const accent=inheritedAccent(b,rows);
+    const root=h('div','cpm-node-block cpm-node-category'+(b.enabled?'':' disabled'));
+    if(accent){root.style.setProperty('--cpm-accent',accent);root.style.borderColor=rgba(accent,0.45);root.style.background=rgba(accent,b.enabled?0.14:0.065);}
+    const header=h('div','cpm-node-category-head');
+    const toggle=action(b.enabled?'ON':'OFF','cpm-node-toggle',()=>{changed(n,b.id,x=>{x.enabled=!x.enabled;});reconcile(n);});
+    toggle.setAttribute('aria-pressed',String(b.enabled));toggle.title='Enable / disable the entire category';
+    const closed=(n.properties?.cpm_collapsed_categories||[]).includes(b.id);
+    const collapse=action(closed?'▸':'▾','cpm-compact-icon cpm-collapse-button cpm-node-category-collapse',()=>{
+        n.properties??={};const values=new Set(n.properties.cpm_collapsed_categories||[]);
+        if(values.has(b.id))values.delete(b.id);else values.add(b.id);
+        n.properties.cpm_collapsed_categories=[...values];graphDirty();reconcile(n);
+    });
+    collapse.title=closed?'Expand category':'Collapse category';
+    collapse.setAttribute('aria-label',collapse.title);
+    collapse.setAttribute('aria-expanded',String(!closed));
+    const visible=visibleCategoryLibraries(t,b.variant,socketSettings(n).nsfw_libraries);
+    const active=visible.filter(id=>b.members?.[id]?.enabled&&b.members?.[id]?.preset_ids?.length).length;
+    header.append(toggle,collapse,h('strong','cpm-node-category-title',b.name),h('span','cpm-node-count',`${active} active`),deleteBlockButton(n,b));
+    root.append(header);
+    if(closed)return root;
+    if(!t){root.append(h('div','cpm-caption','Category definition missing. The saved configuration is preserved.'));return root;}
+    if(t.modes&&Object.keys(t.modes).length){
+        const row=h('div','cpm-node-category-mode');row.append(h('span','','Choose:'));
+        const modeSelect=h('select');for(const [id,v]of Object.entries(t.modes)){
+            const opt=h('option','',v.label);opt.value=id;modeSelect.append(opt);
+        }
+        modeSelect.value=b.variant||t.default_mode;
+        modeSelect.addEventListener('change',()=>{changed(n,b.id,x=>{x.variant=modeSelect.value;});reconcile(n);});
+        row.append(modeSelect);root.append(row);
+    }
+    const selected=visible.filter(id=>b.members?.[id]&&(b.members[id].enabled||b.members[id].preset_ids?.length));
+    const configured=h('div','cpm-category-configured');
+    for(const libraryId of selected){
+        const lib=libFor(libraries,libraryId);
+        if(!lib||lib.kind==='modifier')continue;
+        const member=b.members[libraryId]||{};
+        const line=h('div','cpm-category-library-line'+(member.enabled?'':' off'));
+        const on=action(member.enabled?'ON':'OFF','cpm-node-toggle',()=>{
+            changed(n,b.id,x=>{x.members??={};x.members[libraryId]??={enabled:false,preset_ids:[],variables:{}};x.members[libraryId].enabled=!x.members[libraryId].enabled;});reconcile(n);
+        });
+        on.setAttribute('aria-pressed',String(member.enabled));
+        const label=h('span','cpm-category-library-name',lib.name);
+        const pick=action('', 'cpm-node-picker',ev=>showMultiChoices(ev,lib.entries||[],member.preset_ids||[],ids=>{
+            changed(n,b.id,x=>{x.members??={};x.members[libraryId]??={enabled:true,preset_ids:[],variables:{}};x.members[libraryId].preset_ids=ids;});reconcile(n);
+        },`Search ${lib.name}…`));
+        const names=selectedNames(member.preset_ids||[],lib);
+        pick.title=names;pick.append(h('span','cpm-node-picker-label',names),h('span','cpm-node-picker-arrow','▾'));
+        const key=`${b.id}:${libraryId}`;
+        const collapseItems=member.preset_ids?.length?collapseEntriesButton(n,key,lib.name):null;
+        const remove=action('×','cpm-compact-icon cpm-delete-button cpm-category-remove',()=>{changed(n,b.id,x=>{delete x.members[libraryId];});reconcile(n);});
+        remove.title='Remove library from this category (not from the library collection)';
+        remove.setAttribute('aria-label',remove.title);
+        line.append(on,label,pick);
+        if(collapseItems)line.append(collapseItems);
+        line.append(remove);
+        const group=h('div','cpm-category-library-group');group.append(line);
+        if(member.preset_ids?.length&&!entriesCollapsed(n,key)){
+            group.append(selectedEntryChildren(n,b.id,lib,member.preset_ids,
+                member.variables,member.entry_variables,(entryId,slot,value)=>{
+                    changed(n,b.id,x=>{
+                        const row=x.members?.[libraryId];if(!row)return false;
+                        row.entry_variables??={};row.entry_variables[entryId]??={};
+                        row.entry_variables[entryId][slot]=value;
+                    });
+                },entryId=>{
+                    changed(n,b.id,x=>{
+                        const row=x.members?.[libraryId];if(!row)return false;
+                        row.preset_ids=(row.preset_ids||[]).filter(id=>id!==entryId);
+                        if(row.entry_variables)delete row.entry_variables[entryId];
+                    });reconcile(n);
+                }));
+        }
+        configured.append(group);
+    }
+    if(!configured.children.length)configured.append(h('span','cpm-category-empty','No libraries selected. Add one below.'));
+    root.append(configured);
+    const remaining=visible.filter(id=>!b.members?.[id]&&libFor(libraries,id)?.kind!=='modifier'&&libFor(libraries,id)?.entries?.length);
+    if(remaining.length){
+        const add=h('div','cpm-node-category-add');const selector=h('select');
+        const intro=h('option','','+ Add a library…');intro.value='';selector.append(intro);
+        for(const id of remaining){const lib=libFor(libraries,id),opt=h('option','',lib.name);opt.value=id;selector.append(opt);}
+        selector.addEventListener('change',()=>{
+            if(!selector.value)return;
+            const id=selector.value;
+            changed(n,b.id,x=>{x.members??={};x.members[id]={enabled:true,preset_ids:[],variables:{}};});reconcile(n);
+        });
+        add.append(selector);root.append(add);
+    }
+    if(t.nsfw_only&&!socketSettings(n).nsfw_libraries)root.append(h('span','cpm-caption','Enable adult library visibility in Composer Settings to configure this category.'));
+    return root;
+}
+
 function domFolder(n,b,rows){
     const accent=colorById(b.color).hex;
     const count=rows.filter(x=>x.folder_id===b.id).length;
@@ -370,46 +572,36 @@ function domRow(n,b,rows,library){
         const presets=presetsFor(b,library);
         const active=presets.find(x=>x.id===b.preset_id);
         const button=action('', 'cpm-node-picker',ev=>choosePreset(n,b,ev));
-        button.title=active?.name||b.preset_id||'Choose a preset';
-        button.append(h('span','cpm-node-picker-label',active?.name||b.preset_id||'Select preset'),h('span','cpm-node-picker-arrow','▾'));
+        const summary=selectedNames(selectedIds(b),libFor(library,b.library_id));
+        button.title=summary;
+        button.append(h('span','cpm-node-picker-label',summary),h('span','cpm-node-picker-arrow','▾'));
         top.append(button);
+        if(selectedIds(b).length)top.append(collapseEntriesButton(n,b.id,b.name));
         const edit=action('✎','cpm-node-library-edit',()=>openSettings(n,b.id,{tab:'libraries',libraryId:b.library_id,presetId:b.preset_id}));
         edit.title=`Edit ${labelFor(b,library)} library preset in Settings`;
         edit.setAttribute('aria-label',`Edit ${b.name} library`);
         top.append(edit);
-        for(const [slot,def] of Object.entries(slotDefs(b,library))){
-            if(def.type==='text'){
-                const field=h('label','cpm-node-free-text');
-                field.title=`${b.name} · ${def.label||slot} (optional free text)`;
-                field.append(h('span','cpm-node-free-text-label',def.label||slot));
-                const input=h('input','cpm-node-free-text-input');
-                input.type='text';input.maxLength=2000;input.spellcheck=false;
-                input.value=typeof b.variables?.[slot]==='string'?b.variables[slot]:'';
-                input.placeholder=def.placeholder||'Optional…';
-                input.setAttribute('aria-label',`${b.name} ${def.label||slot} optional free text`);
-                stopNodeGesture(input);
-                input.addEventListener('keydown',e=>e.stopPropagation());
-                // Do not reconcile/rebuild on each keystroke: keep caret/focus.
-                input.addEventListener('input',()=>changed(n,b.id,x=>{
-                    if(x.variables?.[slot]===input.value)return false;
-                    x.variables={...(x.variables||{}),[slot]:input.value};
-                }));
-                field.append(input);top.append(field);
-            }else{
-                const chosen=modifierName(b,slot,def,library);
-                const sub=action('', 'cpm-node-modifier',ev=>chooseModifier(n,b,slot,def,ev));
-                sub.title=`${def.label||slot}: ${chosen}`;
-                sub.setAttribute('aria-label',`${b.name} ${def.label||slot}: ${chosen}`);
-                sub.append(h('span','cpm-node-modifier-name',def.label||slot),
-                           h('span','cpm-node-modifier-value',chosen),
-                           h('span','cpm-node-picker-arrow','▾'));
-                top.append(sub);
-            }
-        }
+
     }else{
         top.append(action(b.show_text_fields===false?'Text in settings':'Edit text below','cpm-node-edit',()=>openSettings(n,b.id)));
     }
+    if(b.type==='library')top.append(deleteBlockButton(n,b));
     root.append(top);
+    if(b.type==='library'&&selectedIds(b).length&&!entriesCollapsed(n,b.id)){
+        root.append(selectedEntryChildren(n,b.id,libFor(library,b.library_id),selectedIds(b),
+            b.variables,b.entry_variables,(entryId,slot,value)=>{
+                changed(n,b.id,x=>{
+                    x.entry_variables??={};x.entry_variables[entryId]??={};
+                    x.entry_variables[entryId][slot]=value;
+                });
+            },entryId=>{
+                changed(n,b.id,x=>{
+                    x.preset_ids=selectedIds(x).filter(id=>id!==entryId);
+                    if(x.entry_variables)delete x.entry_variables[entryId];
+                    if(x.preset_ids.length)x.preset_id=x.preset_ids[0];
+                });reconcile(n);
+            }));
+    }
     if(b.type==='text'&&b.show_text_fields!==false){
         const inputs=h('div','cpm-node-text-inputs');
         for(const polarity of ['positive','negative']){
@@ -458,15 +650,17 @@ function refreshDOM(n,rows,library){
     const suiteTitles=h('div','cpm-node-suite-titles');
     suiteTitles.append(h('strong','','PROMPT COMPOSER'),h('span','','Blocks · Presets · Folders'));
     suiteHead.append(suiteIcon,suiteTitles);
+    const addCategory=action('+ Category','cpm-node-add-category',()=>addCategoryOnNode(n));
+    addCategory.title='Add a preconfigured, multi-library category';
     const settings=action('⚙','cpm-node-settings',()=>openSettings(n));settings.title='Settings';
-    suiteHead.append(settings);shell.append(suiteHead);
+    suiteHead.append(addCategory,settings);shell.append(suiteHead);
     const list=h('div','cpm-node-scroll');n._cpmList=list;
     list.tabIndex=0;list.setAttribute('role','region');
     list.setAttribute('aria-label','Prompt Composer blocks (scroll to see more)');
     const collapsed=new Set(n.properties?.cpm_collapsed_folders||[]);
     for(const b of rows){
         if(b.folder_id&&collapsed.has(b.folder_id))continue;
-        const item=b.type==='folder'?domFolder(n,b,rows):domRow(n,b,rows,library);
+        const item=b.type==='folder'?domFolder(n,b,rows):b.type==='category'?domCategory(n,b,rows,library):domRow(n,b,rows,library);
         enableNodeDrop(n,item,b.id,b.type==='folder');list.append(item);
     }
     const end=h('div','cpm-node-drop-end','Drop here to move to the end');
@@ -497,9 +691,35 @@ function ensureDOM(n){
 function choosePreset(n,b,ev){
     const options=presetsFor(b,n._cpmCatalog);
     if(!options.length)return;
-    showChoices(n,b,ev,options,`Search ${b.name}…`,opt=>{
-        changed(n,b.id,x=>{x.preset_id=opt.id;x.variables={};});reconcile(n);
-    });
+    showMultiChoices(ev,options,selectedIds(b),ids=>{
+        changed(n,b.id,x=>{x.preset_ids=ids;x.preset_id=ids[0]||x.preset_id;});reconcile(n);
+    },`Search ${b.name}…`);
+}
+function showMultiChoices(ev,options,active,onDone,placeholder='Search items…'){
+    const popup=h('div','cpm-picker cpm-multi-picker');
+    popup.style.left=`${Math.min(window.innerWidth-345,Math.max(12,ev.clientX||240))}px`;
+    popup.style.top=`${Math.min(window.innerHeight-430,Math.max(12,ev.clientY||120))}px`;
+    const selected=new Set(active||[]), filter=h('input');filter.placeholder=placeholder;
+    const count=h('div','cpm-picker-count');
+    const list=h('div','cpm-picker-list');
+    const actions=h('div','cpm-multi-actions');
+    const close=()=>{popup.remove();document.removeEventListener('pointerdown',outside,true);};
+    const outside=e=>{if(!popup.contains(e.target))close();};
+    const clear=btn('Clear',()=>{selected.clear();render();});
+    const apply=btn('Done',()=>{onDone([...selected]);close();},'cpm-primary');
+    actions.append(clear,apply);
+    const render=()=>{
+        count.textContent=`${selected.size} selected (maximum 24)`;
+        list.replaceChildren();const q=filter.value.toLocaleLowerCase();
+        for(const opt of options.filter(x=>x.name.toLocaleLowerCase().includes(q)).slice(0,120)){
+            const row=h('label','cpm-multi-option');const check=h('input');check.type='checkbox';check.checked=selected.has(opt.id);
+            check.addEventListener('change',()=>{if(check.checked){if(selected.size>=24){check.checked=false;return;}selected.add(opt.id);}else selected.delete(opt.id);count.textContent=`${selected.size} selected (maximum 24)`;});
+            row.append(check,h('span','',opt.name));list.append(row);
+        }
+    };
+    filter.addEventListener('input',render);popup.append(filter,count,list,actions);
+    document.body.append(popup);render();
+    setTimeout(()=>document.addEventListener('pointerdown',outside,true),0);filter.focus();
 }
 function chooseModifier(n,b,slot,def,ev){
     const choices=modifierOptions(def,n._cpmCatalog);
@@ -556,11 +776,11 @@ function check(label,value,cb){const l=h('label','cpm-check');const x=h('input')
 let cssDone=false;
 function ensureCSS(){if(cssDone)return;cssDone=true;const s=h('style');s.textContent=`
 .cpm-overlay{position:fixed;inset:0;z-index:100000;background:#070b12c9;display:flex;align-items:center;justify-content:center;padding:16px;color:#ecf1fc;font:13px system-ui,sans-serif}
-.cpm-modal{width:min(1020px,96vw);height:min(760px,93vh);max-height:93vh;min-height:0;display:flex;flex-direction:column;background:#1b2230;border:1px solid #4b5870;border-radius:12px;box-shadow:0 22px 80px #000a;overflow:hidden}
+.cpm-modal{width:min(1160px,97vw);height:min(830px,94vh);max-height:93vh;min-height:0;display:flex;flex-direction:column;background:#1b2230;border:1px solid #4b5870;border-radius:12px;box-shadow:0 22px 80px #000a;overflow:hidden}
 .cpm-modal header,.cpm-modal footer{padding:13px 17px;display:flex;align-items:center;gap:8px;background:#202a3b}.cpm-modal header{border-bottom:1px solid #354153;justify-content:space-between}.cpm-modal footer{border-top:1px solid #354153;flex-wrap:wrap;justify-content:flex-end}
 .cpm-modal h2{font-size:17px;margin:0}.cpm-modal button,.cpm-picker button{background:#35455c;border:1px solid #4b5c75;color:#e8effe;border-radius:6px;padding:7px 10px;cursor:pointer;font-size:12px}.cpm-modal button:hover,.cpm-picker button:hover{background:#4d6180}.cpm-modal button.cpm-primary{background:#4469b6}.cpm-modal button.cpm-danger{background:#56333d}
-.cpm-modal button:disabled{opacity:.35}.cpm-layout{display:grid;grid-template-columns:minmax(230px,34%) minmax(360px,1fr);min-height:0;overflow:hidden;flex:1}
-.cpm-sidebar{padding:14px;display:flex;flex-direction:column;gap:9px;min-height:0;border-right:1px solid #394659;overflow:hidden;background:#171f2d}.cpm-sidebar-list{min-height:0;flex:1 1 auto;display:flex;flex-direction:column;gap:4px;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;padding:3px 6px 4px 0;scrollbar-width:thin;scrollbar-color:#63748e #192334}.cpm-sidebar-help{flex:0 0 auto}.cpm-sidebar-root{flex:0 0 auto;width:100%}.cpm-detail{padding:20px;display:flex;min-height:0;flex-direction:column;gap:14px;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain}.cpm-caption{font-size:12px;color:#9eafc7;line-height:1.5}
+.cpm-modal button:disabled{opacity:.35}.cpm-category-modal{width:min(510px,96vw);height:auto;min-height:0;max-height:85vh}.cpm-category-modal .cpm-category-body{display:flex;flex-direction:column;gap:12px;overflow-y:auto;padding:18px}.cpm-category-modal .cpm-category-preview{border:1px solid #455977;border-radius:8px;padding:10px;color:#acbfd8;line-height:1.5;font-size:12px}.cpm-category-modal .cpm-category-preview b{color:#e0ebfc}.cpm-layout{display:grid;grid-template-columns:minmax(310px,43%) minmax(360px,1fr);min-height:0;overflow:hidden;flex:1}
+.cpm-options-panel{flex:1;min-height:0;overflow-y:auto;padding:22px;display:none;align-content:start;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));background:#192434}.cpm-options-panel .cpm-socket-panel{height:max-content}.cpm-sidebar{padding:12px;display:flex;flex-direction:column;gap:9px;min-height:0;border-right:1px solid #394659;overflow:hidden;background:#171f2d}.cpm-sidebar-list{min-height:0;flex:1 1 auto;display:flex;flex-direction:column;gap:4px;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;padding:3px 6px 4px 0;scrollbar-width:thin;scrollbar-color:#63748e #192334}.cpm-sidebar-help{flex:0 0 auto}.cpm-sidebar-root{flex:0 0 auto;width:100%}.cpm-detail{padding:20px;display:flex;min-height:0;flex-direction:column;gap:14px;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain}.cpm-caption{font-size:12px;color:#9eafc7;line-height:1.5}
 .cpm-socket-panel{flex:0 0 auto;display:flex;flex-direction:column;gap:6px;padding:10px;border:1px solid #39485d;border-radius:8px;background:#1b2a3d}.cpm-socket-panel strong{font-size:12px}.cpm-socket-panel .cpm-check{margin:0}.cpm-socket-panel .cpm-caption{margin:2px 0 0;font-size:11px}
 .cpm-sideitem{display:flex;flex:0 0 auto;align-items:center;gap:8px;padding:10px 9px;border-radius:7px;cursor:pointer;min-height:41px;outline:1px solid transparent}.cpm-sideitem:hover{background:#283449}.cpm-sideitem.active{background:#2b4368;outline:1px solid #4b78bc}.cpm-sideitem.dragover{border-top:2px solid #79a8f3}.cpm-sideitem.folder{font-weight:700;background:#243148}.cpm-sideitem.folder-drop{outline:2px dashed #8bb6ff}.cpm-sideitem .handle{opacity:.45;cursor:grab;font-size:13px}.cpm-sideitem .name{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .cpm-color-palette{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;padding:6px 0 10px}.cpm-modal button.cpm-color-swatch{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;min-width:0;padding:8px 3px 6px;background:#222d3d;border:1px solid #4c596d;border-radius:8px;color:#b8c5d9;font-size:10px}.cpm-modal button.cpm-color-swatch.selected{border-color:#ecf2ff;box-shadow:0 0 0 1px #ecf2ff5c;background:#33425a;color:#fff}.cpm-modal button.cpm-color-swatch:hover{background:#3a4a60}.cpm-color-dot{width:23px;height:23px;border-radius:7px;border:1px solid #ffffff50;box-sizing:border-box}.cpm-field{display:flex;flex-direction:column;gap:6px;color:#bdcbe0;font-size:12px}.cpm-field input,.cpm-field textarea,.cpm-field select,.cpm-picker input{background:#121c2a;color:#f5f7fa;border:1px solid #4c5d75;border-radius:6px;padding:9px;font:13px system-ui,sans-serif;box-sizing:border-box;width:100%}.cpm-field textarea{min-height:75px;resize:vertical}.cpm-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.cpm-check{display:flex;align-items:center;gap:8px;font-size:12px;color:#e4e9f4}.cpm-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}.cpm-picker{position:fixed;z-index:100005;min-width:260px;width:320px;max-height:360px;overflow:auto;background:#1d2736;box-shadow:0 12px 40px #000b;border:1px solid #506080;border-radius:10px;padding:10px}.cpm-picker-list{display:flex;flex-direction:column;gap:3px;margin-top:7px}.cpm-picker button{text-align:left;width:100%}
@@ -643,8 +863,71 @@ function ensureCSS(){if(cssDone)return;cssDone=true;const s=h('style');s.textCon
 .cpm-node-drop-end,.cpm-sidebar-end-drop{flex-shrink:0;padding:9px;border:1px dashed #526783;border-radius:7px;text-align:center;color:#91a8c7;font-size:10px}
 .cpm-node-drop-end.cpm-drag-target,.cpm-sidebar-end-drop.dragover{border-color:#94b8ef;color:#eaf3ff;background:#38527377}
 
+.cpm-node-suite-head .cpm-node-add-category{margin-left:auto;height:30px;padding:0 10px;border:1px solid #6784a5;background:#2e4d65;border-radius:7px;white-space:nowrap;font-size:11px!important;font-weight:700!important}
+.cpm-node-suite-head .cpm-node-settings{margin-left:0}
+.cpm-entry-children{display:flex;flex-direction:column;gap:4px;padding:1px 0 0 12px;border-left:2px solid color-mix(in srgb,var(--cpm-accent,#8da2c4) 55%,#4f6175);margin-left:10px;min-width:0}
+.cpm-entry-child{display:flex;align-items:center;gap:6px;flex-wrap:wrap;border-radius:6px;background:#17263882;padding:5px 7px;min-height:31px;min-width:0}
+.cpm-entry-child::before{content:'↳';color:var(--cpm-accent,#90b8da);font-size:13px}
+.cpm-entry-child-label{color:#e3ebf8;font-size:11px;font-weight:600;flex:1 1 130px;min-width:70px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cpm-entry-variable{flex:0 1 155px;min-width:115px;max-width:230px}
+/* Consistent compact controls for category/library collapse and deletion. */
+.cpm-node-layout button.cpm-compact-icon{width:26px;min-width:26px;height:26px;flex:0 0 26px;display:grid;place-items:center;padding:0!important;border-radius:7px;font-size:16px!important;line-height:1!important;transition:background .13s,border-color .13s,color .13s}
+.cpm-node-layout button.cpm-collapse-button{border:1px solid #536b86;background:#23364b;color:#bbd7f5}
+.cpm-node-layout button.cpm-collapse-button:hover{background:#34516e;border-color:#7aa7d6;color:#fff}
+.cpm-node-layout button.cpm-delete-button{border:1px solid #65505e;background:#332633;color:#e6aab5;font-size:18px!important}
+.cpm-node-layout button.cpm-delete-button:hover{border-color:#d38c9e;background:#583344;color:#fff}
+.cpm-node-layout button.cpm-compact-icon:focus-visible{outline:2px solid #b9d8ff;outline-offset:2px}
+.cpm-entry-child-label{flex:1 1 100px}
+.cpm-node-layout button.cpm-entry-remove{margin-left:auto;align-self:center}
+.cpm-node-library-line .cpm-compact-icon{flex-shrink:0}
+.cpm-category-library-group{min-width:0;display:flex;flex-direction:column;gap:3px}
+.cpm-node-category{gap:7px;padding:9px!important}.cpm-node-category-head{display:flex;align-items:center;gap:7px;min-width:0}.cpm-node-category-title{font-size:11px;text-transform:capitalize;letter-spacing:.35px;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.cpm-node-category-collapse{margin:0}.cpm-node-category-mode{display:flex;align-items:center;gap:7px;color:#9bb3d2;font-size:11px}.cpm-node-category-mode select,.cpm-node-category-add select{flex:1;min-width:0;max-width:100%;border-radius:6px;padding:6px;background:#182536;color:#e4efff;border:1px solid #536782}.cpm-category-configured{display:flex;flex-direction:column;gap:5px}.cpm-category-library-line{display:flex;gap:6px;align-items:center;min-width:0;padding:5px;border-radius:6px;background:#202d40}.cpm-category-library-line.off{opacity:.65}.cpm-category-library-name{flex:0 1 115px;min-width:50px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:10px}.cpm-category-library-line .cpm-node-picker{flex:1 1 95px;min-width:75px}.cpm-category-remove{margin:0}.cpm-category-empty{font-size:10px;color:#97aac2}.cpm-node-category-add{display:flex;min-width:0}.cpm-multi-picker{display:flex;flex-direction:column;max-height:min(455px,80vh);width:335px}.cpm-multi-picker .cpm-picker-list{flex:1;overflow-y:auto;min-height:0}.cpm-multi-option{display:flex;align-items:center;gap:8px;padding:5px 4px;cursor:pointer;color:#e5eefb;font-size:12px}.cpm-multi-option input{width:auto!important;accent-color:#86ace5}.cpm-picker-count{padding:7px 2px;color:#abc2e1;font-size:11px}.cpm-multi-actions{display:flex;justify-content:space-between;margin-top:8px;gap:6px}
 @media(max-width:720px){.cpm-layout{grid-template-columns:1fr;grid-template-rows:minmax(155px,38%) minmax(0,1fr);min-height:0}.cpm-sidebar{border-right:0;border-bottom:1px solid #394659;padding:10px}.cpm-detail{min-height:0;padding:14px}.cpm-grid{grid-template-columns:1fr}}
 `;document.head.append(s);}
+// Shared category picker: Settings creates a draft row; the node adds the
+// same single category block immediately to its serialized configuration.
+function openCategoryPicker(nsfw,onAdd){
+    const options=allowedCategories(nsfw);
+    if(!options.length)return;
+    const shade=h('div','cpm-overlay');
+    const panel=h('div','cpm-modal cpm-category-modal');
+    const head=h('header');head.append(h('h2','','Add smart category'));
+    const dismiss=()=>shade.remove();head.append(btn('✕',dismiss));panel.append(head);
+    const body=h('div','cpm-category-body');
+    const choice=select('Category',options.map(t=>[t.id,t.name]),options[0].id,()=>draw());
+    const subtype=h('label','cpm-field');subtype.append(h('span','','Start with subgroup'));
+    const subtypeSelect=h('select');subtype.append(subtypeSelect);
+    const preview=h('div','cpm-category-preview');body.append(choice,subtype,preview);panel.append(body);
+    const footer=h('footer');footer.append(btn('Cancel',dismiss),btn('Add category',()=>{
+        const template=categoryFor(choice.querySelector('select').value);
+        if(!template)return;
+        if(onAdd(template,subtypeSelect.value||template.default_mode||'')!==false)dismiss();
+    },'cpm-primary'));panel.append(footer);shade.append(panel);document.body.append(shade);
+    shade.addEventListener('mousedown',event=>{if(event.target===shade)dismiss();});
+    function draw(){
+        const t=categoryFor(choice.querySelector('select').value);
+        subtypeSelect.replaceChildren();
+        const modes=Object.entries(t?.modes||{});subtype.style.display=modes.length?'':'none';
+        for(const [key,val] of modes){const opt=h('option','',val.label);opt.value=key;subtypeSelect.append(opt);}
+        if(modes.length)subtypeSelect.value=t.default_mode||modes[0][0];
+        const count=new Set([...(t?.common||[]),...Object.values(t?.modes||{}).flatMap(v=>v.libraries),...(nsfw?t?.nsfw||[]:[])]).size;
+        preview.textContent=`${count} available library selectors · all start empty. Add the libraries and select the items you need in the node.`;
+    }
+    draw();
+}
+async function addCategoryOnNode(n){
+    try{
+        if(!CATEGORY_TEMPLATES.length)n._cpmCatalog=await catalog();
+        openCategoryPicker(socketSettings(n).nsfw_libraries,(template,variant)=>{
+            const rows=read(n);
+            if(rows.length>=MAX){window.alert?.(`Maximum ${MAX} Composer blocks reached`);return false;}
+            rows.push({id:uuid(),type:'category',name:template.name,color:CATEGORY_COLORS[template.id]||'slate',
+                enabled:true,expose_input:false,category_id:template.id,variant,members:{},folder_id:null});
+            save(n,rows);reconcile(n);return true;
+        });
+    }catch(err){console.error('[Uninodes] Cannot add category',err);window.alert?.(`Cannot add category: ${err.message}`);}
+}
+
 function openSettings(n,initialSelection,options={}){
     ensureCSS();const draft=read(n).map(b=>({...b}));let available=n._cpmCatalog||[];
     const socketDraft={...socketSettings(n)};
@@ -654,24 +937,30 @@ function openSettings(n,initialSelection,options={}){
     const tabs=h('div','cpm-tabs');
     const layoutTab=btn('Blocks & Folders',()=>setTab('blocks'),'cpm-tab');
     const librariesTab=btn('Library Manager',()=>setTab('libraries'),'cpm-tab');
-    tabs.append(layoutTab,librariesTab);top.append(tabs,btn('✕',close));
+    const optionsTab=btn('Composer Options',()=>setTab('options'),'cpm-tab');
+    const tableTab=btn('Table Editor ↗',()=>window.open('/uninodes/composer/table-editor','_blank','noopener'),'cpm-tab');
+    tableTab.title='Open the simple table editor in a separate browser tab';
+    tabs.append(layoutTab,librariesTab,optionsTab,tableTab);top.append(tabs,btn('✕',close));
     const layout=h('div','cpm-layout'),left=h('nav','cpm-sidebar'),right=h('section','cpm-detail'),footer=h('footer');
+    const optionsPane=h('div','cpm-options-panel');
     const manager=h('div','cpm-library-pane');
     manager.append(h('div','cpm-library-note','Library edits save directly to JSON (with backups). Composer layout changes still require Apply on the Blocks tab.'));
     const iframe=h('iframe','cpm-library-frame');iframe.title='Installed Preset Library Manager';
     manager.append(iframe);
-    layout.append(left,right);modal.append(top,layout,manager,footer);ov.append(modal);document.body.append(ov);
+    layout.append(left,right);modal.append(top,layout,optionsPane,manager,footer);ov.append(modal);document.body.append(ov);
     let libraryDirty=false,iframeLoaded=false;
     const urlFor=(libraryId,presetId)=>'/uninodes/composer/preset-editor?embedded=1'
         +(libraryId?'&library='+encodeURIComponent(libraryId):'')
         +(presetId?'&preset='+encodeURIComponent(presetId):'');
     function setTab(tab,libraryId,presetId){
-        const showManager=tab==='libraries';
-        layout.style.display=showManager?'none':'';
-        footer.style.display=showManager?'none':'';
+        const showManager=tab==='libraries',showOptions=tab==='options';
+        layout.style.display=(showManager||showOptions)?'none':'';
+        optionsPane.style.display=showOptions?'grid':'none';
+        footer.style.display=showManager?'none':'flex';
         manager.style.display=showManager?'flex':'none';
-        layoutTab.classList.toggle('active',!showManager);
+        layoutTab.classList.toggle('active',tab==='blocks');
         librariesTab.classList.toggle('active',showManager);
+        optionsTab.classList.toggle('active',showOptions);
         if(showManager&&(!iframeLoaded||libraryId)){
             if(libraryDirty&&!window.confirm?.('Discard unsaved library edits?'))return;
             iframe.src=urlFor(libraryId,presetId);iframeLoaded=true;libraryDirty=false;
@@ -723,6 +1012,24 @@ function openSettings(n,initialSelection,options={}){
         }
         selected=moving.id;render();
     }
+    // Smart categories are a *single block* with preconfigured member library
+    // choices, not a folder which expands into many separate Composer rows.
+    function addCategory(){
+        if(!CATEGORY_TEMPLATES.length){msg.textContent='Category definitions are still loading';return;}
+        openCategoryPicker(socketDraft.nsfw_libraries,(template,variant)=>{
+            if(draft.length>=MAX){msg.textContent=`Limit of ${MAX} rows reached`;return false;}
+            const row={id:uuid(),type:'category',name:template.name,
+                color:CATEGORY_COLORS[template.id]||'slate',enabled:true,expose_input:false,
+                category_id:template.id,variant,members:{},folder_id:null};
+            const pos=draft.findIndex(x=>x.id===selected);
+            let at=pos<0?draft.length:pos+1;
+            if(pos>=0){const neighbor=draft[pos];row.folder_id=neighbor.type==='folder'?neighbor.id:neighbor.folder_id||null;
+                if(row.folder_id){at=draft.reduce((last,item,i)=>item.id===row.folder_id||item.folder_id===row.folder_id?i+1:last,at);}}
+            draft.splice(at,0,row);selected=row.id;render(true);
+            msg.textContent=`Added ${template.name} · select your libraries in the node`;
+            return true;
+        });
+    }
     function add(type){if(draft.length>=MAX){msg.textContent=`Limit of ${MAX} rows reached`;return;}
         const id=uuid();let row;
         if(type==='folder')row={id,type,name:'New Folder',color:'blue'};
@@ -752,12 +1059,18 @@ function openSettings(n,initialSelection,options={}){
     socketPanel.append(h('strong','','Node sockets'),
         check('Show CLIP input',socketDraft.clip,v=>socketDraft.clip=v),
         check('Show CONDITIONING outputs',socketDraft.conditioning,v=>socketDraft.conditioning=v));
+    const visibilityPanel=h('div','cpm-socket-panel');
+    visibilityPanel.append(h('strong','','Library visibility'),
+        check('Show NSFW libraries in categories',socketDraft.nsfw_libraries,v=>socketDraft.nsfw_libraries=v),
+        h('p','cpm-caption','Only controls adult-library visibility inside smart categories. It does not disable mandatory prompt safeguards or change individual existing library rows.'));
+
     const socketHint=h('p','cpm-caption','For chained composers, disable CLIP and conditioning on intermediate stages. The Positive/Negative STRING ports remain available.');
     socketPanel.append(socketHint);
-    const sidebarHelp=h('div','cpm-caption cpm-sidebar-help','Drag rows to reorder. Drop on a folder to group. Folders add headings, not tags.');
+    const sidebarHelp=h('div','cpm-caption cpm-sidebar-help','+ Category adds a smart multi-library block. + Folder just organizes rows. Drag to reorder.');
     const sidebarRows=h('div','cpm-sidebar-list');
     const ungroup=btn('↗ Move selected to root',()=>{const b=find(selected);if(b?.folder_id){b.folder_id=null;const i=draft.indexOf(b);draft.splice(i,1);draft.push(b);render(true);}},'cpm-sidebar-root');
-    left.append(socketPanel,sidebarHelp,sidebarRows,ungroup);
+    optionsPane.append(socketPanel,visibilityPanel);
+    left.append(sidebarHelp,sidebarRows,ungroup);
     function drawSidebar(ensureSelectedVisible=false){
         const scrollTop=sidebarRows.scrollTop;
         sidebarRows.replaceChildren();
@@ -768,6 +1081,7 @@ function openSettings(n,initialSelection,options={}){
             if(accent){row.style.borderLeft=`3px solid ${accent}`;
                 if(b.type==='folder')row.style.background=rgba(accent,0.15);}
             row.append(h('span','handle','⋮⋮'),h('span','name',b.type==='folder'?`▾ ${b.name}`:b.name));
+            if(b.type==='category')row.lastChild.style.textTransform='capitalize';
             row.addEventListener('click',()=>{selected=b.id;render();});
             row.addEventListener('dragstart',ev=>{ev.dataTransfer.setData('text/plain',b.id);ev.dataTransfer.effectAllowed='move';});
             row.addEventListener('dragover',ev=>{ev.preventDefault();row.classList.add('dragover');});
@@ -791,7 +1105,7 @@ function openSettings(n,initialSelection,options={}){
         if(ensureSelectedVisible)sidebarRows.querySelector?.('.cpm-sideitem.active')?.scrollIntoView?.({block:'nearest',inline:'nearest'});
     }
     function drawDetails(){right.replaceChildren();const b=find(selected);if(!b){right.append(h('p','cpm-caption','Select a library or text row.'));return;}
-        const title=h('strong','',b.type==='folder'?'Folder':b.type==='library'?'Library Selector':'Text Field');right.append(title);
+        const title=h('strong','',b.type==='folder'?'Folder':b.type==='category'?'Smart Category':b.type==='library'?'Library Selector':'Text Field');right.append(title);
         right.append(fld('Label',b.name,v=>{b.name=v;if(b.type==='library')b.auto_label=false;drawSidebar();}));
         if(b.type==='folder'){
             right.append(h('p','cpm-caption','Choose one of 12 accents. The folder header and all contained libraries/text rows inherit this colour in the node. The header is displayed in uppercase; your saved label is unchanged.'));
@@ -807,14 +1121,51 @@ function openSettings(n,initialSelection,options={}){
             right.append(h('p','cpm-caption','Drag library or text rows onto this folder in the left panel. Folders organize the node; they do not add prompt tags.'));
         }else{
             right.append(check('Enabled',b.enabled,v=>b.enabled=v));
-            if(b.type==='library'){
+            if(b.type==='category'){
+                const template=categoryFor(b.category_id);
+                right.append(h('p','cpm-caption','A category is one compact block with individual library switches and per-item variables, shown directly on the node.'));
+                right.append(h('strong','','Category color'));
+                const palette=h('div','cpm-color-palette');
+                for(const color of FOLDER_COLORS){
+                    const swatch=btn('',()=>{b.color=color.id;drawSidebar();drawDetails();},'cpm-color-swatch'+(categoryColor(b).id===color.id?' selected':''));
+                    swatch.title=color.label;swatch.setAttribute('aria-label',`${color.label} category color`);
+                    swatch.dataset.color=color.id;
+                    const dot=h('span','cpm-color-dot');dot.style.background=color.hex;
+                    swatch.append(dot,h('span','',color.label));palette.append(swatch);
+                }
+                right.append(palette);
+                const templates=allowedCategories(socketDraft.nsfw_libraries);
+                if(template){
+                    right.append(select('Category',templates.map(t=>[t.id,t.name]),b.category_id,id=>{
+                        const t=categoryFor(id);if(!t)return;b.category_id=id;b.variant=t.default_mode||'';b.members={};b.name=t.name;render();
+                    }));
+                    if(Object.keys(template.modes||{}).length){
+                        right.append(select('Initial subgroup / type',Object.entries(template.modes).map(([key,x])=>[key,x.label]),
+                            b.variant||template.default_mode,mode=>{b.variant=mode;render();}));
+                    }
+                }
+                right.append(h('p','cpm-caption','The choices remain saved if you switch subgroups, but hidden subgroup libraries do not contribute prompt text.'));
+            }else if(b.type==='library'){
                 const libs=mainLibraries(available).length?mainLibraries(available):[{id:b.library_id,name:b.library_id,entries:[]}];
                 const holder=h('div','cpm-grid');
-                holder.append(select('Library',libs.map(x=>[x.id,displayLibrary(x)]),b.library_id,v=>{
-                    b.library_id=v;b.variables={};const lib=libFor(available,v);b.preset_id=lib?.entries[0]?.id||'';
+                const currentLibrary=libFor(libs,b.library_id)||libs[0];
+                const currentCategory=libraryCategory(currentLibrary);
+                const chooseFirst=(parent,sub)=>{
+                    const candidate=libs.find(lib=>inCategory(lib,parent,sub));
+                    if(!candidate)return;
+                    b.library_id=candidate.id;b.preset_id=candidate.entries[0]?.id||'';b.preset_ids=[b.preset_id].filter(Boolean);b.variables={};b.entry_variables={};
+                    if(b.auto_label)b.name=candidate.name;render();
+                };
+                holder.append(select('Category',categoryOptions(libs).map(x=>[x,x]),currentCategory.parent,parent=>chooseFirst(parent,'')),
+                    select('Subcategory', [['','All'],...subcategoryOptions(libs,currentCategory.parent).map(x=>[x,x])],currentCategory.sub,sub=>chooseFirst(currentCategory.parent,sub)));
+                const filtered=libs.filter(lib=>inCategory(lib,currentCategory.parent,currentCategory.sub));
+                const libraryRow=h('div','cpm-grid');
+                libraryRow.append(select('Library',filtered.map(x=>[x.id,x.name]),b.library_id,v=>{
+                    b.library_id=v;b.variables={};b.entry_variables={};const lib=libFor(available,v);b.preset_id=lib?.entries[0]?.id||'';b.preset_ids=[b.preset_id].filter(Boolean);
                     if(b.auto_label){b.name=lib?.name||v;}
                     render();
-                }),select('Preset',(presetsFor(b,available).length?presetsFor(b,available):[{id:b.preset_id,name:b.preset_id}]).map(x=>[x.id,x.name]),b.preset_id,v=>{b.preset_id=v;b.variables={};render();}));right.append(holder);
+                }),select('Preset',(presetsFor(b,available).length?presetsFor(b,available):[{id:b.preset_id,name:b.preset_id}]).map(x=>[x.id,x.name]),b.preset_id,v=>{b.preset_id=v;b.preset_ids=[v].filter(Boolean);b.variables={};render();}));
+                right.append(holder,libraryRow);
                 const defs=slotDefs(b,available);
                 if(Object.keys(defs).length){
                     right.append(h('strong','','Optional modifiers'));
@@ -834,17 +1185,17 @@ function openSettings(n,initialSelection,options={}){
                         }
                     }
                     right.append(modGrid);
-                    right.append(h('p','cpm-caption','Optional variables: None or blank inserts nothing. Small dropdowns and text fields also appear directly on the node.'));
+                    right.append(h('p','cpm-caption','These are legacy shared defaults. Selected presets now have their own variable controls beneath each item on the node; individual item values override these defaults.'));
                 }
                 right.append(btn('✎ Edit this preset / library',()=>setTab('libraries',b.library_id,b.preset_id),'cpm-primary'));
                 right.append(check('Auto-update label when changing libraries',b.auto_label,v=>b.auto_label=v));
                 right.append(h('p','cpm-caption','Library positive and negative tags are inserted together. A connected STRING overrides only its corresponding positive or negative text.'));
-            }else{
+            }else if(b.type==='text'){
                 const holder=h('div','cpm-grid');holder.append(fld('Positive text',b.positive_text,v=>b.positive_text=v,true),fld('Negative text',b.negative_text,v=>b.negative_text=v,true));right.append(holder);
                 right.append(check('Show Positive and Negative text fields on node',b.show_text_fields!==false,v=>b.show_text_fields=v));
                 right.append(h('p','cpm-caption','Off = a compact on/off row. Text remains saved, usable by the prompt, and editable here. This does not remove optional STRING sockets.'));
             }
-            right.append(check('Expose both Positive (+) and Negative (−) STRING inputs',b.expose_input,v=>b.expose_input=v));
+            if(b.type!=='category')right.append(check('Expose both Positive (+) and Negative (−) STRING inputs',b.expose_input,v=>b.expose_input=v));
             const parent=h('div');parent.append(select('Folder',[['','No folder (root)'],...draft.filter(x=>x.type==='folder').map(x=>[x.id,x.name])],b.folder_id||'',v=>{
                 b.folder_id=v||null;
                 // Keep members next to their folder when assigned from detail view.
@@ -863,7 +1214,7 @@ function openSettings(n,initialSelection,options={}){
             }catch(e){msg.textContent=`Import failed: ${e.message}`;}
         });el.click();
     });
-    footer.append(btn('+ Library',()=>add('library')),btn('+ Text',()=>add('text')),btn('+ Folder',()=>add('folder')),
+    footer.append(btn('+ Category',addCategory),btn('+ Library',()=>add('library')),btn('+ Text',()=>add('text')),btn('+ Folder',()=>add('folder')),
         importBtn,btn('▤ Library Manager',()=>setTab('libraries')),
         msg,btn('Cancel',close),btn('Apply',()=>{
             try{
@@ -880,6 +1231,23 @@ function openSettings(n,initialSelection,options={}){
         },'cpm-primary'));
     if(!n._cpmCatalog)catalog().then(x=>{available=x;n._cpmCatalog=x;render();}).catch(e=>msg.textContent=e.message);
     render();setTab(options.tab||'blocks',options.libraryId,options.presetId);
+}
+// The simple table editor opens in a separate tab. Refresh the installed
+// catalog after it saves so the Composer node does not require a page reload.
+if(typeof window!=='undefined'&&typeof BroadcastChannel!=='undefined'){
+    try{
+        const libraryUpdates=new BroadcastChannel('uninodes-library-data');
+        libraryUpdates.addEventListener('message',event=>{
+            if(event.data?.type!=='libraries-saved')return;
+            catalog().then(all=>{
+                for(const node of app.graph?._nodes||[]){
+                    if(node.type!==TYPE&&node.comfyClass!==TYPE&&!node._cpmComposerElement)continue;
+                    node._cpmCatalog=all;
+                    reconcile(node);
+                }
+            }).catch(error=>console.warn('[Uninodes] Library refresh failed:',error));
+        });
+    }catch(error){console.warn('[Uninodes] Cross-tab library refresh unavailable:',error);}
 }
 app.registerExtension({name:'uninodes.composer',async beforeRegisterNodeDef(def,data){
     if(data.name!==TYPE)return;

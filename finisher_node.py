@@ -37,7 +37,7 @@ class ImageFinisher:
             "vae": ("VAE", {"forceInput": True}),
             "positive": ("CONDITIONING", {"forceInput": True}),
             "negative": ("CONDITIONING", {"forceInput": True}),
-        })}
+        }), "hidden": {"prompt": "PROMPT", "extra_pnginfo": "EXTRA_PNGINFO"}}
 
     @classmethod
     def IS_CHANGED(cls, **kwargs):
@@ -50,7 +50,7 @@ class ImageFinisher:
 
     def finish(self, image, face=False, eyes=False, hands=False, upscale_using_model=False, simple_upscale=False,
                mirror=False, watermark=False, settings_json='{}', seed=0, model=None, clip=None, vae=None,
-               positive=None, negative=None, diffusion_refine=False, enabled=True, finisher=None):
+               positive=None, negative=None, diffusion_refine=False, enabled=True, finisher=None, prompt=None, extra_pnginfo=None):
         from . import finisher_exports
         settings = image_finisher.parse_settings(settings_json)
         if isinstance(finisher, dict) and finisher.get('schema', '').startswith('DIRECT_FINISHER/'):
@@ -61,9 +61,25 @@ class ImageFinisher:
             negative = negative if negative is not None else finisher.get('negative')
             if seed == 0 and finisher.get('seed') is not None:
                 seed = finisher['seed']
+        # Capture actual run metadata, not the current graph at click-to-save time.
+        export_metadata = dict(finisher.get('export_metadata') or {}) if isinstance(finisher, dict) else {}
+        export_metadata['prompt'] = prompt if prompt is not None else export_metadata.get('prompt')
+        if isinstance(extra_pnginfo, dict) and 'workflow' in extra_pnginfo:
+            export_metadata['workflow'] = extra_pnginfo['workflow']
+        export_metadata['finisher'] = {
+            'enabled': bool(enabled),
+            'stages': {key: bool(value) for key, value in {
+                'face': face, 'eyes': eyes, 'hands': hands,
+                'model_upscale': upscale_using_model, 'simple_upscale': simple_upscale,
+                'mirror': mirror, 'watermark': watermark,
+                'diffusion_refine': diffusion_refine,
+            }.items()},
+            'settings': settings,
+            'seed': int(seed),
+        }
         if not enabled:
             summary = 'Image Finisher • bypassed (original image)'
-            previews = finisher_exports.store_preview(image, image, summary=summary, enabled=False)
+            previews = finisher_exports.store_preview(image, image, summary=summary, enabled=False, metadata=export_metadata)
             return {'ui': {'if_images': previews, 'if_enabled': [False], 'if_summary': [summary]},
                     'result': (image, summary)}
         current = image
@@ -118,7 +134,7 @@ class ImageFinisher:
             if wm.get('text') or wm.get('image'):
                 notes.append("watermark")
         summary = "Image Finisher • " + (", ".join(notes) if notes else "no operations enabled")
-        previews = finisher_exports.store_preview(image, current, summary=summary, enabled=True)
+        previews = finisher_exports.store_preview(image, current, summary=summary, enabled=True, metadata=export_metadata)
         return {'ui': {'if_images': previews, 'if_enabled': [True], 'if_summary': [summary]},
                 'result': (current, summary)}
 

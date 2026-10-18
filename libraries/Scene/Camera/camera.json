@@ -7,7 +7,7 @@
     {
       "id": "eye-level-portrait",
       "name": "Eye-Level Portrait",
-      "positive": "portrait, straight-on, looking at viewer, face focus",
+      "positive": "portrait, straight-on, face focus",
       "negative": "",
       "notes": ""
     },

@@ -2114,7 +2114,7 @@ def record_previews(images, metadata=None):
     return results
 
 
-def save_preview(token, prefix="DirectSampler", folder="", image_format="PNG"):
+def save_preview(token, prefix="DirectSampler", folder="", image_format="PNG", embed_metadata=True):
     import folder_paths
     if not isinstance(token,str) or len(token)>128:
         raise ValueError("Invalid preview token")
@@ -2146,31 +2146,12 @@ def save_preview(token, prefix="DirectSampler", folder="", image_format="PNG"):
         full,filename,num,subfolder,_=folder_paths.get_save_image_path(prefix,str(out))
         ext,pil_format=formats[image_format]
         destination=Path(full)/f"{filename}_{num:05}_.{ext}"
-        from PIL import Image, PngImagePlugin
-        image=Image.open(path)
+        from PIL import Image
+        from . import image_metadata
+        with Image.open(path) as preview:
+            image = preview.convert('RGB')
         save_kwargs={"format": pil_format}
-        if metadata:
-            params=[]
-            pos=str((metadata.get("prompts") or {}).get("positive_text") or "").strip()
-            neg=str((metadata.get("prompts") or {}).get("negative_text") or "").strip()
-            meta=metadata.get("metadata") or {}
-            if pos: params.append(pos)
-            if neg: params.append(f"Negative prompt: {neg}")
-            detail=[f"Steps: {meta.get('steps')}", f"Sampler: {meta.get('sampler')}", f"CFG scale: {meta.get('cfg')}", f"Seed: {metadata.get('seed')}", f"Size: {meta.get('width')}x{meta.get('height')}", f"Model: {metadata.get('checkpoint')}"]
-            if meta.get('vae_name') not in (None, '', 'Internal'): detail.append(f"VAE: {meta.get('vae_name')}")
-            params.append(", ".join(detail))
-            if image_format=="PNG":
-                pnginfo=PngImagePlugin.PngInfo()
-                try:
-                    pnginfo.add_text("direct_sampler", json.dumps(metadata, ensure_ascii=False))
-                except Exception:
-                    pass
-                pnginfo.add_text("parameters", "\n".join(params))
-                save_kwargs["pnginfo"]=pnginfo
-            else:
-                try:
-                    image.info["parameters"]="\n".join(params)
-                except Exception:
-                    pass
+        save_kwargs.update(image_metadata.save_kwargs(
+            image_format, metadata, namespace='direct_sampler', embed_metadata=embed_metadata))
         image.save(destination, **save_kwargs)
     return {"filename":destination.name,"subfolder":folder,"type":"output","format":image_format}

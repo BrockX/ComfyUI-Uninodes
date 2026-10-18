@@ -21,7 +21,7 @@
     {
       "id": "shy",
       "name": "Shy",
-      "positive": "shy, embarrassed, looking away, own hands together",
+      "positive": "shy, embarrassed, own hands together",
       "negative": "",
       "notes": ""
     },
@@ -49,14 +49,14 @@
     {
       "id": "curious",
       "name": "Curious",
-      "positive": "curious, head tilt, looking at viewer",
+      "positive": "curious, head tilt",
       "negative": "",
       "notes": ""
     },
     {
       "id": "thoughtful",
       "name": "Thoughtful",
-      "positive": "thoughtful, hand on own chin, looking away",
+      "positive": "thoughtful, hand on own chin",
       "negative": "",
       "notes": ""
     },
@@ -70,14 +70,14 @@
     {
       "id": "protective",
       "name": "Protective",
-      "positive": "protective, arm up, serious, looking at viewer",
+      "positive": "protective, arm up, serious",
       "negative": "",
       "notes": ""
     },
     {
       "id": "friendly",
       "name": "Friendly",
-      "positive": "friendly, smile, waving, looking at viewer",
+      "positive": "friendly, smile, waving",
       "negative": "",
       "notes": ""
     },
@@ -91,7 +91,7 @@
     {
       "id": "nervous",
       "name": "Nervous",
-      "positive": "nervous, sweatdrop, fidgeting, looking away",
+      "positive": "nervous, sweatdrop, fidgeting",
       "negative": "",
       "notes": ""
     },

@@ -21,7 +21,7 @@
     {
       "id": "runway",
       "name": "Runway Walk",
-      "positive": "walking, runway, looking at viewer, <detail>",
+      "positive": "walking, runway, <detail>",
       "negative": "",
       "notes": "",
       "variables": {

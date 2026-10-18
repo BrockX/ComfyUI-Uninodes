@@ -13,7 +13,8 @@ import subprocess
 import sys
 import threading
 
-from PIL import Image, PngImagePlugin
+from PIL import Image
+from . import image_metadata
 import numpy as np
 
 _LOCK = RLock()
@@ -130,29 +131,25 @@ EXPORT_FORMATS = {'PNG': ('png', 'PNG'), 'JPEG': ('jpg', 'JPEG'),
                   'WEBP': ('webp', 'WEBP'), 'TIFF': ('tiff', 'TIFF'),
                   'BMP': ('bmp', 'BMP'), 'GIF': ('gif', 'GIF')}
 
-def _export_image(source, destination, variant, summary, image_format):
+def _export_image(source, destination, variant, summary, image_format, metadata=None, embed_metadata=True):
     with Image.open(source) as source_image:
-        # Use original RGB values and never mutate the preview image in place.
+        # Re-encode from pixel data; never carry metadata from source previews.
         im = source_image.convert('RGB')
-        kwargs = {}
-        if image_format == 'PNG':
-            meta = PngImagePlugin.PngInfo()
-            meta.add_text('image_finisher', json.dumps({'variant': variant, 'summary': summary}, ensure_ascii=False))
-            kwargs['pnginfo'] = meta
-        elif image_format == 'JPEG':
-            kwargs.update(quality=95, subsampling=0, optimize=True)
-        elif image_format == 'WEBP':
-            kwargs.update(quality=95, method=5)
-        elif image_format == 'GIF':
+        details = dict(metadata or {})
+        details['finisher'] = {'variant': variant, 'summary': summary, **details.get('finisher', {})}
+        kwargs = image_metadata.save_kwargs(
+            image_format, details, namespace='image_finisher', embed_metadata=embed_metadata)
+        if image_format == 'GIF':
             im = im.quantize(colors=256)
         im.save(destination, format=EXPORT_FORMATS[image_format][1], **kwargs)
+
 
 def _png_image(sample, path):
     pixels = (sample.detach().cpu().numpy().clip(0, 1) * 255).astype(np.uint8)
     Image.fromarray(pixels).save(path, format='PNG')
 
 
-def store_preview(original, detailed, summary='', enabled=True):
+def store_preview(original, detailed, summary='', enabled=True, metadata=None):
     import folder_paths
     temp = Path(folder_paths.get_temp_directory())
     temp.mkdir(parents=True, exist_ok=True)
@@ -166,7 +163,7 @@ def store_preview(original, detailed, summary='', enabled=True):
         _png_image(before, before_path)
         _png_image(after, after_path)
         with _LOCK:
-            _PREVIEWS[token] = {'original': before_path, 'detailed': after_path, 'summary': summary, 'enabled': enabled}
+            _PREVIEWS[token] = {'original': before_path, 'detailed': after_path, 'summary': summary, 'enabled': enabled, 'metadata': metadata or {}}
             _PREVIEWS.move_to_end(token)
             while len(_PREVIEWS) > _MAX_PREVIEWS:
                 _PREVIEWS.popitem(last=False)
@@ -176,7 +173,7 @@ def store_preview(original, detailed, summary='', enabled=True):
     return images
 
 
-def save_preview(token, variant, folder='', image_format='PNG', placement='suffix', detail_label='_Detailed'):
+def save_preview(token, variant, folder='', image_format='PNG', placement='suffix', detail_label='_Detailed', embed_metadata=True):
     if not isinstance(token, str) or len(token) > 128:
         raise ValueError('Invalid preview token')
     if variant not in ('original', 'detailed', 'all'):
@@ -216,7 +213,7 @@ def save_preview(token, variant, folder='', image_format='PNG', placement='suffi
             try:
                 # Exclusive create, so never overwrite existing images.
                 with dest_path.open('xb') as stream:
-                    _export_image(source, stream, name, item['summary'], image_format)
+                    _export_image(source, stream, name, item['summary'], image_format, item.get('metadata'), embed_metadata=embed_metadata)
             except Exception:
                 dest_path.unlink(missing_ok=True)
                 raise

@@ -477,7 +477,9 @@ async function openSettings(node) {
       const where=styledSelect([{value:'suffix',label:'Suffix (after filename)'},{value:'prefix',label:'Prefix (before filename)'}],config.export.placement||'suffix');
       const label=styledInput('text',config.export.detail_label??'_Detailed');
       sectionNode.append(field('Placement',where),field('Detailed label',label,'Default: _Detailed'));
-      saver=()=>{config.export.placement=where.value;config.export.detail_label=label.value||'_Detailed';};
+      const embed=styledInput('checkbox',config.export.embed_metadata!==false);
+      sectionNode.append(field('Embed metadata',embed,'On by default. Adds ComfyUI prompt/workflow plus generation and finishing settings where supported (PNG, JPEG, WebP, TIFF, GIF). BMP is image-only.'));
+      saver=()=>{config.export.placement=where.value;config.export.detail_label=label.value||'_Detailed';config.export.embed_metadata=embed.checked;};
     } else if (state.section === "mirror") {
       sectionNode = card("Mirror", "Optional flip stage performed before any upscaling or refinement.");
       const mode = styledSelect([{ value: "horizontal", label: "Horizontal" }, { value: "vertical", label: "Vertical" }, { value: "both", label: "Both" }], config.mirror.mode);
@@ -526,7 +528,7 @@ function samplerPreviewActive(n){return Boolean(n?._ifCombined && n?._ifSamplerP
 function saveChoice(n,variant){const selected=sourcePair(n);if(!selected){n._ifSaveMessage='Generate an image before saving';n._cpmSuiteRender?.();return;}
  const folder=n.properties?.if_output_folder||'';const format=n.properties?.if_export_format||'PNG';const naming=parseSettings(n).export||{};
  n._ifSaveMessage='Saving…';n._cpmSuiteRender?.();
- request('/uninodes/finisher/save',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({token:selected.token,variant,folder,format,placement:naming.placement||'suffix',detail_label:naming.detail_label??'_Detailed'})})
+ request('/uninodes/finisher/save',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({token:selected.token,variant,folder,format,placement:naming.placement||'suffix',detail_label:naming.detail_label??'_Detailed',embed_metadata:naming.embed_metadata!==false})})
  .then(result=>{n._ifSaveMessage=`Saved ${result.images.length} ${format} image${result.images.length>1?'s':''} → ${result.destination||folder||'output'}`;n._cpmSuiteRender?.();})
  .catch(err=>{n._ifSaveMessage=`Save failed: ${err.message}`;n._cpmSuiteRender?.();});}
 
@@ -536,7 +538,7 @@ async function autoSaveFinisher(n,pairs){
  let saved=0;
  for(const pair of pairs){
    if(!pair?.token)continue;
-   await request('/uninodes/finisher/save',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({token:pair.token,variant:'detailed',folder,format,placement:naming.placement||'suffix',detail_label:naming.detail_label??'_Detailed'})});
+   await request('/uninodes/finisher/save',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({token:pair.token,variant:'detailed',folder,format,placement:naming.placement||'suffix',detail_label:naming.detail_label??'_Detailed',embed_metadata:naming.embed_metadata!==false})});
    saved++;
  }
  n._ifSaveMessage=`Autosaved ${saved} detailed image${saved===1?'':'s'} (${format})`;

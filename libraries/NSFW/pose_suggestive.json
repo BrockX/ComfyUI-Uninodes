@@ -21,35 +21,35 @@
     {
       "id": "seated-legs-crossed",
       "name": "Seated Legs Crossed",
-      "positive": "sitting, crossed legs, looking at viewer, seductive smile",
+      "positive": "sitting, crossed legs, seductive smile",
       "negative": "",
       "notes": ""
     },
     {
       "id": "leaning-forward",
       "name": "Leaning Forward",
-      "positive": "leaning forward, cleavage, looking at viewer",
+      "positive": "leaning forward, cleavage",
       "negative": "",
       "notes": ""
     },
     {
       "id": "hand-near-face",
       "name": "Hand Near Face",
-      "positive": "finger to mouth, blush, looking at viewer",
+      "positive": "finger to mouth, blush",
       "negative": "",
       "notes": ""
     },
     {
       "id": "reclined-side",
       "name": "Reclined on Side",
-      "positive": "lying, on side, head rest, looking at viewer",
+      "positive": "lying, on side, head rest",
       "negative": "",
       "notes": ""
     },
     {
       "id": "kneeling-upright",
       "name": "Kneeling Upright",
-      "positive": "kneeling, hands on own thighs, looking at viewer",
+      "positive": "kneeling, hands on own thighs",
       "negative": "",
       "notes": ""
     },
@@ -63,14 +63,14 @@
     {
       "id": "stomach-legs-up",
       "name": "Lying on Stomach, Feet Up",
-      "positive": "lying, on stomach, feet up, looking at viewer",
+      "positive": "lying, on stomach, feet up",
       "negative": "",
       "notes": ""
     },
     {
       "id": "hair-touch",
       "name": "Hair Touch",
-      "positive": "hand in own hair, looking at viewer, smile",
+      "positive": "hand in own hair, smile",
       "negative": "",
       "notes": ""
     }

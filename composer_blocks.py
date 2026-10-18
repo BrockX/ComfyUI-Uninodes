@@ -10,6 +10,8 @@ import re
 MAX_BLOCKS = 96
 MAX_CONFIG_BYTES = 250_000
 MAX_TEXT = 12_000
+MAX_MULTI_PRESETS = 24
+MAX_CATEGORY_LIBRARIES = 64
 ID_RE = re.compile(r"^[a-zA-Z0-9_-]{1,64}$")
 MAIN_ID = "cpm_main"
 
@@ -17,6 +19,44 @@ def _check_text(value, what):
     if not isinstance(value, str) or len(value) > MAX_TEXT:
         raise ValueError(f"{what} must be text up to {MAX_TEXT} characters")
     return value
+
+
+def _variables(selections):
+    if not isinstance(selections, dict) or len(selections) > 8:
+        raise ValueError("Invalid modifier selections")
+    for slot, value in selections.items():
+        if (not isinstance(slot, str) or not re.fullmatch(r"[a-z][a-z0-9_]{0,31}", slot)
+                or not isinstance(value, str) or len(value) > 2000):
+            raise ValueError("Invalid variable slot/value")
+    return selections
+
+
+def _entry_variables(value):
+    """Per-selected-item variable overrides; old shared variables still work."""
+    if not isinstance(value, dict) or len(value) > MAX_MULTI_PRESETS:
+        raise ValueError('Invalid per-entry variables')
+    result = {}
+    for preset_id, selections in value.items():
+        if not isinstance(preset_id, str) or not ID_RE.fullmatch(preset_id):
+            raise ValueError('Invalid per-entry preset ID')
+        result[preset_id] = _variables(selections)
+    return result
+
+
+def _resolved_variables(shared, by_entry, preset_id):
+    # A pre-1.3.0 workflow used one variable map per library. Preserve it as
+    # a fallback, allowing individual selections to override slots.
+    return {**shared, **by_entry.get(preset_id, {})}
+
+
+def _preset_ids(values, allow_empty=False):
+    if not isinstance(values, list) or len(values) > MAX_MULTI_PRESETS:
+        raise ValueError("Invalid multi-select preset IDs")
+    if not values and not allow_empty:
+        raise ValueError("No presets selected")
+    if any(not isinstance(x, str) or not ID_RE.fullmatch(x) for x in values) or len(set(values)) != len(values):
+        raise ValueError("Invalid or duplicate preset ID")
+    return values
 
 
 def read_blocks(raw):
@@ -54,7 +94,35 @@ def read_blocks(raw):
         if folder_id is not None and (not isinstance(folder_id, str) or not ID_RE.fullmatch(folder_id)):
             raise ValueError("Invalid folder ID")
         common = {"id": ident, "type": typ, "name": name, "enabled": enabled, "folder_id": folder_id}
-        if typ == "library":
+        if typ == "category":
+            from . import composer_categories
+            category_id = entry.get("category_id")
+            template = composer_categories.get_template(category_id)
+            variant = entry.get("variant", template.get("default_mode", ""))
+            if not isinstance(variant, str) or len(variant) > 64:
+                raise ValueError("Invalid category variant")
+            if template.get("modes") and variant not in template["modes"]:
+                raise ValueError(f"Unknown variant for {category_id}: {variant}")
+            members = entry.get("members", {})
+            if not isinstance(members, dict) or len(members) > MAX_CATEGORY_LIBRARIES:
+                raise ValueError("Invalid category members")
+            valid_member_ids = set(template.get("common", [])) | set(template.get("nsfw", []))
+            for mode_spec in template.get("modes", {}).values():
+                valid_member_ids.update(mode_spec["libraries"])
+            cleaned = {}
+            for lib_id, item in members.items():
+                if lib_id not in valid_member_ids or not isinstance(item, dict):
+                    raise ValueError(f"Invalid category library: {lib_id}")
+                enabled_member = item.get("enabled", False)
+                if not isinstance(enabled_member, bool):
+                    raise ValueError("Invalid category library switch")
+                ids = _preset_ids(item.get("preset_ids", []), allow_empty=True)
+                variables = _variables(item.get("variables", {}))
+                entry_variables = _entry_variables(item.get("entry_variables", {}))
+                cleaned[lib_id] = {"enabled": enabled_member, "preset_ids": ids,
+                                   "variables": variables, "entry_variables": entry_variables}
+            common.update(category_id=category_id, variant=variant, members=cleaned)
+        elif typ == "library":
             expose = entry.get("expose_input", False)
             if not isinstance(expose, bool):
                 raise ValueError("Invalid socket setting")
@@ -62,16 +130,11 @@ def read_blocks(raw):
             lib_id, preset_id = entry.get("library_id"), entry.get("preset_id")
             if not all(isinstance(v, str) and ID_RE.fullmatch(v or "") for v in (lib_id, preset_id)):
                 raise ValueError("Library row requires valid library and preset IDs")
-            selections = entry.get("variables", {})
-            if not isinstance(selections, dict) or len(selections) > 8:
-                raise ValueError("Invalid modifier selections")
-            for slot, value in selections.items():
-                if (not isinstance(slot, str) or not re.fullmatch(r"[a-z][a-z0-9_]{0,31}", slot)
-                        or not isinstance(value, str) or len(value) > 2000):
-                    raise ValueError("Invalid variable slot/value")
-                # Text slots may contain spaces and punctuation; library-backed
-                # choices are still validated as IDs by resolve_preset().
-            common.update(library_id=lib_id, preset_id=preset_id, variables=selections,
+            selections = _variables(entry.get("variables", {}))
+            entry_variables = _entry_variables(entry.get("entry_variables", {}))
+            ids = _preset_ids(entry.get("preset_ids", [preset_id]), allow_empty=True)
+            common.update(library_id=lib_id, preset_id=preset_id, preset_ids=ids,
+                          variables=selections, entry_variables=entry_variables,
                           auto_label=entry.get("auto_label", True) is not False)
         elif typ == "text":
             pos = entry.get("positive_text")
@@ -116,8 +179,9 @@ def joined(items):
 
 
 def compose(positive_prompt="", negative_prompt="", checkpoint_positive="", checkpoint_negative="",
-            blocks_json="[]", **connected):
+            blocks_json="[]", *, nsfw_categories=False, **connected):
     sections = {"positive": [], "negative": []}
+    nsfw_used = False  # Safeguard is unconditional; never a UI setting.
     # Checkpoint prefixes are first and not part of the ordered library/text list.
     sections["positive"].append(checkpoint_positive)
     sections["negative"].append(checkpoint_negative)
@@ -142,23 +206,51 @@ def compose(positive_prompt="", negative_prompt="", checkpoint_positive="", chec
             continue
         if not b["enabled"]:
             continue
+        if typ == "category":
+            from . import composer_categories, library_store
+            visible = composer_categories.visible_library_ids(
+                b["category_id"], b["variant"], nsfw_visible=bool(nsfw_categories))
+            for lib_id in visible:
+                member = b["members"].get(lib_id, {})
+                if member.get("enabled"):
+                    if member.get("preset_ids") and library_store.is_nsfw_library(lib_id):
+                        nsfw_used = True
+                    for preset_id in member.get("preset_ids", []):
+                        entry = library_store.resolve_preset(
+                            library_store.get_preset(lib_id, preset_id),
+                            _resolved_variables(member.get("variables", {}), member.get("entry_variables", {}), preset_id))
+                        for polarity in ("positive", "negative"):
+                            sections[polarity].append(_check_text(entry[polarity], f"{lib_id} {polarity}"))
+            continue
         if typ == "library":
             from . import library_store
-            raw_entry = library_store.get_preset(b["library_id"], b["preset_id"])
-            entry = library_store.resolve_preset(raw_entry, b.get("variables", {}))
+            if library_store.is_nsfw_library(b["library_id"]) and (b["preset_ids"] or any(
+                b["expose_input"] and socket_name(b["id"], polarity) in connected
+                for polarity in ("positive", "negative")
+            )):
+                nsfw_used = True
+            entries = [library_store.resolve_preset(library_store.get_preset(b["library_id"], preset_id),
+                         _resolved_variables(b.get("variables", {}), b.get("entry_variables", {}), preset_id))
+                       for preset_id in b["preset_ids"]]
         else:
-            entry = None
+            entries = None
         for polarity in ("positive", "negative"):
             key = socket_name(b["id"], polarity)
             if b["expose_input"] and key in connected:
                 val = connected[key]
             elif b["expose_input"] and f"cpm_block_{b['id']}" in connected and b.get("legacy_target") == polarity:
-                # Migration path for original single-input v1.4 workflow.
                 val = connected[f"cpm_block_{b['id']}"]
             else:
-                val = entry[polarity] if entry is not None else b[polarity + "_text"]
+                val = joined(e[polarity] for e in entries) if entries is not None else b[polarity + "_text"]
             sections[polarity].append(_check_text(val, f"Connected {polarity} text"))
     if before_main >= len(rows):
         sections["positive"].append(positive_prompt)
         sections["negative"].append(negative_prompt)
-    return joined(sections["positive"]), joined(sections["negative"])
+    positive_final, negative_final = joined(sections["positive"]), joined(sections["negative"])
+    if nsfw_used:
+        # Append the permanent safeguard exactly once, after all text/socket
+        # overrides. Neither NSFW visibility nor any block setting can turn it off.
+        guard = "child, loli, shota, aged down"
+        if guard.casefold() not in negative_final.casefold():
+            negative_final = joined([negative_final, guard])
+    return positive_final, negative_final

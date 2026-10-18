@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Uninodes — Library Table Editor</title>
+<style>
+:root{color-scheme:dark;font:13px system-ui,Segoe UI,Arial,sans-serif;background:#151b25;color:#e5eaf2}
+*{box-sizing:border-box}body{margin:0;display:flex;flex-direction:column;height:100vh;min-height:420px}
+header{padding:11px 16px;border-bottom:1px solid #394456;background:#202937;display:flex;align-items:center;flex-wrap:wrap;gap:10px}
+h1{font-size:16px;margin:0 18px 0 0;white-space:nowrap}.toolbar{display:flex;flex-wrap:wrap;gap:8px;padding:9px 14px;border-bottom:1px solid #344256;align-items:center}
+button,input,select,textarea{font:inherit;color:#e5eaf2;background:#242e3d;border:1px solid #4c5c70;border-radius:4px}
+button{padding:6px 11px;cursor:pointer}button:hover:not(:disabled){background:#35455d}button:disabled{opacity:.4;cursor:not-allowed}
+button.primary{background:#335c96;border-color:#688ab9}button.primary:hover{background:#4272b4}
+input,select{padding:6px 8px;min-width:0}label{display:inline-flex;align-items:center;gap:6px}
+small,.muted{color:#a5b4c7}.grow{flex:1}.push{margin-left:auto}
+#library{max-width:min(620px,45vw);min-width:240px;flex:1}.count{min-width:95px;text-align:right;font-variant-numeric:tabular-nums}
+#search{width:270px;max-width:50vw}.find{width:185px}.replace{width:185px}
+#status{padding:7px 14px;min-height:31px;border-bottom:1px solid #324053;font-size:12px;color:#b3c9e1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#status.error{color:#ffacac}.tablewrap{flex:1;overflow:auto;min-height:0}table{border-collapse:separate;border-spacing:0;width:100%;table-layout:fixed;min-width:1050px}th{background:#293546;position:sticky;top:0;text-align:left;font-size:11px;letter-spacing:.2px;z-index:1}td,th{border-right:1px solid #344052;border-bottom:1px solid #344052;padding:5px;vertical-align:top}
+tr:nth-child(even){background:#1c2531}tr:hover{background:#293549}.lib{width:16%}.name{width:13%}.positive{width:25%}.negative{width:22%}.notes{width:12%}.variables{width:12%}
+.cell{width:100%;min-height:46px;resize:vertical;padding:5px 7px;line-height:1.35;background:#17212f;display:block;white-space:pre-wrap;overflow-wrap:anywhere}
+.cell:focus{outline:1px solid #719ce0;border-color:#719ce0}.cell.invalid{border-color:#ef7272;background:#45292e}
+.lib-label{font-size:11px;color:#a9c0e1;overflow-wrap:anywhere}.item-id{font-size:10px;color:#8ca4bc;overflow-wrap:anywhere;margin-top:3px}.dirty{color:#eac17a;margin-left:5px}
+footer{padding:8px 14px;display:flex;align-items:center;flex-wrap:wrap;gap:9px;border-top:1px solid #394456;background:#202937}.note{padding:6px 14px;color:#97aeca;font-size:11px;background:#1a2431}
+.hidden{display:none!important}#page{font-variant-numeric:tabular-nums}
+@media(max-width:900px){header{gap:5px}.toolbar{gap:5px}#library{max-width:100%;min-width:170px}h1{width:100%;margin-bottom:5px}}
+</style>
+</head>
+<body>
+<header>
+<h1>Uninodes · Library Table Editor</h1>
+<button id="installed" class="primary">Installed libraries</button>
+<button id="open">Open JSON file(s)…</button>
+<button id="openFolder" title="Select a directory containing multiple JSON libraries (browser-dependent)">Open folder…</button>
+<input type="file" id="files" multiple accept=".json,application/json" class="hidden">
+<input type="file" id="folderFiles" multiple webkitdirectory class="hidden">
+<span class="muted push" id="source">Installed · data/libraries</span>
+</header>
+<div class="toolbar">
+<label>Library <select id="library"><option value="all">All libraries</option></select></label>
+<label>Filter <input type="search" id="search" placeholder="Name, tags, ID, folder…"></label>
+<span class="count" id="count">0 rows</span>
+<button id="reload" title="Reload files from disk; dirty edits must be confirmed">↻ Reload</button>
+</div>
+<div class="toolbar">
+<label>Find <input id="find" class="find" placeholder="e.g. looking at viewer"></label>
+<label>Replace <input id="replace" class="replace" placeholder="Replacement text"></label>
+<label><input type="checkbox" id="inPositive" checked> Positive</label>
+<label><input type="checkbox" id="inNegative"> Negative</label>
+<button id="replaceAll">Replace in displayed library(s)…</button>
+<span class="muted">Bulk replace is optional and never automatic.</span>
+</div>
+<div id="status" role="status" aria-live="polite">Choose one installed library or All libraries. Double-clicking isn't required — edit cells directly.</div>
+<div class="tablewrap" id="tablewrap">
+<table><thead><tr>
+<th class="lib">Library / Folder</th><th class="name">Entry name / Stable ID</th><th class="positive">Positive</th><th class="negative">Negative</th><th class="notes">Notes</th><th class="variables">Variables (JSON)</th>
+</tr></thead><tbody id="rows"></tbody></table>
+</div>
+<footer>
+<button id="previous">← Previous</button><span id="page">Page 1/1</span><button id="next">Next →</button>
+<span class="grow"></span>
+<span class="muted" id="dirty">No changes</span>
+<button id="exportOne">Export current JSON</button><button id="exportZip">Export loaded ZIP</button>
+<button id="save" class="primary">Save changed to ComfyUI</button>
+</footer>
+<div class="note" id="note">Installed mode: changes save to Uninodes/data/libraries with backup files and conflict protection. Existing IDs and variables are preserved. File mode: export edited JSON or ZIP; browsers such as Firefox cannot silently overwrite the original local file.</div>
+<script>
+(()=>{'use strict';
+const $=id=>document.getElementById(id);
+const KEYS={mode:'uninodes.table.mode',selected:'uninodes.table.selected',page:'uninodes.table.page'};
+const LIMIT=75;
+const state={mode:'installed',catalog:[],files:new Map(),dirty:new Set(),invalid:new Set(),selected:'all',page:0,filter:'',loading:false};
+const escName=x=>String(x??'');
+const jsonHeaders={'Content-Type':'application/json'};
+const pathSafe=s=>String(s||'').replaceAll('\\','/').split('/').filter(x=>x && x!=='.' && x!=='..').join('/');
+function status(s,bad=false){$('status').textContent=s;$('status').classList.toggle('error',bad);}
+async function request(url,opts={}){const resp=await fetch(url,{credentials:'same-origin',...opts});let data;try{data=await resp.json();}catch{throw Error(`Unexpected response (HTTP ${resp.status})`);}if(!resp.ok)throw Error(data.error||`HTTP ${resp.status}`);return data;}
+const activeIds=()=>state.selected==='all'?[...state.files.keys()]:state.files.has(state.selected)?[state.selected]:[];
+function validateFile(lib){if(!lib||lib.format!=='cpm-preset-library'||lib.schema_version!==1||typeof lib.id!=='string'||!Array.isArray(lib.entries))throw Error('Expected cpm-preset-library schema_version 1 JSON');return lib;}
+function setBusy(value){state.loading=value;for(const name of ['installed','open','openFolder','reload','library','save','replaceAll','exportOne','exportZip'])$(name).disabled=value;}
+function useMode(mode){state.mode=mode;localStorage.setItem(KEYS.mode,mode);$('source').textContent=mode==='installed'?'Installed · Uninodes/data/libraries':'Local JSON · export to save';$('save').textContent=mode==='installed'?'Save changed to ComfyUI':'Export changed JSON / ZIP';}
+async function loadIndex(){const data=await request('/uninodes/composer/libraries');state.catalog=(data.libraries||[]).filter(x=>x.id!=='style');return state.catalog;}
+function persistSelected(){if(state.mode==='installed')localStorage.setItem(KEYS.selected,state.selected);}
+function options(){const select=$('library');select.replaceChildren();const all=document.createElement('option');all.value='all';all.textContent=`All libraries (${state.mode==='installed'?state.catalog.length:state.files.size})`;select.append(all);
+ const options=state.mode==='installed'?state.catalog:[...state.files.values()].map(x=>({id:x.lib.id,name:x.lib.name,folder:x.folder,source:'Local JSON'}));
+ for(const v of options){const opt=document.createElement('option');opt.value=v.id;opt.textContent=`${v.folder?v.folder+' / ':''}${v.name}${state.dirty.has(v.id)?' *':''}`;select.append(opt);}
+ select.value=state.selected;if(select.value!==state.selected){state.selected='all';select.value='all';}
+}
+async function fetchOne(id){if(state.files.has(id))return state.files.get(id);const data=await request('/uninodes/composer/library/edit?id='+encodeURIComponent(id));const info=state.catalog.find(x=>x.id===id)||{};
+ const entry={lib:validateFile(data.library),revision:data.revision,folder:data.folder||'',source:data.source||info.source||'',editable:data.editable!==false};state.files.set(id,entry);return entry;}
+async function loadIds(ids){const pending=ids.filter(x=>!state.files.has(x));if(!pending.length)return;
+ setBusy(true);let next=0,done=0;const errors=[];
+ try{await Promise.all(Array.from({length:Math.min(6,pending.length)},async()=>{
+  while(next<pending.length){const id=pending[next++];try{await fetchOne(id);}catch(e){errors.push(`${id}: ${e.message}`);}done++;status(`Loading libraries… ${done}/${pending.length}`);}
+ }));if(errors.length)status(`${errors.length} libraries could not be opened: ${errors.slice(0,2).join(' · ')}`,true);
+ else status(`${state.files.size} libraries loaded. Edit rows directly and Save when ready.`);
+ }finally{setBusy(false);}}
+async function changeSelection(id){state.selected=id;state.page=0;persistSelected();if(state.mode==='installed'){await loadIds(id==='all'?state.catalog.map(x=>x.id):[id]);}options();render();}
+function dataRows(){const needle=state.filter.toLocaleLowerCase();const out=[];
+ for(const id of activeIds()){
+  const file=state.files.get(id);if(!file)continue;
+  const lib=file.lib;for(const [index,entry] of lib.entries.entries()){
+   const haystack=`${lib.id} ${lib.name} ${file.folder} ${entry.id} ${entry.name} ${entry.positive} ${entry.negative} ${entry.notes||''}`.toLocaleLowerCase();
+   if(needle&&!haystack.includes(needle))continue;out.push({id,file,entry,index});
+  }
+ }return out;
+}
+function cell(tag,cl,text){const e=document.createElement(tag);if(cl)e.className=cl;if(text!==undefined)e.textContent=escName(text);return e;}
+function mark(id){state.dirty.add(id);$('dirty').textContent=`${state.dirty.size} unsaved librar${state.dirty.size===1?'y':'ies'}`;}
+function makeEditor(value,onInput,code=false){const area=cell('textarea','cell',undefined);area.value=typeof value==='string'?value:'';area.spellcheck=false;if(code)area.style.fontFamily='ui-monospace,monospace';area.rows=code?2:3;
+ area.addEventListener('input',()=>onInput(area));return area;}
+function render(){const rows=dataRows();const pages=Math.max(1,Math.ceil(rows.length/LIMIT));state.page=Math.max(0,Math.min(pages-1,state.page));
+ $('page').textContent=`Page ${state.page+1}/${pages}`;$('previous').disabled=state.page===0;$('next').disabled=state.page>=pages-1;
+ $('count').textContent=`${rows.length} rows`;$('rows').replaceChildren();const frag=document.createDocumentFragment();
+ for(const {id,file,entry} of rows.slice(state.page*LIMIT,(state.page+1)*LIMIT)){
+  const tr=cell('tr');const td0=cell('td');td0.append(cell('div','lib-label',file.lib.name),cell('div','item-id',file.folder||'(root)'));tr.append(td0);
+  const td1=cell('td');td1.append(makeEditor(entry.name,el=>{entry.name=el.value;mark(id);},false),cell('div','item-id',entry.id));tr.append(td1);
+  for(const key of ['positive','negative','notes']){
+   const td=cell('td');td.append(makeEditor(entry[key]||'',el=>{entry[key]=el.value;mark(id);}));tr.append(td);
+  }
+  const variableTd=cell('td');const input=makeEditor(entry.variables?JSON.stringify(entry.variables,null,1):'',el=>{
+   const raw=el.value.trim();try{const parsed=raw?JSON.parse(raw):{};if(!parsed||Array.isArray(parsed)||typeof parsed!=='object')throw Error('Expected JSON object');
+    if(raw)entry.variables=parsed;else delete entry.variables;state.invalid.delete(`${id}/${entry.id}`);el.classList.remove('invalid');el.title='';
+    mark(id);
+   }catch(err){state.invalid.add(`${id}/${entry.id}`);el.classList.add('invalid');el.title=err.message;status(`Invalid variables JSON in ${id} / ${entry.id}: ${err.message}`,true);}
+  },true);variableTd.append(input);tr.append(variableTd);frag.append(tr);
+ }$('rows').append(frag);
+ $('dirty').textContent=state.dirty.size?`${state.dirty.size} unsaved librar${state.dirty.size===1?'y':'ies'}`:'No changes';
+ $('exportOne').disabled=state.loading||state.selected==='all'||!state.files.has(state.selected);
+ $('exportZip').disabled=state.loading||state.files.size===0;
+}
+async function installed(){if(state.dirty.size&&!confirm('Discard unsaved edits before reloading installed libraries?'))return;
+ setBusy(true);try{state.files.clear();state.dirty.clear();state.invalid.clear();useMode('installed');await loadIndex();state.selected=localStorage.getItem(KEYS.selected)||state.catalog[0]?.id||'all';options();setBusy(false);await changeSelection(state.selected);status('Installed libraries ready. The last selected library is remembered.');}
+ catch(err){status(`Load failed: ${err.message}`,true);}finally{setBusy(false);options();render();}}
+async function localFiles(files){const chosen=[...files].filter(f=>f.name.toLowerCase().endsWith('.json'));if(!chosen.length)return status('No JSON files selected.',true);
+ if(state.dirty.size&&!confirm('Discard unsaved edits and open these files?'))return;
+ const next=new Map(),errors=[];setBusy(true);try{
+  for(const file of chosen){try{if(file.size>550000)throw Error('Larger than 500 KB');const lib=validateFile(JSON.parse(await file.text()));if(next.has(lib.id))throw Error('Duplicate library ID');
+   const parts=pathSafe(file.webkitRelativePath||file.name).split('/');parts.pop();const folder=parts.join('/');next.set(lib.id,{lib,revision:null,folder,source:'Local JSON',editable:true});
+  }catch(err){errors.push(`${file.name}: ${err.message}`);}}
+  if(!next.size)throw Error(errors.join(' · ')||'No valid libraries');
+  state.files=next;state.catalog=[];state.dirty.clear();state.invalid.clear();useMode('local');state.selected=chosen.length===1?[...next.keys()][0]:'all';state.page=0;options();render();status(`Opened ${next.size} JSON files. ${errors.length?errors.length+' failed. ':''}Use Export to save edited copies.${errors.length?' '+errors.join(' · '):''}`,Boolean(errors.length));
+ }catch(err){status(err.message,true);}finally{setBusy(false);render();}}
+function download(blob,name){const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),4000);}
+function exportCurrent(){const file=state.files.get(state.selected);if(!file)return status('Select one library first.',true);download(new Blob([JSON.stringify(file.lib,null,2)+'\n'],{type:'application/json'}),file.lib.id+'.json');}
+async function exportZip(){const entries=[...state.files.values()].map(f=>({library:f.lib,folder:f.folder}));if(!entries.length)return;
+ if(state.invalid.size)return status('Fix invalid variables JSON before export.',true);
+ setBusy(true);try{const resp=await fetch('/uninodes/composer/table-editor/export',{method:'POST',credentials:'same-origin',headers:jsonHeaders,body:JSON.stringify({libraries:entries})});
+  if(!resp.ok){let error;try{error=(await resp.json()).error;}catch{}throw Error(error||`HTTP ${resp.status}`);}
+  download(await resp.blob(),'Uninodes_libraries_export.zip');status(`Exported ${entries.length} libraries as ZIP.`);
+ }catch(err){status(`Export failed: ${err.message}`,true);}finally{setBusy(false);render();}}
+async function save(){if(state.invalid.size)return status('Fix invalid variables JSON before saving.',true);
+ if(state.mode==='local')return state.files.size===1?exportCurrent():exportZip();
+ const ids=[...state.dirty];if(!ids.length)return status('Nothing to save.');if(!confirm(`Save changes to ${ids.length} installed librar${ids.length===1?'y':'ies'}? Backups will be created for existing personal files.`))return;
+ setBusy(true);const failures=[];let saved=0;
+ try{for(const id of ids){const file=state.files.get(id);if(!file?.editable){failures.push(`${id}: read-only`);continue;}
+  try{const data=await request('/uninodes/composer/library/edit',{method:'PUT',headers:jsonHeaders,body:JSON.stringify({library:file.lib,folder:file.folder,expected_revision:file.revision})});
+   file.revision=data.revision;file.folder=data.folder;file.source=data.source;state.dirty.delete(id);saved++;
+  }catch(err){failures.push(`${id}: ${err.message}`);}
+  status(`Saving… ${saved} saved, ${failures.length} failed`);
+ }status(`Saved ${saved} librar${saved===1?'y':'ies'}. ${failures.length?'Not saved: '+failures.join(' · '):'Backups and change checks preserved.'}`,Boolean(failures.length));
+  if(saved && typeof BroadcastChannel!=='undefined'){
+   try{const channel=new BroadcastChannel('uninodes-library-data');channel.postMessage({type:'libraries-saved'});channel.close();}catch{}
+  }
+ }finally{setBusy(false);options();render();}}
+function bulkReplace(){const find=$('find').value,replace=$('replace').value;if(!find)return status('Enter text to find.',true);
+ const fields=['positive','negative'].filter(k=>$(k==='positive'?'inPositive':'inNegative').checked);if(!fields.length)return status('Choose Positive and/or Negative.',true);
+ let changed=0,matches=0;const planned=[];
+ for(const id of activeIds()){const file=state.files.get(id);if(!file)continue;for(const entry of file.lib.entries){for(const field of fields){const value=entry[field]||'';const count=value.split(find).length-1;if(count>0){matches+=count;changed++;planned.push({id,entry,field,next:value.split(find).join(replace)});}}}}
+ if(!matches)return status('No exact matches in the selected library/libraries.');
+ if(!confirm(`Replace ${matches} occurrence(s) in ${changed} cells across ${new Set(planned.map(x=>x.id)).size} libraries? You can review the changes before saving to disk.`))return;
+ for(const p of planned){p.entry[p.field]=p.next;mark(p.id);}render();status(`Replaced ${matches} occurrence(s). Review the rows, then Save to write to disk.`);}
+$('installed').onclick=installed;
+$('open').onclick=()=>$('files').click();$('openFolder').onclick=()=>$('folderFiles').click();
+$('files').onchange=event=>{localFiles(event.target.files);event.target.value='';};$('folderFiles').onchange=event=>{localFiles(event.target.files);event.target.value='';};
+$('library').onchange=async e=>{try{await changeSelection(e.target.value);}catch(err){status(err.message,true);}render();};
+$('search').oninput=e=>{state.filter=e.target.value;state.page=0;render();};
+$('reload').onclick=()=>state.mode==='installed'?installed():status('For local files, use Open JSON file(s)… again to reload.');
+$('previous').onclick=()=>{state.page--;render();$('tablewrap').scrollTop=0;};$('next').onclick=()=>{state.page++;render();$('tablewrap').scrollTop=0;};
+$('replaceAll').onclick=bulkReplace;$('save').onclick=save;$('exportOne').onclick=exportCurrent;$('exportZip').onclick=exportZip;
+window.addEventListener('beforeunload',e=>{if(state.dirty.size){e.preventDefault();e.returnValue='';}});
+// Installed libraries live on disk at a stable location, so reopening the
+// last selection works in Firefox too. Arbitrary local file paths cannot be
+// reopened silently due to browser sandbox restrictions.
+installed();
+})();
+</script>
+</body>
+</html>

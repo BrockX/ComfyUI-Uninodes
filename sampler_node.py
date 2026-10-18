@@ -39,7 +39,7 @@ class DirectSampler:
                 "init_image":("IMAGE",{"forceInput":True}),
                 "mask":("MASK",{"forceInput":True}),
             },
-            "hidden":{"unique_id":"UNIQUE_ID"},
+            "hidden":{"unique_id":"UNIQUE_ID", "prompt":"PROMPT", "extra_pnginfo":"EXTRA_PNGINFO"},
         }
 
     @classmethod
@@ -51,11 +51,13 @@ class DirectSampler:
             profile={"error":str(exc)}
         return json.dumps({"checkpoint":checkpoint,"profile":profile,"seed":seed,"settings":settings_json},sort_keys=True)
 
-    def generate(self,checkpoint,profile_mode,seed,settings_json,positive="",negative="",unique_id=None,**kwargs):
+    def generate(self,checkpoint,profile_mode,seed,settings_json,positive="",negative="",unique_id=None, prompt=None, extra_pnginfo=None, **kwargs):
         image,bundle,lat,pc,nc=backend.encode_and_sample(
             checkpoint,seed,positive or "",negative or "",settings_json,profile_mode,
             unique_id=unique_id,**kwargs)
-        metadata={"checkpoint": checkpoint, "seed": int(seed), "profile_mode": profile_mode, "prompts": bundle.get("prompts", {}), "metadata": bundle.get("metadata", {})}
+        metadata={"checkpoint": checkpoint, "seed": int(seed), "profile_mode": profile_mode, "prompts": bundle.get("prompts", {}), "metadata": bundle.get("metadata", {}),
+                  "prompt": prompt, "workflow": (extra_pnginfo or {}).get("workflow") if isinstance(extra_pnginfo, dict) else None}
+        bundle['export_metadata'] = metadata
         previews=backend.record_previews(image, metadata)
         return {"ui":{"ds_images":previews,"ds_seed":[str(seed)]},
                 "result":(image,bundle,lat,pc,nc)}
