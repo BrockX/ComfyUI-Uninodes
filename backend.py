@@ -63,6 +63,45 @@ def settings(raw):
     return result
 
 
+
+def nearest_compatible_dimension(value, multiple=8, *, minimum=64, maximum=4096):
+    """Nearest valid image dimension; ties choose the smaller number.
+
+    Called after numeric validation. This does not silently accept oversized
+    presets or otherwise invalid settings.
+    """
+    unit = int(multiple)
+    if unit < 1:
+        raise ValueError("Invalid model spatial downscale ratio")
+    lower = max(1, (int(minimum) + unit - 1) // unit)
+    upper = int(maximum) // unit
+    if lower > upper:
+        raise ValueError("No compatible resolution within the sampler limits")
+    size = int(value)
+    quotient = size // unit
+    candidates = [max(lower, min(upper, quotient)),
+                  max(lower, min(upper, quotient + 1))]
+    return min((candidate * unit for candidate in candidates),
+               key=lambda candidate: (abs(candidate - size), candidate))
+
+
+def nearest_compatible_resolution(width, height, multiple=8):
+    """Preserve requested dimensions as closely as possible on a model's pixel grid."""
+    return (nearest_compatible_dimension(width, multiple),
+            nearest_compatible_dimension(height, multiple))
+
+
+def model_resolution_multiple(model):
+    """Ask the actual loaded model, including connected MODEL overrides."""
+    latent_format = getattr(getattr(model, "model", None), "latent_format", None)
+    multiple = getattr(latent_format, "spacial_downscale_ratio",
+                       getattr(latent_format, "spatial_downscale_ratio", 8))
+    if isinstance(multiple, bool) or not isinstance(multiple, int) or multiple < 1:
+        raise ValueError("Unsupported model latent format: invalid spatial downscale ratio")
+    # The public sampler contract still uses 8-pixel-safe resolutions.
+    return math.lcm(8, multiple)
+
+
 def validate_settings(value, *, allowed_loras=None):
     cfg = settings(value)
     for key in ("positive_prefix", "negative_prefix"):
@@ -75,8 +114,9 @@ def validate_settings(value, *, allowed_loras=None):
         cfg[key] = int(v)
     for key, low, high in (("steps",1,150), ("width",64,4096), ("height",64,4096), ("batch_size",1,8), ("clip_skip",-12,-1)):
         integer(key, low, high)
-    if cfg["width"]%8 or cfg["height"]%8:
-        raise ValueError("Resolution must be a multiple of 8")
+    # Presets are targets, not immutable tensor sizes. Snap both dimensions
+    # independently to the nearest valid 8-pixel value before any VAE work.
+    cfg["width"], cfg["height"] = nearest_compatible_resolution(cfg["width"], cfg["height"])
     for key, low, high in (("cfg",0,30), ("denoise",0,1)):
         v=cfg[key]
         if isinstance(v, bool) or not isinstance(v,(int,float)) or not math.isfinite(float(v)) or not low <= v <= high:
@@ -2066,6 +2106,8 @@ def encode_and_sample(checkpoint,seed,pos,neg,raw,profile_mode="Custom",*,latent
                               positive_conditioning=positive_conditioning,
                               negative_conditioning=negative_conditioning)
     model,clip,applied=apply_loras(model,clip,cfg["loras"],lora_stack)
+    cfg["width"], cfg["height"] = nearest_compatible_resolution(
+        cfg["width"], cfg["height"], model_resolution_multiple(model))
     clipped=clip.clone() if clip is not None else None
     # CLIP skip is SD1/2/SDXL specific. Never apply blindly to Qwen/T5/Flux,
     # and do not touch encoders when the default -1 is selected.

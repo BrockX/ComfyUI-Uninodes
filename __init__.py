@@ -32,6 +32,14 @@ if web is not None:
         return web.json_response({'libraries': composer_libraries.list_libraries(),
                                   'categories': composer_categories.public_templates()})
 
+    @PromptServer.instance.routes.get('/uninodes/composer/catalog')
+    async def uni_composer_catalog(request):
+        # One library traversal for every Composer on this page, not one
+        # traversal per library per node. JSONs remain disk-backed and editable.
+        return web.json_response({'libraries': composer_libraries.catalog_libraries(),
+                                  'categories': composer_categories.public_templates()},
+                                 headers={'Cache-Control': 'no-store'})
+
     @PromptServer.instance.routes.get('/uninodes/composer/library')
     async def uni_composer_library(request):
         try:

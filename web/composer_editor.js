@@ -62,15 +62,25 @@ const esc = s=>String(s??'');
 const connector=(b,pol)=>`${PREFIX}${b.id}_${pol}`;
 const textOrEmpty=(s)=>typeof s==='string'?s:'';
 const request=async(url,opt)=>{const res=await api.fetchApi(url,opt);const json=await res.json();if(!res.ok)throw Error(json.error||`HTTP ${res.status}`);return json;};
-const catalog=async()=>{
-    const idx=await request('/uninodes/composer/libraries');
-    const all=[];
-    const responses=await Promise.all(idx.libraries.map(row=>request(`/uninodes/composer/library?id=${encodeURIComponent(row.id)}`).catch(e=>{
-        console.warn('[CPM] Library unavailable:',row.id,e);return null;
-    })));
-    CATEGORY_TEMPLATES=Array.isArray(idx.categories)?idx.categories:[];
-    const folders=new Map(idx.libraries.map(row=>[row.id,row.folder||'']));
-    return responses.filter(Boolean).map(lib=>({...lib,folder:folders.get(lib.id)||''}));
+// All Composer nodes share one library snapshot and one in-flight request.
+// Keeping the promise here prevents parallel 100-request floods when opening
+// a workflow with multiple Composers. Explicit edits force a fresh snapshot.
+let catalogCached=null, catalogPending=null, catalogGeneration=0;
+const catalog=(refresh=false)=>{
+    if(!refresh&&catalogCached)return Promise.resolve(catalogCached);
+    if(!refresh&&catalogPending)return catalogPending;
+    const version=++catalogGeneration;
+    const loading=request('/uninodes/composer/catalog').then(snapshot=>{
+        if(!Array.isArray(snapshot.libraries))throw Error('Invalid Composer catalog response');
+        if(version===catalogGeneration){
+            CATEGORY_TEMPLATES=Array.isArray(snapshot.categories)?snapshot.categories:[];
+            catalogCached=snapshot.libraries;
+        }
+        return snapshot.libraries;
+    });
+    catalogPending=loading;
+    loading.finally(()=>{if(catalogPending===loading)catalogPending=null;}).catch(()=>{});
+    return loading;
 };
 const libFor=(arr,id)=>arr?.find(x=>x.id===id);
 const displayLibrary=lib=>lib.folder?`${lib.folder.replaceAll('/', ' / ')} / ${lib.name}`:lib.name;
@@ -971,7 +981,7 @@ function openSettings(n,initialSelection,options={}){
         if(e.data?.type==='cpm-library-dirty')libraryDirty=Boolean(e.data.dirty);
         if(e.data?.type==='cpm-library-saved'){
             libraryDirty=false;
-            catalog().then(x=>{
+            catalog(true).then(x=>{
                 available=x;render();
                 const nodes=new Set([n,...(app.graph?._nodes||[]).filter(node=>
                     node.type===TYPE||node.comfyClass===TYPE||Boolean(node._cpmComposerElement))]);
@@ -1210,7 +1220,7 @@ function openSettings(n,initialSelection,options={}){
         const el=h('input');el.type='file';el.accept='.json,application/json';el.addEventListener('change',async()=>{
             try{const file=el.files?.[0];if(!file)return;if(file.size>500000)throw Error('File larger than 500 KB');
                 await request('/uninodes/composer/library',{method:'POST',headers:{'Content-Type':'application/json'},body:await file.text()});
-                available=await catalog();n._cpmCatalog=available;msg.textContent=`Imported ${file.name}`;render();
+                available=await catalog(true);n._cpmCatalog=available;msg.textContent=`Imported ${file.name}`;render();
             }catch(e){msg.textContent=`Import failed: ${e.message}`;}
         });el.click();
     });
@@ -1239,7 +1249,7 @@ if(typeof window!=='undefined'&&typeof BroadcastChannel!=='undefined'){
         const libraryUpdates=new BroadcastChannel('uninodes-library-data');
         libraryUpdates.addEventListener('message',event=>{
             if(event.data?.type!=='libraries-saved')return;
-            catalog().then(all=>{
+            catalog(true).then(all=>{
                 for(const node of app.graph?._nodes||[]){
                     if(node.type!==TYPE&&node.comfyClass!==TYPE&&!node._cpmComposerElement)continue;
                     node._cpmCatalog=all;
@@ -1249,10 +1259,21 @@ if(typeof window!=='undefined'&&typeof BroadcastChannel!=='undefined'){
         });
     }catch(error){console.warn('[Uninodes] Cross-tab library refresh unavailable:',error);}
 }
+// Node creation and workflow restore can both request reconciliation in the
+// same turn. Build the DOM only once for the final restored block state.
+function scheduleRestoreReconcile(n){
+    if(n._cpmRestoreReconcilePending)return;
+    n._cpmRestoreReconcilePending=true;
+    const schedule=typeof requestAnimationFrame==='function'?requestAnimationFrame:(callback=>setTimeout(callback,0));
+    schedule(()=>{
+        n._cpmRestoreReconcilePending=false;
+        reconcile(n);
+    });
+}
 app.registerExtension({name:'uninodes.composer',async beforeRegisterNodeDef(def,data){
     if(data.name!==TYPE)return;
     const previous=def.prototype.onNodeCreated;
-    def.prototype.onNodeCreated=function(...args){const x=previous?.apply(this,args);reconcile(this);return x;};
+    def.prototype.onNodeCreated=function(...args){const x=previous?.apply(this,args);scheduleRestoreReconcile(this);return x;};
     const config=def.prototype.onConfigure;
     def.prototype.onConfigure=function(...args){
         const state=args[0];
@@ -1318,7 +1339,7 @@ app.registerExtension({name:'uninodes.composer',async beforeRegisterNodeDef(def,
         const x=config?.apply(this,args);
         setTimeout(()=>{
             const count=repairGraphLinks(this,migrated);
-            reconcile(this);
+            scheduleRestoreReconcile(this);
             // In a few ComfyUI builds the global links table is restored
             // after node configuration. Retry once after graph load.
             if(count<migrated.length)setTimeout(()=>repairGraphLinks(this,migrated),150);

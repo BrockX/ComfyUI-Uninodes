@@ -196,6 +196,30 @@ def list_libraries():
                   for k in keys if k != 'style')
     return result
 
+
+def catalog_libraries():
+    """Complete Composer catalog from one validated disk scan.
+
+    The browser needs the entries of each library to render selected items and
+    variables. Previously it fetched ~100 individual libraries, each calling
+    _records() and re-reading *every* JSON file. Keep the old per-library APIs
+    for the editors, while making workflow startup a single snapshot.
+    """
+    records = _records()
+    style = _style_library()
+    # Preserve list_libraries() ordering and folder semantics, including
+    # personal overrides of bundled IDs and the synthetic Style library.
+    order = ['camera', 'composition', 'lighting']
+    keys = [key for key in order if key in records] + sorted(
+        (key for key in records if key not in order and key != 'style'),
+        key=lambda key: (records[key]['folder'].casefold(),
+                         records[key]['library']['name'].casefold()))
+    return [{**style, 'folder': ''}] + [
+        {**records[key]['library'], 'folder': records[key]['folder']}
+        for key in keys
+    ]
+
+
 def get_library(lib_id):
     _valid_id(lib_id)
     if lib_id == 'style':
