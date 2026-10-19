@@ -45,7 +45,10 @@ class PromptComposer:
                 opts = {}
             nsfw_visible = opts.get('nsfw_libraries') is True if isinstance(opts, dict) else False
             for b in composer_blocks.read_blocks(raw):
-                if not b['enabled']:
+                # Folder rows are organizational only; they have no 'enabled' flag.
+                # Accessing it raised KeyError('enabled') in IS_CHANGED, causing
+                # ComfyUI to log warnings and bypass ordinary cache comparisons.
+                if b['type'] == 'folder' or not b.get('enabled', True):
                     continue
                 if b['type'] == 'library':
                     used.extend(library_store.fingerprint(b['library_id'], pid) for pid in b['preset_ids'])

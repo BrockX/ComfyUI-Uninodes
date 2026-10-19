@@ -1670,33 +1670,130 @@ def _validated_external_stack(stack):
     return list(stack)
 
 
-def apply_loras(model,clip,entries,external_stack=None):
-    import nodes as comfy_nodes
+def _active_lora_entries(entries, external_stack=None):
+    """Validate the combined LoRA stack and retain prompt trigger overrides.
+
+    Only enabled entries affect the patched model. Trigger words and the
+    use_trigger flag belong to prompt composition, not the model cache key.
+    """
     import folder_paths
-    allowed=set(folder_paths.get_filename_list("loras") or [])
-    all_entries=list(entries)+_validated_external_stack(external_stack)
-    if len(all_entries)>MAX_LORAS*2:
+    allowed = set(folder_paths.get_filename_list("loras") or [])
+    all_entries = list(entries) + _validated_external_stack(external_stack)
+    if len(all_entries) > MAX_LORAS * 2:
         raise ValueError("Too many combined LoRAs")
-    applied=[]
-    for i, entry in enumerate(all_entries):
-        if isinstance(entry,(tuple,list)) and len(entry)>=3:
-            entry={"name":entry[0],"strength_model":entry[1],"strength_clip":entry[2]}
-        if not isinstance(entry,dict) or entry.get("enabled",True) is False:continue
-        name=entry.get("name","")
-        if not name:continue
-        if name not in allowed:raise ValueError(f"LoRA not installed: {name}")
-        sm=float(entry.get("strength_model",1));sc=float(entry.get("strength_clip",1))
-        if not math.isfinite(sm) or not math.isfinite(sc) or not -5<=sm<=5 or not -5<=sc<=5:
+    active = []
+    for entry in all_entries:
+        if isinstance(entry, (tuple, list)) and len(entry) >= 3:
+            entry = {"name": entry[0], "strength_model": entry[1], "strength_clip": entry[2]}
+        if not isinstance(entry, dict) or entry.get("enabled", True) is False:
+            continue
+        name = entry.get("name", "")
+        if not name:
+            continue
+        if name not in allowed:
+            raise ValueError(f"LoRA not installed: {name}")
+        sm = float(entry.get("strength_model", 1))
+        sc = float(entry.get("strength_clip", 1))
+        if not math.isfinite(sm) or not math.isfinite(sc) or not -5 <= sm <= 5 or not -5 <= sc <= 5:
             raise ValueError(f"Invalid LoRA strengths: {name}")
+        active.append(entry)
+    return active
+
+
+def _apply_active_loras(model, clip, active):
+    import nodes as comfy_nodes
+    for entry in active:
+        name = entry["name"]
+        sm = float(entry.get("strength_model", 1))
+        sc = float(entry.get("strength_clip", 1))
         if clip is None:
             if sc:
                 raise ValueError(f"LoRA {name!r} requires a CLIP input for its text-encoder strength. "
                                  "Connect an encoder, or set the LoRA CLIP strength to 0.")
             model = comfy_nodes.LoraLoaderModelOnly().load_lora_model_only(model, name, sm)[0]
         else:
-            model,clip=comfy_nodes.LoraLoader().load_lora(model,clip,name,sm,sc)
-        applied.append(entry)
-    return model,clip,applied
+            model, clip = comfy_nodes.LoraLoader().load_lora(model, clip, name, sm, sc)
+    return model, clip
+
+
+def apply_loras(model, clip, entries, external_stack=None):
+    """Uncached compatibility path (also used by the cached miss handler)."""
+    active = _active_lora_entries(entries, external_stack)
+    model, clip = _apply_active_loras(model, clip, active)
+    return model, clip, active
+
+
+@lru_cache(maxsize=1)
+def _cached_lora_chain(model, clip, signature):
+    """Hold one patched model/CLIP configuration for repeated generations.
+
+    LoraLoader clones patchers, so rebuilding it every queue makes ComfyUI's
+    dynamic VRAM manager treat identical LoRA stacks as new configurations.
+    The single-entry limit avoids retaining unbounded model variants.
+    """
+    active = [{"name": name, "strength_model": sm, "strength_clip": sc}
+              for name, sm, sc, _mtime_ns, _size in signature]
+    return _apply_active_loras(model, clip, active)
+
+
+@lru_cache(maxsize=1)
+def _cached_clip_with_skip(clip, layer):
+    """Keep CLIP-skip's cloned encoder stable across prompt/seed changes."""
+    clipped = clip.clone()
+    clipped.clip_layer(layer)
+    return clipped
+
+
+def _clip_with_skip_cached(clip, layer):
+    try:
+        hash(clip)
+    except TypeError:
+        # Nonstandard external CLIP providers need the old safe behavior.
+        clipped = clip.clone()
+        clipped.clip_layer(layer)
+        return clipped
+    return _cached_clip_with_skip(clip, layer)
+
+
+def apply_loras_cached(model, clip, entries, external_stack=None):
+    """Reuse unchanged LoRA chains without caching prompts or conditioning.
+
+    Cache identity includes the source MODEL/CLIP objects, enabled LoRA order,
+    exact strengths, and each installed LoRA's size/mtime. Replacing a LoRA
+    file invalidates its cache even when the filename stays unchanged.
+    Connected model/CLIP changes naturally cause a cache miss by identity.
+    """
+    import folder_paths
+    active = _active_lora_entries(entries, external_stack)
+    if not active:
+        # Release the previous patched configuration when LoRAs are disabled.
+        _cached_lora_chain.cache_clear()
+        return model, clip, active
+    if clip is None:
+        for entry in active:
+            if float(entry.get("strength_clip", 1)) != 0:
+                raise ValueError(f"LoRA {entry['name']!r} requires a CLIP input for its text-encoder strength. "
+                                 "Connect an encoder, or set the LoRA CLIP strength to 0.")
+    try:
+        signature = []
+        for entry in active:
+            name = entry["name"]
+            path = folder_paths.get_full_path("loras", name)
+            if not path:
+                raise OSError(f"Unable to resolve LoRA path: {name}")
+            info = Path(path).stat()
+            signature.append((name, float(entry.get("strength_model", 1)),
+                              float(entry.get("strength_clip", 1)), info.st_mtime_ns, info.st_size))
+        # Custom MODEL / CLIP providers may return nonhashable objects.
+        hash(model)
+        if clip is not None:
+            hash(clip)
+    except (OSError, TypeError, ValueError):
+        # File metadata unavailable: do not risk reusing a modified LoRA.
+        model, clip = _apply_active_loras(model, clip, active)
+        return model, clip, active
+    model, clip = _cached_lora_chain(model, clip, tuple(signature))
+    return model, clip, active
 
 
 @lru_cache(maxsize=1)
@@ -2105,16 +2202,19 @@ def encode_and_sample(checkpoint,seed,pos,neg,raw,profile_mode="Custom",*,latent
     _require_model_components(checkpoint, model, clip, vae,
                               positive_conditioning=positive_conditioning,
                               negative_conditioning=negative_conditioning)
-    model,clip,applied=apply_loras(model,clip,cfg["loras"],lora_stack)
+    model,clip,applied=apply_loras_cached(model,clip,cfg["loras"],lora_stack)
     cfg["width"], cfg["height"] = nearest_compatible_resolution(
         cfg["width"], cfg["height"], model_resolution_multiple(model))
-    clipped=clip.clone() if clip is not None else None
+    # CLIPTextEncode does not need a cloned encoder. When CLIP-skip is used,
+    # reuse that clone as well; making a new one on each run defeats the LoRA
+    # cache for SDXL/Illustrious users who select a non-default clip skip.
+    clipped = clip
     # CLIP skip is SD1/2/SDXL specific. Never apply blindly to Qwen/T5/Flux,
     # and do not touch encoders when the default -1 is selected.
-    if clipped is not None and int(cfg["clip_skip"]) != -1:
+    if clip is not None and int(cfg["clip_skip"]) != -1:
         latent_channels = getattr(getattr(getattr(model, "model", None), "latent_format", None), "latent_channels", None)
         if _model_family(checkpoint) == "unknown" and source == "checkpoints" and latent_channels == 4:
-            clipped.clip_layer(int(cfg["clip_skip"]))
+            clipped = _clip_with_skip_cached(clip, int(cfg["clip_skip"]))
     pos, neg = apply_prompt_prefixes(cfg, profile, pos, neg)
     for entry in applied:
         if entry.get("use_trigger") and entry.get("trigger"):
