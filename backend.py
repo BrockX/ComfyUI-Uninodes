@@ -1876,29 +1876,47 @@ def _require_model_components(selection, model, clip, vae, *, positive_condition
 
 
 def _empty_latent_for_model(model, cfg):
-    """Respect the diffusion model's latent channel count (4 for SDXL, 16 for Anima).
+    """Create the still-image latent expected by the loaded diffusion model.
 
-    Fall back to core's familiar 4-channel factory for SD1/SDXL. ComfyUI's
-    sample.fix_empty_latent_channels remains in place as additional protection.
+    Anima is an image model backed by a Wan21 3D latent format: its one-frame
+    still images are [batch, 16, 1, height/8, width/8].  The older blanket
+    latent_dimensions == 2 check wrongly rejected it before sampling.
+    Other 3D/video model families remain outside this node's T2I scope.
     """
     import nodes as comfy_nodes
-    latent_format = getattr(getattr(model, "model", None), "latent_format", None)
+    internal_model = getattr(model, "model", None)
+    latent_format = getattr(internal_model, "latent_format", None)
     channels = getattr(latent_format, "latent_channels", 4)
     spatial_ratio = getattr(latent_format, "spacial_downscale_ratio",
                             getattr(latent_format, "spatial_downscale_ratio", 8))
-    if channels == 4 and spatial_ratio == 8:
+    latent_dimensions = getattr(latent_format, "latent_dimensions", 2)
+    # Identify Anima by the *loaded model*, not by its filename: community
+    # checkpoints may have arbitrary names and MODEL sockets can override it.
+    config = getattr(internal_model, "model_config", None)
+    is_anima = (type(internal_model).__name__ == "Anima"
+                or type(config).__name__ == "Anima")
+    if latent_dimensions == 3:
+        if not is_anima:
+            raise ValueError("Direct Sampler only supports single-frame 3D latents for Anima; "
+                             "other 3D/video models need a dedicated workflow")
+    elif latent_dimensions != 2:
+        raise ValueError("Direct Sampler supports 2D image latents and Anima single-frame 3D latents only")
+    if channels == 4 and spatial_ratio == 8 and latent_dimensions == 2:
         return comfy_nodes.EmptyLatentImage().generate(cfg["width"], cfg["height"], cfg["batch_size"])[0]
     if not isinstance(channels, int) or channels < 1 or not isinstance(spatial_ratio, int) or spatial_ratio < 1:
         raise ValueError("Unsupported model latent format: invalid channels/downscale ratio")
     if cfg["width"] % spatial_ratio or cfg["height"] % spatial_ratio:
         raise ValueError(f"The selected model needs an image resolution divisible by {spatial_ratio}")
-    if getattr(latent_format, "latent_dimensions", 2) != 2:
-        raise ValueError("Direct Sampler currently supports image models with 2D latents only")
     import torch
     import comfy.model_management
-    samples = torch.zeros((cfg["batch_size"], channels,
-                           cfg["height"] // spatial_ratio, cfg["width"] // spatial_ratio),
-                          device=comfy.model_management.intermediate_device())
+    shape = (cfg["batch_size"], channels,
+             cfg["height"] // spatial_ratio, cfg["width"] // spatial_ratio)
+    if latent_dimensions == 3:
+        # ComfyUI's sample.fix_empty_latent_channels also expands a 4D empty
+        # latent to this shape; creating it directly works with older releases.
+        shape = (cfg["batch_size"], channels, 1,
+                 cfg["height"] // spatial_ratio, cfg["width"] // spatial_ratio)
+    samples = torch.zeros(shape, device=comfy.model_management.intermediate_device())
     return {"samples": samples}
 
 
