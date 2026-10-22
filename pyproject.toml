@@ -1,0 +1,15 @@
+
+[project]
+name = "uninodes"
+version = "1.2.19"
+description = "Prompt composition, image generation, LoRA management, upscaling, detailing, and all-in-one workflows for ComfyUI."
+license = { file = "LICENSE" }
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/BrockX/ComfyUI-Uninodes"
+Issues = "https://github.com/BrockX/ComfyUI-Uninodes/issues"
+
+[tool.comfy]
+PublisherId = "brockx"
+DisplayName = "Uninodes"
