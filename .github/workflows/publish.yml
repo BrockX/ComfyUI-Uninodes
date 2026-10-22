@@ -1,0 +1,23 @@
+name: Publish Uninodes to Comfy Registry
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - pyproject.toml
+
+permissions:
+  contents: read
+
+jobs:
+  publish-node:
+    name: Publish to Comfy Registry
+    if: github.repository == 'BrockX/ComfyUI-Uninodes'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Publish Uninodes
+        uses: Comfy-Org/publish-node-action@v1
+        with:
+          personal_access_token: ${{ secrets.REGISTRY_ACCESS_TOKEN }}
