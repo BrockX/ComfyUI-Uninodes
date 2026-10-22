@@ -2,3 +2,11 @@ __pycache__/
 *.pyc
 data/
 tests/
+
+# Development and release tools
+Release-Uninodes.cmd
+Release-Uninodes.ps1
+README_RELEASE.txt
+
+# Generated publishing archive
+node.zip
