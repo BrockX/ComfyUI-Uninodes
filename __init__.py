@@ -1,4 +1,5 @@
 """Uninodes: Direct Sampler + Image Finisher, with legacy workflow-compatible IDs."""
+import asyncio
 from .sampler_node import NODE_CLASS_MAPPINGS as _SAMPLER_NODES, NODE_DISPLAY_NAME_MAPPINGS as _SAMPLER_NAMES
 from .finisher_node import NODE_CLASS_MAPPINGS as _FINISHER_NODES, NODE_DISPLAY_NAME_MAPPINGS as _FINISHER_NAMES
 
@@ -116,6 +117,19 @@ if web is not None:
         try:
             return web.json_response({'profile': backend.read_profile(request.query.get('checkpoint',''),request.query.get('mode','Creator'))})
         except (ValueError, KeyError) as exc:
+            return web.json_response({'error': str(exc)}, status=400)
+
+    @PromptServer.instance.routes.get('/uninodes/sampler/components')
+    async def ds_components(request):
+        try:
+            checkpoint = request.query.get('checkpoint', '')
+            options = await asyncio.to_thread(backend.component_options, checkpoint)
+            mode = request.query.get('mode', 'Custom')
+            profile = backend.read_profile(checkpoint, mode)
+            options['saved'] = profile['values'] if profile else (
+                backend.saved_component_settings(checkpoint, backend.settings({})) if mode == 'Custom' else {})
+            return web.json_response(options)
+        except (ValueError, OSError, TypeError) as exc:
             return web.json_response({'error': str(exc)}, status=400)
 
     @PromptServer.instance.routes.post('/uninodes/sampler/profile')
