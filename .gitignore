@@ -22,3 +22,7 @@ data/
 .vscode/
 .DS_Store
 Thumbs.db
+
+Release-Uninodes.cmd
+Release-Uninodes.ps1
+README_RELEASE.txt
