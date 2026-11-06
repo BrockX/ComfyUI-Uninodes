@@ -1651,6 +1651,29 @@ def read_profile(checkpoint, mode):
     return sampler_profiles.get_profile(checkpoint, mode)
 
 
+def component_options(checkpoint, model=None):
+    from . import model_components
+    family = _model_family(checkpoint, model)
+    if model is None:
+        family = model_components.selected_family(checkpoint, family)
+    return model_components.choices(family, AUTO_COMPANIONS)
+
+
+def saved_component_settings(checkpoint, cfg):
+    """Fill unset component choices from Personal, then Creator; never replace explicit picks."""
+    result = dict(cfg)
+    for mode in ('Personal', 'Creator'):
+        profile = read_profile(checkpoint, mode) if checkpoint else None
+        values = profile.get('values', {}) if profile else {}
+        if result['clip_source'] == 'Internal' and values.get('clip_source') in ('Manual', 'External'):
+            for key in ('clip_source', 'encoder_loader', 'encoder_type', 'encoder_1', 'encoder_2', 'encoder_3', 'encoder_4'):
+                if key in values:
+                    result[key] = values[key]
+        if result['vae_name'] == 'Internal' and values.get('vae_name', 'Internal') != 'Internal':
+            result['vae_name'] = values['vae_name']
+    return result
+
+
 def effective_settings(checkpoint, profile_mode, raw, *, reader=read_profile):
     cfg=settings(raw)
     profile=reader(checkpoint, profile_mode) if profile_mode in ("Creator","Personal") else None
@@ -1854,12 +1877,34 @@ def _installed_file_with_basename(category, *basenames):
     return None
 
 
-def _model_family(selection):
-    """Conservative filename identification, never fallback across families."""
+def _model_family(selection, model=None):
+    """Prefer the loaded architecture; filenames are only a pre-load hint."""
+    internal = getattr(model, "model", None)
+    config = getattr(internal, "model_config", None)
+    if config is not None:
+        family = {
+            "Anima": "anima", "Krea2": "krea2", "Flux": "flux",
+            "FluxSchnell": "flux", "Flux2": "flux2", "SD3": "sd3",
+            "QwenImage": "qwen_image", "ZImage": "z_image",
+            "HiDream": "hidream", "HunyuanImage21": "hunyuan_image",
+            "Omnigen2": "omnigen2", "Chroma": "chroma", "Lumina2": "lumina2",
+        }.get(type(config).__name__, "unknown")
+        if family == "flux2":
+            # Klein's three Qwen hidden states have a different width from Dev's Mistral.
+            context = config.unet_config.get("context_in_dim")
+            return {7680: "flux2_klein_4b", 12288: "flux2_klein_9b",
+                    15360: "flux2"}.get(context, "unknown")
+        return family
     _, filename = model_source(selection)
     name = filename.replace("\\", "/").casefold()
     if "anima" in name: return "anima"
-    if "flux2" in name or "flux_2" in name or "flux-2" in name or "flux.2" in name: return "flux2"
+    if "krea2" in name or "krea_2" in name or "krea-2" in name or "krea 2" in name: return "krea2"
+    if "flux2" in name or "flux_2" in name or "flux-2" in name or "flux.2" in name:
+        if "klein" in name:
+            if "4b" in name: return "flux2_klein_4b"
+            if "9b" in name: return "flux2_klein_9b"
+            return "unknown"
+        return "flux2"
     if "flux" in name: return "flux"
     if "sd3" in name or "stable_diffusion_3" in name or "stable-diffusion-3" in name: return "sd3"
     if "qwen_image" in name or "qwen-image" in name: return "qwen_image"
@@ -1876,10 +1921,15 @@ def _model_family(selection):
 # Automatic resolution is all-or-nothing for encoders. A missing file produces
 # an actionable error; it must not accidentally mix another family's encoder.
 AUTO_COMPANIONS = {
+    "krea2": ("single", "krea2", (("qwen3vl_4b_fp8_scaled.safetensors", "qwen3vl_4b_bf16.safetensors"),), ("qwen_image_vae.safetensors",)),
     "anima": ("single", "stable_diffusion", (("qwen_3_06b_base.safetensors",),), ("qwen_image_vae.safetensors",)),
     "flux": ("dual", "flux", (("clip_l.safetensors",),
              ("t5xxl_fp8_e4m3fn_scaled.safetensors", "t5xxl_fp16.safetensors", "t5xxl_fp8_e4m3fn.safetensors")), ("ae.safetensors",)),
     "flux2": ("single", "flux2", (("mistral_3_small_flux2_fp8.safetensors", "mistral_3_small_flux2.safetensors"),), ("flux2-vae.safetensors",)),
+    "flux2_klein_4b": ("single", "flux2", (("qwen_3_4b.safetensors",),), ("flux2-vae.safetensors",)),
+    "flux2_klein_9b": ("single", "flux2", (("qwen_3_8b.safetensors", "qwen_3_8b_fp8mixed.safetensors"),), ("flux2-vae.safetensors",)),
+    "chroma": ("single", "chroma", (("t5xxl_fp16.safetensors", "t5xxl_fp8_e4m3fn_scaled.safetensors"),), ("ae.safetensors",)),
+    "lumina2": ("single", "lumina2", (("gemma_2_2b_fp16.safetensors",),), ("ae.safetensors",)),
     "sd3": ("triple", None, (("clip_l.safetensors",), ("clip_g.safetensors",),
              ("t5xxl_fp8_e4m3fn_scaled.safetensors", "t5xxl_fp16.safetensors", "t5xxl_fp8_e4m3fn.safetensors")), ("sd3_vae.safetensors",)),
     "qwen_image": ("single", "qwen_image", (("qwen_2.5_vl_7b_fp8_scaled.safetensors", "qwen_2.5_vl_7b.safetensors"),), ("qwen_image_vae.safetensors",)),
@@ -1916,10 +1966,23 @@ def _load_encoder(layout, kind, filenames):
 def _load_encoder_uncached(layout, kind, filenames):
     """Use Comfy's native single/dual/triple/quad CLIP loaders."""
     import nodes
+    import folder_paths
+    expected = {"single": 1, "dual": 2, "triple": 3, "quad": 4}[layout]
+    if len(filenames) != expected:
+        raise ValueError(f"{layout} CLIP loading needs {expected} text encoder files")
+    available = set(folder_paths.get_filename_list("text_encoders") or [])
+    absent = [name for name in filenames if name not in available]
+    if absent:
+        raise ValueError("Missing selected text encoder(s): " + ", ".join(absent))
+    if layout in ("triple", "quad"):
+        # Core SD3/HiDream extras use this API in both legacy and V3 nodes.
+        # V3's QuadrupleCLIPLoader no longer has a load_clip method.
+        import comfy.sd
+        paths = [folder_paths.get_full_path_or_raise("text_encoders", name) for name in filenames]
+        return comfy.sd.load_clip(ckpt_paths=paths,
+                                  embedding_directory=folder_paths.get_folder_paths("embeddings"))
     loaders = {"single": ("CLIPLoader", "load_clip"),
-               "dual": ("DualCLIPLoader", "load_clip"),
-               "triple": ("TripleCLIPLoader", "load_clip"),
-               "quad": ("QuadrupleCLIPLoader", "load_clip")}
+               "dual": ("DualCLIPLoader", "load_clip")}
     cls_name, method = loaders[layout]
     cls = getattr(nodes, cls_name, None)
     if cls is None:
@@ -1931,14 +1994,6 @@ def _load_encoder_uncached(layout, kind, filenames):
         if kind not in supported:
             raise ValueError(f"{cls_name} does not support encoder type {kind!r} on this ComfyUI version. "
                              f"Available: {', '.join(supported)}. Update ComfyUI or use External CLIP.")
-    expected = {"single": 1, "dual": 2, "triple": 3, "quad": 4}[layout]
-    if len(filenames) != expected:
-        raise ValueError(f"{cls_name} needs {expected} text encoder files")
-    available = set(__import__("folder_paths").get_filename_list("text_encoders") or [])
-    absent = [name for name in filenames if name not in available]
-    if absent:
-        raise ValueError("Missing selected text encoder(s): " + ", ".join(absent))
-    # Triple and Quad core nodes use no 'type' argument (fixed SD3/HiDream).
     args = [*filenames]
     if type_field:
         args.append(kind)
@@ -1950,8 +2005,7 @@ def _load_manual_encoder(cfg):
     count = {"single": 1, "dual": 2, "triple": 3, "quad": 4}[layout]
     names = [cfg[f"encoder_{idx}"] for idx in range(1, count + 1)]
     if not all(names):
-        raise ValueError(f"Manual CLIP loading is set to {layout}, but {count} encoder filename(s) "
-                         "must be selected in Model & profile > Encoders.")
+        raise ValueError("The selected CLIP setup is incomplete. Choose a complete entry in the CLIP dropdown.")
     return _load_encoder(layout, cfg["encoder_type"], names)
 
 
@@ -1972,19 +2026,18 @@ def _load_vae(filename):
     return _cached_vae(filename, sig)
 
 
-def _recover_known_components(selection, cfg, clip, vae, *, need_clip=True):
-    """Complete model-only families with exact official companion files."""
-    family = _model_family(selection)
-    recipe = AUTO_COMPANIONS.get(family)
-    if not recipe:
+def _recover_known_components(selection, cfg, clip, vae, *, need_clip=True, model=None):
+    """Fill absent components using architecture-compatible local files."""
+    if ((clip is not None or not need_clip or cfg.get('clip_source') != 'Internal')
+            and (vae is not None or cfg.get('vae_name', 'Internal') != 'Internal')):
         return clip, vae
-    layout, kind, encoder_groups, vae_names = recipe
+    options = component_options(selection, model)
     if clip is None and need_clip and cfg.get("clip_source") == "Internal":
-        files = [_installed_file_with_basename("text_encoders", *choices) for choices in encoder_groups]
-        if all(files):
+        if options['recommended_clip']:
+            layout, kind, files = json.loads(options['recommended_clip'])
             clip = _load_encoder(layout, kind, files)
     if vae is None and cfg.get("vae_name", "Internal") == "Internal":
-        filename = _installed_file_with_basename("vae", *vae_names)
+        filename = options['recommended_vae']
         if filename:
             vae = _load_vae(filename)
     return clip, vae
@@ -1997,17 +2050,16 @@ def _require_model_components(selection, model, clip, vae, *, positive_condition
         missing.append("CLIP/text encoder")
     if vae is None: missing.append("VAE")
     if not missing: return
-    family = _model_family(selection)
+    family = _model_family(selection, model)
     recipe = AUTO_COMPANIONS.get(family)
     if recipe:
         _, _, groups, vae_names = recipe
         required = ", ".join(" / ".join(group) for group in groups)
         hint = (f"Model family {family!r} requires compatible encoder(s): {required}; "
                 f"VAE: {' / '.join(vae_names)}. Install these exact files, or choose "
-                "CLIP Manual and select matching encoders / a VAE explicitly (or connect sockets).")
+                "matching entries in the CLIP and VAE dropdowns (or connect sockets).")
     else:
-        hint = ("For model-only files, choose Manual CLIP and matching encoder file(s) "
-                "in the node's Encoders settings, plus an installed VAE, or connect "
+        hint = ("For model-only files, choose matching CLIP and VAE entries, or connect "
                 "compatible CLIP/VAE sockets. Unknown families are never assigned a guessed encoder.")
     raise ValueError(f"Selected model {selection!r} is missing: {', '.join(missing)}. {hint}")
 
@@ -2015,10 +2067,8 @@ def _require_model_components(selection, model, clip, vae, *, positive_condition
 def _empty_latent_for_model(model, cfg):
     """Create the still-image latent expected by the loaded diffusion model.
 
-    Anima is an image model backed by a Wan21 3D latent format: its one-frame
-    still images are [batch, 16, 1, height/8, width/8].  The older blanket
-    latent_dimensions == 2 check wrongly rejected it before sampling.
-    Other 3D/video model families remain outside this node's T2I scope.
+    Known still-image architectures may use a video-style latent format with
+    one frame. A shared latent format alone does not make a video model safe.
     """
     import nodes as comfy_nodes
     internal_model = getattr(model, "model", None)
@@ -2027,17 +2077,16 @@ def _empty_latent_for_model(model, cfg):
     spatial_ratio = getattr(latent_format, "spacial_downscale_ratio",
                             getattr(latent_format, "spatial_downscale_ratio", 8))
     latent_dimensions = getattr(latent_format, "latent_dimensions", 2)
-    # Identify Anima by the *loaded model*, not by its filename: community
-    # checkpoints may have arbitrary names and MODEL sockets can override it.
     config = getattr(internal_model, "model_config", None)
-    is_anima = (type(internal_model).__name__ == "Anima"
-                or type(config).__name__ == "Anima")
+    image_3d_models = {"Anima", "Krea2", "QwenImage"}
+    is_image_3d = (type(config).__name__ in image_3d_models if config is not None
+                   else type(internal_model).__name__ in image_3d_models)
     if latent_dimensions == 3:
-        if not is_anima:
-            raise ValueError("Direct Sampler only supports single-frame 3D latents for Anima; "
-                             "other 3D/video models need a dedicated workflow")
+        if not is_image_3d:
+            raise ValueError(f"Direct Sampler does not support single-frame generation for "
+                             f"{type(config or internal_model).__name__}; use a dedicated workflow")
     elif latent_dimensions != 2:
-        raise ValueError("Direct Sampler supports 2D image latents and Anima single-frame 3D latents only")
+        raise ValueError("Direct Sampler supports 2D image latents and known single-frame image architectures only")
     if channels == 4 and spatial_ratio == 8 and latent_dimensions == 2:
         return comfy_nodes.EmptyLatentImage().generate(cfg["width"], cfg["height"], cfg["batch_size"])[0]
     if not isinstance(channels, int) or channels < 1 or not isinstance(spatial_ratio, int) or spatial_ratio < 1:
@@ -2177,6 +2226,8 @@ def encode_and_sample(checkpoint,seed,pos,neg,raw,profile_mode="Custom",*,latent
         if source == "checkpoints" and name in installed and (clip is None or vae is None):
             _, loaded_clip, loaded_vae = load_checkpoint_cached(name)
     external_vae = vae is not None
+    if profile is None:
+        cfg = saved_component_settings(checkpoint, cfg)
     if cfg["clip_source"] == "External" and clip is None:
         if positive_conditioning is None or negative_conditioning is None:
             raise ValueError("CLIP source is External but no CLIP socket is connected")
@@ -2198,6 +2249,7 @@ def encode_and_sample(checkpoint,seed,pos,neg,raw,profile_mode="Custom",*,latent
         clip, vae = _recover_known_components(
             checkpoint, cfg, clip, vae,
             need_clip=positive_conditioning is None or negative_conditioning is None,
+            model=model,
         )
     _require_model_components(checkpoint, model, clip, vae,
                               positive_conditioning=positive_conditioning,
@@ -2250,7 +2302,7 @@ def encode_and_sample(checkpoint,seed,pos,neg,raw,profile_mode="Custom",*,latent
                         "height":int(image.shape[1]),"denoise":cfg["denoise"],"clip_skip":cfg["clip_skip"],
                         "mode":cfg.get("mode","t2i"),"i2i_strength":cfg.get("i2i_strength","Balanced"),
                         "vae_name":cfg.get("vae_name","Internal"),"clip_source":cfg.get("clip_source","Internal"),
-                        "model_source":source,"model_family":_model_family(checkpoint)}}
+                        "model_source":source,"model_family":_model_family(checkpoint, model)}}
     return image,bundle,sampled,p_cond,n_cond
 
 

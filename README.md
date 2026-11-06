@@ -67,7 +67,9 @@ Direct Sampler can list models from:
 
 It supports conventional SD/SDXL-family checkpoints (including Pony and Illustrious), and provides loading paths for several model-only architectures such as **Anima, FLUX, SD3/3.5, Qwen Image, Z-Image, HiDream**, and others supported by your ComfyUI installation.
 
-Some architectures need separate text encoders and VAEs in `models/text_encoders/` and `models/vae/`. Use automatic companion loading where available, manually select the matching encoders, or connect external **MODEL / CLIP / VAE** inputs. Uninodes does **not** download model weights.
+Some architectures need separate text encoders and VAEs in `models/text_encoders/` and `models/vae/`. Choose them with the **CLIP** and **VAE** dropdowns. Compatible local files are marked green with a check; required encoder pairs/groups appear as one CLIP choice. Loader and encoder type are handled automatically. Header inspection reads metadata without loading model weights; recognized architectures can match renamed files, with exact known filenames as a fallback for valid unrecognized headers.
+
+Existing workflow choices and the active Creator/Personal profile take priority. With no active profile or explicit choice, saved Personal components take priority over Creator, then compatible files are selected automatically. Save Creator/Personal to remember the selected files for that model. Missing saved files remain selected and produce an error rather than silently switching. External **MODEL / CLIP / VAE** inputs remain available. Uninodes does **not** download model weights.
 
 **Note:** Model loading is not a guarantee that one sampling preset works for every architecture. Some models require different guidance, schedules, or specialized workflows.
 

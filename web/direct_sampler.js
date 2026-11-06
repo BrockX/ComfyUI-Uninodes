@@ -83,6 +83,57 @@ function btn(label, onClick, cls="") {const x=e('button',cls,label);x.type='butt
 function field(label, control) {const w=e('label','ds-field');w.append(e('span','',label),control);return w;}
 function textBox(v,type="text",step=null) {const x=e('input');x.type=type;if(type!=="checkbox")x.value=String(v??'');else x.checked=!!v;if(step!==null)x.step=step;return x;}
 function select(v,values) {const x=e('select');const options=values||[];for(const item of options){const p=e('option','',typeof item==='string'?item:item.label);p.value=typeof item==='string'?item:item.value;x.append(p);}if(v!=null&&![...x.options].some(z=>z.value===String(v))){const missing=e('option','',`Missing: ${v}`);missing.value=String(v);x.prepend(missing);}x.value=String(v??'');return x;}
+const COMPONENT_FIELDS=['clip_source','encoder_loader','encoder_type','encoder_1','encoder_2','encoder_3','encoder_4','vae_name'];
+function clipChoice(cfg){
+ if(cfg.clip_source!=='Manual')return cfg.clip_source||'Internal';
+ const count={single:1,dual:2,triple:3,quad:4}[cfg.encoder_loader]||1;
+ return JSON.stringify([cfg.encoder_loader||'single',cfg.encoder_type||'stable_diffusion',Array.from({length:count},(_,i)=>cfg[`encoder_${i+1}`]||'')]);
+}
+function setClipChoice(cfg,value){
+ if(value==='Internal'||value==='External'){cfg.clip_source=value;return;}
+ const [layout,kind,names]=JSON.parse(value);
+ cfg.clip_source='Manual';cfg.encoder_loader=layout;cfg.encoder_type=kind;
+ for(let i=1;i<=4;i++)cfg[`encoder_${i}`]=names[i-1]||'';
+}
+function componentSelect(value,choices,kind){
+ const items=[{value:'Internal',label:'Automatic / embedded'},{value:'External',label:'Connected socket'},...choices.map(item=>({...item,label:(item.compatible?'✓ Compatible · ':'')+item.label}))];
+ if(!items.some(item=>item.value===value)&&kind==='CLIP'&&value.startsWith('[')){
+  try{items.splice(2,0,{value,label:'Saved / selected · '+JSON.parse(value)[2].join(' + ')});}catch{}
+ }
+ const control=select(value,items);
+ const paint=()=>{control.style.color=choices.some(item=>item.value===control.value&&item.compatible)?'#72e2a3':'';};
+ for(const option of control.options)if(choices.some(item=>item.value===option.value&&item.compatible))option.style.color='#72e2a3';
+ control.addEventListener('change',paint);paint();return control;
+}
+function componentFields(n,cfg,changed){
+ const group=e('div','ds-2col');const options=n._dsComponents||{};
+ const clip=componentSelect(clipChoice(cfg),options.clips||[],'CLIP');
+ const vae=componentSelect(cfg.vae_name||'Internal',options.vaes||[],'VAE');
+ clip.addEventListener('change',()=>changed(c=>setClipChoice(c,clip.value)));
+ vae.addEventListener('change',()=>changed(c=>{c.vae_name=vae.value;}));
+ group.append(field('CLIP',clip),field('VAE',vae));return group;
+}
+async function refreshComponents(n){
+ if(!n._dsOptions)return;
+ const checkpoint=val(n,'checkpoint')||'',mode=val(n,'profile_mode')||'Custom',key=JSON.stringify([checkpoint,mode]);
+ if(n._dsComponentKey===key)return;
+ n._dsComponentKey=key;n._dsComponents=null;n._dsComponentError='';
+ const request=(n._dsComponentRequest||0)+1;n._dsComponentRequest=request;
+ try{
+  const response=await api.fetchApi(`/uninodes/sampler/components?checkpoint=${encodeURIComponent(checkpoint)}&mode=${encodeURIComponent(mode)}`);
+  const options=await response.json();if(!response.ok)throw Error(options.error||'Could not find compatible components');
+  if(n._dsComponentRequest!==request||key!==JSON.stringify([val(n,'checkpoint')||'',val(n,'profile_mode')||'Custom']))return;
+  n._dsComponents=options;
+  const cfg=structuredClone(n._dsConfig||parse(n)),saved=options.saved||{};
+  // A choice already made in this workflow or profile has authority, even if missing.
+  if(!cfg.clip_source||cfg.clip_source==='Internal'){
+   if(saved.clip_source&&saved.clip_source!=='Internal')for(const field of COMPONENT_FIELDS.filter(field=>field!=='vae_name')){if(field in saved)cfg[field]=saved[field];}
+   else if(options.recommended_clip)setClipChoice(cfg,options.recommended_clip);
+  }
+  if(!cfg.vae_name||cfg.vae_name==='Internal')cfg.vae_name=saved.vae_name&&saved.vae_name!=='Internal'?saved.vae_name:options.recommended_vae||'Internal';
+  write(n,cfg);optionalSockets(n);
+ }catch(error){if(n._dsComponentRequest!==request)return;n._dsComponentError=error.message;render(n);}
+}
 function stopGestures(el) {for(const evt of ['pointerdown','mousedown','dblclick'])el.addEventListener(evt,ev=>ev.stopPropagation());}
 const parse=n=>{try{return JSON.parse(val(n,'settings_json')||'{}')||{};}catch{return {};}};
 function setWidget(n,key,value){const w=get(n,key);if(!w)return;w.value=value;graphDirty();}
@@ -129,6 +180,23 @@ function ensureCSS(){if(document.querySelector('#direct-sampler-css'))return;con
 .ds-prefix-card{gap:6px}.ds-prefix-head{display:flex;align-items:center;gap:7px;min-width:0}.ds-prefix-head .ds-card-title{margin-right:auto}.ds-prefix-toggle{display:inline-flex;align-items:center;gap:5px;white-space:nowrap;font-size:10px;color:#c2d7ef;cursor:pointer}.ds-prefix-toggle input{margin:0;cursor:pointer}.ds-root button.ds-prefix-expand{padding:2px 6px;font-size:14px;line-height:1.3;min-width:25px}.ds-prefix-body{display:flex;flex-direction:column;gap:7px;min-width:0}.ds-prefix-field{display:flex;flex-direction:column;gap:3px;min-width:0}.ds-prefix-field>span{font-size:10px;color:#c1d4e9;font-weight:650}.ds-root textarea.ds-prefix-textarea{font-size:11px;line-height:1.4;padding:6px 7px;min-height:48px;resize:vertical;max-height:190px}.ds-prefix-hint{font-size:10px;color:#99b4cf;line-height:1.35}
 .ds-2col{display:grid;grid-template-columns:1fr 1fr;gap:7px}.ds-lora{padding:6px;border:1px solid #4b5d78;border-radius:7px;background:#1c2a3d;display:flex;flex-direction:column;gap:5px}.ds-lora-main{display:grid;grid-template-columns:16px minmax(75px,1fr) 50px 50px 23px;gap:5px;align-items:end}.ds-lora-main input[type=number]{width:100%;padding:6px 3px;text-align:center;font-size:11px}.ds-lora-main select{min-width:0;width:100%;padding:6px 3px}.ds-lora-main button{padding:5px 3px}.ds-lora-col{min-width:0;display:flex;flex-direction:column;gap:3px}.ds-lora-col>span{font-size:9px;line-height:1;color:#a9bfdc;white-space:nowrap}.ds-lora-tools{display:flex;justify-content:space-between;align-items:center;gap:5px}.ds-lora-tools details{flex:1;min-width:0}.ds-lora-tools button{padding:2px 6px}.ds-lora-tools summary{font-size:10px;cursor:pointer}.ds-seed-wrap{display:flex;align-items:center;gap:5px;min-width:0}.ds-seed-wrap>input{width:auto!important;min-width:0!important;flex:1 1 80px;min-height:32px;font-variant-numeric:tabular-nums;appearance:textfield;-moz-appearance:textfield}.ds-seed-wrap>input::-webkit-inner-spin-button,.ds-seed-wrap>input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}.ds-seed-controls{display:flex;align-items:center;gap:4px;flex:none}.ds-root .ds-seed-controls .ds-chip{display:grid;place-items:center;width:28px;min-width:28px;height:28px;padding:0;border-radius:6px;font-size:13px;line-height:1}.ds-root .ds-seed-controls .ds-chip.active{background:#3b6398;border-color:#94b8ef}.ds-root .ds-seed-controls select{height:28px;width:40px;min-width:40px;max-width:40px;font-size:13px;padding:0 0 0 6px;border-radius:6px}.ds-seed-note{font-size:10px;color:#a4bddc;margin-top:4px;line-height:1.3}.ds-3col{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.ds-resolution-grid{display:grid;grid-template-columns:minmax(0,0.95fr) minmax(0,1.05fr);gap:10px}.ds-ratio-card{padding:8px;border:1px solid #455972;border-radius:8px;background:#1c2a3d;display:flex;flex-direction:column;gap:8px}.ds-ratio-preview{height:120px;border:1px solid #4a6079;border-radius:8px;background:#152131;display:flex;align-items:center;justify-content:center;position:relative}.ds-ratio-rect{border:1px solid #9ec2ff;background:linear-gradient(180deg,#466792 0%,#2c4b73 100%);border-radius:6px;box-shadow:inset 0 0 0 1px #ffffff14}.ds-ratio-size{position:absolute;bottom:8px;right:8px;font-size:11px;color:#cfe1ff;background:#0005;padding:3px 6px;border-radius:999px}.ds-inline-tools{display:flex;gap:7px;align-items:center}.ds-preset-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:6px;max-height:190px;overflow:auto;padding-right:2px}.ds-preset-btn{display:flex;align-items:center;gap:8px;padding:7px 8px!important;justify-content:flex-start;text-align:left}.ds-preset-btn.active{background:#3b6398!important;border-color:#94b8ef!important}.ds-mini-rect{width:34px;height:26px;border:1px solid #88aee4;border-radius:5px;background:linear-gradient(180deg,#557aad 0%,#35537c 100%);flex:none}.ds-preset-meta{display:flex;flex-direction:column;min-width:0}.ds-preset-meta b{font-size:11px}.ds-preset-meta span{font-size:10px;color:#adc0d8}.ds-encoder-note{font-size:10px;color:#9fb2ca;margin-top:-2px}.ds-res-adjusted{font-size:10px;line-height:1.4;color:#abd9b8;padding:5px 6px;border:1px solid #44765a;border-radius:6px;background:#1d3a2a80}.ds-res-warning{font-size:10px;line-height:1.4;color:#f3c58c;padding:5px 6px;border:1px solid #876849;border-radius:6px;background:#422d2080}
 
+/* Sampling controls keep their own grid and sizing inside either node UI. */
+.ds-sampling-card{container-type:inline-size;gap:10px}
+.ds-sampling-stats,.ds-sampling-methods,.ds-sampling-settings{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;align-items:start}
+.ds-sampling-stats.ds-3col{grid-template-columns:repeat(3,minmax(0,1fr))}
+.ds-sampling-card .ds-field,.ds-sampling-settings .ds-field{width:100%;margin:0;align-self:start}
+.ds-sampling-card .ds-field>span,.ds-sampling-settings .ds-field>span{display:block;margin:0;line-height:16px}
+.ds-root .ds-sampling-card input,.ds-root .ds-sampling-card select,.ds-modal .ds-sampling-settings input,.ds-modal .ds-sampling-settings select{display:block;width:100%;height:34px;min-height:34px;margin:0;line-height:18px}
+.ds-seed-row{display:grid;grid-template-columns:minmax(0,1fr);width:100%;min-width:0}
+.ds-sampling-card .ds-seed-wrap{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center}
+.ds-root .ds-sampling-card .ds-seed-wrap>input{width:100%!important}
+.ds-sampling-card .ds-seed-controls{gap:5px;align-items:center}
+.ds-root .ds-sampling-card .ds-seed-controls .ds-chip{width:32px;min-width:32px;height:34px;margin:0}
+.ds-root .ds-sampling-card .ds-seed-controls select{width:42px;min-width:42px;max-width:42px;height:34px;padding:0 4px}
+.ds-sampling-card .ds-seed-note{margin-top:3px;line-height:1.45;white-space:normal;overflow-wrap:anywhere}
+.ds-sampling-mode{grid-column:1/-1}
+@container(max-width:290px){.ds-sampling-stats.ds-3col{grid-template-columns:repeat(2,minmax(0,1fr))}.ds-sampling-stats.ds-3col>.ds-field:last-child{grid-column:1/-1}.ds-sampling-methods{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:560px){.ds-modal .ds-sampling-settings{grid-template-columns:minmax(0,1fr)}}
 .ds-preview-dimensions{font-size:10px;color:#c7daee;margin-left:auto;white-space:nowrap}.ds-autosave{display:flex;align-items:center;gap:4px;font-size:10px;color:#b9d0e4;white-space:nowrap}.ds-root .ds-autosave input{width:auto;min-width:0;accent-color:#90c6ff}.ds-preview-head{display:flex;align-items:center;justify-content:space-between;gap:6px;min-height:29px}.ds-preview-frame{position:relative;flex:1;min-height:180px;border:1px solid #3f526b;border-radius:8px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:repeating-conic-gradient(#252d39 0 25%,#1c2531 0 50%) 50%/16px 16px;touch-action:none}
 .ds-preview-frame img{position:absolute;width:100%;height:100%;object-fit:contain;pointer-events:none;transform-origin:center center}.ds-empty{font-size:12px;color:#a5bad7;text-align:center;padding:16px;max-width:310px;line-height:1.55}
 .ds-progress{height:6px;border-radius:10px;background:#344356;overflow:hidden}.ds-progress>div{height:100%;width:0;background:#7fa9df;transition:width .13s}
@@ -454,7 +522,7 @@ function attachSplitter(frame,node,key='ds_left_ratio'){
   return splitter;
 }
 
-function render(n){const root=n._dsRoot;if(!root)return;const cfg=n._dsConfig||parse(n);const mode=cfg.mode==='i2i'?'i2i':'t2i';root.classList.toggle('ds-compact',cfg.preview_layout==='compact');root.classList.toggle('ds-mode-i2i',mode==='i2i');root.replaceChildren();const frame=e('div','ds-frame');const left=e('section','ds-left');const right=e('section','ds-right');frame.append(left,attachSplitter(frame,n),right);root.append(frame);
+function render(n){const root=n._dsRoot;if(!root)return;queueMicrotask(()=>refreshComponents(n));const cfg=n._dsConfig||parse(n);const mode=cfg.mode==='i2i'?'i2i':'t2i';root.classList.toggle('ds-compact',cfg.preview_layout==='compact');root.classList.toggle('ds-mode-i2i',mode==='i2i');root.replaceChildren();const frame=e('div','ds-frame');const left=e('section','ds-left');const right=e('section','ds-right');frame.append(left,attachSplitter(frame,n),right);root.append(frame);
   const placeholderText=mode==='i2i'?'Load a source image or connect init_image externally, then Queue Prompt.\nLive sampling previews appear here.':'Connect positive / negative text from Prompt Composer, then Queue Prompt.\nLive sampling previews appear here.';
   function settingField(label,key,{type='number',options=null,step=1,onChange=null}={}){const ctl=options?select(cfg[key],options):textBox(cfg[key],type,step);ctl.addEventListener('change',()=>{update(n,c=>{c[key]=type==='number'&&!options?Number(ctl.value):type==='checkbox'?ctl.checked:ctl.value;if(key==='width'||key==='height'){c.resolution_preset='custom';}onChange?.(c, ctl.value);});updateProfileModeIfNeeded(n);render(n);});return field(label,ctl);}
   const header=e('div','ds-header');header.append(e('span','ds-icon',mode==='i2i'?'◉':'◈'));const headerText=e('div');headerText.append(e('div','ds-title','DIRECT SAMPLER'),e('div','ds-caption',mode==='i2i'?'Image-to-Image studio':'Text-to-Image studio'));header.append(headerText);const actions=e('div','ds-top-actions');actions.append(btn('T2I',()=>{switchMode(n,'t2i');render(n);},'ds-chip'+(mode==='t2i'?' active':'')),btn('I2I',()=>{switchMode(n,'i2i',c=>{if(!c.i2i_strength)c.i2i_strength='Balanced';if(sourceInfo(c))applySourceResolutionToConfig(n,c,sourceInfo(c));if(c.denoise===1)c.denoise=0.55;});render(n);},'ds-chip'+(mode==='i2i'?' active':'')));const settingsBtn=btn('⚙',()=>openSettings(n));actions.append(settingsBtn);header.append(actions);left.append(header);
@@ -473,7 +541,7 @@ function render(n){const root=n._dsRoot;if(!root)return;const cfg=n._dsConfig||p
   }
 
   const checkpointCard=e('div','ds-card');checkpointCard.append(e('div','ds-card-title','Model & profile'));
-  const ckpt=select(val(n,'checkpoint'),n._dsOptions?.checkpoints||[val(n,'checkpoint')]);ckpt.addEventListener('change',async()=>{n._dsProfileRequest=(n._dsProfileRequest||0)+1;setWidget(n,'checkpoint',ckpt.value);n._dsProfileMessage='';if(val(n,'profile_mode')!=='Custom')await refreshProfile(n);else render(n);});checkpointCard.append(field('Checkpoint / diffusion model',ckpt));if(String(val(n,'checkpoint')||'').startsWith('[Diffusion] '))checkpointCard.append(e('div','ds-muted','Diffusion model-only: the matching text encoder and VAE must also be available.'));
+  const ckpt=select(val(n,'checkpoint'),n._dsOptions?.checkpoints||[val(n,'checkpoint')]);ckpt.addEventListener('change',async()=>{n._dsProfileRequest=(n._dsProfileRequest||0)+1;n._dsComponentMemory??=new Map();const old=n._dsConfig||parse(n);n._dsComponentMemory.set(val(n,'checkpoint'),Object.fromEntries(COMPONENT_FIELDS.map(key=>[key,old[key]])));setWidget(n,'checkpoint',ckpt.value);n._dsComponents=null;n._dsComponentKey=null;update(n,c=>{c.clip_source='Internal';c.vae_name='Internal';Object.assign(c,n._dsComponentMemory.get(ckpt.value)||{});});n._dsProfileMessage='';if(val(n,'profile_mode')!=='Custom')await refreshProfile(n);else render(n);});checkpointCard.append(field('Checkpoint / diffusion model',ckpt));if(String(val(n,'checkpoint')||'').startsWith('[Diffusion] '))checkpointCard.append(e('div','ds-muted','Diffusion model-only: the matching text encoder and VAE must also be available.'));
   const modes=e('div','ds-mode');for(const profile of ['Creator','Personal','Custom'])modes.append(btn(profile,async()=>{if(profile==='Custom'){n._dsProfileRequest=(n._dsProfileRequest||0)+1;setWidget(n,'profile_mode',profile);n._dsProfileMessage='Custom settings — not linked to a saved profile.';render(n);}else{setWidget(n,'profile_mode',profile);await refreshProfile(n);}},profile===val(n,'profile_mode')?'active':''));checkpointCard.append(modes);
   const profileActions=e('div','ds-profile-actions');profileActions.append(btn('Save Creator',()=>saveSamplerProfile(n,'Creator')),btn('Save Personal',()=>saveSamplerProfile(n,'Personal')));
   const activeMode=val(n,'profile_mode');if(activeMode!=='Custom')profileActions.append(btn('Delete '+activeMode,()=>deleteSamplerProfile(n,activeMode)));
@@ -536,20 +604,12 @@ function render(n){const root=n._dsRoot;if(!root)return;const cfg=n._dsConfig||p
   }
   left.append(prefixCard);
 
-  const encoderCard=e('div','ds-card');encoderCard.append(e('div','ds-card-title','Encoders'));const encoderRow=e('div','ds-2col');const vaeChoices=[{value:'Internal',label:'Internal'},{value:'External',label:'External'},...(n._dsOptions?.vaes||[]).map(v=>({value:v,label:v}))];const clipChoices=[{value:'Internal',label:'Auto / embedded'},{value:'Manual',label:'Select encoders'},{value:'External',label:'External socket'}];encoderRow.append(settingField('VAE','vae_name',{type:'text',options:vaeChoices}),settingField('CLIP','clip_source',{type:'text',options:clipChoices}));encoderCard.append(encoderRow,e('div','ds-encoder-note','Auto uses embedded encoders or exact known model-family companions. Select encoders for other model-only families; External uses a connected CLIP socket.'));
-  if(cfg.clip_source==='Manual'){
-    const encoderMode=select(cfg.encoder_loader||'single',[{value:'single',label:'Single'},{value:'dual',label:'Dual'},{value:'triple',label:'Triple (SD3)'},{value:'quad',label:'Quad (HiDream)'}]);
-    encoderMode.addEventListener('change',()=>update(n,c=>{c.encoder_loader=encoderMode.value;c.encoder_type=encoderMode.value==='dual'?'flux':'stable_diffusion';}));
-    encoderCard.append(field('Encoder loader',encoderMode));
-    const supportedTypes=n._dsOptions?.encoder_types?.[cfg.encoder_loader||'single']||[];
-    if(supportedTypes.length){const encoderType=select(cfg.encoder_type||'stable_diffusion',supportedTypes);encoderType.addEventListener('change',()=>update(n,c=>{c.encoder_type=encoderType.value;}));encoderCard.append(field('Encoder type',encoderType));}
-    const count={single:1,dual:2,triple:3,quad:4}[cfg.encoder_loader||'single']||1;
-    const encoderOptions=[{value:'',label:'— Select an encoder —'},...(n._dsOptions?.text_encoders||[]).map(x=>({value:x,label:x}))];
-    for(let i=1;i<=count;i++){const name=`encoder_${i}`;const control=select(cfg[name]||'',encoderOptions);control.addEventListener('change',()=>update(n,c=>{c[name]=control.value;}));encoderCard.append(field(`Text encoder ${i}`,control));}
-  }
+  const encoderCard=e('div','ds-card');encoderCard.append(e('div','ds-card-title','CLIP & VAE'));
+  encoderCard.append(componentFields(n,cfg,change=>{updateProfileModeIfNeeded(n);update(n,change);optionalSockets(n);}));
+  encoderCard.append(e('div','ds-encoder-note',n._dsComponentError||(!n._dsComponents?'Finding compatible files…':'✓ Green: compatible · Saved choices take priority. CLIP pairs are selected together.')));
   left.append(encoderCard);
 
-  const samplerCard=e('div','ds-card');samplerCard.append(e('div','ds-card-title','Sampling'));const row=e('div',mode==='i2i'?'ds-2col':'ds-3col');row.append(settingField('Steps','steps',{step:1}),settingField('CFG','cfg',{step:0.5}));if(mode!=='i2i')row.append(settingField('Denoise','denoise',{step:0.01}));samplerCard.append(row);const row2=e('div','ds-2col');row2.append(settingField('Sampler','sampler_name',{type:'text',options:n._dsOptions?.samplers||[cfg.sampler_name]}),settingField('Scheduler','scheduler',{type:'text',options:n._dsOptions?.schedulers||[cfg.scheduler]}));samplerCard.append(row2);
+  const samplerCard=e('div','ds-card ds-sampling-card');samplerCard.append(e('div','ds-card-title','Sampling'));const row=e('div','ds-sampling-stats '+(mode==='i2i'?'ds-2col':'ds-3col'));row.append(settingField('Steps','steps',{step:1}),settingField('CFG','cfg',{step:0.5}));if(mode!=='i2i')row.append(settingField('Denoise','denoise',{step:0.01}));samplerCard.append(row);const row2=e('div','ds-sampling-methods');row2.append(settingField('Sampler','sampler_name',{type:'text',options:n._dsOptions?.samplers||[cfg.sampler_name]}),settingField('Scheduler','scheduler',{type:'text',options:n._dsOptions?.schedulers||[cfg.scheduler]}));samplerCard.append(row2);
   const row3=e('div','ds-seed-row');const seedField=e('label','ds-field');seedField.append(e('span','','Seed'));const seed=textBox(displayedSeed(n),'number');n._dsSeedInput=seed;seed.min='0';seed.max='9007199254740991';seed.step='1';seed.title='Seed associated with the displayed image (editable)';seed.addEventListener('change',()=>{const value=sanitizeSeed(seed.value);seed.value=String(value);setVisibleSeed(n,value);n._dsManualNext=true;if(seedControls(n).lock){seedControls(n).lock=false;graphDirty();render(n);}if(n._dsSeedNote)n._dsSeedNote.textContent='Selected seed — not generated yet.';});
   const controls=e('div','ds-seed-controls');const state=seedControls(n);const lockBtn=btn(state.lock?'🔒':'🔓',()=>{state.lock=!state.lock;if(state.lock)setVisibleSeed(n,displayedSeed(n));graphDirty();render(n);},'ds-chip'+(state.lock?' active':''));lockBtn.title=state.lock?'Unlock image seed':'Lock seed of displayed image';controls.append(lockBtn);const nextMode=select(state.mode,[{value:'random',label:'♻️'},{value:'increment',label:'➕'},{value:'decrement',label:'➖'}]);nextMode.title='Unlocked seed mode';nextMode.addEventListener('change',()=>{state.mode=nextMode.value;graphDirty();render(n);});controls.append(nextMode);const random=btn('🎲',()=>{const value=randomSeed();setVisibleSeed(n,value);n._dsManualNext=true;seed.value=String(value);if(state.lock){state.lock=false;graphDirty();render(n);}if(n._dsSeedNote)n._dsSeedNote.textContent='Selected seed — not generated yet.';},'ds-chip');random.title='Roll a new seed for next generation';controls.append(random);const wrap=e('div','ds-seed-wrap');wrap.append(seed,controls);seedField.append(wrap);const note=e('div','ds-seed-note',state.lock?'🔒 Reuse displayed image seed.':'New seed selected when queued. Lock to reuse displayed seed.');n._dsSeedNote=note;seedField.append(note);row3.append(seedField);samplerCard.append(row3);left.append(samplerCard);
 
@@ -655,13 +715,15 @@ function openSettings(n){const originalCfg=structuredClone(n._dsConfig||parse(n)
   }finally{creatorButton.disabled=personalButton.disabled=false;}
  }
  const sections=[['sampling','Sampling'],['resolution','Resolution & encoders'],['loras','LoRA & prompts'],['sockets','Optional sockets'],['preview','Preview & layout'],['export','Export & metadata']];let flush=null;
- function addField(target,key,title,{options=null,type='number',step=1,defaultValue=null}={}){const input=options?select(target[key],options):textBox(target[key]??defaultValue,type,step);const f=field(title,input);article.append(f);return ()=>{target[key]=options?input.value:type==='number'?Number(input.value):type==='checkbox'?input.checked:input.value;};}
+ function addField(target,key,title,{options=null,type='number',step=1,defaultValue=null}={},container=article){const input=options?select(target[key],options):textBox(target[key]??defaultValue,type,step);const f=field(title,input);container.append(f);return ()=>{target[key]=options?input.value:type==='number'?Number(input.value):type==='checkbox'?input.checked:input.value;};}
  function tab(id){flush?.();flush=null;nav.replaceChildren(...sections.map(([k,l])=>btn(l,()=>tab(k),'ds-tab'+(id===k?' active':''))));article.replaceChildren();const fns=[];
  if(id==='sampling'){article.append(e('div','ds-muted','Creator and Personal are saved in Uninodes for each model. Changing manual sampling values switches to Custom until you save again.'));
- for(const [key,label,opts] of [['sampler_name','Sampler',{options:n._dsOptions?.samplers||[]}],['scheduler','Scheduler',{options:n._dsOptions?.schedulers||[]}],['steps','Steps',{step:1}],['cfg','CFG',{step:0.5}],['denoise','Denoise',{step:0.01}],['clip_skip','CLIP skip',{step:1}]])fns.push(addField(cfg,key,label,opts));
- const modeSel=select(cfg.mode||'t2i',[{value:'t2i',label:'T2I'},{value:'i2i',label:'I2I'}]);article.append(field('Mode',modeSel));fns.push(()=>{if(modeSel.value!==currentMode(cfg)){const previous=currentMode(cfg);const prevBag=cfg[previous+'_settings'];for(const key of MODE_SETTINGS[previous])prevBag[key]=structuredClone(cfg[key]);applyModeSettings(cfg,modeSel.value);}else cfg.mode=modeSel.value;});
- }else if(id==='resolution'){for(const [key,label,opts]of [['width','Width',{step:8}],['height','Height',{step:8}],['batch_size','Batch size',{step:1}],['vae_name','VAE',{options:[{value:'Internal',label:'Internal'},{value:'External',label:'External'},...(n._dsOptions?.vaes||[]).map(v=>({value:v,label:v}))]}],['clip_source','CLIP',{options:[{value:'Internal',label:'Auto / embedded'},{value:'Manual',label:'Select encoders'},{value:'External',label:'External socket'}]}]])fns.push(addField(cfg,key,label,opts));
- article.append(e('p','ds-muted','Model-only families can use the left-column encoder selector. For unusual models choose Manual and select a compatible loader + encoder(s).'));
+ const samplingFields=e('div','ds-sampling-settings');article.append(samplingFields);
+ for(const [key,label,opts] of [['sampler_name','Sampler',{options:n._dsOptions?.samplers||[]}],['scheduler','Scheduler',{options:n._dsOptions?.schedulers||[]}],['steps','Steps',{step:1}],['cfg','CFG',{step:0.5}],['denoise','Denoise',{step:0.01}],['clip_skip','CLIP skip',{step:1}]])fns.push(addField(cfg,key,label,opts,samplingFields));
+ const modeSel=select(cfg.mode||'t2i',[{value:'t2i',label:'T2I'},{value:'i2i',label:'I2I'}]);const modeField=field('Mode',modeSel);modeField.classList.add('ds-sampling-mode');samplingFields.append(modeField);fns.push(()=>{if(modeSel.value!==currentMode(cfg)){const previous=currentMode(cfg);const prevBag=cfg[previous+'_settings'];for(const key of MODE_SETTINGS[previous])prevBag[key]=structuredClone(cfg[key]);applyModeSettings(cfg,modeSel.value);}else cfg.mode=modeSel.value;});
+ }else if(id==='resolution'){for(const [key,label,opts]of [['width','Width',{step:8}],['height','Height',{step:8}],['batch_size','Batch size',{step:1}]])fns.push(addField(cfg,key,label,opts));
+ article.append(componentFields(n,cfg,change=>change(cfg)));
+ article.append(e('p','ds-muted','Green entries are compatible. Save Creator / Personal to remember your CLIP and VAE for this model.'));
  }else if(id==='loras'){article.append(e('p','ds-muted','Use the LoRA rows on the left to add, reorder, enable, and tune LoRAs. Trigger words are optional.'));const ck=e('label','ds-row');const c=textBox(cfg.apply_profile_prefixes,'checkbox');ck.append(c,e('span','','Apply positive / negative prefixes to prompts'));article.append(ck);fns.push(()=>{cfg.apply_profile_prefixes=c.checked;});
  article.append(e('p','ds-muted','Prefixes can also be edited directly under Model & Profile on the node. They work in Custom mode too when enabled; use Save Creator / Personal to keep per-model presets.'));
  for(const [key,labelText] of [['positive_prefix','Positive prefix'],['negative_prefix','Negative prefix']]){
