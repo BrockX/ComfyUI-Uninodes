@@ -2179,7 +2179,7 @@ def sample_with_direct_preview(model, seed, cfg, positive, negative, latent, uni
             server.send_sync("direct_sampler_frame", {
                 "node_id": str(unique_id), "step": int(step + 1),
                 "total": int(total_steps), "image": base64.b64encode(stream.getvalue()).decode("ascii")
-            }, getattr(server, "client_id", None))
+            })
         except Exception:
             # Preview encoding/socket problems must never interrupt generation.
             pass

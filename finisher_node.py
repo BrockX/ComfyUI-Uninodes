@@ -120,10 +120,10 @@ class ImageFinisher:
             hand_cfg = settings.get("hand_detailer", {})
             detector_cache, sam_cache = {}, {}  # Reuse detector/SAM instances within this execution.
             if face:
-                current = image_finisher.run_face_detailer(current, detector_model=face_cfg.get("detector", ""), settings=face_cfg, model=model, clip=clip, vae=vae, positive=image_finisher.detailer_positive(face_cfg, clip, positive), negative=negative, seed=seed, detector_cache=detector_cache, sam_cache=sam_cache)
+                current = image_finisher.run_face_detailer(current, detector_model=face_cfg.get("detector", ""), settings=face_cfg, model=model, clip=clip, vae=vae, positive=image_finisher.detailer_positive(face_cfg, clip, positive), negative=image_finisher.detailer_negative(face_cfg, clip, negative), seed=seed, detector_cache=detector_cache, sam_cache=sam_cache)
                 notes.append(f"face:{face_cfg.get('detector', '')}")
             if eyes:
-                current = image_finisher.run_face_detailer(current, detector_model=eye_cfg.get("detector", ""), settings=eye_cfg, model=model, clip=clip, vae=vae, positive=image_finisher.detailer_positive(eye_cfg, clip, positive), negative=negative, seed=seed, detector_cache=detector_cache, sam_cache=sam_cache)
+                current = image_finisher.run_face_detailer(current, detector_model=eye_cfg.get("detector", ""), settings=eye_cfg, model=model, clip=clip, vae=vae, positive=image_finisher.detailer_positive(eye_cfg, clip, positive), negative=image_finisher.detailer_negative(eye_cfg, clip, negative), seed=seed, detector_cache=detector_cache, sam_cache=sam_cache)
                 notes.append(f"eyes:{eye_cfg.get('detector', '')}")
             if hands:
                 current = image_finisher.run_face_detailer(current, detector_model=hand_cfg.get("detector", ""), settings=hand_cfg, model=model, clip=clip, vae=vae, positive=image_finisher.detailer_positive(hand_cfg, clip, positive), negative=negative, seed=seed, detector_cache=detector_cache, sam_cache=sam_cache)

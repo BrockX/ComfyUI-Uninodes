@@ -26,3 +26,7 @@ Thumbs.db
 Release-Uninodes.cmd
 Release-Uninodes.ps1
 README_RELEASE.txt
+
+# Local collaboration files and project notes
+/work/
+/docs/

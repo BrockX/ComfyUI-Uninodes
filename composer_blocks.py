@@ -250,7 +250,7 @@ def compose(positive_prompt="", negative_prompt="", checkpoint_positive="", chec
     if nsfw_used:
         # Append the permanent safeguard exactly once, after all text/socket
         # overrides. Neither NSFW visibility nor any block setting can turn it off.
-        guard = "child, loli, shota, aged down"
+        guard = "shota"
         if guard.casefold() not in negative_final.casefold():
             negative_final = joined([negative_final, guard])
     return positive_final, negative_final

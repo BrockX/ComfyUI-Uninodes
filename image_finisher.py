@@ -66,6 +66,7 @@ DEFAULT_DETAILER_SETTINGS: Dict[str, Any] = {
     "cycle": 1,
     "prompt_enabled": False,
     "prompt": "",
+    "negative_prompt": "",
     "sam_detection_hint": "center-1",
     "sam_dilation": 0,
     "sam_threshold": 0.93,
@@ -378,6 +379,16 @@ def detailer_positive(settings, clip, positive):
         raise ValueError('Custom detailer prompts require a connected CLIP or Direct Sampler finisher bundle')
     import nodes as comfy_nodes
     return comfy_nodes.CLIPTextEncode().encode(clip, str(settings['prompt']))[0]
+
+
+def detailer_negative(settings, clip, negative):
+    """Override negative conditioning only when the custom-prompt toggle is on."""
+    if not settings.get('prompt_enabled') or not str(settings.get('negative_prompt', '')).strip():
+        return negative
+    if clip is None:
+        raise ValueError('Custom detailer prompts require a connected CLIP or Direct Sampler finisher bundle')
+    import nodes as comfy_nodes
+    return comfy_nodes.CLIPTextEncode().encode(clip, str(settings['negative_prompt']))[0]
 
 
 def upscale_with_model(image: torch.Tensor, model_name: str) -> torch.Tensor:
